@@ -7,7 +7,7 @@ Stable tag: Beta
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Add Japanese font to TinyMCE Advanced plugin\'s font family selections.
+Add Japanese font to TinyMCE Advanced plugin's font family selections.
 
 == Description ==
 Add Japanese font to TinyMCE Advanced plugin's font family selections.<br>
