@@ -1,7 +1,7 @@
 <?php
 /*
-Plugin Name: Japanese font for Tiny mce
-Description: Add Japanese font to Tiny MCE plugin.
+Plugin Name: Japanese font for TinyMCE
+Description: Add Japanese font to TinyMCE Advanced plugin's font family selections..
 Version: beta-1
 Author: raspi0124
 License: GPL2
