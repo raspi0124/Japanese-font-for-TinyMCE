@@ -9,14 +9,13 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Add Japanese font to TinyMCE Advanced plugin\'s font family selections.
 
 == Description ==
-Add Japanese font to TinyMCE Advanced plugin\'s font family selections.
-Font to be added；
-ふい字（http://hp.vector.co.jp/authors/VA039499/#hui）
-Noto Sans Japanese（https://www.google.com/get/noto/#sans-jpan）
-自家製 Rounded M+（http://jikasei.me/font/rounded-mplus/）
-
-Development for this plugin takes place at GitHub. To report bugs or feature requests, please use Github issues.
-
+Add Japanese font to TinyMCE Advanced plugin's font family selections.<br>
+Font to be added；<br>
+<a href="http://hp.vector.co.jp/authors/VA039499/#hui">ふい字</a><br>
+<a href="https://www.google.com/get/noto/#sans-jpan">Noto Sans Japanese</a><br>
+<a href="http://jikasei.me/font/rounded-mplus/">自家製 Rounded M+</a><br><br>
+<br>
+Development for this plugin takes place at GitHub. To report bugs or feature requests, please use <a href="https://github.com/raspi0124/Japanese-font-for-TinyMCE">Github</a> issues.
 == Installation ==
 Same as other plugins.
 
