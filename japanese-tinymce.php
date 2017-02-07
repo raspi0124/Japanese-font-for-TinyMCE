@@ -34,3 +34,11 @@ function load_custom_fonts_frontend() {
 }
 add_action('wp_head', 'load_custom_fonts_frontend');
 add_action('admin_head', 'load_custom_fonts_frontend');
+
+wp_enqueue_style(
+    'add_jpfont_tinymce_style',
+    plugins_url() . '/css/addfont.css',
+    array( 'add_jpfont_tinymce_style' ),
+    null, // example of no version number...
+    // ...and no CSS media type
+);
