@@ -26,8 +26,7 @@ function load_custom_fonts_frontend() {
     plugin_dir_url( __FILE__ ) . 'assets/foo-styles.css',
     array( 'japanese-font-tinymce_style' ),
     null,
-	);
-}
-add_action('wp_head', 'load_custom_fonts_frontend');
+	
+add_action('wp_head', 'load_custom_fonts_frontend')
 add_action('admin_head', 'load_custom_fonts_frontend');
 ?>
