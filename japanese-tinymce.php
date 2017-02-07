@@ -20,13 +20,12 @@ function load_custom_fonts($init) {
     return $init;
 }
 add_filter('tiny_mce_before_init', 'load_custom_fonts');
-function load_custom_fonts_frontend() {
-	wp_enqueue_style(
-    'japanese-font-tinymce_style',
-    plugin_dir_url( __FILE__ ) . 'assets/foo-styles.css',
-    array( 'japanese-font-tinymce_style' ),
-    null,
-	
-add_action('wp_head', 'load_custom_fonts_frontend')
-add_action('admin_head', 'load_custom_fonts_frontend');
+/**
+ * Include CSS file for MyPlugin.
+ */
+function tinyjpfont_style() {
+    wp_register_style( 'foo-styles',  plugin_dir_url( __FILE__ ) . 'assets/foo-styles.css' );
+    wp_enqueue_style( 'foo-styles' );
+}
+add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
 ?>
