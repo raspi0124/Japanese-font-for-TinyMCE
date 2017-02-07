@@ -8,7 +8,7 @@ License: GPL2
 */
 //add font to tiny mce
 function load_custom_fonts($init) {
-    $stylesheet_url = 'https://cdn.rawgit.com/raspi0124/my-sites-files/9e60dc98/addfont.css';
+    $stylesheet_url = 'plugin_dir_url( __FILE__ )/addfont.css';
     if(empty($init['content_css'])) {
         $init['content_css'] = $stylesheet_url;
     } else {
@@ -24,8 +24,9 @@ add_filter('tiny_mce_before_init', 'load_custom_fonts');
  * Include CSS file for MyPlugin.
  */
 function tinyjpfont_style() {
-    wp_register_style( 'foo-styles',  plugin_dir_url( __FILE__ ) . 'assets/foo-styles.css' );
-    wp_enqueue_style( 'foo-styles' );
+    wp_register_style( 'tinyjpfont-styles',  plugin_dir_url( __FILE__ ) . 'addfont.css' );
+    wp_enqueue_style( 'tinyjpfont-styles' );
 }
 add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
+add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
 ?>
