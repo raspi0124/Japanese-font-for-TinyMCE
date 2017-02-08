@@ -7,7 +7,7 @@ Author: raspi0124
 License: GPL2
 */
 //add font to tiny mce
-function load_custom_fonts($init) {
+function tinyjpfont_load_custom_fonts($init) {
     $stylesheet_url = 'plugin_dir_url( __FILE__ )/addfont.css';
     if(empty($init['content_css'])) {
         $init['content_css'] = $stylesheet_url;
