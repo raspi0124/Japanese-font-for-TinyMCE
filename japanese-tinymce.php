@@ -19,7 +19,7 @@ function load_custom_fonts($init) {
     $init['font_formats'] = $font_formats . $custom_fonts;
     return $init;
 }
-add_filter('tiny_mce_before_init', 'load_custom_fonts');
+add_filter('tiny_mce_before_init', 'tinyjpfont_load_custom_fonts');
 /**
  * Include CSS file for MyPlugin.
  */
