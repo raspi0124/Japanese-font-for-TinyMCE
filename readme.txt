@@ -27,3 +27,4 @@ A ;Please report it at github issue page.
 
 == Changelog ==
 Version beta-1 ;First release
+Version beta-2 ;Add light and bold font for Noto Sans Japanese.
