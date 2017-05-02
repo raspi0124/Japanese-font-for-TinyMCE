@@ -2,7 +2,7 @@
 /*
 Plugin Name: Japanese font for TinyMCE
 Description: Add Japanese font to TinyMCE Advanced plugin's font family selections..
-Version: beta-4
+Version: beta-5
 Author: raspi0124
 License: GPL2
 */
