@@ -4,6 +4,13 @@
 }
 
 @font-face {
+	font-family: esenapaj;
+	src: url("https://cdn.rawgit.com/raspi0124/my-sites-files/097f6373/esenapaj.ttf") format("truetype")
+}
+
+
+
+@font-face {
   font-family: 'Noto Sans Japanese-100';
   font-style: normal;
   font-weight: 100;
@@ -34,15 +41,9 @@
 
 
 
-@font-face {
-   font-family: 'Noto Sans Japanese-700';
-   font-style: normal;
-   font-weight: 700;
-   src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff2) format('woff2'),
-        url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff) format('woff'),
-        url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.otf) format('opentype');
- }
-
 #mceu_68 {display: none;}
+#mceu_69 {display: none;}
 
 .mceu_68 {display: none;}
+.mceu_69 {display: none;}
+
