@@ -1,12 +1,66 @@
+# CSS for Japanese Font for TinyMCE. Version 2.0
+
+
+
+
 @font-face {
-    font-family: 'Huifont';
-    src: url('https://cdn.rawgit.com/raspi0124/my-sites-files/eed42314/Light-Huiji.ttf') format('truetype');
+  font-family: esenapaj;
+  src: url("https://cdn.rawgit.com/raspi0124/my-sites-files/097f6373/esenapaj.ttf") format("truetype")
 }
 
 @font-face {
-	font-family: esenapaj;
-	src: url("https://cdn.rawgit.com/raspi0124/my-sites-files/097f6373/esenapaj.ttf") format("truetype")
+    font-family: 'Huifont';
+    src:url('https://cdn.rawgit.com/raspi0124/my-sites-files/dc302549/HuiFont109.woff2') format('woff2'),
+         url('https://cdn.rawgit.com/raspi0124/my-sites-files/eed42314/Light-Huiji.ttf') format('truetype'),
 }
+
+
+
+# Copyright for HONOKAMARU
+# Copyright© 2014 Adobe Systems Incorporated. All Rights Reserved.
+# Copyright© 2012 M+ FONTS PROJECT
+# Copyright© 2014 Jikasei Font Kobo by MM.
+# Copyright© 2014 HONOKA Project
+# Honokamaru is using Apache licence. and honokamaru is based on 源柔ゴシック 源ノ角ゴシック and M+ OUTLINE FONTS.
+# フォントデータ内の「源ノ角ゴシック」由来の文字グリフの著作権は、Adobe が所有しています。
+# フォントデータ内の「M+ OUTLINE FONTS」由来の文字グリフの著作権は、M+ FONTS PROJECT が所有しています。
+# フォントデータ内の「源柔ゴシック」由来の文字グリフの著作権は、自家製フォント工房が所有しています。
+# フォントデータ内のひらがな・カタカナ・長音の文字グリフの著作権は、「HONOKA Project」が所有しています。
+
+@font-face {
+  font-family: honokamaru;
+  src: url("https://cdn.rawgit.com/raspi0124/my-sites-files/80b7a9fa/font_1_honokamarugo_1.1.ttf") format("truetype")
+}
+
+/*
+ * Copyright (C) 2017 Adobe
+ *      https://github.com/adobe-fonts/source-han-sans/tree/release/SubsetOTF
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@font-face {
+  font-family: light-gen;
+  src: url("https://cdn.rawgit.com/adobe-fonts/source-han-sans/release/SubsetOTF/JP/SourceHanSansJP-ExtraLight.otf") format("opentype")
+}
+
+
+@font-face {
+  font-family: normal-gen;
+  src: url("https://cdn.rawgit.com/adobe-fonts/source-han-sans/release/SubsetOTF/JP/SourceHanSansJP-Normal.otf") format("opentype")
+}
+
+
 
 
 
@@ -28,22 +82,18 @@
         url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff) format('woff'),
         url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.otf) format('opentype');
 }
-
 @font-face {
-   font-family: 'Noto Sans Japanese-400';
+   font-family: 'Noto Sans Japanese-900';
    font-style: normal;
-   font-weight: 400;
-   src: local('NotoSansJP-Regular.otf'),
-        url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.woff2) format('woff2'),
-        url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.woff) format('woff'),
-        url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.otf) format('opentype');
+   font-weight: 900;
+   src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.otf) format('opentype');
  }
 
 
 
-#mceu_68 {display: none;}
-#mceu_69 {display: none;}
 
-.mceu_68 {display: none;}
-.mceu_69 {display: none;}
+
+
 
