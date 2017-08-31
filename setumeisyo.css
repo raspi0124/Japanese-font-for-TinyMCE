@@ -13,7 +13,7 @@ a:hover { color: #ff0000; }
 a:active { color: #ff0000; }
 
 /* --- コンテナ --- */
-#container {
+#tinyjpfont_container {
 width: 780px; /* ページの幅 */
 margin: 0 auto; /* センタリング */
 background: url(sidebar_200.gif) repeat-y right; /* サイドバーの背景画像 */
@@ -23,24 +23,24 @@ border-right: 1px #c0c0c0 solid; /* 右の境界線 */
 }
 
 /* --- ヘッダ --- */
-#header {
+#tinyjpfont_header {
 background-color: #ffe080; /* ヘッダの背景色 */
 }
 
 /* --- ナビゲーション --- */
-#nav {
+#tinyjpfont_nav {
 float: right;
 width: 200px; /* サイドバーの幅 */
 }
 
 /* --- メインカラム --- */
-#content {
+#tinyjpfont_content {
 float: right;
 width: 580px; /* メインカラムの幅 */
 }
 
 /* --- フッタ --- */
-#footer {
+#tinyjpfont_footer {
 clear: right; /* フロートのクリア */
 width: 100%;
 background-color: #ffe080; /* フッタの背景色 */
