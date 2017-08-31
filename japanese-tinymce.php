@@ -48,6 +48,11 @@ function tinyjpfont_style() {
 add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
 add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
 
+function tinyjpfont_setumeisyostyle() {
+    wp_register_style( 'tinyjpfont-setumeisyostyles',  plugin_dir_url( __FILE__ ) . 'setumeisyo.css' );
+    wp_enqueue_style( 'tinyjpfont-setumeisyostyles' );
+}
+add_action( 'admin_enqueue_scripts', 'tinyjpfont_setumeisyostyle' );
 //add 説明書
 
 add_action( 'admin_menu', 'tinyjpfont_create_menu' );
@@ -64,82 +69,6 @@ function tinyjpfont_settings_page() {
 
 <!-- コンテナ開始 -->
 <div id="container">
-<style>
-
-/* --- 全体の背景・テキスト --- */
-body {
-margin: 0;
-padding: 0;
-background-color: #ffffff; /* ページの背景色 */
-color: #000000; /* 全体の文字色 */
-font-size: 100%; /* 全体の文字サイズ */
-}
-
-/* --- 全体のリンクテキスト --- */
-a:link { color: #0000ff; }
-a:visited { color: #800080; }
-a:hover { color: #ff0000; }
-a:active { color: #ff0000; }
-
-/* --- コンテナ --- */
-#container {
-width: 780px; /* ページの幅 */
-margin: 0 auto; /* センタリング */
-background: url(sidebar_200.gif) repeat-y right; /* サイドバーの背景画像 */
-background-color: #ffffff; /* メインカラムの背景色 */
-border-left: 1px #c0c0c0 solid; /* 左の境界線 */
-border-right: 1px #c0c0c0 solid; /* 右の境界線 */
-}
-
-/* --- ヘッダ --- */
-#header {
-background-color: #ffe080; /* ヘッダの背景色 */
-}
-
-/* --- ナビゲーション --- */
-#nav {
-float: right;
-width: 200px; /* サイドバーの幅 */
-}
-
-/* --- メインカラム --- */
-#content {
-float: right;
-width: 580px; /* メインカラムの幅 */
-}
-
-/* --- フッタ --- */
-#footer {
-clear: right; /* フロートのクリア */
-width: 100%;
-background-color: #ffe080; /* フッタの背景色 */
-}
-
-blockquote{
-background-color:#ddd;
-padding:3em 1em;
-position:relative;
-}
-blockquote:before{
-content:"“";
-font-size:600%;
-line-height:1em;
-color:#999;
-position:absolute;
-left:0;
-top:0;
-}
-blockquote:after{
-content:"”";
-font-size:600%;
-line-height:0em;
-color:#999;
-position:absolute;
-right:0;
-bottom:0;
-}
-</style>
-
 <!-- ヘッダ開始 -->
 <div id="header">
 <h2>Japanese Font for TinyMCE 説明書</h2>
