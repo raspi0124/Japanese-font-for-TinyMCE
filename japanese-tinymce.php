@@ -2,7 +2,7 @@
 /*
 Plugin Name: Japanese font for TinyMCE
 Description: Add Japanese font to TinyMCE Advanced plugin's font family selections..
-Version: 2.0
+Version: 2.1
 Author: raspi0124
 Author URI: https://raspi-diary.com/
 License: GPL2
