@@ -48,6 +48,8 @@ function tinyjpfont_style() {
 add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
 add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
 
+
+
 function tinyjpfont_setumeisyostyle() {
     wp_register_style( 'tinyjpfont-setumeisyostyles',  plugin_dir_url( __FILE__ ) . 'setumeisyo.css' );
     wp_enqueue_style( 'tinyjpfont-setumeisyostyles' );
@@ -68,15 +70,15 @@ function tinyjpfont_settings_page() {
 
 
 <!-- コンテナ開始 -->
-<div id="container">
+<div id="tinyjpfont_container">
 <!-- ヘッダ開始 -->
-<div id="header">
+<div id="tinyjpfont_header">
 <h2>Japanese Font for TinyMCE 説明書</h2>
 </div>
 <!-- ヘッダ終了 -->
 
 <!-- ナビゲーション開始 -->
-<div id="nav">
+<div id="tinyjpfont_nav">
 作者のTwitterをフォロー<br>
 <a href="https://twitter.com/raspi0124" class="twitter-follow-button" data-show-count="false" data-size="large" data-dnt="true">Follow @raspi0124</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script><br><br>
@@ -92,7 +94,7 @@ Monacoin address : MG2vzkSguWscQp3haGJ4kkhJFePvkSgKsU <br>
 <!-- ナビゲーション終了 -->
 
 <!-- メインカラム開始 -->
-<div id="content">
+<div id="tinyjpfont_content">
 <h3>このプラグインについて</h3>
 &nbsp;
 
@@ -187,7 +189,11 @@ Version1.8 説明書を修正<br>
 Version 1.9 フォント追加！バージョン2.0への準備完了！ けど、もう限界なので寝ます。もしバグがあったら朝直します。おやすみ！そして楽しんでね！<br>
 Version 2.0;Bug check complete. and added woff2 font for Huifont. that's it. done. and I might stop making update for while because of school......( I hate school now....) prety sadly. if there is any important bug, just post a comment to <a href="https://raspi-diary.com/wordpress%e3%81%ae%e3%82%a8%e3%83%87%e3%82%a3%e3%82%bf%e3%81%ab%e6%97%a5%e6%9c%ac%e8%aa%9e%e3%83%95%e3%82%a9%e3%83%b3%e3%83%88%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b%e3%83%97%e3%83%a9%e3%82%b0/" target="_blank">here</a> and I will fix (if I can...) them as fast as possible... If there is no responce from me for 1-2week, that's mean I can't responce.....but enjoy and I hope see you again soon!(really)<br>
 「日本語訳」<br>
-バグのチェック完了。そして新たにふい字はwoff2形式のサポートを開始しました。そして説明書に変更ログを書き始めました。あと、学校とかの理由でひょっとしたらしばらくこのプラグインの更新を止めるかもです。（すぐに戻ってくるかもです。 あー。。。学校嫌になってきた）もし重大なバグがあったら、<a href="https://raspi-diary.com/wordpress%e3%81%ae%e3%82%a8%e3%83%87%e3%82%a3%e3%82%bf%e3%81%ab%e6%97%a5%e6%9c%ac%e8%aa%9e%e3%83%95%e3%82%a9%e3%83%b3%e3%83%88%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b%e3%83%97%e3%83%a9%e3%82%b0/" target="_blank">ここ</a>に書いてくれればできるだけ早く直します。もし、1−2週間ほどたっても返信がなければ、ちょっとこのプラグインに手がつけれない事態になっているということです。まあ、バージョン2.x からも引き続き楽しんで使ってくださると嬉しいです。それでは、またいつか！できるだけ早くまた会えることを祈っています！
+バグのチェック完了。そして新たにふい字はwoff2形式のサポートを開始しました。そして説明書に変更ログを書き始めました。あと、学校とかの理由でひょっとしたらしばらくこのプラグインの更新を止めるかもです。（すぐに戻ってくるかもです。 あー。。。学校嫌になってきた）もし重大なバグがあったら、<a href="https://raspi-diary.com/wordpress%e3%81%ae%e3%82%a8%e3%83%87%e3%82%a3%e3%82%bf%e3%81%ab%e6%97%a5%e6%9c%ac%e8%aa%9e%e3%83%95%e3%82%a9%e3%83%b3%e3%83%88%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b%e3%83%97%e3%83%a9%e3%82%b0/" target="_blank">ここ</a>に書いてくれればできるだけ早く直します。もし、1−2週間ほどたっても返信がなければ、ちょっとこのプラグインに手がつけれない事態になっているということです。まあ、バージョン2.x からも引き続き楽しんで使ってくださると嬉しいです。それでは、またいつか！できるだけ早くまた会えることを祈っています！<br>
+Version 2.1;yey! Im back! and in this version, I just seprated css for 説明書(explain page on adminpanel). I guess 説明書page get bit faster if you are using browser cache or CDN.<br> and WARNING! in next version releace at September 5th 2017, <br>the 源ノ角ゴシック font will be remove from this plugin.ofcause you can still use 源ノ角ゴシック, by just staying on this version (2.1) but, I would not recommend you to do that.if you still using 源ノ角ゴシック after version 2.2, the Noto Sans Japanese font will be loaded instead of 源ノ角ゴシック.and... enjoy this plugin and I hope you will keep using this plugin!
+<br>
+「日本語訳」<br>
+よっしゃーただいま！そして、このバージョンでは、説明書のためのcssを分割させました。これでたぶんCloudflareやブラウザーキャッシュを使ってる場合、説明書の表示がほんのチョット早くなると思います。<br>あと、警告です。９月5日頃にリリースされるバージョン2.2にて源ノ角ゴシックは、廃止されます。引き続きこのバージョンをお使いになることで源ノ角ゴシックの使用は可能ですが、おすすめはできません。また、バージョン2.2以降源ノ角ゴシックが使用されている場合は、自動的にNoto Sans Japanese フォントが代わりにロードされます。そして。。たのしんでね！あと、このプラグインを今後も使っていただけると嬉しいです！<br>
 &nbsp;
 
 &nbsp;
