@@ -1,28 +1,35 @@
-# CSS for Japanese Font for TinyMCE. Version 2.1
+# CSS for Japanese Font for TinyMCE. Version 2.0
+
+
 
 
 @font-face {
-  font-family: "esenapaj";
-
-  src: url("https://cdn.rawgit.com/raspi0124/my-sites-files/c84750d8/esenapaj.otf") format("opentype"), /* Open Type Font */
-    url("https://cdn.rawgit.com/raspi0124/my-sites-files/c84750d8/esenapaj.ttf") format("truetype"), /* Safari, Android, iOS */
-    url("https://cdn.rawgit.com/raspi0124/my-sites-files/c84750d8/esenapaj.woff2") format("woff2"); /* Modern Browsers */
-  font-weight: normal;
-  font-style: normal;
+  font-family: esenapaj;
+  src: url("https://cdn.rawgit.com/raspi0124/my-sites-files/097f6373/esenapaj.ttf") format("truetype")
 }
-
-
 
 @font-face {
     font-family: 'Huifont';
     src:url('https://cdn.rawgit.com/raspi0124/my-sites-files/dc302549/HuiFont109.woff2') format('woff2'),
-         url('https://cdn.rawgit.com/raspi0124/my-sites-files/eed42314/Light-Huiji.ttf') format('truetype');
+         url('https://cdn.rawgit.com/raspi0124/my-sites-files/eed42314/Light-Huiji.ttf') format('truetype'),
 }
 
 
+
+# Copyright for HONOKAMARU
+# Copyright© 2014 Adobe Systems Incorporated. All Rights Reserved.
+# Copyright© 2012 M+ FONTS PROJECT
+# Copyright© 2014 Jikasei Font Kobo by MM.
+# Copyright© 2014 HONOKA Project
+# Honokamaru is using Apache licence. and honokamaru is based on 源柔ゴシック 源ノ角ゴシック and M+ OUTLINE FONTS.
+# フォントデータ内の「源ノ角ゴシック」由来の文字グリフの著作権は、Adobe が所有しています。
+# フォントデータ内の「M+ OUTLINE FONTS」由来の文字グリフの著作権は、M+ FONTS PROJECT が所有しています。
+# フォントデータ内の「源柔ゴシック」由来の文字グリフの著作権は、自家製フォント工房が所有しています。
+# フォントデータ内のひらがな・カタカナ・長音の文字グリフの著作権は、「HONOKA Project」が所有しています。
+
 @font-face {
-  font-family: 'honokamaru';
-  src: url("https://cdn.rawgit.com/raspi0124/my-sites-files/80b7a9fa/font_1_honokamarugo_1.1.ttf") format("truetype");
+  font-family: honokamaru;
+  src: url("https://cdn.rawgit.com/raspi0124/my-sites-files/80b7a9fa/font_1_honokamarugo_1.1.ttf") format("truetype")
 }
 
 /*
@@ -43,14 +50,14 @@
  */
 
 @font-face {
-  font-family: 'light-gen';
-  src: url("https://cdn.rawgit.com/adobe-fonts/source-han-sans/release/SubsetOTF/JP/SourceHanSansJP-ExtraLight.otf") format("opentype");
+  font-family: light-gen;
+  src: url("https://cdn.rawgit.com/adobe-fonts/source-han-sans/release/SubsetOTF/JP/SourceHanSansJP-ExtraLight.otf") format("opentype")
 }
 
 
 @font-face {
-  font-family: 'normal-gen';
-  src: url("https://cdn.rawgit.com/adobe-fonts/source-han-sans/release/SubsetOTF/JP/SourceHanSansJP-Normal.otf") format("opentype");
+  font-family: normal-gen;
+  src: url("https://cdn.rawgit.com/adobe-fonts/source-han-sans/release/SubsetOTF/JP/SourceHanSansJP-Normal.otf") format("opentype")
 }
 
 
