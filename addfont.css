@@ -8,10 +8,16 @@
   src: url("https://cdn.rawgit.com/raspi0124/my-sites-files/097f6373/esenapaj.ttf") format("truetype")
 }
 
+
 @font-face {
-    font-family: 'Huifont';
-    src:url('https://cdn.rawgit.com/raspi0124/my-sites-files/dc302549/HuiFont109.woff2') format('woff2'),
-         url('https://cdn.rawgit.com/raspi0124/my-sites-files/eed42314/Light-Huiji.ttf') format('truetype'),
+  font-family: light-gen;
+  src: url("https://cdn.rawgit.com/adobe-fonts/source-han-sans/release/SubsetOTF/JP/SourceHanSansJP-ExtraLight.otf") format("opentype")
+}
+
+
+@font-face {
+    font-family: Huifont;
+  src: url("https://raspi-diary.com/font/Light-Huiji.ttf") format("truetype"),
 }
 
 
