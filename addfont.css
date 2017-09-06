@@ -1,8 +1,3 @@
-# CSS for Japanese Font for TinyMCE. Version 2.0
-
-
-
-
 @font-face {
   font-family: esenapaj;
   src: url("https://cdn.rawgit.com/raspi0124/my-sites-files/097f6373/esenapaj.ttf") format("truetype")
@@ -17,21 +12,10 @@
 
 @font-face {
     font-family: Huifont;
-  src: url("https://raspi-diary.com/font/Light-Huiji.ttf") format("truetype"),
+  src: url("https://cdn.rawgit.com/raspi0124/my-sites-files/c84750d8/Light-Huiji.ttf") format("truetype"),
 }
 
 
-
-# Copyright for HONOKAMARU
-# Copyright© 2014 Adobe Systems Incorporated. All Rights Reserved.
-# Copyright© 2012 M+ FONTS PROJECT
-# Copyright© 2014 Jikasei Font Kobo by MM.
-# Copyright© 2014 HONOKA Project
-# Honokamaru is using Apache licence. and honokamaru is based on 源柔ゴシック 源ノ角ゴシック and M+ OUTLINE FONTS.
-# フォントデータ内の「源ノ角ゴシック」由来の文字グリフの著作権は、Adobe が所有しています。
-# フォントデータ内の「M+ OUTLINE FONTS」由来の文字グリフの著作権は、M+ FONTS PROJECT が所有しています。
-# フォントデータ内の「源柔ゴシック」由来の文字グリフの著作権は、自家製フォント工房が所有しています。
-# フォントデータ内のひらがな・カタカナ・長音の文字グリフの著作権は、「HONOKA Project」が所有しています。
 
 @font-face {
   font-family: honokamaru;
