@@ -1,3 +1,5 @@
+/* CSS for Japanese Font for TinyMCE. Version 2.18*/
+/* this css is optmized. if you want to see this css, go to github. */
 @font-face {
   font-family: esenapaj;
   src: url("https://cdn.rawgit.com/raspi0124/my-sites-files/097f6373/esenapaj.ttf") format("truetype")
