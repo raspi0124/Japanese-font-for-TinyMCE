@@ -2,8 +2,7 @@
 Contributors: raspi0124
 Tags: TinyMCE,fonts,font,Japanese,JapaneseFont
 Requires at least: 4.7
-Tested up to: 4.9-alpha
-Stable tag: Beta
+Tested up to: 4.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,3 +58,9 @@ Version 1.7;.I hate you, bug!Don't come to me anymore! please.. go somewhere els
 Version1.8 Edited 説明書
 Version 1.9 Added font! almost ready for version2.0! but Im too sleeeeeeeeeeepy..letme sleep.... If there is any bug,I will fix them morning....Goodnight and enjoy!
 Version 2.0;Bug check complete. and added woff2 font for Huifont. that's it. done. and I might stop making update for while...prety sadly. if there is any important bug, just post a comment to <a href="https://raspi-diary.com/wordpress%e3%81%ae%e3%82%a8%e3%83%87%e3%82%a3%e3%82%bf%e3%81%ab%e6%97%a5%e6%9c%ac%e8%aa%9e%e3%83%95%e3%82%a9%e3%83%b3%e3%83%88%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b%e3%83%97%e3%83%a9%e3%82%b0/" target="_blank">here</a> and I will fix (if I can...) them as fast as possible... If there is no responce from me for 1-2week, that's mean I can't responce.....but enjoy and I hope see you again soon!(really)
+Version 2.05;Fixed important bug!
+Version 2.1; say bye to 源ノ角ゴシック.. 源ノ角ゴシック has gone now.. The sentence using 源ノ角ゴシック will be replace by Noto Sans Japanese.
+Version 2.15: edit 説明書
+Version 2.16 edit 説明書
+Version 2.17: edit 説明書
+Version 2.18: edit 説明書
