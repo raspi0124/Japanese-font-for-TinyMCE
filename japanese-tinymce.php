@@ -41,15 +41,20 @@ function tinyjpfont_load_custom_fonts($init) {
 }
 add_filter('tiny_mce_before_init', 'tinyjpfont_load_custom_fonts');
 
+
 // setting <Version alpha>
+
 if( $config1 == 1 ){
-    add_action( 'wp_enqueue_scripts', 'tinyjpfont_cdncss' );
+
 // enque CSS at CDN
-function tinyjpfont_cdncss() {
-    wp_register_style( 'tinyjpfont-cdncss', 'https://cdn.rawgit.com/raspi0124/Japanese-font-for-TinyMCE/stable/addfont.css' );
-    wp_enqueue_style( 'tinyjpfont-cdncss' );
+function tinyjpfont_style() {
+    wp_register_style( 'tinyjpfont-styles', 'https://cdn.rawgit.com/raspi0124/Japanese-font-for-TinyMCE/stable/addfont.css' );
+    wp_enqueue_style( 'tinyjpfont-styles' );
 }
+add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
+add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
 }
+
 else{
 
 function tinyjpfont_style() {
