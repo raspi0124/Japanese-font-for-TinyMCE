@@ -64,3 +64,4 @@ Version 2.15: edit 説明書
 Version 2.16 edit 説明書
 Version 2.17: edit 説明書
 Version 2.18: edit 説明書
+Version 2.2: Added CDN option(Alpha) you can now make your website bit more faster.To use CDN option, Please click here
