@@ -2,7 +2,7 @@
 /*
 Plugin Name: Japanese font for TinyMCE
 Description: Add Japanese font to TinyMCE Advanced plugin's font family selections..
-Version: 2.18
+Version: 2.2
 Author: raspi0124
 Author URI: https://raspi-diary.com/
 License: GPL2
@@ -23,6 +23,8 @@ License: GPL2
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
+// define $
+$config1 = 1;
 
 //add font to tiny mce
 function tinyjpfont_load_custom_fonts($init) {
@@ -38,23 +40,31 @@ function tinyjpfont_load_custom_fonts($init) {
     return $init;
 }
 add_filter('tiny_mce_before_init', 'tinyjpfont_load_custom_fonts');
-/**
- * Include CSS file for Plugin.
- */
+
+
+// setting <Version alpha>
+
+if( $config1 == 0 ){
+
+// enque CSS at CDN
+function tinyjpfont_style() {
+    wp_register_style( 'tinyjpfont-styles', 'https://cdn.rawgit.com/raspi0124/Japanese-font-for-TinyMCE/stable/addfont.css' );
+    wp_enqueue_style( 'tinyjpfont-styles' );
+}
+add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
+add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
+}
+
+else{
+
 function tinyjpfont_style() {
     wp_register_style( 'tinyjpfont-styles',  plugin_dir_url( __FILE__ ) . 'addfont.css' );
     wp_enqueue_style( 'tinyjpfont-styles' );
 }
 add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
 add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
-
-
-
-function tinyjpfont_setumeisyostyle() {
-    wp_register_style( 'tinyjpfont-setumeisyostyles',  plugin_dir_url( __FILE__ ) . 'setumeisyo.css' );
-    wp_enqueue_style( 'tinyjpfont-setumeisyostyles' );
 }
-add_action( 'admin_enqueue_scripts', 'tinyjpfont_setumeisyostyle' );
+
 //add 説明書
 
 add_action( 'admin_menu', 'tinyjpfont_create_menu' );
