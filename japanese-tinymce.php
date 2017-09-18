@@ -2,7 +2,7 @@
 /*
 Plugin Name: Japanese font for TinyMCE
 Description: Add Japanese font to TinyMCE Advanced plugin's font family selections..
-Version: 2.20
+Version: 2.40
 Author: raspi0124
 Author URI: https://raspi-diary.com/
 License: GPL2
@@ -12,7 +12,7 @@ License: GPL2
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as
-	published by the Free Software Foundation.
+    published by the Free Software Foundation.
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -22,12 +22,18 @@ License: GPL2
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+    This software includes the work that is distributed in the Apache License 2.0
+
 */
 // define $
 $config1 = 0;
+$config2 = 0;
 
 //add font to tiny mce
-function tinyjpfont_load_custom_fonts($init) {
+
+// setting <Version alpha>
+if ( $config2 == 0) {
+    function tinyjpfont_load_custom_fonts($init) {
     $stylesheet_url = plugin_dir_url( __FILE__ ) . 'addfont.css';
     if(empty($init['content_css'])) {
         $init['content_css'] = $stylesheet_url;
@@ -40,9 +46,24 @@ function tinyjpfont_load_custom_fonts($init) {
     return $init;
 }
 add_filter('tiny_mce_before_init', 'tinyjpfont_load_custom_fonts');
+}
+else {
+    function tinyjpfont_load_custom_fonts($init) {
+    $stylesheet_url = plugin_dir_url( __FILE__ ) . 'addfont.css';
+    if(empty($init['content_css'])) {
+        $init['content_css'] = $stylesheet_url;
+    } else {
+        $init['content_css'] = $init['content_css'].','.$stylesheet_url;
+    }
+    $font_formats = isset($init['font_formats']) ? $init['font_formats'] : 'Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings,zapf dingbats';
+    $custom_fonts = ';'.'ふい字=Huifont;Noto Sans Japanese=Noto Sans Japanese;';
+    $init['font_formats'] = $font_formats . $custom_fonts;
+    return $init;
+}
+add_filter('tiny_mce_before_init', 'tinyjpfont_load_custom_fonts');
+}
 
 
-// setting <Version alpha>
 
 if( $config1 == 1 ){
 
@@ -215,6 +236,17 @@ Monacoin address : MG2vzkSguWscQp3haGJ4kkhJFePvkSgKsU <br>
 <span style="font-family: honokamaru;">このフォントは、Honoka Project さんが作成したフォントです。ちょっと古めな見た目ですね。</span>
 
 <span style="font-family: honokamaru;">このフォントについて詳しくは<a href="http://font.gloomy.jp/honoka-maru-gothic-dl.html">こちら</a>をおねがいします</span>
+<br>
+============<br>
+COPYRIGHTS FOR FONT=<br>
+============<br>
+Copyright© 2014 Adobe Systems Incorporated. All Rights Reserved.<br>
+Copyright© 2012 M+ FONTS PROJECT<br>
+Copyright© 2014 Jikasei Font Kobo by MM.<br>
+Copyright© 2014 HONOKA Project<br>
+Copyright© Google<br>
+Copyright© たぬきフォント<br>
+
 
 &nbsp;
 
@@ -258,7 +290,9 @@ Monacoin address : MG2vzkSguWscQp3haGJ4kkhJFePvkSgKsU <br>
 <span style="font-family: Noto Sans Japanese;"> Version 2.15:バグ修正</span><br>
 <span style="font-family: Noto Sans Japanese;"> Version 2.16:バグ修正</span><br>
 <span style="font-family: Noto Sans Japanese;"> Version 2.17:バグ修正</span><br>
-</div>
+<span style="font-family: Noto Sans Japanese;"> Version 2.20:CDNからのCSS読み込みオプションを追加しました。詳しくはこちらをご覧ください</span><br>
+<span style="font-family: Noto Sans Japanese;"> Version 2.30:最低限のフォントのみロードするオプションを追加しました。</span><br>
+<span style="font-family: Noto Sans Japanese;"> Version 2.40:フォントのライセンス及びコピーライトを追加しました。ライセンスにつきましては、Japanese fonr for tinymceフォルダに同梱のLICENCE.txtをご覧ください。</span><br>
 
 </div>
 <!-- メインカラム終了 -->
