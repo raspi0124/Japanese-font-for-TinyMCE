@@ -2,7 +2,7 @@
 /*
 Plugin Name: Japanese font for TinyMCE
 Description: Add Japanese font to TinyMCE Advanced plugin's font family selections..
-Version: 2.40
+Version: 2.60
 Author: raspi0124
 Author URI: https://raspi-diary.com/
 License: GPL2
@@ -22,12 +22,35 @@ License: GPL2
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+Copyright  2017  raspi0124
+
+このプログラムはフリーソフトウェアです。あなたはこれを、フリーソフトウェ
+ア財団によって発行された GNU 一般公衆利用許諾契約書(バージョン2か、希
+望によってはそれ以降のバージョンのうちどれか)の定める条件の下で再頒布
+または改変することができます。
+
+このプログラムは有用であることを願って頒布されますが、*全くの無保証* 
+です。商業可能性の保証や特定の目的への適合性は、言外に示されたものも含
+め全く存在しません。詳しくはGNU 一般公衆利用許諾契約書をご覧ください。
+ 
+あなたはこのプログラムと共に、GNU 一般公衆利用許諾契約書の複製物を一部
+受け取ったはずです。もし受け取っていなければ、フリーソフトウェア財団ま
+で請求してください(宛先は the Free Software Foundation, Inc., 59
+Temple Place, Suite 330, Boston, MA 02111-1307 USA)。
+
     This software includes the work that is distributed in the Apache License 2.0
 
 */
 // define $
+
+ 
+ //--CONFIG START--
+
 $config1 = 0;
 $config2 = 0;
+
+
+
 
 //add font to tiny mce
 
@@ -85,6 +108,86 @@ function tinyjpfont_style() {
 add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
 add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
 }
+
+
+
+//add font selection to quicktag also<alpha>
+//http://webtukuru.com/web/wordpress-quicktag/
+//https://wpdocs.osdn.jp/%E3%82%AF%E3%82%A4%E3%83%83%E3%82%AF%E3%82%BF%E3%82%B0API
+if ( !function_exists( 'tinyjpfont_quicktag' ) ):
+function tinyjpfont_quicktag() {
+  //スクリプトキューにquicktagsが保存されているかチェック
+  if (wp_script_is('quicktags')){?>
+    <script>
+      QTags.addButton('tinyjpfont-noto','Noto Sans Japanese','<span style="font-family: Noto Sans Japanese;">','</span>');
+      QTags.addButton('tinyjpfont-huiji','ふい字','<span style="font-family: Huifont;">','</span>');
+    </script>
+  <?php
+  }
+}
+endif;
+add_action( 'admin_print_footer_scripts', 'tinyjpfont_quicktag' );
+
+
+if ( is_plugin_active( 'plugin-directory/plugin-file.php' ) ) {
+//No more TINYMCE Advanced UPDATE<alpha>
+//TinyMCE追加用のスタイルを初期化
+//http://com4tis.net/tinymce-advanced-post-custom/
+if ( !function_exists( 'tinyjpfont_inittinystyle' ) ):
+function tinyjpfont_inittinystyle($init_array) {
+   //追加するスタイルの配列を作成
+  $style_formats = array(
+    array(
+      'title' => 'ふい字',
+      'inline' => 'div',
+      'classes' => 'tinyjpfont_huiji'
+    ),
+    array(
+      'title' => 'エセナパJ',
+      'block' => 'div',
+      'classes' => 'tinyjpfont_ese'
+    ),
+    array(
+      'title' => 'Noto Sans Japanese',
+      'inline' => 'div',
+      'classes' => 'tinyjpfont_noto'
+    ),
+     array(
+      'title' => '細字のNoto Sans Japanese',
+      'block' => 'div',
+      'classes' => 'tinyjpfont_honoto'
+    ),
+     array(
+      'title' => '太字のNoto Sans Japanese',
+      'block' => 'div',
+      'classes' => 'tinyjpfont_hunoto'
+    ),
+  );
+  //JSONに変換
+  $init_array['style_formats'] = json_encode($style_formats);
+  return $init_array;
+}
+endif;
+add_filter('tiny_mce_before_init', 'tinyjpfont_inittinystyle', 10000);
+
+//TinyMCEにスタイルセレクトボックスを追加
+//https://codex.wordpress.org/Plugin_API/Filter_Reference/mce_buttons,_mce_buttons_2,_mce_buttons_3,_mce_buttons_4
+
+if ( !function_exists( 'tinyjpfont_addstylebutton' ) ):
+function tinyjpfont_addstylebutton($buttons) {
+  //見出しなどが入っているセレクトボックスを取り出す
+  $temp = array_shift($buttons);
+  //先頭にスタイルセレクトボックスを追加
+  array_unshift($buttons, 'styleselect');
+  //先頭に見出しのセレクトボックスを追加
+  array_unshift($buttons, $temp);
+
+  return $buttons;
+}
+endif;
+add_filter('mce_buttons_2','tinyjpfont_addstylebutton');
+}
+
 
 //add 説明書
 
@@ -293,6 +396,7 @@ Copyright© たぬきフォント<br>
 <span style="font-family: Noto Sans Japanese;"> Version 2.20:CDNからのCSS読み込みオプションを追加しました。詳しくはこちらをご覧ください</span><br>
 <span style="font-family: Noto Sans Japanese;"> Version 2.30:最低限のフォントのみロードするオプションを追加しました。</span><br>
 <span style="font-family: Noto Sans Japanese;"> Version 2.40:フォントのライセンス及びコピーライトを追加しました。ライセンスにつきましては、Japanese fonr for tinymceフォルダに同梱のLICENCE.txtをご覧ください。</span><br>
+<span style="font-family: Noto Sans Japanese;"> Version 2.50:TinyMCEのテキストエディタでも一部のフォントが使用可能になりました</span><br>
 
 </div>
 <!-- メインカラム終了 -->
