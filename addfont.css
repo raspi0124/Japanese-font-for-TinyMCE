@@ -4,25 +4,15 @@
   font-family: esenapaj;
   src: url("https://cdn.rawgit.com/raspi0124/my-sites-files/097f6373/esenapaj.ttf") format("truetype")
 }
-
-
-
 @font-face {
     font-family: Huifont;
     src:url('https://cdn.rawgit.com/raspi0124/my-sites-files/dc302549/HuiFont109.woff2') format('woff2'),
         url('https://cdn.rawgit.com/raspi0124/my-sites-files/eed42314/Light-Huiji.ttf') format('truetype');
 }
-
-
-
 @font-face {
   font-family: honokamaru;
   src: url("https://cdn.rawgit.com/raspi0124/my-sites-files/80b7a9fa/font_1_honokamarugo_1.1.ttf") format("truetype")
 }
-
-
-
-
 @font-face {
   font-family: light-gen;
   font-style: normal;
@@ -31,9 +21,6 @@
        url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Thin.woff) format('woff'),
        url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Thin.otf) format('opentype');
 }
-
-
-
 @font-face {
    font-family: normal-gen;
    font-style: normal;
@@ -42,9 +29,6 @@
         url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff) format('woff'),
         url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.otf) format('opentype');
 }
-
-
-
 @font-face {
   font-family: 'Noto Sans Japanese-100';
   font-style: normal;
@@ -53,8 +37,6 @@
        url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Thin.woff) format('woff'),
        url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Thin.otf) format('opentype');
 }
-
-
 @font-face {
    font-family: 'Noto Sans Japanese';
    font-style: normal;
@@ -71,10 +53,12 @@
         url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.woff) format('woff'),
         url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.otf) format('opentype');
  }
-
-
-
-
-
-
-
+ .noto {
+    font-family: Noto Sans Japanese;
+}
+ .huiji {
+    font-family: Huifont;
+}
+ .honokamaru {
+    font-family: honokamaru;
+}

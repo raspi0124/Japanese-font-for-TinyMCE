@@ -2,7 +2,7 @@
 /*
 Plugin Name: Japanese font for TinyMCE
 Description: Add Japanese font to TinyMCE Advanced plugin's font family selections..
-Version: 2.60
+Version: 2.50
 Author: raspi0124
 Author URI: https://raspi-diary.com/
 License: GPL2
@@ -129,64 +129,76 @@ endif;
 add_action( 'admin_print_footer_scripts', 'tinyjpfont_quicktag' );
 
 
-if ( is_plugin_active( 'plugin-directory/plugin-file.php' ) ) {
-//No more TINYMCE Advanced UPDATE<alpha>
-//TinyMCE追加用のスタイルを初期化
-//http://com4tis.net/tinymce-advanced-post-custom/
-if ( !function_exists( 'tinyjpfont_inittinystyle' ) ):
-function tinyjpfont_inittinystyle($init_array) {
-   //追加するスタイルの配列を作成
-  $style_formats = array(
-    array(
-      'title' => 'ふい字',
-      'inline' => 'div',
-      'classes' => 'tinyjpfont_huiji'
-    ),
-    array(
-      'title' => 'エセナパJ',
-      'block' => 'div',
-      'classes' => 'tinyjpfont_ese'
-    ),
-    array(
-      'title' => 'Noto Sans Japanese',
-      'inline' => 'div',
-      'classes' => 'tinyjpfont_noto'
-    ),
-     array(
-      'title' => '細字のNoto Sans Japanese',
-      'block' => 'div',
-      'classes' => 'tinyjpfont_honoto'
-    ),
-     array(
-      'title' => '太字のNoto Sans Japanese',
-      'block' => 'div',
-      'classes' => 'tinyjpfont_hunoto'
-    ),
-  );
-  //JSONに変換
-  $init_array['style_formats'] = json_encode($style_formats);
-  return $init_array;
+
+//add font selector to TinyMCE also. no more TinyMCE Advanced plugin
+if ( !function_exists( 'Tinymce_Advanced' ) ):
+add_filter('mce_css', 'tinyjpfont_mcekit_editor_style');
+function tinyjpfont_mcekit_editor_style($url) {
+ 
+    if ( !empty($url) )
+        $url .= ',';
+ 
+    // Retrieves the plugin directory URL
+    // Change the path here if using different directories
+    $url .= trailingslashit( plugin_dir_url(__FILE__) ) . '/addfont.css';
+ 
+    return $url;
 }
+ 
+/**
+ * Add "Styles" drop-down
+ */
+add_filter( 'mce_buttons_2', 'tinyjpfont_mce_editor_buttons' );
+ 
+function tinyjpfont_mce_editor_buttons( $buttons ) {
+    array_unshift( $buttons, 'styleselect' );
+    return $buttons;
+}
+ 
+/**
+ * Add styles/classes to the "Styles" drop-down
+ */
+add_filter( 'tiny_mce_before_init', 'tinyjpfont_mce_before_init' );
+ 
+function tinyjpfont_mce_before_init( $settings ) {
+ 
+    $style_formats = array(
+        array(
+            'title' => 'Noto Sans Japanese',
+            'selector' => 'div',
+            'classes' => 'noto'
+            ),
+        array(
+            'title' => 'ふい字',
+            'selector' => 'div',
+            'classes' => 'huiji',
+        ),
+        array(
+            'title' => 'ほのか丸ゴシック',
+            'block' => 'div',
+            'classes' => 'honokamaru',
+        )
+        );
+ 
+    $settings['style_formats'] = json_encode( $style_formats );
+ 
+    return $settings;
+ 
+}
+ 
+/* Learn TinyMCE style format options at http://www.tinymce.com/wiki.php/Configuration:formats */
+ 
+/*
+ * Add custom stylesheet to the website front-end with hook 'wp_enqueue_scripts'
+ */
+add_action('wp_enqueue_scripts', 'tinyjpfont_mcekit_editor_enqueue');
 endif;
-add_filter('tiny_mce_before_init', 'tinyjpfont_inittinystyle', 10000);
 
-//TinyMCEにスタイルセレクトボックスを追加
-//https://codex.wordpress.org/Plugin_API/Filter_Reference/mce_buttons,_mce_buttons_2,_mce_buttons_3,_mce_buttons_4
 
-if ( !function_exists( 'tinyjpfont_addstylebutton' ) ):
-function tinyjpfont_addstylebutton($buttons) {
-  //見出しなどが入っているセレクトボックスを取り出す
-  $temp = array_shift($buttons);
-  //先頭にスタイルセレクトボックスを追加
-  array_unshift($buttons, 'styleselect');
-  //先頭に見出しのセレクトボックスを追加
-  array_unshift($buttons, $temp);
 
-  return $buttons;
-}
-endif;
-add_filter('mce_buttons_2','tinyjpfont_addstylebutton');
-}
+
+
+
 
 
 //add 説明書
@@ -285,6 +297,7 @@ bottom:0;
 よろしければ寄付をおねがいします。<br>
 Monacoin address : MG2vzkSguWscQp3haGJ4kkhJFePvkSgKsU <br>
 <img src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&l=9&chld=M|1&chl=monacoin:MG2vzkSguWscQp3haGJ4kkhJFePvkSgKsU"><br>
+その他の手段での寄付; iroiro@raspi-diary.com<br>
 
 </div>
 <!-- ナビゲーション終了 -->
