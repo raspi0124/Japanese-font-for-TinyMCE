@@ -2,7 +2,7 @@
 /*
 Plugin Name: Japanese font for TinyMCE
 Description: Add Japanese font to TinyMCE Advanced plugin's font family selections..
-Version: 2.50
+Version: 3.0
 Author: raspi0124
 Author URI: https://raspi-diary.com/
 License: GPL2
@@ -53,7 +53,7 @@ $config2 = 0;
 
 
 //add font to tiny mce
-
+if ( function_exists( 'Tinymce_Advanced' ) ):
 // setting <Version alpha>
 if ( $config2 == 0) {
     function tinyjpfont_load_custom_fonts($init) {
@@ -85,7 +85,7 @@ else {
 }
 add_filter('tiny_mce_before_init', 'tinyjpfont_load_custom_fonts');
 }
-
+endif;
 
 
 if( $config1 == 1 ){
@@ -132,59 +132,31 @@ add_action( 'admin_print_footer_scripts', 'tinyjpfont_quicktag' );
 
 //add font selector to TinyMCE also. no more TinyMCE Advanced plugin
 if ( !function_exists( 'Tinymce_Advanced' ) ):
-add_filter('mce_css', 'tinyjpfont_mcekit_editor_style');
-function tinyjpfont_mcekit_editor_style($url) {
- 
-    if ( !empty($url) )
-        $url .= ',';
- 
-    $url .= trailingslashit( plugin_dir_url(__FILE__) ) . '/addfont.css';
- 
-    return $url;
+add_filter( 'tiny_mce_before_init', 'tinyjpfont_custom_tiny_mce_style_formats' );
+function custom_tiny_mce_style_formats( $settings ) {
+  $style_formats = array(
+    array(
+      'title' => 'Noto Sans Japanese',
+      'block' => 'div',
+      'classes' => 'noto',
+      'wrapper' => true,
+    ),
+    array(
+      'title' => 'Huifont',
+      'block' => 'div',
+      'classes' => 'huiji',
+      'wrapper' => true,
+    ),
+  );
+  $settings[ 'style_formats' ] = json_encode( $style_formats );
+  return $settings;
 }
- 
-/**
- * Add "Styles" drop-down
- */
-add_filter( 'mce_buttons_2', 'tinyjpfont_mce_editor_buttons' );
- 
-function tinyjpfont_mce_editor_buttons( $buttons ) {
-    array_unshift( $buttons, 'styleselect' );
-    return $buttons;
+
+add_filter( 'mce_buttons', 'tinyjpfont_add_original_styles_button' );
+function add_original_styles_button( $buttons ) {
+  array_splice( $buttons, 1, 0, 'styleselect' );
+  return $buttons;
 }
- 
-/**
- * Add styles/classes to the "Styles" drop-down
- */
-add_filter( 'tiny_mce_before_init', 'tinyjpfont_mce_before_init' );
- 
-function tinyjpfont_mce_before_init( $settings ) {
- 
-    $style_formats = array(
-        array(
-            'title' => 'Noto Sans Japanese',
-            'selector' => 'div',
-            'classes' => 'noto'
-            ),
-        array(
-            'title' => 'ふい字',
-            'selector' => 'div',
-            'classes' => 'huiji',
-            ),
-        array(
-            'title' => 'ほのか丸ゴシック',
-            'block' => 'div',
-            'classes' => 'honokamaru',
-            ),
-        );
- 
-    $settings['style_formats'] = json_encode( $style_formats );
- 
-    return $settings;
- 
-}
- 
-add_action('wp_enqueue_scripts', 'tinyjpfont_mcekit_editor_enqueue');
 endif;
 
 
@@ -403,6 +375,7 @@ Copyright© たぬきフォント<br>
 <span style="font-family: Noto Sans Japanese;"> Version 2.30:最低限のフォントのみロードするオプションを追加しました。</span><br>
 <span style="font-family: Noto Sans Japanese;"> Version 2.40:フォントのライセンス及びコピーライトを追加しました。ライセンスにつきましては、Japanese fonr for tinymceフォルダに同梱のLICENCE.txtをご覧ください。</span><br>
 <span style="font-family: Noto Sans Japanese;"> Version 2.50:TinyMCEのテキストエディタでも一部のフォントが使用可能になりました</span><br>
+<span style="font-family: Noto Sans Japanese;"> Version 3.0:いえい！もうTinyMCE Advanced プラグインは必要ありません！ビジュアルエディタでも日本語フォントが使用可能になりました！</span><br>
 
 </div>
 <!-- メインカラム終了 -->
