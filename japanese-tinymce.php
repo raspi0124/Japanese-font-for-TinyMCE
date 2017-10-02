@@ -138,8 +138,6 @@ function tinyjpfont_mcekit_editor_style($url) {
     if ( !empty($url) )
         $url .= ',';
  
-    // Retrieves the plugin directory URL
-    // Change the path here if using different directories
     $url .= trailingslashit( plugin_dir_url(__FILE__) ) . '/addfont.css';
  
     return $url;
@@ -172,12 +170,12 @@ function tinyjpfont_mce_before_init( $settings ) {
             'title' => 'ふい字',
             'selector' => 'div',
             'classes' => 'huiji',
-        ),
+            ),
         array(
             'title' => 'ほのか丸ゴシック',
             'block' => 'div',
             'classes' => 'honokamaru',
-        )
+            ),
         );
  
     $settings['style_formats'] = json_encode( $style_formats );
@@ -186,11 +184,6 @@ function tinyjpfont_mce_before_init( $settings ) {
  
 }
  
-/* Learn TinyMCE style format options at http://www.tinymce.com/wiki.php/Configuration:formats */
- 
-/*
- * Add custom stylesheet to the website front-end with hook 'wp_enqueue_scripts'
- */
 add_action('wp_enqueue_scripts', 'tinyjpfont_mcekit_editor_enqueue');
 endif;
 
