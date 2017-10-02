@@ -147,6 +147,30 @@ function custom_tiny_mce_style_formats( $settings ) {
       'classes' => 'huiji',
       'wrapper' => true,
     ),
+    array(
+      'title' => '細字なNoto Sans Japanese',
+      'block' => 'div',
+      'classes' => 'hoso-noto',
+      'wrapper' => true,
+    ),
+    array(
+      'title' => '太字なNoto Sans Japanese',
+      'block' => 'div',
+      'classes' => 'huto-huiji',
+      'wrapper' => true,
+    ),
+    array(
+      'title' => 'エセナパJ',
+      'block' => 'div',
+      'classes' => 'esenapaj',
+      'wrapper' => true,
+    ),
+    array(
+      'title' => 'ほのか丸ゴシック',
+      'block' => 'div',
+      'classes' => 'honokamaru',
+      'wrapper' => true,
+    ),
   );
   $settings[ 'style_formats' ] = json_encode( $style_formats );
   return $settings;
@@ -154,7 +178,7 @@ function custom_tiny_mce_style_formats( $settings ) {
 
 add_filter( 'mce_buttons', 'tinyjpfont_add_original_styles_button' );
 function add_original_styles_button( $buttons ) {
-  array_splice( $buttons, 1, 0, 'styleselect' );
+  array_splice( $buttons, 2, 1, 0, 'styleselect' );
   return $buttons;
 }
 endif;
@@ -388,10 +412,3 @@ Copyright© たぬきフォント<br>
 
 <?php
 }
-
-
-
-
-
-
-
