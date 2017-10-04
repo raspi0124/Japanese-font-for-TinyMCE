@@ -53,7 +53,6 @@ $config2 = 0;
 
 
 //add font to tiny mce
-if ( function_exists( 'Tinymce_Advanced' ) ):
 // setting <Version alpha>
 if ( $config2 == 0) {
     function tinyjpfont_load_custom_fonts($init) {
@@ -85,7 +84,6 @@ else {
 }
 add_filter('tiny_mce_before_init', 'tinyjpfont_load_custom_fonts');
 }
-endif;
 
 
 if( $config1 == 1 ){
