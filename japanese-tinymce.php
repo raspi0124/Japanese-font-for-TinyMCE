@@ -127,7 +127,6 @@ add_action( 'admin_print_footer_scripts', 'tinyjpfont_quicktag' );
 
 
 //add font selector to TinyMCE also. no more TinyMCE Advanced plugin
-if ( !is_plugin_active( 'tinymce-advanced/tinymce-advanced.php' ) ) {
 
 add_filter( 'tiny_mce_before_init', 'tinyjpfont_custom_tiny_mce_style_formats' );
 function tinyjpfont_custom_tiny_mce_style_formats( $settings ) {
@@ -154,7 +153,7 @@ function tinyjpfont_add_original_styles_button( $buttons ) {
   array_splice( $buttons, 1, 0, 'styleselect' );
   return $buttons;
 }
-} 
+
 
 
 
