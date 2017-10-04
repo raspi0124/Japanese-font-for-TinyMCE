@@ -130,7 +130,7 @@ add_action( 'admin_print_footer_scripts', 'tinyjpfont_quicktag' );
 if ( !is_plugin_active( 'tinymce-advanced/tinymce-advanced.php' ) ) {
 
 add_filter( 'tiny_mce_before_init', 'tinyjpfont_custom_tiny_mce_style_formats' );
-function custom_tiny_mce_style_formats( $settings ) {
+function tinyjpfont_custom_tiny_mce_style_formats( $settings ) {
   $style_formats = array(
     array(
       'title' => 'Noto Sans Japanese',
@@ -150,7 +150,7 @@ function custom_tiny_mce_style_formats( $settings ) {
 }
 
 add_filter( 'mce_buttons', 'tinyjpfont_add_original_styles_button' );
-function add_original_styles_button( $buttons ) {
+function tinyjpfont_add_original_styles_button( $buttons ) {
   array_splice( $buttons, 1, 0, 'styleselect' );
   return $buttons;
 }
