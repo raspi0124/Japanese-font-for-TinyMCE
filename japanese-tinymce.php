@@ -112,7 +112,6 @@ add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
 //add font selection to quicktag also<alpha>
 //http://webtukuru.com/web/wordpress-quicktag/
 //https://wpdocs.osdn.jp/%E3%82%AF%E3%82%A4%E3%83%83%E3%82%AF%E3%82%BF%E3%82%B0API
-if ( !function_exists( 'tinyjpfont_quicktag' ) ):
 function tinyjpfont_quicktag() {
   //スクリプトキューにquicktagsが保存されているかチェック
   if (wp_script_is('quicktags')){?>
@@ -123,15 +122,15 @@ function tinyjpfont_quicktag() {
   <?php
   }
 }
-endif;
 add_action( 'admin_print_footer_scripts', 'tinyjpfont_quicktag' );
 
 
 
 //add font selector to TinyMCE also. no more TinyMCE Advanced plugin
-if ( !function_exists( 'Tinymce_Advanced' ) ):
+if ( !is_plugin_active( 'tinymce-advanced/tinymce-advanced.php' ) ) {
+
 add_filter( 'tiny_mce_before_init', 'tinyjpfont_custom_tiny_mce_style_formats' );
-function custom_tiny_mce_style_formats( $settings ) {
+function tinyjpfont_custom_tiny_mce_style_formats( $settings ) {
   $style_formats = array(
     array(
       'title' => 'Noto Sans Japanese',
@@ -145,41 +144,17 @@ function custom_tiny_mce_style_formats( $settings ) {
       'classes' => 'huiji',
       'wrapper' => true,
     ),
-    array(
-      'title' => '細字なNoto Sans Japanese',
-      'block' => 'div',
-      'classes' => 'hoso-noto',
-      'wrapper' => true,
-    ),
-    array(
-      'title' => '太字なNoto Sans Japanese',
-      'block' => 'div',
-      'classes' => 'huto-huiji',
-      'wrapper' => true,
-    ),
-    array(
-      'title' => 'エセナパJ',
-      'block' => 'div',
-      'classes' => 'esenapaj',
-      'wrapper' => true,
-    ),
-    array(
-      'title' => 'ほのか丸ゴシック',
-      'block' => 'div',
-      'classes' => 'honokamaru',
-      'wrapper' => true,
-    ),
   );
   $settings[ 'style_formats' ] = json_encode( $style_formats );
   return $settings;
 }
 
 add_filter( 'mce_buttons', 'tinyjpfont_add_original_styles_button' );
-function add_original_styles_button( $buttons ) {
-  array_splice( $buttons, 2, 1, 0, 'styleselect' );
+function tinyjpfont_add_original_styles_button( $buttons ) {
+  array_splice( $buttons, 1, 0, 'styleselect' );
   return $buttons;
 }
-endif;
+} 
 
 
 
