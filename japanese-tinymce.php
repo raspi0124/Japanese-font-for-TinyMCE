@@ -155,232 +155,62 @@ function tinyjpfont_add_original_styles_button( $buttons ) {
 }
 
 
-
-
-
-
-
-
-
-//add 説明書
-
-add_action( 'admin_menu', 'tinyjpfont_create_menu' );
-function tinyjpfont_create_menu() {
-  add_menu_page( 'Japanese Font for TinyMCEの説明書', 'Japanese Font for TinyMCEの説明書',
-    'manage_options', 'tinyjpfont_main_menu', 'tinyjpfont_settings_page' );
-}
-
-
-function tinyjpfont_settings_page() {
+// メニューで表示されるページの内容を返す関数
+function tinyjpfont_options_page() {
+    // POSTデータがあれば設定を更新
+    if (isset($_POST['tinyjpfont_text'])) {
+        // POSTデータの'"などがエスケープされるのでwp_unslashで戻して保存
+        update_option('tinyjpfont_text', wp_unslash($_POST['tinyjpfont_text']));
+        update_option('tinyjpfont_textarea', wp_unslash($_POST['tinyjpfont_textarea']));
+        update_option('tinyjpfont_radio', $_POST['tinyjpfont_radio']);
+        update_option('tinyjpfont_select', $_POST['tinyjpfont_select']);
+        // チェックボックスはチェックされないとキーも受け取れないので、ない時は0にする
+        $tinyjpfont_checkbox = isset($_POST['tinyjpfont_checkbox']) ? 1 : 0;
+        update_option('tinyjpfont_checkbox', $tinyjpfont_checkbox);
+    }
 ?>
-  <div class="wrap">
+<div class="wrap">
+<h2>設定サンプル</h2>
+<?php
+    // 更新完了を通知
+    if (isset($_POST['tinyjpfont_text'])) {
+        echo '<div id="setting-error-settings_updated" class="updated settings-error notice is-dismissible">
+            <p><strong>設定を保存しました。</strong></p></div>';
+    }
+?>
 
-
-<!-- コンテナ開始 -->
-<div id="tinyjpfont_container">
-<!-- ヘッダ開始 -->
-<div id="tinyjpfont_header">
-<h2>Japanese Font for TinyMCE 説明書</h2>
-<style>/* --- 全体の背景・テキスト --- */
-body {
-margin: 0;
-padding: 0;
-background-color: #ffffff; /* ページの背景色 */
-color: #000000; /* 全体の文字色 */
-font-size: 100%; /* 全体の文字サイズ */
-}
-/* --- 全体のリンクテキスト --- */
-a:link { color: #0000ff; }
-a:visited { color: #800080; }
-a:hover { color: #ff0000; }
-a:active { color: #ff0000; }
-/* --- コンテナ --- */
-#tinyjpfont_container {
-width: 780px; /* ページの幅 */
-margin: 0 auto; /* センタリング */
-background: url(sidebar_200.gif) repeat-y right; /* サイドバーの背景画像 */
-background-color: #ffffff; /* メインカラムの背景色 */
-border-left: 1px #c0c0c0 solid; /* 左の境界線 */
-border-right: 1px #c0c0c0 solid; /* 右の境界線 */
-}
-/* --- ナビゲーション --- */
-#tinyjpfont_nav {
-float: right;
-width: 200px; /* サイドバーの幅 */
-}
-/* --- メインカラム --- */
-#tinyjpfont_content {
-float: right;
-width: 580px; /* メインカラムの幅 */
-}
-/* --- フッタ --- */
-#tinyjpfont_footer {
-clear: right; /* フロートのクリア */
-width: 100%;
-background-color: #ffe080; /* フッタの背景色 */
-}
-blockquote{
-background-color:#ddd;
-padding:3em 1em;
-position:relative;
-}
-blockquote:before{
-content:"“";
-font-size:600%;
-line-height:1em;
-color:#999;
-position:absolute;
-left:0;
-top:0;
-}
-blockquote:after{
-content:"”";
-font-size:600%;
-line-height:0em;
-color:#999;
-position:absolute;
-right:0;
-bottom:0;
-}
-</style>
+<form method="post" action="">
+<table class="form-table">
+    <tr>
+        <th scope="row"><label for="tinyjpfont_text">マイテキスト</label></th>
+        <td><input name="tinyjpfont_text" type="text" id="tinyjpfont_text" value="<?php form_option('tinyjpfont_text'); ?>" class="regular-text" /></td>
+    </tr>
+    <tr>
+        <th scope="row"><label for="tinyjpfont_textarea">マイテキストボックス</label></th>
+        <td><textarea name="tinyjpfont_textarea" id="tinyjpfont_textarea" class="large-text code" rows="5"><?php echo esc_textarea(get_option('tinyjpfont_textarea')); ?></textarea></td>
+    </tr>
+    <tr>
+        <th scope="row"><label for="tinyjpfont_checkbox">マイチェックボックス</label></th>
+        <td><label><input name="tinyjpfont_checkbox" type="checkbox" id="tinyjpfont_checkbox" value="1" <?php checked( 1, get_option('tinyjpfont_checkbox')); ?> /> チェック</label></td>
+    </tr>
+    <tr>
+        <th scope="row">マイラジオ</th>
+        <td><p><label><input name="tinyjpfont_radio" type="radio" value="0" <?php checked( 0, get_option( 'tinyjpfont_radio' ) ); ?>  />ラジオ0</label><br />
+                <label><input name="tinyjpfont_radio" type="radio" value="1" <?php checked( 1, get_option( 'tinyjpfont_radio' ) ); ?> />ラジオ1</label></p>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row"><label for="tinyjpfont_select">マイセレクト</label></th>
+        <td>
+            <select name="tinyjpfont_select" id="tinyjpfont_select">
+                <option value="0" <?php selected( 0, get_option( 'tinyjpfont_select' ) ); ?> >セレクト0</option>
+                <option value="1" <?php selected( 1, get_option( 'tinyjpfont_select' ) ); ?> >セレクト1</option>
+            </select>
+        </td>
+    </tr>
+</table>
+<?php submit_button(); ?>
+</form>
 </div>
-<!-- ヘッダ終了 -->
-
-<!-- ナビゲーション開始 -->
-<div id="tinyjpfont_nav">
-作者のTwitterをフォロー<br>
-<a href="https://twitter.com/raspi0124" class="twitter-follow-button" data-show-count="false" data-size="large" data-dnt="true">Follow @raspi0124</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script><br><br>
-<br>このプラグインをフォロワーさんにおすすめしてくださると嬉しいです。<br>
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://rasdi.cf/2qGvgdl" data-text="Japanese Font for TinyMCEを使ってます。このプラグインおすすめします。" data-via="raspi0124" data-size="large" data-dnt="true">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script><br>
-
-よろしければ寄付をおねがいします。<br>
-Monacoin address : MG2vzkSguWscQp3haGJ4kkhJFePvkSgKsU <br>
-<img src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&l=9&chld=M|1&chl=monacoin:MG2vzkSguWscQp3haGJ4kkhJFePvkSgKsU"><br>
-その他の手段での寄付; iroiro@raspi-diary.com<br>
-
-</div>
-<!-- ナビゲーション終了 -->
-
-<!-- メインカラム開始 -->
-<div id="tinyjpfont_content">
-<h3>このプラグインについて</h3>
-&nbsp;
-&nbsp;
-
-このプラグインは，日本語フォントをTinyMCE Advanced プラグインのフォント選択画面に追加するプラグインです。
-フォントは現在 <span style="font-family: Noto Sans Japanese-100;">Noto Sans Japaneseの細字バージョン <span style="font-family: Noto Sans Japanese;">Noto Sans Japanese <span style="font-family: Noto Sans Japanese-900;">太字なNoto Sans Japanese <span style="font-family: Huifont;">ふい字 <span style="font-family: esenapaj;">エセナパJ <span style="font-family: honokamaru;"> ほのか丸ゴシック
-</span></span></span></span></span></span>
-
-をご用意しています。
-
-なお、このプラグインについての詳しい説明は <a href="https://raspi-diary.com/wordpress%e3%81%ae%e3%82%a8%e3%83%87%e3%82%a3%e3%82%bf%e3%81%ab%e6%97%a5%e6%9c%ac%e8%aa%9e%e3%83%95%e3%82%a9%e3%83%b3%e3%83%88%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b%e3%83%97%e3%83%a9%e3%82%b0/">こちら</a> をご覧ください。
-
-(ちなみにこのページ，本当は設定画面にしようと思ったのですが，設定することも思いつかなかったので説明書になりましたｗ)
-<h3>フォントの説明</h3>
-&nbsp;
-<h4><a href="https://www.google.com/get/noto/"><span style="font-family: Noto Sans Japanese;">Noto Sans Japanese</span></a></h4>
-<span style="font-family: Noto Sans Japanese;">このフォントは， Google社より提供されているフォントです。日本語フォントの作者は西塚 涼子さんだそうです。 </span>
-<span style="font-family: Noto Sans Japanese;">このフォントは，GoogleのCDNより読みこまれています。</span>
-
-&nbsp;
-<h4><a href="http://hp.vector.co.jp/authors/VA039499/"><span style="font-family: Huifont;">ふい字</span></a></h4>
-<span style="font-family: Huifont;">このフォントは，ふい さんが作成された手書きフォントです。</span>
-
-<span style="font-family: Huifont;">このフォントは，rawgit というCDNのサービスで読み込まれています。</span>
-<h4><span style="font-family: esenapaj;">エセナパJ</span></h4>
-<span style="font-family: esenapaj;">このフォントは，ドッキリなどでよく使えそうな，中華系フォントです。ぶっちゃけ記事に書くにはめっちゃ読みにくいです。。</span>
-<blockquote><span style="font-family: esenapaj;">日本語漢字を中国語の漢字字形で表示したり、かな文字をあえて誤字で表示したりしますので、真面目な目的での使用はご遠慮ください。</span></blockquote>
-&nbsp;
-
-&nbsp;
-
-&lt;このフォントは，ドッキリなどでよく使えそうな，中華系フォントです。ぶっちゃけ記事に書くにはめっちゃ読みにくいです。。&gt;
-<blockquote>日本語漢字を中国語の漢字字形で表示したり、かな文字をあえて誤字で表示したりしますので、真面目な目的での使用はご遠慮ください。</blockquote>
-&nbsp;
-
-<span style="font-family: esenapaj;">このフォントは，</span>
-<p class="ProfileHeaderCard-name"><a class="ProfileHeaderCard-nameLink u-textInheritColor js-nav" href="https://twitter.com/tanukizamurai"><span style="font-family: esenapaj;">たぬき侍</span> </a><span style="font-family: esenapaj;">さんによって作成されました。</span></p>
-&lt;このフォントは，
-
-たぬき侍 さんによって作成されました。&gt;
-
-<span style="font-family: esenapaj;">このフォントは，rawgit というCDNサービスを使用して，読み込んでいます。</span>
-
-&lt;このフォントは，rawgit というCDNサービスを使用して，読み込んでいます。&gt;
-<h4><span style="font-family: honokamaru;">ほのか丸ゴシック</span></h4>
-<span style="font-family: honokamaru;">このフォントは、Honoka Project さんが作成したフォントです。ちょっと古めな見た目ですね。</span>
-
-<span style="font-family: honokamaru;">このフォントについて詳しくは<a href="http://font.gloomy.jp/honoka-maru-gothic-dl.html">こちら</a>をおねがいします</span>
-<br>
-============<br>
-COPYRIGHTS FOR FONT=<br>
-============<br>
-Copyright© 2014 Adobe Systems Incorporated. All Rights Reserved.<br>
-Copyright© 2012 M+ FONTS PROJECT<br>
-Copyright© 2014 Jikasei Font Kobo by MM.<br>
-Copyright© 2014 HONOKA Project<br>
-Copyright© Google<br>
-Copyright© たぬきフォント<br>
-
-
-&nbsp;
-
-&nbsp;
-<h3><span style="font-family: Noto Sans Japanese;">変更ログ</span></h3>
-<span style="font-family: Noto Sans Japanese;">== Changelog ==</span>
-<span style="font-family: Noto Sans Japanese;"> Version beta-1 ;最初のリリース</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version beta-2 ;Noto Sans Japaneseの細字、太字を追加br&gt;</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version beta-3 ;ふい字を軽量化(1.5MB から 400KB.)</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version beta-4 ;バグを直しました。 (追記；この修正、実はただバグを増やしただけでしたとさ。おしまいｗ)</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version beta-5 ;バグ修正</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version beta-6 ;重要なバグを修正</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version beta-7 ;バグ修正(応急処置)</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version beta-8 ;エセナパJ (EsenapaJ) フォントを追加</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version beta-9 ;コードをバージョンbeta-8からバージョンbeta-7へと戻しました。</span>
-<span style="font-family: Noto Sans Japanese;"> Version beta-10 ;エセナパJ (EsenapaJ) フォントをようやく追加することに成功しました！ 楽しんでね！</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 0.1 ;やっとバージョンを安定化バージョンに持ってこれました。マルチサイトサポート、バージョン4.7,4.8,4.9のサポート確認。</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 0.2;また応急処置でバグ直しました。</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 0.3;バグ修正して、ロゴを追加しました</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 0.4;重要なバグを修正しました。</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 0.5;バグまたまた修正中。。とりあえず応急処置バージョンをリリースしました。</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 0.6; バグの一部を修正</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 0.7; たぶんこれで今わかっているすべてのバグを修正しました！次のバージョンではフォント追加するよ！</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 0.8;バグ修正しました。。フォントは追加できませんでした。</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 0.9;バグ修正</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 1.0; 源ノ角ゴシックフォントを追加しました！そしてコピーライトを入力しました！やっとバージョン1.xです！それでは、楽しんでください</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 1.1:ライセンスへのリンクを忘れてました。。修正しました。</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 1.2:バグ修正できたと思いたいです。</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 1.3:バグ修正しました</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 1.4:またまたバグ修正。。もうバグないといいなー</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 1.5: 説明書を編集</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 1.6:説明書を修正</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 1.7;.バグくん、僕ね、バグを見たくないの。どっか他のところにいってくれると嬉しいなというわけでそれなりにひどいバグを修正</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version1.8 説明書を修正</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 1.9 フォント追加！バージョン2.0への準備完了！ けど、もう限界なので寝ます。もしバグがあったら朝直します。おやすみ！そして楽しんでね！</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 2.0;Bug check complete. and added woff2 font for Huifont. that's it. done. and I might stop making update for while because of school......( I hate school now....) prety sadly. if there is any important bug, just post a comment to <a href="https://raspi-diary.com/wordpress%e3%81%ae%e3%82%a8%e3%83%87%e3%82%a3%e3%82%bf%e3%81%ab%e6%97%a5%e6%9c%ac%e8%aa%9e%e3%83%95%e3%82%a9%e3%83%b3%e3%83%88%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b%e3%83%97%e3%83%a9%e3%82%b0/" target="_blank" rel="noopener">here</a> and I will fix (if I can...) them as fast as possible... If there is no responce from me for 1-2week, that's mean I can't responce.....but enjoy and I hope see you again soon!(really)</span><br>
-<span style="font-family: Noto Sans Japanese;"> 「日本語訳」</span><br>
-<span style="font-family: Noto Sans Japanese;"> バグのチェック完了。そして新たにふい字はwoff2形式のサポートを開始しました。そして説明書に変更ログを書き始めました。</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 2.05:重要なバグ修正。まだフォントの変更はしてません。</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 2.1:いよいよ、源ノ角ゴシックとのお別れです。。今まで短い間でしたがありがとうございました。なお、源ノ角ゴシックフォントを使用している文章はすべてNoto Sans Japanese によって置き換えられます。</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 2.15:バグ修正</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 2.16:バグ修正</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 2.17:バグ修正</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 2.20:CDNからのCSS読み込みオプションを追加しました。詳しくはこちらをご覧ください</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 2.30:最低限のフォントのみロードするオプションを追加しました。</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 2.40:フォントのライセンス及びコピーライトを追加しました。ライセンスにつきましては、Japanese fonr for tinymceフォルダに同梱のLICENCE.txtをご覧ください。</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 2.50:TinyMCEのテキストエディタでも一部のフォントが使用可能になりました</span><br>
-<span style="font-family: Noto Sans Japanese;"> Version 3.0:いえい！もうTinyMCE Advanced プラグインは必要ありません！ビジュアルエディタでも日本語フォントが使用可能になりました！</span><br>
-
-</div>
-<!-- メインカラム終了 -->
-
-
-
-
-</div>
-<!-- コンテナ終了 -->
-
 <?php
 }
