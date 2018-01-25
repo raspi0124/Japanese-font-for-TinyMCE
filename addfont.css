@@ -5,6 +5,18 @@
   src: url("https://cdn.rawgit.com/raspi0124/my-sites-files/097f6373/esenapaj.ttf") format("truetype")
 }
 @font-face {
+  font-family: kokorom;
+  src: url("https://cdn.rawgit.com/raspi0124/my-sites-files/0a9c3e24/Kokoro.ttf") format("truetype")
+}
+@font-face {
+  font-family: aoyanagiT;
+  src: url("https://cdn.rawgit.com/raspi0124/my-sites-files/729d123c/aoyanagiT.ttf") format("truetype")
+}
+@font-face {
+  font-family: tanukiM;
+  src: url("https://cdn.rawgit.com/raspi0124/my-sites-files/729d123c/TanukiMagic.ttf") format("truetype")
+}
+@font-face {
     font-family: Huifont;
     src:url('https://cdn.rawgit.com/raspi0124/my-sites-files/dc302549/HuiFont109.woff2') format('woff2'),
         url('https://cdn.rawgit.com/raspi0124/my-sites-files/eed42314/Light-Huiji.ttf') format('truetype');

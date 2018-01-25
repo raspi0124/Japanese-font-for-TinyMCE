@@ -2,7 +2,7 @@
 Contributors: raspi0124
 Tags: TinyMCE,fonts,font,Japanese,JapaneseFont
 Requires at least: 4.7
-Tested up to: 4.9
+Tested up to: 5.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -67,3 +67,7 @@ Version 2.18: edit 説明書
 Version 2.20: Added CDN option(Alpha) you can now make your website bit more faster.To use CDN option, Please click here
 Version 2.30: Added lite option. you can now make your website faster by loading only two font.
 Version 2.40: Added Licence and copyright for fonts
+Version 2.50:You can now use font even from TinyMCE's text editor.
+Version 2.60: yay! You can use font selector without installing TinyMCE Advanced plugin!
+Version 3.0+ yay! no more TinyMCE Advanced plugin! you can now select font without TinyMCE Advanced plugin!(alpha)
+Version 3.01: bug fixed.
