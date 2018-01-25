@@ -154,15 +154,32 @@ function tinyjpfont_add_original_styles_button( $buttons ) {
   return $buttons;
 }
 
+//ADD OPTION
+
+
+// 管理メニューにフックを登録
+add_action('admin_menu', 'tinyjpfont_add_pages');
+
+// メニューを追加する
+function tinyjpfont_add_pages()
+{
+    // プラグインのスラグ名はユニークならなんでも良い
+    // /plugin/tinyjpfont-test/tinyjpfont-test.phpに置いているので
+    $tinyjpfont_plugin_slug = plugin_basename(__FILE__);
+
+    // トップレベルにオリジナルのメニューを追加（購読者相当）
+    add_menu_page('Japanese Font for TinyMCEの設定', 'Japanese Font for TinyMCEの設定', 'read',
+        $tinyjpfont_plugin_slug,
+        'tinyjpfont_options_page',
+        plugins_url('/images/logo.png', __FILE__)
+    );
+    
+}
 
 // メニューで表示されるページの内容を返す関数
 function tinyjpfont_options_page() {
     // POSTデータがあれば設定を更新
     if (isset($_POST['tinyjpfont_text'])) {
-        // POSTデータの'"などがエスケープされるのでwp_unslashで戻して保存
-        update_option('tinyjpfont_text', wp_unslash($_POST['tinyjpfont_text']));
-        update_option('tinyjpfont_textarea', wp_unslash($_POST['tinyjpfont_textarea']));
-        update_option('tinyjpfont_radio', $_POST['tinyjpfont_radio']);
         update_option('tinyjpfont_select', $_POST['tinyjpfont_select']);
         // チェックボックスはチェックされないとキーも受け取れないので、ない時は0にする
         $tinyjpfont_checkbox = isset($_POST['tinyjpfont_checkbox']) ? 1 : 0;
@@ -170,7 +187,7 @@ function tinyjpfont_options_page() {
     }
 ?>
 <div class="wrap">
-<h2>設定サンプル</h2>
+<h2>Japanese Font for TinyMCE</h2>
 <?php
     // 更新完了を通知
     if (isset($_POST['tinyjpfont_text'])) {
@@ -182,32 +199,19 @@ function tinyjpfont_options_page() {
 <form method="post" action="">
 <table class="form-table">
     <tr>
-        <th scope="row"><label for="tinyjpfont_text">マイテキスト</label></th>
-        <td><input name="tinyjpfont_text" type="text" id="tinyjpfont_text" value="<?php form_option('tinyjpfont_text'); ?>" class="regular-text" /></td>
-    </tr>
-    <tr>
-        <th scope="row"><label for="tinyjpfont_textarea">マイテキストボックス</label></th>
-        <td><textarea name="tinyjpfont_textarea" id="tinyjpfont_textarea" class="large-text code" rows="5"><?php echo esc_textarea(get_option('tinyjpfont_textarea')); ?></textarea></td>
-    </tr>
-    <tr>
         <th scope="row"><label for="tinyjpfont_checkbox">マイチェックボックス</label></th>
         <td><label><input name="tinyjpfont_checkbox" type="checkbox" id="tinyjpfont_checkbox" value="1" <?php checked( 1, get_option('tinyjpfont_checkbox')); ?> /> チェック</label></td>
     </tr>
     <tr>
-        <th scope="row">マイラジオ</th>
-        <td><p><label><input name="tinyjpfont_radio" type="radio" value="0" <?php checked( 0, get_option( 'tinyjpfont_radio' ) ); ?>  />ラジオ0</label><br />
-                <label><input name="tinyjpfont_radio" type="radio" value="1" <?php checked( 1, get_option( 'tinyjpfont_radio' ) ); ?> />ラジオ1</label></p>
-        </td>
-    </tr>
-    <tr>
-        <th scope="row"><label for="tinyjpfont_select">マイセレクト</label></th>
+        <th scope="row"><label for="tinyjpfont_select">フォントロードモード</label></th>
         <td>
             <select name="tinyjpfont_select" id="tinyjpfont_select">
-                <option value="0" <?php selected( 0, get_option( 'tinyjpfont_select' ) ); ?> >セレクト0</option>
-                <option value="1" <?php selected( 1, get_option( 'tinyjpfont_select' ) ); ?> >セレクト1</option>
+                <option value="0" <?php selected( 0, get_option( 'tinyjpfont_select' ) ); ?> >フォントロードNormal</option>
+                <option value="1" <?php selected( 1, get_option( 'tinyjpfont_select' ) ); ?> >フォントロードLite</option>
             </select>
         </td>
     </tr>
+    フォントロードNormalは上で指定したフォントを読み込みます。Liteを指定した場合、上で設定した内容はすべて無効となり、作者おすすめのフォントのみロードします。
 </table>
 <?php submit_button(); ?>
 </form>
