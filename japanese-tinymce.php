@@ -197,6 +197,7 @@ function tinyjpfont_options_page() {
 ?>
 
 <form method="post" action="">
+	<p>ロードするフォントを選択してください</p>
 <table class="form-table">
     <tr>
         <th scope="row"><label for="tinyjpfont_check_noto">Noto Sans Japanese</label></th>
@@ -238,7 +239,7 @@ function tinyjpfont_options_page() {
             </select>
         </td>
     </tr>
-    フォントロードNormalは上で指定したフォントを読み込みます。Liteを指定した場合、上で設定した内容はすべて無効となり、最低限のフォントのみロードします。
+    フォントロードNormalは指定したフォントを読み込みます。Liteを指定した場合、設定した内容はすべて無効となり、最低限のフォントのみロードします。
 </table>
 <?php submit_button(); ?>
 </form>
