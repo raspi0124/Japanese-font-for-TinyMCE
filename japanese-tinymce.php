@@ -199,9 +199,36 @@ function tinyjpfont_options_page() {
 <form method="post" action="">
 <table class="form-table">
     <tr>
-        <th scope="row"><label for="tinyjpfont_checkbox">マイチェックボックス</label></th>
-        <td><label><input name="tinyjpfont_checkbox" type="checkbox" id="tinyjpfont_checkbox" value="1" <?php checked( 1, get_option('tinyjpfont_checkbox')); ?> /> チェック</label></td>
+        <th scope="row"><label for="tinyjpfont_check_noto">Noto Sans Japanese</label></th>
+        <td><label><input name="tinyjpfont_check_noto" type="checkbox" id="tinyjpfont_check_noto" value="1" <?php checked( 1, get_option('tinyjpfont_check_noto')); ?> /> Noto Sans Japaneseフォントシリーズをロード</label></td>
     </tr>
+    <tr>
+        <th scope="row"><label for="tinyjpfont_check_huifont">ふい字</label></th>
+        <td><label><input name="tinyjpfont_check_huifont" type="checkbox" id="tinyjpfont_check_huifont" value="1" <?php checked( 1, get_option('tinyjpfont_check_huifont')); ?> /> ふい字フォントをロード</label></td>
+    </tr>
+    <tr>
+        <th scope="row"><label for="tinyjpfont_check_honokamaru">ほのか丸フォント</label></th>
+        <td><label><input name="tinyjpfont_check_honokamaru" type="checkbox" id="tinyjpfont_check_honokamaru" value="1" <?php checked( 1, get_option('tinyjpfont_check_honokamaru')); ?> /> ほのか丸フォントをロード</label></td>
+    </tr>
+    <tr>
+        <th scope="row"><label for="tinyjpfont_check_esenapaj">エセナパJ</label></th>
+        <td><label><input name="tinyjpfont_check_esenapaj" type="checkbox" id="tinyjpfont_check_esenapaj" value="1" <?php checked( 1, get_option('tinyjpfont_check_esenapaj')); ?> /> エセナパJフォントをロード</label></td>
+    </tr>
+    <tr>
+        <th scope="row"><label for="tinyjpfont_check_tanukiM">たぬき油性マジック</label></th>
+        <td><label><input name="tinyjpfont_check_tanukiM" type="checkbox" id="tinyjpfont_check_tanukiM" value="1" <?php checked( 1, get_option('tinyjpfont_check_tanukiM')); ?> /> たぬき油性マジックフォントをロード</label></td>
+    </tr>
+    <tr>
+        <th scope="row"><label for="tinyjpfont_check_aoyanagiT">青柳衡山フォントT</label></th>
+        <td><label><input name="tinyjpfont_check_aoyanagiT" type="checkbox" id="tinyjpfont_check_aoyanagiT" value="1" <?php checked( 1, get_option('tinyjpfont_check_aoyanagiT')); ?> /> 青柳衡山フォントTフォントをロード</label></td>
+    </tr>
+    <tr>
+        <th scope="row"><label for="tinyjpfont_check_kokorom">こころ明朝体</label></th>
+        <td><label><input name="tinyjpfont_check_kokorom" type="checkbox" id="tinyjpfont_check_kokorom" value="1" <?php checked( 1, get_option('tinyjpfont_check_kokorom')); ?> /> こころ明朝体フォントをロード</label></td>
+    </tr>
+
+
+
     <tr>
         <th scope="row"><label for="tinyjpfont_select">フォントロードモード</label></th>
         <td>
@@ -211,7 +238,7 @@ function tinyjpfont_options_page() {
             </select>
         </td>
     </tr>
-    フォントロードNormalは上で指定したフォントを読み込みます。Liteを指定した場合、上で設定した内容はすべて無効となり、作者おすすめのフォントのみロードします。
+    フォントロードNormalは上で指定したフォントを読み込みます。Liteを指定した場合、上で設定した内容はすべて無効となり、最低限のフォントのみロードします。
 </table>
 <?php submit_button(); ?>
 </form>
