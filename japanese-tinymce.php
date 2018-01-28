@@ -2,7 +2,7 @@
 /*
 Plugin Name: Japanese font for TinyMCE
 Description: Add Japanese font to TinyMCE Advanced plugin's font family selections..
-Version: 3.5
+Version: 3.5-beta1
 Author: raspi0124
 Author URI: https://raspi-diary.com/
 License: GPL2
@@ -38,16 +38,15 @@ Copyright  2017  raspi0124
 で請求してください(宛先は the Free Software Foundation, Inc., 59
 Temple Place, Suite 330, Boston, MA 02111-1307 USA)。
 
-    This software includes the work that is distributed in the Apache License 2.0
-
+For futrher information about licence, please read LICENCE.txt.
 */
 // define $
 
  
  //--CONFIG START--
 
-$config1 = 0;
-$config2 = 0;
+$config1 = "0"
+$config2 = get_option( 'tinyjpfont_select' );
 
 
 
@@ -164,11 +163,11 @@ add_action('admin_menu', 'tinyjpfont_add_pages');
 function tinyjpfont_add_pages()
 {
     // プラグインのスラグ名はユニークならなんでも良い
-    // /plugin/tinyjpfont-test/tinyjpfont-test.phpに置いているので
+    // /plugin/tinyjpfont/japanese-tinymce.phpに置いているので
     $tinyjpfont_plugin_slug = plugin_basename(__FILE__);
 
-    // トップレベルにオリジナルのメニューを追加（購読者相当）
-    add_menu_page('Japanese Font for TinyMCEの設定', 'Japanese Font for TinyMCEの設定', 'read',
+    // トップレベルにオリジナルのメニューを追加
+    add_menu_page('Japanese Font for TinyMCEの設定', 'Japanese Font for TinyMCEの設定', 'manage_options',
         $tinyjpfont_plugin_slug,
         'tinyjpfont_options_page',
         plugins_url('/images/logo.png', __FILE__)
@@ -184,20 +183,26 @@ function tinyjpfont_options_page() {
         // チェックボックスはチェックされないとキーも受け取れないので、ない時は0にする
         $tinyjpfont_checkbox = isset($_POST['tinyjpfont_checkbox']) ? 1 : 0;
         update_option('tinyjpfont_checkbox', $tinyjpfont_checkbox);
+
+        $tinyjpfont_check_cdn = isset($_POST['tinyjpfont_check_cdn']) ? 1 : 0;
+        update_option('tinyjpfont_check_cdn', $tinyjpfont_check_cdn);
+
+        $tinyjpfont_check_noto = isset($_POST['tinyjpfont_check_noto']) ? 1 : 0;
+        update_option('tinyjpfont_check_noto', $tinyjpfont_check_noto);
     }
 ?>
 <div class="wrap">
 <h2>Japanese Font for TinyMCE</h2>
 <?php
     // 更新完了を通知
-    if (isset($_POST['tinyjpfont_text'])) {
+    if (isset($_POST['tinyjpfont_select'])) {
         echo '<div id="setting-error-settings_updated" class="updated settings-error notice is-dismissible">
             <p><strong>設定を保存しました。</strong></p></div>';
     }
 ?>
-
+<h2>現在、この設定画面は絶賛構築中です。フォントのロードモード以外は保存されずに動かないのでご了承ください</h2>
 <form method="post" action="">
-	<p>ロードするフォントを選択してください</p>
+	<p>ロードするフォントを選択してください(この機能は動きません)</p>
 <table class="form-table">
     <tr>
         <th scope="row"><label for="tinyjpfont_check_noto">Noto Sans Japanese</label></th>
@@ -231,7 +236,7 @@ function tinyjpfont_options_page() {
 
 
     <tr>
-        <th scope="row"><label for="tinyjpfont_select">フォントロードモード</label></th>
+        <th scope="row"><label for="tinyjpfont_select">フォントロードモード(この機能は動きます)</label></th>
         <td>
             <select name="tinyjpfont_select" id="tinyjpfont_select">
                 <option value="0" <?php selected( 0, get_option( 'tinyjpfont_select' ) ); ?> >フォントロードNormal</option>
@@ -240,6 +245,10 @@ function tinyjpfont_options_page() {
         </td>
     </tr>
     フォントロードNormalは指定したフォントを読み込みます。Liteを指定した場合、設定した内容はすべて無効となり、最低限のフォントのみロードします。
+    <tr>
+        <th scope="row"><label for="tinyjpfont_check_cdn">CDNモード (CSSもCDNから読み込むようになります)</label></th>
+        <td><label><input name="tinyjpfont_check_cdn" type="checkbox" id="tinyjpfont_check_cdn" value="1" <?php checked( 1, get_option('tinyjpfont_check_cdn')); ?> /> CSSをCDNから読み込む</label></td>
+    </tr>
 </table>
 <?php submit_button(); ?>
 </form>

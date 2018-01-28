@@ -71,3 +71,4 @@ Version 2.50:You can now use font even from TinyMCE's text editor.
 Version 2.60: yay! You can use font selector without installing TinyMCE Advanced plugin!
 Version 3.0+ yay! no more TinyMCE Advanced plugin! you can now select font without TinyMCE Advanced plugin!(alpha)
 Version 3.01: bug fixed.
+Version 3.5-beta1: added 3 font and beta option page.
