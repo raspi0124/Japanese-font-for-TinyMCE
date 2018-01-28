@@ -45,7 +45,7 @@ For futrher information about licence, please read LICENCE.txt.
  
  //--CONFIG START--
 
-$config1 = "0"
+$config1 = "0";
 $config2 = get_option( 'tinyjpfont_select' );
 
 
