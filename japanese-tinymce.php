@@ -2,7 +2,7 @@
 /*
 Plugin Name: Japanese font for TinyMCE
 Description: Add Japanese font to TinyMCE Advanced plugin's font family selections..
-Version: 3.5-beta1
+Version: 3.5-beta3
 Author: raspi0124
 Author URI: https://raspi-diary.com/
 License: GPL2
@@ -42,17 +42,61 @@ For futrher information about licence, please read LICENCE.txt.
 */
 // define $
 
- 
- //--CONFIG START--
-
-$config1 = "0";
+// config 1 is CDN
+//conbfig 2 is font load mode
+$config1 = get_option( 'tinyjpfont_check_cdn' );
 $config2 = get_option( 'tinyjpfont_select' );
+
+
+
+// setting <Version 3.5-beta3>
+
+//もしCDNがtrueでフォントロードモードもNormalだったら
+if( $config1 == "1" and $config2 == "0"){
+
+// enque CSS at CDN
+function tinyjpfont_style() {
+    wp_register_style( 'tinyjpfont-styles', 'https://cdn.rawgit.com/raspi0124/Japanese-font-for-TinyMCE/stable/addfont.css' );
+    wp_enqueue_style( 'tinyjpfont-styles' );
+}
+add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
+add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
+}
+//もしCDNがtrueでフォントロードモードがLiteだったら
+if ( $config1 == "1" $config2 == "1") {
+// enque Lite version of CSS at CDN
+function tinyjpfont_style() {
+    wp_register_style( 'tinyjpfont-styles', 'https://cdn.rawgit.com/raspi0124/Japanese-font-for-TinyMCE/stable/addfont_lite.css' );
+    wp_enqueue_style( 'tinyjpfont-styles' );
+}
+add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
+add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
+}
+//もしCDNがfalseでフォントロードモードがLiteだったら
+if ( $config1 == "0" $config2 == "1") {
+    
+function tinyjpfont_style() {
+    wp_register_style( 'tinyjpfont-styles',  plugin_dir_url( __FILE__ ) . 'addfont_lite.css' );
+    wp_enqueue_style( 'tinyjpfont-styles' );
+}
+add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
+add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
+}
+//もしCDNがFalseでロードモードがNormalだったら
+else{
+
+function tinyjpfont_style() {
+    wp_register_style( 'tinyjpfont-styles',  plugin_dir_url( __FILE__ ) . 'addfont.css' );
+    wp_enqueue_style( 'tinyjpfont-styles' );
+}
+add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
+add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
+}
 
 
 
 
 //add font to tiny mce
-// setting <Version alpha>
 if ( $config2 == 0) {
     function tinyjpfont_load_custom_fonts($init) {
     $stylesheet_url = plugin_dir_url( __FILE__ ) . 'addfont.css';
@@ -70,7 +114,7 @@ add_filter('tiny_mce_before_init', 'tinyjpfont_load_custom_fonts');
 }
 else {
     function tinyjpfont_load_custom_fonts($init) {
-    $stylesheet_url = plugin_dir_url( __FILE__ ) . 'addfont.css';
+    $stylesheet_url = plugin_dir_url( __FILE__ ) . 'addfont_lite.css';
     if(empty($init['content_css'])) {
         $init['content_css'] = $stylesheet_url;
     } else {
@@ -85,26 +129,6 @@ add_filter('tiny_mce_before_init', 'tinyjpfont_load_custom_fonts');
 }
 
 
-if( $config1 == 1 ){
-
-// enque CSS at CDN
-function tinyjpfont_style() {
-    wp_register_style( 'tinyjpfont-styles', 'https://cdn.rawgit.com/raspi0124/Japanese-font-for-TinyMCE/stable/addfont.css' );
-    wp_enqueue_style( 'tinyjpfont-styles' );
-}
-add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
-add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
-}
-
-else{
-
-function tinyjpfont_style() {
-    wp_register_style( 'tinyjpfont-styles',  plugin_dir_url( __FILE__ ) . 'addfont.css' );
-    wp_enqueue_style( 'tinyjpfont-styles' );
-}
-add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
-add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
-}
 
 
 
@@ -178,7 +202,21 @@ function tinyjpfont_add_pages()
 // メニューで表示されるページの内容を返す関数
 function tinyjpfont_options_page() {
     // POSTデータがあれば設定を更新
-    if (isset($_POST['tinyjpfont_text'])) {
+    if (isset($_POST['tinyjpfont_select'])) {
+
+        update_option('tinyjpfont_select', $_POST['tinyjpfont_select']);
+        // チェックボックスはチェックされないとキーも受け取れないので、ない時は0にする
+        $tinyjpfont_checkbox = isset($_POST['tinyjpfont_checkbox']) ? 1 : 0;
+        update_option('tinyjpfont_checkbox', $tinyjpfont_checkbox);
+
+        $tinyjpfont_check_cdn = isset($_POST['tinyjpfont_check_cdn']) ? 1 : 0;
+        update_option('tinyjpfont_check_cdn', $tinyjpfont_check_cdn);
+
+        $tinyjpfont_check_noto = isset($_POST['tinyjpfont_check_noto']) ? 1 : 0;
+        update_option('tinyjpfont_check_noto', $tinyjpfont_check_noto);
+    }
+    if (isset($_POST['tinyjpfont_check_cdn'])) {
+        
         update_option('tinyjpfont_select', $_POST['tinyjpfont_select']);
         // チェックボックスはチェックされないとキーも受け取れないので、ない時は0にする
         $tinyjpfont_checkbox = isset($_POST['tinyjpfont_checkbox']) ? 1 : 0;
@@ -200,7 +238,7 @@ function tinyjpfont_options_page() {
             <p><strong>設定を保存しました。</strong></p></div>';
     }
 ?>
-<h2>現在、この設定画面は絶賛構築中です。フォントのロードモード以外は保存されずに動かないのでご了承ください</h2>
+<h2>現在、この設定画面は絶賛構築中です。一部の設定は保存されずに動かないのでご了承ください</h2>
 <form method="post" action="">
 	<p>ロードするフォントを選択してください(この機能は動きません)</p>
 <table class="form-table">
@@ -246,7 +284,7 @@ function tinyjpfont_options_page() {
     </tr>
     フォントロードNormalは指定したフォントを読み込みます。Liteを指定した場合、設定した内容はすべて無効となり、最低限のフォントのみロードします。
     <tr>
-        <th scope="row"><label for="tinyjpfont_check_cdn">CDNモード (CSSもCDNから読み込むようになります)</label></th>
+        <th scope="row"><label for="tinyjpfont_check_cdn">CDNモード (CSSもCDNから読み込むようになります)(この機能は動きます)</label></th>
         <td><label><input name="tinyjpfont_check_cdn" type="checkbox" id="tinyjpfont_check_cdn" value="1" <?php checked( 1, get_option('tinyjpfont_check_cdn')); ?> /> CSSをCDNから読み込む</label></td>
     </tr>
 </table>
