@@ -73,3 +73,4 @@ Version 3.0+ yay! no more TinyMCE Advanced plugin! you can now select font witho
 Version 3.01: bug fixed.
 Version 3.5-beta1: added 3 font and beta option page.
 Version 3.5-beta2: Bug fixed for option page
+Version 3.5-beta3: from now on, the font load mode is not only apply to front-end editor, but also applys to css.
