@@ -63,8 +63,8 @@ add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
 add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
 }
 //もしCDNがtrueでフォントロードモードがLiteだったら
-if ( $config1 == "1" $config2 == "1") {
-// enque Lite version of CSS at CDN
+if ( $config1 == "1" and $config2 == "1") {
+// enque Lite version of CSS at CDNs
 function tinyjpfont_style() {
     wp_register_style( 'tinyjpfont-styles', 'https://cdn.rawgit.com/raspi0124/Japanese-font-for-TinyMCE/stable/addfont_lite.css' );
     wp_enqueue_style( 'tinyjpfont-styles' );
@@ -73,7 +73,7 @@ add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
 add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
 }
 //もしCDNがfalseでフォントロードモードがLiteだったら
-if ( $config1 == "0" $config2 == "1") {
+if ( $config1 == "0" and $config2 == "1") {
     
 function tinyjpfont_style() {
     wp_register_style( 'tinyjpfont-styles',  plugin_dir_url( __FILE__ ) . 'addfont_lite.css' );
@@ -82,9 +82,8 @@ function tinyjpfont_style() {
 add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
 add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
 }
-//もしCDNがFalseでロードモードがNormalだったら
-else{
-
+if ( $config1 == "0" and $config2 == "0") {
+    //もしCDNがFalseでロードモードがNormalだったら
 function tinyjpfont_style() {
     wp_register_style( 'tinyjpfont-styles',  plugin_dir_url( __FILE__ ) . 'addfont.css' );
     wp_enqueue_style( 'tinyjpfont-styles' );
@@ -97,7 +96,7 @@ add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
 
 
 //add font to tiny mce
-if ( $config2 == 0) {
+if ( $config2 == "0" ) {
     function tinyjpfont_load_custom_fonts($init) {
     $stylesheet_url = plugin_dir_url( __FILE__ ) . 'addfont.css';
     if(empty($init['content_css'])) {
