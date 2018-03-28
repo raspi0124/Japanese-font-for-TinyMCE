@@ -2,13 +2,13 @@
 /*
 Plugin Name: Japanese font for TinyMCE
 Description: Add Japanese font to TinyMCE Advanced plugin's font family selections..
-Version: 3.5-beta3
+Version: 3.6
 Author: raspi0124
 Author URI: https://raspi-diary.com/
 License: GPL2
 */
 
-/*  Copyright 2017 raspi0124 (email : admin@raspi-diary.com)
+/*  Copyright 2017-2018 raspi0124 (email : admin@raspi-diary.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as
@@ -44,9 +44,10 @@ For futrher information about licence, please read LICENCE.txt.
 
 // config 1 is CDN
 //conbfig 2 is font load mode
+//config 3 is enable/disable gutenberg setting
 $config1 = get_option( 'tinyjpfont_check_cdn' );
 $config2 = get_option( 'tinyjpfont_select' );
-
+$config3 = get_option( 'tinyjpfont_gutenberg' );
 
 
 // setting <Version 3.5-beta3>
@@ -127,7 +128,24 @@ else {
 add_filter('tiny_mce_before_init', 'tinyjpfont_load_custom_fonts');
 }
 
+//add non-tinymce support
+//ビジュアルエディターのフォントサイズ変更機能の文字サイズ指定
+add_filter( 'tiny_mce_before_init', function ($settings) {
+    //フォントサイズの指定
+  $settings['fontsize_formats'] =
+      '10px 12px 14px 16px 18px 20px 24px 28px 32px 36px 42px 48px';
+  //$settings['fontsize_formats'] = '0.8em 1.6em 2em 3em';
+  //$settings['fontsize_formats'] = '80% 160% 200% 300%';
+  return $settings;
+} );
 
+//Wordpressビジュアルエディターに文字サイズの変更機能を追加
+add_filter('mce_buttons', function ($buttons){
+    //フォントサイズ変更機能を追加
+  array_push($buttons, 'fontsizeselect');
+  return $buttons;
+});
+//finish
 
 
 
@@ -172,7 +190,7 @@ function tinyjpfont_custom_tiny_mce_style_formats( $settings ) {
 
 add_filter( 'mce_buttons', 'tinyjpfont_add_original_styles_button' );
 function tinyjpfont_add_original_styles_button( $buttons ) {
-  array_splice( $buttons, 1, 0, 'styleselect' );
+  array_splice( $buttons, 1, 0, 'fontselect' );
   return $buttons;
 }
 
@@ -193,7 +211,7 @@ function tinyjpfont_add_pages()
     add_menu_page('Japanese Font for TinyMCEの設定', 'Japanese Font for TinyMCEの設定', 'manage_options',
         $tinyjpfont_plugin_slug,
         'tinyjpfont_options_page',
-        plugins_url('/images/logo.png', __FILE__)
+        plugins_url('icon.png', __FILE__)
     );
     
 }
@@ -239,39 +257,6 @@ function tinyjpfont_options_page() {
 ?>
 <h2>現在、この設定画面は絶賛構築中です。一部の設定は保存されずに動かないのでご了承ください</h2>
 <form method="post" action="">
-	<p>ロードするフォントを選択してください(この機能は動きません)</p>
-<table class="form-table">
-    <tr>
-        <th scope="row"><label for="tinyjpfont_check_noto">Noto Sans Japanese</label></th>
-        <td><label><input name="tinyjpfont_check_noto" type="checkbox" id="tinyjpfont_check_noto" value="1" <?php checked( 1, get_option('tinyjpfont_check_noto')); ?> /> Noto Sans Japaneseフォントシリーズをロード</label></td>
-    </tr>
-    <tr>
-        <th scope="row"><label for="tinyjpfont_check_huifont">ふい字</label></th>
-        <td><label><input name="tinyjpfont_check_huifont" type="checkbox" id="tinyjpfont_check_huifont" value="1" <?php checked( 1, get_option('tinyjpfont_check_huifont')); ?> /> ふい字フォントをロード</label></td>
-    </tr>
-    <tr>
-        <th scope="row"><label for="tinyjpfont_check_honokamaru">ほのか丸フォント</label></th>
-        <td><label><input name="tinyjpfont_check_honokamaru" type="checkbox" id="tinyjpfont_check_honokamaru" value="1" <?php checked( 1, get_option('tinyjpfont_check_honokamaru')); ?> /> ほのか丸フォントをロード</label></td>
-    </tr>
-    <tr>
-        <th scope="row"><label for="tinyjpfont_check_esenapaj">エセナパJ</label></th>
-        <td><label><input name="tinyjpfont_check_esenapaj" type="checkbox" id="tinyjpfont_check_esenapaj" value="1" <?php checked( 1, get_option('tinyjpfont_check_esenapaj')); ?> /> エセナパJフォントをロード</label></td>
-    </tr>
-    <tr>
-        <th scope="row"><label for="tinyjpfont_check_tanukiM">たぬき油性マジック</label></th>
-        <td><label><input name="tinyjpfont_check_tanukiM" type="checkbox" id="tinyjpfont_check_tanukiM" value="1" <?php checked( 1, get_option('tinyjpfont_check_tanukiM')); ?> /> たぬき油性マジックフォントをロード</label></td>
-    </tr>
-    <tr>
-        <th scope="row"><label for="tinyjpfont_check_aoyanagiT">青柳衡山フォントT</label></th>
-        <td><label><input name="tinyjpfont_check_aoyanagiT" type="checkbox" id="tinyjpfont_check_aoyanagiT" value="1" <?php checked( 1, get_option('tinyjpfont_check_aoyanagiT')); ?> /> 青柳衡山フォントTフォントをロード</label></td>
-    </tr>
-    <tr>
-        <th scope="row"><label for="tinyjpfont_check_kokorom">こころ明朝体</label></th>
-        <td><label><input name="tinyjpfont_check_kokorom" type="checkbox" id="tinyjpfont_check_kokorom" value="1" <?php checked( 1, get_option('tinyjpfont_check_kokorom')); ?> /> こころ明朝体フォントをロード</label></td>
-    </tr>
-
-
-
     <tr>
         <th scope="row"><label for="tinyjpfont_select">フォントロードモード(この機能は動きます)</label></th>
         <td>
@@ -285,6 +270,11 @@ function tinyjpfont_options_page() {
     <tr>
         <th scope="row"><label for="tinyjpfont_check_cdn">CDNモード (CSSもCDNから読み込むようになります)(この機能は動きます)</label></th>
         <td><label><input name="tinyjpfont_check_cdn" type="checkbox" id="tinyjpfont_check_cdn" value="1" <?php checked( 1, get_option('tinyjpfont_check_cdn')); ?> /> CSSをCDNから読み込む</label></td>
+    </tr>
+    <tr>
+    	<th scope="row">
+    	</th>
+
     </tr>
 </table>
 <?php submit_button(); ?>
