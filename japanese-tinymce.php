@@ -2,7 +2,7 @@
 /*
 Plugin Name: Japanese font for TinyMCE
 Description: Add Japanese font to TinyMCE Advanced plugin's font family selections..
-Version: 3.6
+Version: 3.7
 Author: raspi0124
 Author URI: https://raspi-diary.com/
 License: GPL2
@@ -29,10 +29,10 @@ Copyright  2017  raspi0124
 望によってはそれ以降のバージョンのうちどれか)の定める条件の下で再頒布
 または改変することができます。
 
-このプログラムは有用であることを願って頒布されますが、*全くの無保証* 
+このプログラムは有用であることを願って頒布されますが、*全くの無保証*
 です。商業可能性の保証や特定の目的への適合性は、言外に示されたものも含
 め全く存在しません。詳しくはGNU 一般公衆利用許諾契約書をご覧ください。
- 
+
 あなたはこのプログラムと共に、GNU 一般公衆利用許諾契約書の複製物を一部
 受け取ったはずです。もし受け取っていなければ、フリーソフトウェア財団ま
 で請求してください(宛先は the Free Software Foundation, Inc., 59
@@ -42,26 +42,34 @@ For futrher information about licence, please read LICENCE.txt.
 */
 // define $
 
+//1 is enable, 0 is disable unless written.
 // config 1 is CDN
 //conbfig 2 is font load mode
 //config 3 is enable/disable gutenberg setting
+//config 4 is load by header or footer. 0=header, 1=footer
 $config1 = get_option( 'tinyjpfont_check_cdn' );
 $config2 = get_option( 'tinyjpfont_select' );
 $config3 = get_option( 'tinyjpfont_gutenberg' );
-
+$config4 = get_option( 'tinyjpfont_head' );
 
 // setting <Version 3.5-beta3>
 
 //もしCDNがtrueでフォントロードモードもNormalだったら
 if( $config1 == "1" and $config2 == "0"){
-
 // enque CSS at CDN
 function tinyjpfont_style() {
     wp_register_style( 'tinyjpfont-styles', 'https://cdn.rawgit.com/raspi0124/Japanese-font-for-TinyMCE/stable/addfont.css' );
     wp_enqueue_style( 'tinyjpfont-styles' );
 }
-add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
-add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
+//もしheader読み込みだったら
+if ( $config4 ==  "0") {
+	add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
+	add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
+}
+else {
+	add_action( 'get_footer', 'tinyjpfont_style' );
+	add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
+}
 }
 //もしCDNがtrueでフォントロードモードがLiteだったら
 if ( $config1 == "1" and $config2 == "1") {
@@ -70,18 +78,30 @@ function tinyjpfont_style() {
     wp_register_style( 'tinyjpfont-styles', 'https://cdn.rawgit.com/raspi0124/Japanese-font-for-TinyMCE/stable/addfont_lite.css' );
     wp_enqueue_style( 'tinyjpfont-styles' );
 }
-add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
-add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
+if ( $config4 ==  "0") {
+	add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
+	add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
+}
+else {
+	add_action( 'get_footer', 'tinyjpfont_style' );
+	add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
+}
 }
 //もしCDNがfalseでフォントロードモードがLiteだったら
 if ( $config1 == "0" and $config2 == "1") {
-    
+
 function tinyjpfont_style() {
     wp_register_style( 'tinyjpfont-styles',  plugin_dir_url( __FILE__ ) . 'addfont_lite.css' );
     wp_enqueue_style( 'tinyjpfont-styles' );
 }
-add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
-add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
+if ( $config4 ==  "0") {
+	add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
+	add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
+}
+else {
+	add_action( 'get_footer', 'tinyjpfont_style' );
+	add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
+}
 }
 if ( $config1 == "0" and $config2 == "0") {
     //もしCDNがFalseでロードモードがNormalだったら
@@ -89,10 +109,23 @@ function tinyjpfont_style() {
     wp_register_style( 'tinyjpfont-styles',  plugin_dir_url( __FILE__ ) . 'addfont.css' );
     wp_enqueue_style( 'tinyjpfont-styles' );
 }
-add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
-add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
+if ( $config4 ==  "0") {
+	add_action( 'wp_enqueue_scripts', 'tinyjpfont_style' );
+	add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
+}
+else {
+	add_action( 'get_footer', 'tinyjpfont_style' );
+	add_action( 'admin_enqueue_scripts', 'tinyjpfont_style' );
+}
 }
 
+//add gutenberg support.
+if ( $config3 = "1" ) {
+  include( plugin_dir_path( __FILE__ ) . 'gutenjpfont/gutenjpfont.php');
+}
+else {
+
+}
 
 
 
@@ -213,7 +246,7 @@ function tinyjpfont_add_pages()
         'tinyjpfont_options_page',
         plugins_url('icon.png', __FILE__)
     );
-    
+
 }
 
 // メニューで表示されるページの内容を返す関数
@@ -222,6 +255,7 @@ function tinyjpfont_options_page() {
     if (isset($_POST['tinyjpfont_select'])) {
 
         update_option('tinyjpfont_select', $_POST['tinyjpfont_select']);
+				update_option('tinyjpfont_head', $_POST['tinyjpfont_head']);
         // チェックボックスはチェックされないとキーも受け取れないので、ない時は0にする
         $tinyjpfont_checkbox = isset($_POST['tinyjpfont_checkbox']) ? 1 : 0;
         update_option('tinyjpfont_checkbox', $tinyjpfont_checkbox);
@@ -231,10 +265,14 @@ function tinyjpfont_options_page() {
 
         $tinyjpfont_check_noto = isset($_POST['tinyjpfont_check_noto']) ? 1 : 0;
         update_option('tinyjpfont_check_noto', $tinyjpfont_check_noto);
+
+        $tinyjpfont_gutenberg = isset($_POST['tinyjpfont_gutenberg']) ? 1 : 0;
+        update_option('tinyjpfont_check_noto', $tinyjpfont_gutenberg);
     }
     if (isset($_POST['tinyjpfont_check_cdn'])) {
-        
+
         update_option('tinyjpfont_select', $_POST['tinyjpfont_select']);
+				update_option('tinyjpfont_head', $_POST['tinyjpfont_head']);
         // チェックボックスはチェックされないとキーも受け取れないので、ない時は0にする
         $tinyjpfont_checkbox = isset($_POST['tinyjpfont_checkbox']) ? 1 : 0;
         update_option('tinyjpfont_checkbox', $tinyjpfont_checkbox);
@@ -244,41 +282,88 @@ function tinyjpfont_options_page() {
 
         $tinyjpfont_check_noto = isset($_POST['tinyjpfont_check_noto']) ? 1 : 0;
         update_option('tinyjpfont_check_noto', $tinyjpfont_check_noto);
-    }
-?>
-<div class="wrap">
-<h2>Japanese Font for TinyMCE</h2>
-<?php
-    // 更新完了を通知
-    if (isset($_POST['tinyjpfont_select'])) {
-        echo '<div id="setting-error-settings_updated" class="updated settings-error notice is-dismissible">
-            <p><strong>設定を保存しました。</strong></p></div>';
-    }
-?>
-<h2>現在、この設定画面は絶賛構築中です。一部の設定は保存されずに動かないのでご了承ください</h2>
-<form method="post" action="">
-    <tr>
-        <th scope="row"><label for="tinyjpfont_select">フォントロードモード(この機能は動きます)</label></th>
-        <td>
-            <select name="tinyjpfont_select" id="tinyjpfont_select">
-                <option value="0" <?php selected( 0, get_option( 'tinyjpfont_select' ) ); ?> >フォントロードNormal</option>
-                <option value="1" <?php selected( 1, get_option( 'tinyjpfont_select' ) ); ?> >フォントロードLite</option>
-            </select>
-        </td>
-    </tr>
-    フォントロードNormalは指定したフォントを読み込みます。Liteを指定した場合、設定した内容はすべて無効となり、最低限のフォントのみロードします。
-    <tr>
-        <th scope="row"><label for="tinyjpfont_check_cdn">CDNモード (CSSもCDNから読み込むようになります)(この機能は動きます)</label></th>
-        <td><label><input name="tinyjpfont_check_cdn" type="checkbox" id="tinyjpfont_check_cdn" value="1" <?php checked( 1, get_option('tinyjpfont_check_cdn')); ?> /> CSSをCDNから読み込む</label></td>
-    </tr>
-    <tr>
-    	<th scope="row">
-    	</th>
 
-    </tr>
-</table>
-<?php submit_button(); ?>
-</form>
+        $tinyjpfont_gutenberg = isset($_POST['tinyjpfont_gutenberg']) ? 1 : 0;
+        update_option('tinyjpfont_check_noto', $tinyjpfont_gutenberg);
+    }
+?>
+
+
+
+<title>ページのタイトル</title>
+
+</head>
+<body>
+
+<!-- コンテナ開始 -->
+<div id="wrap">
+<!-- ナビゲーション開始 -->
+<div id="nav">
+［サイドバー］
 </div>
+<!-- ナビゲーション終了 -->
+
+<!-- メインカラム開始 -->
+<div id="content">
+  <h2>Japanese Font for TinyMCE</h2>
+  <?php
+      // 更新完了を通知
+      if (isset($_POST['tinyjpfont_select'])) {
+          echo '<div id="setting-error-settings_updated" class="updated settings-error notice is-dismissible">
+              <p><strong>設定を保存しました。</strong></p></div>';
+      }
+  ?>
+  <form method="post" action="">
+      <tr>
+          <th scope="row"><h3><label for="tinyjpfont_select">フォントロードモード</label></h3></th><br>
+          <td>
+              <select name="tinyjpfont_select" id="tinyjpfont_select">
+                  <option value="0" <?php selected( 0, get_option( 'tinyjpfont_select' ) ); ?> >フォントロードNormal</option>
+                  <option value="1" <?php selected( 1, get_option( 'tinyjpfont_select' ) ); ?> >フォントロードLite</option>
+              </select>
+          </td>
+      </tr><br>
+  		<strong>
+      フォントロードNormalは指定したフォントを読み込みます。Liteを指定した場合最低限のフォントのみ読み込まれるようになります。
+  	</strong>
+      <tr>
+          <th scope="row"><label for="tinyjpfont_check_cdn"><h3>CDNモード (CSSもCDNから読み込むようになります)</h3></label></th><br>
+          <td><label><input name="tinyjpfont_check_cdn" type="checkbox" id="tinyjpfont_check_cdn" value="1" <?php checked( 1, get_option('tinyjpfont_check_cdn')); ?> /> CSSをCDNから読み込む</label></td><br>
+      </tr>
+  		<strong>CDNはrawgitという無料サービスを使用しています。おそらく不安定なため不安な方はチェックボックスを外しておきましょう。</strong>
+      <tr>
+      	<th scope="row">
+  				<label for="tinyjpfont_head"><h3>読み込み場所指定モード</h3></label></th><br>
+          <td>
+              <select name="tinyjpfont_head" id="tinyjpfont_head">
+                  <option value="0" <?php selected( 0, get_option( 'tinyjpfont_head' ) ); ?> >ヘッダーで読み込む</option>
+                  <option value="1" <?php selected( 1, get_option( 'tinyjpfont_head' ) ); ?> >フッターで読み込む</option>
+              </select>
+          </td>
+      	</th>
+  			<br><strong>テーマの仕様により対応していない場合もあります。</strong>
+      </tr><br>
+      <tr>
+          <th scope="row"><label for="tinyjpfont_gutenberg"><h3>Gutenberg対応モード(beta)</h3></label></th><br>
+          <td><label><input name="tinyjpfont_gutenberg" type="checkbox" id="tinyjpfont_gutenberg" value="1" <?php checked( 1, get_option('tinyjpfont_gutenberg')); ?> /> Gutenbergに対応させる(beta)</label></td><br>
+      </tr><br>
+      <strong>
+      Gutenberg対応機能は現在beta版です。ちなみにNoto Sans Japaneseフォント以外は今のところGutenbergには対応していません。<br>Gutenbergとは?</br>GutenbergとはWordPress、バージョン5.0に搭載される予定の新しいエディタです。デザイン等すべてがめっちゃ変わります。
+    </strong>
+  </table>
+  <?php submit_button(); ?>
+  </form>
+
+</div>
+<!-- メインカラム終了 -->
+
+
+
+</div>
+<!-- コンテナ終了 -->
+
+</body>
+</html>
+
 <?php
 }
