@@ -41,7 +41,7 @@ Temple Place, Suite 330, Boston, MA 02111-1307 USA)。
 For futrher information about licence, please read LICENCE.txt.
 */
 // define $
-
+$version = "3.8";
 //1 is enable, 0 is disable unless written.
 // config 1 is CDN
 //conbfig 2 is font load mode
@@ -51,8 +51,7 @@ $config1 = get_option( 'tinyjpfont_check_cdn' );
 $config2 = get_option( 'tinyjpfont_select' );
 $config3 = get_option( 'tinyjpfont_gutenberg' );
 $config4 = get_option( 'tinyjpfont_head' );
-
-//update notification
+$isshown = get_option( 'tinyjpfont_isshown' ); #Check if update notice has already been shown.
 function tinyjpfont_update() {
     ?>
     <div class="notice notice-success is-dismissible">
@@ -61,7 +60,11 @@ function tinyjpfont_update() {
     </div>
     <?php
 }
-add_action( 'admin_notices', 'tinyjpfont_update' );
+if ($version != $isshown) {
+  add_action( 'admin_notices', 'tinyjpfont_update' );
+  update_option('tinyjpfont_isshown', $version);
+}else {#do nothing when already notified.
+}
 
 
 // setting <Version 3.5-beta3>
@@ -299,30 +302,20 @@ function tinyjpfont_options_page() {
         update_option('tinyjpfont_gutenberg', $tinyjpfont_gutenberg);
     }
 ?>
-
-
-
-<title>ページのタイトル</title>
-
 </head>
 <body>
 
-<!-- コンテナ開始 -->
 <div id="wrap">
-<!-- ナビゲーション開始 -->
+
 <div id="nav">
-［サイドバー］
+Japanese Font for TinyMCEの情報についてはTwitterにて#tinyjpfontのハッシュタグでたまーにツイートしています。<br>
+あとよろしければ <a href="https://twitter.com/raspi0124">作者のTwitter</a>もフォローお願いします!<br><br>
+なお、このプラグインの次を決める <a href="https://docs.google.com/forms/d/e/1FAIpQLSd_PLkuRGr-NcXQ1Jq36xru73WvvbmyCm0QjFH92pJ14yQQjQ/viewform?usp=send_form">アンケートフォーム</a>も公開中！よろしければ要望等どうぞ！<br>
+
 </div>
-<!-- ナビゲーション終了 -->
-
-<!-- メインカラム開始 -->
-<div id="content">
   <h2>Japanese Font for TinyMCE</h2>
-  <?php
-  $stylesheet_url = plugin_dir_url( __FILE__ ) . 'addfont.css';
-   ?>
-   <link rel="stylesheet" href= <?php $stylesheet_url; ?> >
-
+   <link rel="stylesheet" href= "https://cdn.rawgit.com/raspi0124/Japanese-font-for-TinyMCE/stable/admin.css">
+<div id="content">
   <?php
       // 更新完了を通知
       if (isset($_POST['tinyjpfont_select'])) {

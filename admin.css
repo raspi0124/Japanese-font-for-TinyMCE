@@ -1,51 +1,23 @@
 
-@charset "Shift_JIS";
-
-/* --- 全体の背景・テキスト --- */
-body {
-margin: 0;
-padding: 0;
-background-color: #ffffff; /* ページの背景色 */
-color: #000000; /* 全体の文字色 */
-font-size: 100%; /* 全体の文字サイズ */
-}
-
-/* --- 全体のリンクテキスト --- */
-a:link { color: #0000ff; }
-a:visited { color: #800080; }
-a:hover { color: #ff0000; }
-a:active { color: #ff0000; }
-
-/* --- コンテナ --- */
-#container {
-width: 780px; /* ページの幅 */
-margin: 0 auto; /* センタリング */
-background: url(sidebar_200.gif) repeat-y right; /* サイドバーの背景画像 */
-background-color: #ffffff; /* メインカラムの背景色 */
-border-left: 1px #c0c0c0 solid; /* 左の境界線 */
-border-right: 1px #c0c0c0 solid; /* 右の境界線 */
-}
-
-/* --- ヘッダ --- */
-#header {
-background-color: #ffe080; /* ヘッダの背景色 */
-}
 
 /* --- ナビゲーション --- */
 #nav {
 float: right;
-width: 200px; /* サイドバーの幅 */
+width: 20%; /* サイドバーの幅 */
+position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+z-index: 1; /* Stay on top */
+top: 30%; /* Stay at the top */
+left: 75%;
+padding: 0.5em 1em;
+margin: 2em 0;
+color: #5989cf;
+background: #c6e4ff;
+border-bottom: solid 6px #aac5de;
+border-radius: 9px;
 }
 
 /* --- メインカラム --- */
 #content {
 float: right;
-width: 580px; /* メインカラムの幅 */
-}
-
-/* --- フッタ --- */
-#footer {
-clear: right; /* フロートのクリア */
-width: 100%;
-background-color: #ffe080; /* フッタの背景色 */
+width: 100%; /* メインカラムの幅 */
 }

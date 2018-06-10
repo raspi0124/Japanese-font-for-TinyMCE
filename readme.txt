@@ -77,3 +77,4 @@ Version 3.5-beta2: Bug fixed for option page
 Version 3.5-beta3: from now on, the font load mode is not only apply to front-end editor, but also applys to css.
 Version 3.6: Deleted some option from option page. Now ready for gutenberg classic editor. I will be continue working on addinf japanese font to gutenberg!
 Version 3.7: Fixed design for option page, and added option to select either load css in header or footer.
+Version 3.8: Support for Gutenberg now available! (beta) and setdting page has been changed a bit.
