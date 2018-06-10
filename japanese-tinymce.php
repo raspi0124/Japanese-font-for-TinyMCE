@@ -2,7 +2,7 @@
 /*
 Plugin Name: Japanese font for TinyMCE
 Description: Add Japanese font to TinyMCE Advanced plugin's font family selections..
-Version: 3.7
+Version: 3.8
 Author: raspi0124
 Author URI: https://raspi-diary.com/
 License: GPL2
@@ -51,6 +51,18 @@ $config1 = get_option( 'tinyjpfont_check_cdn' );
 $config2 = get_option( 'tinyjpfont_select' );
 $config3 = get_option( 'tinyjpfont_gutenberg' );
 $config4 = get_option( 'tinyjpfont_head' );
+
+//update notification
+function tinyjpfont_update() {
+    ?>
+    <div class="notice notice-success is-dismissible">
+        <p>Japanese font for TinyMCEが3.8にアップデートされました！アップデート内容は以下のとおりです！
+          <br>・Gutenberg対応モードが追加されました(beta)<br>・アップデートについての通知機能(今見てるやつです。)<br></p>
+    </div>
+    <?php
+}
+add_action( 'admin_notices', 'tinyjpfont_update' );
+
 
 // setting <Version 3.5-beta3>
 
@@ -284,7 +296,7 @@ function tinyjpfont_options_page() {
         update_option('tinyjpfont_check_noto', $tinyjpfont_check_noto);
 
         $tinyjpfont_gutenberg = isset($_POST['tinyjpfont_gutenberg']) ? 1 : 0;
-        update_option('tinyjpfont_check_noto', $tinyjpfont_gutenberg);
+        update_option('tinyjpfont_gutenberg', $tinyjpfont_gutenberg);
     }
 ?>
 
@@ -306,6 +318,11 @@ function tinyjpfont_options_page() {
 <!-- メインカラム開始 -->
 <div id="content">
   <h2>Japanese Font for TinyMCE</h2>
+  <?php
+  $stylesheet_url = plugin_dir_url( __FILE__ ) . 'addfont.css';
+   ?>
+   <link rel="stylesheet" href= <?php $stylesheet_url; ?> >
+
   <?php
       // 更新完了を通知
       if (isset($_POST['tinyjpfont_select'])) {

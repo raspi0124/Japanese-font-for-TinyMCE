@@ -15,6 +15,7 @@ Font to be added；<br>
 <a href="https://www.google.com/get/noto/#sans-jpan">Noto Sans Japanese</a><br>
 <a href="http://tanukifont.com/esenapaj/">エセナパJ</a><br>
 <a href="http://font.gloomy.jp/honoka-maru-gothic-dl.html">ほのか丸ゴシック</a><br>
+and more..
 And If you want more font,please post a comment to page below.<br>
 <br>
 Please see <a href="http://raspi-diary.com/wordpress%e3%81%ae%e3%82%a8%e3%83%87%e3%82%a3%e3%82%bf%e3%81%ab%e6%97%a5%e6%9c%ac%e8%aa%9e%e3%83%95%e3%82%a9%e3%83%b3%e3%83%88%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b%e3%83%97%e3%83%a9%e3%82%b0/">here</a> for more infomation.(Japanese)<br>
@@ -41,7 +42,7 @@ Version beta-10 ;I finally made it! I added エセナパJ (EsenapaJ) font! Enjoy
 Version 0.1 ;Finally, I made it! I updated this plugin to stable verdsion! With multi site support and compatible with WordPress version 4.7,4.8 and 4.9! Enjoy!
 Version 0.2;Fixed bug temporary(temporary repair again..)
 Version 0.3;FIxed bug and added logo for this plugin!
-Version 0.4;Fixed an important bug! 
+Version 0.4;Fixed an important bug!
 Version 0.5;... fixing bug again.. this is temporally repair. it's goin to work, but we still need to fix them..
 Version 0.6; \Bug fixed
 Version 0.7; I think all bug is fixed now. in next time, I will add font!
@@ -74,3 +75,5 @@ Version 3.01: bug fixed.
 Version 3.5-beta1: added 3 font and beta option page.
 Version 3.5-beta2: Bug fixed for option page
 Version 3.5-beta3: from now on, the font load mode is not only apply to front-end editor, but also applys to css.
+Version 3.6: Deleted some option from option page. Now ready for gutenberg classic editor. I will be continue working on addinf japanese font to gutenberg!
+Version 3.7: Fixed design for option page, and added option to select either load css in header or footer.
