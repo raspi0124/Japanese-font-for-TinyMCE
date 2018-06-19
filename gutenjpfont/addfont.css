@@ -7,6 +7,6 @@
         url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.otf) format('opentype');
 }
 /*ご丁寧にGutenbergが割り込みしてNoto Serifをロードしてくるので対策。*/
- .wp-block-gutenjpfont-noto {
+ .wp-block-tinyjpfont-noto {
     font-family: Noto Sans Japanese !important;
 }

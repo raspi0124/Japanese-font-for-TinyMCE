@@ -4,7 +4,7 @@ var el = wp.element.createElement,
     registerBlockType = wp.blocks.registerBlockType,
     RichText = wp.editor.RichText;
 
-registerBlockType( 'gutenjpfont/noto', {
+registerBlockType( 'tinyjpfont/noto', {
     title: 'Noto Sans Japanese フォント',
 
     icon: 'dashicons-editor-textcolor',

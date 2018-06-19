@@ -2,7 +2,7 @@
 /*
 Plugin Name: Japanese font for TinyMCE
 Description: Add Japanese font to TinyMCE Advanced plugin's font family selections..
-Version: 3.8
+Version: 3.85
 Author: raspi0124
 Author URI: https://raspi-diary.com/
 License: GPL2
@@ -51,20 +51,6 @@ $config1 = get_option( 'tinyjpfont_check_cdn' );
 $config2 = get_option( 'tinyjpfont_select' );
 $config3 = get_option( 'tinyjpfont_gutenberg' );
 $config4 = get_option( 'tinyjpfont_head' );
-$isshown = get_option( 'tinyjpfont_isshown' ); #Check if update notice has already been shown.
-function tinyjpfont_update() {
-    ?>
-    <div class="notice notice-success is-dismissible">
-        <p>Japanese font for TinyMCEが3.8にアップデートされました！アップデート内容は以下のとおりです！
-          <br>・Gutenberg対応モードが追加されました(beta)<br>・アップデートについての通知機能(今見てるやつです。)<br></p>
-    </div>
-    <?php
-}
-if ($version != $isshown) {
-  add_action( 'admin_notices', 'tinyjpfont_update' );
-  update_option('tinyjpfont_isshown', $version);
-}else {#do nothing when already notified.
-}
 
 
 // setting <Version 3.5-beta3>
@@ -253,7 +239,7 @@ function tinyjpfont_add_pages()
 {
     // プラグインのスラグ名はユニークならなんでも良い
     // /plugin/tinyjpfont/japanese-tinymce.phpに置いているので
-    $tinyjpfont_plugin_slug = plugin_basename(__FILE__);
+    $tinyjpfont_plugin_slug = "tinyjpfont";
 
     // トップレベルにオリジナルのメニューを追加
     add_menu_page('Japanese Font for TinyMCEの設定', 'Japanese Font for TinyMCEの設定', 'manage_options',
