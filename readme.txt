@@ -6,10 +6,10 @@ Tested up to: 5.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Add Japanese font to TinyMCE Advanced plugin's font family selections.
+Add Japanese font to both Gutenberg and TinyMCE Advanced plugin's font family selections.
 
 == Description ==
-Add Japanese font to TinyMCE Advanced plugin's font family selections.<br>
+Add Japanese font to both Gutenberg and TinyMCE Advanced plugin's font family selections.<br>
 Font to be added；<br>
 <a href="http://hp.vector.co.jp/authors/VA039499/#hui">ふい字</a><br>
 <a href="https://www.google.com/get/noto/#sans-jpan">Noto Sans Japanese</a><br>
@@ -78,3 +78,4 @@ Version 3.5-beta3: from now on, the font load mode is not only apply to front-en
 Version 3.6: Deleted some option from option page. Now ready for gutenberg classic editor. I will be continue working on addinf japanese font to gutenberg!
 Version 3.7: Fixed design for option page, and added option to select either load css in header or footer.
 Version 3.8: Support for Gutenberg now available! (beta) and setdting page has been changed a bit.
+Version 3.8.5: Added Huiji to Gutenberg Block!
