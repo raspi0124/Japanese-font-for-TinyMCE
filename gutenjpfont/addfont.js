@@ -50,10 +50,6 @@ registerBlockType( 'tinyjpfont/noto', {
 
 
 
-var el = wp.element.createElement,
-    registerBlockType = wp.blocks.registerBlockType,
-    RichText = wp.editor.RichText;
-
 registerBlockType( 'tinyjpfont/huiji', {
     title: 'ふい字 フォント',
 
