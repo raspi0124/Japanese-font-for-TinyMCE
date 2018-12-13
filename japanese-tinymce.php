@@ -2,7 +2,7 @@
 /*
 Plugin Name: Japanese font for TinyMCE
 Description: Add Japanese font to both Gutenberg and TinyMCE Advanced plugin's font family selections.
-Version: 3.90
+Version: 4.00
 Author: raspi0124
 Author URI: https://raspi-diary.com/
 License: GPL2
