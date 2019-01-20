@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Japanese font for WordPress
+Plugin Name: Japanese font for WordPress (priviously: Japanese Font for TinyMCE)
 Description: Add Japanese font to both Gutenberg and TinyMCE Advanced plugin's font family selections.
 Version: 4.05
 Author: raspi0124
@@ -41,7 +41,7 @@ Temple Place, Suite 330, Boston, MA 02111-1307 USA)。
 For futrher information about licence, please read LICENCE.txt.
 */
 // define $
-$version = "3.9";
+$version = "4.05";
 //1 is enable, 0 is disable unless written.
 // config 1 is CDN
 //conbfig 2 is font load mode
@@ -344,7 +344,7 @@ Japanese Font for WordPressの情報についてはTwitterにて#tinyjpfontの�
           <td><label><input name="tinyjpfont_gutenberg" type="checkbox" id="tinyjpfont_gutenberg" value="1" <?php checked( 1, get_option('tinyjpfont_gutenberg')); ?> /> Gutenbergに対応させる(beta)</label></td><br>
       </tr><br>
       <strong>
-      Gutenberg対応機能は現在beta版です。ちなみにNoto Sans Japaneseとふい字フォントのみ現在サポートしています。
+      Gutenberg対応機能はNoto Sans Japaneseとふい字フォントのみ現在サポートしています。
     </strong>
   </table>
   <?php submit_button(); ?>

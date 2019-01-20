@@ -1,4 +1,4 @@
-=== Japanese font for TinyMCE ===
+=== Japanese font for WordPress(Previously: Japanese Font for TinyMCE) ===
 Contributors: raspi0124
 Tags: TinyMCE,fonts,font,Japanese,JapaneseFont, gutenberg
 Requires at least: 4.7
@@ -6,12 +6,11 @@ Tested up to: 5.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Add Japanese font to TinyMCE Advanced plugin's font family selections.
+Add Japanese font to Gutenberg and TinyMCE Advanced plugin's font family selections.
 
 == Description ==
-Add Japanese font to TinyMCE Advanced plugin's font family selections.<br>
-Currently supports gutenberg as alpha (Curently planning to update this for official gutenberg support at JST 13th of Dec)<br>
-Gutenberg対応正式アップデートを日本時間12月13日から14日にかけて実行する予定です。<br>
+Add Japanese font to Gutenberg and TinyMCE Advanced plugin's font family selections.<br>
+Now supports Gutenberg as option. Please enable gutenberg option in order to use it
 Font to be added；<br>
 <a href="http://hp.vector.co.jp/authors/VA039499/#hui">ふい字</a><br>
 <a href="https://www.google.com/get/noto/#sans-jpan">Noto Sans Japanese</a><br>
