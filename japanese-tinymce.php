@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Japanese font for TinyMCE
+Plugin Name: Japanese font for WordPress
 Description: Add Japanese font to both Gutenberg and TinyMCE Advanced plugin's font family selections.
 Version: 4.00
 Author: raspi0124
@@ -242,7 +242,7 @@ function tinyjpfont_add_pages()
     $tinyjpfont_plugin_slug = "tinyjpfont";
 
     // トップレベルにオリジナルのメニューを追加
-    add_menu_page('Japanese Font for TinyMCEの設定', 'Japanese Font for TinyMCEの設定', 'manage_options',
+    add_menu_page('Japanese Font for WordPressの設定', 'Japanese Font for WordPressの設定', 'manage_options',
         $tinyjpfont_plugin_slug,
         'tinyjpfont_options_page',
         plugins_url('icon.png', __FILE__)
@@ -294,12 +294,12 @@ function tinyjpfont_options_page() {
 <div id="wrap">
 
 <div id="nav">
-Japanese Font for TinyMCEの情報についてはTwitterにて#tinyjpfontのハッシュタグでたまーにツイートしています。<br>
+Japanese Font for WordPressの情報についてはTwitterにて#tinyjpfontのハッシュタグでたまーにツイートしています。<br>
 あとよろしければ <a href="https://twitter.com/raspi0124">作者のTwitter</a>もフォローお願いします!<br><br>
 なお、このプラグインの次を決める <a href="https://docs.google.com/forms/d/e/1FAIpQLSd_PLkuRGr-NcXQ1Jq36xru73WvvbmyCm0QjFH92pJ14yQQjQ/viewform?usp=send_form">アンケートフォーム</a>も公開中！よろしければ要望等どうぞ！<br>
 
 </div>
-  <h2>Japanese Font for TinyMCE</h2>
+  <h2>Japanese Font for WordPress</h2>
    <link rel="stylesheet" href= "https://cdn.rawgit.com/raspi0124/Japanese-font-for-TinyMCE/stable/admin.css">
 <div id="content">
   <?php
