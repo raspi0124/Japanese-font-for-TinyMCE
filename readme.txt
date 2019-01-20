@@ -82,3 +82,4 @@ Version 3.7: Fixed design for option page, and added option to select either loa
 Version 3.8: Support for Gutenberg now available! (beta) and setdting page has been changed a bit.
 Version 3.85: Fixed important bug caused by version 3.8, missing function availability check.
 Version 4.00: Official support for gutenberg. Thanks to @ahmadawais, the author of create-guten-block tool.
+Version 4.05: Rewrited plugin's name, icon.
