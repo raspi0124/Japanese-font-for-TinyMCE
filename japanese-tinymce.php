@@ -59,7 +59,7 @@ $config4 = get_option( 'tinyjpfont_head' );
 if( $config1 == "1" and $config2 == "0"){
 // enque CSS at CDN
 function tinyjpfont_style() {
-    wp_register_style( 'tinyjpfont-styles', 'https://cdn.rawgit.com/raspi0124/Japanese-font-for-TinyMCE/stable/addfont.css' );
+    wp_register_style( 'tinyjpfont-styles', 'https://cdn.jsdelivr.net/gh/raspi0124/Japanese-font-for-TinyMCE@stable/addfont.css' );
     wp_enqueue_style( 'tinyjpfont-styles' );
 }
 //もしheader読み込みだったら
@@ -76,7 +76,7 @@ else {
 if ( $config1 == "1" and $config2 == "1") {
 // enque Lite version of CSS at CDNs
 function tinyjpfont_style() {
-    wp_register_style( 'tinyjpfont-styles', 'https://cdn.rawgit.com/raspi0124/Japanese-font-for-TinyMCE/stable/addfont_lite.css' );
+    wp_register_style( 'tinyjpfont-styles', 'https://cdn.jsdelivr.net/gh/raspi0124/Japanese-font-for-TinyMCE@stable/addfont_lite.css' );
     wp_enqueue_style( 'tinyjpfont-styles' );
 }
 if ( $config4 ==  "0") {
@@ -300,7 +300,7 @@ Japanese Font for WordPressの情報についてはTwitterにて#tinyjpfontの�
 
 </div>
   <h2>Japanese Font for WordPress</h2>
-   <link rel="stylesheet" href= "https://cdn.rawgit.com/raspi0124/Japanese-font-for-TinyMCE/stable/admin.css">
+   <link rel="stylesheet" href= "https://cdn.jsdelivr.net/gh/raspi0124/Japanese-font-for-TinyMCE@stable/admin.css">
 <div id="content">
   <?php
       // 更新完了を通知
