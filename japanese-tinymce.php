@@ -66,10 +66,7 @@ function tinyjpfont_notify_cdn_change()
 	$html .= '    <span class="screen-reader-text">閉じる</span>';
 	$html .= '  </button>';
 	$html .= '</div>';
-
-if (current_user_can('administrator')) {
-			echo $html;
-}
+	echo $html;
 }
 add_action( 'admin_notices', 'tinyjpfont_notify_cdn_change' );
 
