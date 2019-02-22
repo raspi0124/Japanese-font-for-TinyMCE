@@ -2,7 +2,7 @@
 /*
 Plugin Name: Japanese font for WordPress (priviously: Japanese Font for TinyMCE)
 Description: Add Japanese font to both Gutenberg and TinyMCE Advanced plugin's font family selections.
-Version: 4.05
+Version: 4.10
 Author: raspi0124
 Author URI: https://raspi-diary.com/
 License: GPL2
@@ -41,7 +41,7 @@ Temple Place, Suite 330, Boston, MA 02111-1307 USA)。
 For futrher information about licence, please read LICENCE.txt.
 */
 // define $
-$version = "4.05";
+$version = "4.10";
 //1 is enable, 0 is disable unless written.
 // config 1 is CDN
 //conbfig 2 is font load mode
@@ -51,6 +51,27 @@ $config1 = get_option( 'tinyjpfont_check_cdn' );
 $config2 = get_option( 'tinyjpfont_select' );
 $config3 = get_option( 'tinyjpfont_gutenberg' );
 $config4 = get_option( 'tinyjpfont_head' );
+
+//Notice
+function tinyjpfont_notify_cdn_change()
+{
+	if ( $version != '4.10' ) {
+		return;
+	}
+
+
+	$html  = '<div class="error notice is-dismissible">';
+	$html .= '  <p>Japanese Font for TinyMCEからのお知らせ:<br>いままでフォントやCSSのロードに使用していたRawgitのサービス終了に伴い<a href="https://www.jsdelivr.com/">jsdelivr</a>からのロードに切り替えました。不具合がありましたらご報告お願いします</p>';
+	$html .= '  <button type="button" class="notice-dismiss">';
+	$html .= '    <span class="screen-reader-text">閉じる</span>';
+	$html .= '  </button>';
+	$html .= '</div>';
+
+if (current_user_can('administrator')) {
+			echo $html;
+}
+}
+add_action( 'admin_notices', 'tinyjpfont_notify_cdn_change' );
 
 
 // setting <Version 3.5-beta3>
@@ -326,7 +347,7 @@ Japanese Font for WordPressの情報についてはTwitterにて#tinyjpfontの�
           <th scope="row"><label for="tinyjpfont_check_cdn"><h3>CDNモード (CSSもCDNから読み込むようになります)</h3></label></th><br>
           <td><label><input name="tinyjpfont_check_cdn" type="checkbox" id="tinyjpfont_check_cdn" value="1" <?php checked( 1, get_option('tinyjpfont_check_cdn')); ?> /> CSSをCDNから読み込む</label></td><br>
       </tr>
-  		<strong>CDNはrawgitという無料サービスを使用しています。おそらく不安定なため不安な方はチェックボックスを外しておきましょう。</strong>
+  		<strong>CDNはjsdelivrという無料サービスを使用しています。日本国内でのロード速度に自信があるようでしたらチェックボックスはオフにしましょう</strong>
       <tr>
       	<th scope="row">
   				<label for="tinyjpfont_head"><h3>読み込み場所指定モード</h3></label></th><br>

@@ -2,7 +2,7 @@
 Contributors: raspi0124
 Tags: TinyMCE,fonts,font,Japanese,JapaneseFont, gutenberg
 Requires at least: 4.7
-Tested up to: 5.0.3
+Tested up to: 5.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -82,3 +82,4 @@ Version 3.8: Support for Gutenberg now available! (beta) and setdting page has b
 Version 3.85: Fixed important bug caused by version 3.8, missing function availability check.
 Version 4.00: Official support for gutenberg. Thanks to @ahmadawais, the author of create-guten-block tool.
 Version 4.05: Rewrited plugin's name, icon.
+Version 4.10: Changed all CDN url from rawgit to jsdelivr since rawgit is now closing service
