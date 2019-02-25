@@ -53,22 +53,26 @@ $config3 = get_option( 'tinyjpfont_gutenberg' );
 $config4 = get_option( 'tinyjpfont_head' );
 
 //Notice
-function tinyjpfont_notify_cdn_change()
-{
-	if ( $version != '4.10' ) {
-		return;
+
+function tinyjpfont_notify_cdn_change__render_notice( $message = '', $classes = 'notice-success' ) {
+	if ( ! empty( $message ) ) {
+		printf( '<div class="notice %2$s">%1$s</div>', $message, $classes );
 	}
-
-
-	$html  = '<div class="error notice is-dismissible">';
-	$html .= '  <p>Japanese Font for TinyMCEからのお知らせ:<br>いままでフォントやCSSのロードに使用していたRawgitのサービス終了に伴い<a href="https://www.jsdelivr.com/">jsdelivr</a>からのロードに切り替えました。不具合がありましたらご報告お願いします</p>';
-	$html .= '  <button type="button" class="notice-dismiss">';
-	$html .= '    <span class="screen-reader-text">閉じる</span>';
-	$html .= '  </button>';
-	$html .= '</div>';
-	echo $html;
 }
-add_action( 'admin_notices', 'tinyjpfont_notify_cdn_change' );
+
+
+function tinyjpfont_notify_cdn_change() {
+	$maybe_display_notice = get_option( 'tinyjpfont_notify_cdn_change__status', 'activating' );
+	if ( current_user_can( 'manage_options' ) ) {
+		add_action( 'admin_notices', function() {
+
+			$message = sprintf( '<p><strong>Japanese Font for WordPressからのお知らせ:<br>Japanese Font for WordPressは今までCSSや一部のフォントの配信に使用していたRawgitのサービス終了に伴いjsdelivrからの配信に切り替えたためこれをお知らせします。<br>詳しくは<a href="https://raspi-diary.com/post-4241/">をご覧ください。 </a></strong></p>');
+			tinyjpfont_notify_cdn_change__render_notice( $message, 'notice-info is-dismissible' );
+		} );
+		update_option( 'tinyjpfont_notify_cdn_change__status', 'activated' );
+	}
+}
+add_action( 'init', 'tinyjpfont_notify_cdn_change' );
 
 
 // setting <Version 3.5-beta3>
@@ -318,6 +322,7 @@ Japanese Font for WordPressの情報についてはTwitterにて#tinyjpfontの�
 
 </div>
   <h2>Japanese Font for WordPress</h2>
+	<h3>Japanese Font for WordPressからのお知らせ:<br>Japanese Font for WordPressは今までCSSや一部のフォントの配信に使用していたRawgitのサービス終了に伴いjsdelivrからの配信に切り替えたためこれをお知らせします。<br>詳しくは<a href="https://raspi-diary.com/post-4241/">をご覧ください。<h3>
    <link rel="stylesheet" href= "https://cdn.jsdelivr.net/gh/raspi0124/Japanese-font-for-TinyMCE@stable/admin.css">
 <div id="content">
   <?php
