@@ -83,3 +83,5 @@ Version 3.85: Fixed important bug caused by version 3.8, missing function availa
 Version 4.00: Official support for gutenberg. Thanks to @ahmadawais, the author of create-guten-block tool.
 Version 4.05: Rewrited plugin's name, icon.
 Version 4.10: Changed all CDN url from rawgit to jsdelivr since rawgit is now closing service
+Version 4.15: Fixed bug reported by "一斗缶", closing h3 tag and link tag on setting page.
+Version 4.16: Fixed bug caused by optimization done at version 4.15
