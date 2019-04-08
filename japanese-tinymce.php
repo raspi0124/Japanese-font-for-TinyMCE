@@ -2,7 +2,7 @@
 /*
 Plugin Name: Japanese font for WordPress (priviously: Japanese Font for TinyMCE)
 Description: Add Japanese font to both Gutenberg and TinyMCE Advanced plugin's font family selections.
-Version: 4.16
+Version: 4.17
 Author: raspi0124
 Author URI: https://raspi-diary.com/
 License: GPL2
@@ -47,7 +47,7 @@ https://wpdocs.osdn.jp/Settings_API
 Gutenberg版はgutenjpfont/gutenjpfont.phpをご覧ください
 */
 // define $
-$version = "4.10";
+$version = "4.17";
 //1 is enable, 0 is disable unless written.
 // config 1 is CDN
 //conbfig 2 is font load mode

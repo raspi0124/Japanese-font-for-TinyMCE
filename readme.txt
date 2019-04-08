@@ -85,3 +85,4 @@ Version 4.05: Rewrited plugin's name, icon.
 Version 4.10: Changed all CDN url from rawgit to jsdelivr since rawgit is now closing service
 Version 4.15: Fixed bug reported by "一斗缶", closing h3 tag and link tag on setting page.
 Version 4.16: Fixed bug caused by optimization done at version 4.15
+Version 4.17: Fixed looping noticing bug.
