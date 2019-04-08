@@ -57,26 +57,32 @@ $config1 = get_option( 'tinyjpfont_check_cdn' );
 $config2 = get_option( 'tinyjpfont_select' );
 $config3 = get_option( 'tinyjpfont_gutenberg' );
 $config4 = get_option( 'tinyjpfont_head' );
-
+$defaultvalue = "0"
 //Notice
 
-function tinyjpfont_notify_cdn_change__render_notice( $message = '', $classes = 'notice-success' ) {
+function tinyjpfont_notify( $message = '', $classes = 'notice-success' ) {
 	if ( ! empty( $message ) ) {
 		printf( '<div class="notice %2$s">%1$s</div>', $message, $classes );
 	}
 }
 
-
+$isknown = get_option( 'isknown' );
+if ($isknown == ""){
+	update_option('tinyjpfont_cdn_change_notice', $defaultvalue);
+};
 function tinyjpfont_notify_cdn_change() {
-	$maybe_display_notice = get_option( 'tinyjpfont_notify_cdn_change__status', 'activating' );
+	if ($isknown == "0"){
 	if ( current_user_can( 'manage_options' ) ) {
 		add_action( 'admin_notices', function() {
 
-			$message = sprintf( '<p><strong>Japanese Font for WordPressからのお知らせ:<br>Japanese Font for WordPressは今までCSSや一部のフォントの配信に使用していたRawgitのサービス終了に伴いjsdelivrからの配信に切り替えたためこれをお知らせします。<br>詳しくは<a href="https://raspi-diary.com/post-4241/">をご覧ください。 </a></strong></p>');
-			tinyjpfont_notify_cdn_change__render_notice( $message, 'notice-info is-dismissible' );
+			$message = sprintf( '<p><strong>Japanese Font for WordPressからのお知らせ:<br>Japanese Font for WordPressは今までCSSや一部のフォントの配信に使用していたRawgitのサービス終了に伴いjsdelivrからの配信に切り替えたためこれをお知らせします。<br>詳しくは<a href="https://raspi-diary.com/post-4241/">こちら</aをご覧ください。 </a></strong></p>');
+			tinyjpfont_notify( $message, 'notice-info is-dismissible' );
 		} );
-		update_option( 'tinyjpfont_notify_cdn_change__status', 'activated' );
+		update_option( 'tinyjpfont_cdn_change_notice', '1' );
 	}
+}else {
+	
+}
 }
 add_action( 'init', 'tinyjpfont_notify_cdn_change' );
 
@@ -190,25 +196,6 @@ else {
 add_filter('tiny_mce_before_init', 'tinyjpfont_load_custom_fonts');
 }
 
-//add non-tinymce support
-//ビジュアルエディターのフォントサイズ変更機能の文字サイズ指定
-add_filter( 'tiny_mce_before_init', function ($settings) {
-    //フォントサイズの指定
-  $settings['fontsize_formats'] =
-      '10px 12px 14px 16px 18px 20px 24px 28px 32px 36px 42px 48px';
-  //$settings['fontsize_formats'] = '0.8em 1.6em 2em 3em';
-  //$settings['fontsize_formats'] = '80% 160% 200% 300%';
-  return $settings;
-} );
-
-//Wordpressビジュアルエディターに文字サイズの変更機能を追加
-add_filter('mce_buttons', function ($buttons){
-    //フォントサイズ変更機能を追加
-  array_push($buttons, 'fontsizeselect');
-  return $buttons;
-});
-//finish
-
 
 
 //add font selection to quicktag also<alpha>
@@ -298,23 +285,6 @@ function tinyjpfont_options_page() {
         $tinyjpfont_gutenberg = isset($_POST['tinyjpfont_gutenberg']) ? 1 : 0;
         update_option('tinyjpfont_check_noto', $tinyjpfont_gutenberg);
     }
-    if (isset($_POST['tinyjpfont_check_cdn'])) {
-
-        update_option('tinyjpfont_select', $_POST['tinyjpfont_select']);
-				update_option('tinyjpfont_head', $_POST['tinyjpfont_head']);
-        // チェックボックスはチェックされないとキーも受け取れないので、ない時は0にする
-        $tinyjpfont_checkbox = isset($_POST['tinyjpfont_checkbox']) ? 1 : 0;
-        update_option('tinyjpfont_checkbox', $tinyjpfont_checkbox);
-
-        $tinyjpfont_check_cdn = isset($_POST['tinyjpfont_check_cdn']) ? 1 : 0;
-        update_option('tinyjpfont_check_cdn', $tinyjpfont_check_cdn);
-
-        $tinyjpfont_check_noto = isset($_POST['tinyjpfont_check_noto']) ? 1 : 0;
-        update_option('tinyjpfont_check_noto', $tinyjpfont_check_noto);
-
-        $tinyjpfont_gutenberg = isset($_POST['tinyjpfont_gutenberg']) ? 1 : 0;
-        update_option('tinyjpfont_gutenberg', $tinyjpfont_gutenberg);
-    }
 ?>
 </head>
 <body>
@@ -349,7 +319,7 @@ Japanese Font for WordPressの情報についてはTwitterにて#tinyjpfontの�
           </td>
       </tr><br>
   		<strong>
-      フォントロードNormalは指定したフォントを読み込みます。Liteを指定した場合最低限のフォントのみ読み込まれるようになります。
+      フォントロードNormalは指定したフォントを読み込みます。Liteを指定した場合最低限のフォント(ふい字、Noto Sans Japanese)のみ読み込まれるようになります。
   	</strong>
       <tr>
           <th scope="row"><label for="tinyjpfont_check_cdn"><h3>CDNモード (CSSもCDNから読み込むようになります)</h3></label></th><br>
@@ -380,12 +350,10 @@ Japanese Font for WordPressの情報についてはTwitterにて#tinyjpfontの�
   </form>
 
 </div>
-<!-- メインカラム終了 -->
 
 
 
 </div>
-<!-- コンテナ終了 -->
 
 </body>
 </html>
