@@ -57,7 +57,7 @@ $config1 = get_option( 'tinyjpfont_check_cdn' );
 $config2 = get_option( 'tinyjpfont_select' );
 $config3 = get_option( 'tinyjpfont_gutenberg' );
 $config4 = get_option( 'tinyjpfont_head' );
-$defaultvalue = "0"
+$defaultvalue = "0";
 //Notice
 
 function tinyjpfont_notify( $message = '', $classes = 'notice-success' ) {
@@ -81,7 +81,7 @@ function tinyjpfont_notify_cdn_change() {
 		update_option( 'tinyjpfont_cdn_change_notice', '1' );
 	}
 }else {
-	
+
 }
 }
 add_action( 'init', 'tinyjpfont_notify_cdn_change' );
