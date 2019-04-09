@@ -44,7 +44,8 @@ http://www.de2p.co.jp/tech/wordpress/admin-notices/
 http://learn.wpeditpro.com/adding-new-wordpress-tinymce-fonts/
 https://nelog.jp/add-quicktags-to-wordpress-text-editor
 https://wpdocs.osdn.jp/Settings_API
-Gutenberg版はgutenjpfont/gutenjpfont.phpをご覧ください
+https://nelog.jp/wordpress-visual-editor-font-size
+Gutenberg版で参考になった記事についてははgutenjpfont/gutenjpfont.phpをご覧ください
 */
 // define $
 $version = "4.17";
@@ -196,6 +197,22 @@ else {
 add_filter('tiny_mce_before_init', 'tinyjpfont_load_custom_fonts');
 }
 
+
+add_filter( 'tiny_mce_before_init', function ($settings) {
+    //フォントサイズの指定
+  $settings['fontsize_formats'] =
+      '10px 12px 14px 16px 18px 20px 24px 28px 32px 36px 42px 48px';
+
+  return $settings;
+} );
+
+//also add some font size selecting function for non-tinymce-advanced user.
+//https://nelog.jp/wordpress-visual-editor-font-size
+add_filter('mce_buttons', function ($buttons){
+  array_push($buttons, 'fontsizeselect');
+  return $buttons;
+});
+//finish
 
 
 //add font selection to quicktag also<alpha>
