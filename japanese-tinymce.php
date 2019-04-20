@@ -290,9 +290,6 @@ function tinyjpfont_options_page() {
         update_option('tinyjpfont_select', $_POST['tinyjpfont_select']);
 				update_option('tinyjpfont_head', $_POST['tinyjpfont_head']);
         // チェックボックスはチェックされないとキーも受け取れないので、ない時は0にする
-        $tinyjpfont_checkbox = isset($_POST['tinyjpfont_checkbox']) ? 1 : 0;
-        update_option('tinyjpfont_checkbox', $tinyjpfont_checkbox);
-
         $tinyjpfont_check_cdn = isset($_POST['tinyjpfont_check_cdn']) ? 1 : 0;
         update_option('tinyjpfont_check_cdn', $tinyjpfont_check_cdn);
 
@@ -300,7 +297,7 @@ function tinyjpfont_options_page() {
         update_option('tinyjpfont_check_noto', $tinyjpfont_check_noto);
 
         $tinyjpfont_gutenberg = isset($_POST['tinyjpfont_gutenberg']) ? 1 : 0;
-        update_option('tinyjpfont_check_noto', $tinyjpfont_gutenberg);
+        update_option('tinyjpfont_gutenberg', $tinyjpfont_gutenberg);
     }
 ?>
 </head>
