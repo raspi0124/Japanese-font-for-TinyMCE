@@ -59,6 +59,7 @@ $config2 = get_option( 'tinyjpfont_select' );
 $config3 = get_option( 'tinyjpfont_gutenberg' );
 $config4 = get_option( 'tinyjpfont_head' );
 $defaultvalue = "0";
+$isknown = "";
 //Notice
 
 function tinyjpfont_notify( $message = '', $classes = 'notice-success' ) {
