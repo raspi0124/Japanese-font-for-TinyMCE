@@ -5,7 +5,7 @@ Description: Add Japanese font to both Gutenberg and TinyMCE Advanced plugin's f
 Version: 4.19
 Author: raspi0124
 Author URI: https://raspi-diary.com/
-License: GPL2
+License: GPLv2
 */
 
 /*  Copyright 2017-2019 raspi0124 (email : raspi0124@gmail.com)
@@ -168,33 +168,23 @@ else {
 
 //add font to tiny mce
 if ( $config2 == "0" ) {
-    function tinyjpfont_load_custom_fonts($init) {
-    $stylesheet_url = plugin_dir_url( __FILE__ ) . 'addfont.css';
-    if(empty($init['content_css'])) {
-        $init['content_css'] = $stylesheet_url;
-    } else {
-        $init['content_css'] = $init['content_css'].','.$stylesheet_url;
-    }
-    $font_formats = isset($init['font_formats']) ? $init['font_formats'] : 'Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings,zapf dingbats';
     $custom_fonts = ';'.'ふい字=Huifont;Noto Sans Japanese=Noto Sans Japanese;太字なNoto Sans Japanese=Noto Sans Japanese-900;細字なNoto Sans Japanese=Noto Sans Japanese-100;エセナパJ=esenapaj;ほのか丸ゴシック=honokamaru;こころ明朝体=kokorom;青柳衡山フォントT=aoyanagiT;たぬき油性マジック=tanukiM';
-    $init['font_formats'] = $font_formats . $custom_fonts;
-    return $init;
-}
-add_filter('tiny_mce_before_init', 'tinyjpfont_load_custom_fonts');
-}
-else {
-    function tinyjpfont_load_custom_fonts($init) {
-    $stylesheet_url = plugin_dir_url( __FILE__ ) . 'addfont_lite.css';
-    if(empty($init['content_css'])) {
-        $init['content_css'] = $stylesheet_url;
-    } else {
-        $init['content_css'] = $init['content_css'].','.$stylesheet_url;
-    }
-    $font_formats = isset($init['font_formats']) ? $init['font_formats'] : 'Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings,zapf dingbats';
+	}
+else{
     $custom_fonts = ';'.'ふい字=Huifont;Noto Sans Japanese=Noto Sans Japanese;';
-    $init['font_formats'] = $font_formats . $custom_fonts;
-    return $init;
+	}
+
+function tinyjpfont_load_custom_fonts($init) {
+$stylesheet_url = plugin_dir_url( __FILE__ ) . 'addfont.css';
+if(empty($init['content_css'])) {
+		$init['content_css'] = $stylesheet_url;
+} else {
+		$init['content_css'] = $init['content_css'].','.$stylesheet_url;
 }
+$font_formats = isset($init['font_formats']) ? $init['font_formats'] : 'Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings,zapf dingbats';
+$init['font_formats'] = $font_formats . $custom_fonts;
+return $init;
+
 add_filter('tiny_mce_before_init', 'tinyjpfont_load_custom_fonts');
 }
 
@@ -310,6 +300,7 @@ function tinyjpfont_options_page() {
 Japanese Font for WordPressの情報についてはTwitterにて#tinyjpfontのハッシュタグでたまーにツイートしています。<br>
 あとよろしければ <a href="https://twitter.com/raspi0124">作者のTwitter</a>もフォローお願いします!<br><br>
 なお、このプラグインの次を決める <a href="https://docs.google.com/forms/d/e/1FAIpQLSd_PLkuRGr-NcXQ1Jq36xru73WvvbmyCm0QjFH92pJ14yQQjQ/viewform?usp=send_form">アンケートフォーム</a>も公開中！よろしければ要望等どうぞ！<br>
+バグ等発見されましたらraspi0124<@>gmail.comかTwitter(@raspi0124)までお願いいたします。
 
 </div>
   <h2>Japanese Font for WordPress</h2>
