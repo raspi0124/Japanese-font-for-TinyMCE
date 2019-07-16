@@ -70,15 +70,17 @@ function tinyjpfont_notify($message = '', $classes = 'notice-success')
 }
 
 $isknown = get_option('isknown');
-if ($isknown == "") {
+
+if ($isknown == "" || !isset($isknown)) {
 		update_option('tinyjpfont_cdn_change_notice', $defaultvalue);
 };
 function tinyjpfont_notify_cdn_change()
 {
+	$isknown = get_option('isknown');
 		if ($isknown == "0") {
 				if (current_user_can('manage_options')) {
 						add_action('admin_notices', function () {
-								$message = sprintf('<p><strong>Japanese Font for WordPressからのお知らせ:<br>Japanese Font for WordPressは今までCSSや一部のフォントの配信に使用していたRawgitのサービス終了に伴いjsdelivrからの配信に切り替えたためこれをお知らせします。<br>詳しくは<a href="https://raspi-diary.com/post-4241/">こちら</aをご覧ください。 </a></strong></p>');
+								$message = sprintf('<p><strong>Japanese Font for WordPressからのお知らせ:<br>Japanese Font for WordPressは今までCSSや一部のフォントの配信に使用していたRawgitのサービス終了に伴いjsdelivrからの配信に切り替えたためこれをお知らせします。<br>詳しくは<a href="https://raspi-diary.com/post-4241/">こちら</a>をご覧ください。 </a></strong></p>');
 								tinyjpfont_notify($message, 'notice-info is-dismissible');
 						});
 						update_option('tinyjpfont_cdn_change_notice', '1');
@@ -86,7 +88,7 @@ function tinyjpfont_notify_cdn_change()
 		} else {
 		}
 }
-add_action('init', 'tinyjpfont_notify_cdn_change');
+add_action('init', 'tinyjpfont_notify_cdn_change', 10, $isknown);
 
 
 // setting <Version 3.5-beta3>
