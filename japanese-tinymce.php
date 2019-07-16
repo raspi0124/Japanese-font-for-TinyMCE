@@ -88,7 +88,7 @@ function tinyjpfont_notify_cdn_change()
 		} else {
 		}
 }
-add_action('init', 'tinyjpfont_notify_cdn_change', 10, $isknown);
+add_action('init', 'tinyjpfont_notify_cdn_change');
 
 
 // setting <Version 3.5-beta3>
@@ -164,8 +164,9 @@ if ($config3 == "1") {
 }
 
 
-function tinyjpfont_get_custom_fonts($config2)
+function tinyjpfont_get_custom_fonts()
 {
+	$config2 = get_option('tinyjpfont_select');
 		if (!isset($config2)) {
 				$config2 = "0";
 		}
@@ -175,8 +176,10 @@ function tinyjpfont_get_custom_fonts($config2)
 		} else {
 				$custom_fonts = ';'.'ふい字=Huifont;Noto Sans Japanese=Noto Sans Japanese;';
 		}
+		return $custom_fonts;
 }
 
+$seted_custom_fonts = tinyjpfont_get_custom_fonts();
 
 function tinyjpfont_load_custom_fonts($init)
 {
@@ -186,13 +189,19 @@ function tinyjpfont_load_custom_fonts($init)
 		} else {
 				$init['content_css'] = $init['content_css'].','.$stylesheet_url;
 		}
-		$custom_fonts = tinyjpfont_get_custom_fonts();
-		$font_formats = isset($init['font_formats']) ? $init['font_formats'] : 'Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings,zapf dingbats';
+		global $seted_custom_fonts;
+		$custom_fonts = $seted_custom_fonts;
+
+		if (!isset($custom_fonts)) {
+			$custom_fonts = ';'.'ふい字=Huifont;Noto Sans Japanese=Noto Sans Japanese';
+		}
+		$font_formats = isset($init['font_formats']) ? $init['font_formats'] : 'Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings';
 		$init['font_formats'] = $font_formats . $custom_fonts;
 		return $init;
 
 		add_filter('tiny_mce_before_init', 'tinyjpfont_load_custom_fonts');
 }
+add_action('tiny_mce_before_init', 'tinyjpfont_load_custom_fonts');
 
 
 add_filter('tiny_mce_before_init', function ($settings) {
