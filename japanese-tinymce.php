@@ -381,6 +381,18 @@ Japanese Font for WordPressの情報についてはTwitterにて#tinyjpfontの�
 			<strong>
 			Gutenberg対応機能はNoto Sans Japaneseとふい字フォントのみ現在サポートしています。
 		</strong>
+		<tr>
+			<th scope="row"><label for="tinyjpfont_default_font"><h3>デフォルトフォント(beta)</h3></label></th><br>
+				<td>
+					<select name="tinyjpfont_default_font" id="tinyjpfont_default_font">
+							<option value="Noto Sans Japanese" <?php selected("Noto Sans Japanese", get_option('tinyjpfont_default_font')); ?> >Noto Sans Japanese</option>
+							<option value="Huifont" <?php selected("Huifont", get_option('tinyjpfont_default_font')); ?> >ふい字</option>
+							<option value="kokorom" <?php selected("kokorom", get_option('tinyjpfont_default_font')); ?> >こころ明朝体</option>
+					</select>
+				</td>
+			</th>
+		</tr>
+	<br>
 	</table>
 	<?php submit_button(); ?>
 	</form>
