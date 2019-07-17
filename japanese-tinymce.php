@@ -58,6 +58,7 @@ $config1 = get_option('tinyjpfont_check_cdn');
 $config2 = get_option('tinyjpfont_select');
 $config3 = get_option('tinyjpfont_gutenberg');
 $config4 = get_option('tinyjpfont_head');
+$config5 = get_option('tinyjpfont_default_font');
 $defaultvalue = "0";
 $isknown = "";
 //Notice
@@ -267,6 +268,17 @@ function tinyjpfont_add_original_styles_button($buttons)
 {
 		array_splice($buttons, 1, 0, 'fontselect');
 		return $buttons;
+}
+
+//DEFAULT FONT
+$fontname = $config5;
+if (!isset($config5) || $config5 != "") {
+}else{
+$defaultfont_url = plugin_dir_url(__FILE__) . "default-font-css.php?fn={$fontname}";
+function tinyjpfont_add_default_font() {
+	add_editor_style( $defaultfont_url );
+}
+add_action( 'init', 'tinyjpfont_add_default_font' );
 }
 
 //ADD OPTION
