@@ -273,6 +273,12 @@ function tinyjpfont_add_original_styles_button($buttons)
 //DEFAULT FONT
 $fontname = $config5;
 if (!isset($config5) || $config5 != "") {
+    #デフォルトではNoto Sans Japaneseが読まれるようになっている。とりあえずデフォルトフォント設定がなされていない場合は自動的にNoto Sans Japaneseに
+    $defaultfont_url = plugin_dir_url(__FILE__) . "default-font-css.php";
+    function tinyjpfont_add_default_font() {
+        add_editor_style( $defaultfont_url );
+    }
+    add_action( 'init', 'tinyjpfont_add_default_font' );
 }else{
 $defaultfont_url = plugin_dir_url(__FILE__) . "default-font-css.php?fn={$fontname}";
 function tinyjpfont_add_default_font() {
@@ -290,9 +296,7 @@ add_action('admin_menu', 'tinyjpfont_add_pages');
 // メニューを追加する
 function tinyjpfont_add_pages()
 {
-		// プラグインのスラグ名はユニークならなんでも良い
-		// /plugin/tinyjpfont/japanese-tinymce.phpに置いているので
-		$tinyjpfont_plugin_slug = "tinyjpfont";
+        $tinyjpfont_plugin_slug = "tinyjpfont";
 
 		// トップレベルにオリジナルのメニューを追加
 		add_menu_page(
@@ -385,7 +389,7 @@ Japanese Font for WordPressの情報についてはTwitterにて#tinyjpfontの�
 			<th scope="row"><label for="tinyjpfont_default_font"><h3>デフォルトフォント(beta)</h3></label></th><br>
 				<td>
 					<select name="tinyjpfont_default_font" id="tinyjpfont_default_font">
-							<option value="Noto Sans Japanese" <?php selected("Noto Sans Japanese", get_option('tinyjpfont_default_font')); ?> >Noto Sans Japanese</option>
+							<option value="Noto Sans Japanese" <?php selected("noto", get_option('tinyjpfont_default_font')); ?> >Noto Sans Japanese</option>
 							<option value="Huifont" <?php selected("Huifont", get_option('tinyjpfont_default_font')); ?> >ふい字</option>
 							<option value="kokorom" <?php selected("kokorom", get_option('tinyjpfont_default_font')); ?> >こころ明朝体</option>
 					</select>
