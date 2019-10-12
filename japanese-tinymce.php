@@ -269,7 +269,6 @@ function tinyjpfont_add_original_styles_button($buttons)
 		array_splice($buttons, 1, 0, 'fontselect');
 		return $buttons;
 }
-<<<<<<< HEAD
 
 //DEFAULT FONT
 function tinyjpfont_getdefaultfonturl(){
@@ -287,25 +286,6 @@ function tinyjpfont_add_default_font() {
 }
 add_action( 'init', 'tinyjpfont_add_default_font' );
 }
-=======
-
-//DEFAULT FONT
-$fontname = $config5;
-if (!isset($config5) || $config5 != "") {
-    #デフォルトではNoto Sans Japaneseが読まれるようになっている。とりあえずデフォルトフォント設定がなされていない場合は自動的にNoto Sans Japaneseに
-    $defaultfont_url = plugin_dir_url(__FILE__) . "default-font-css.php";
-    function tinyjpfont_add_default_font() {
-        add_editor_style( $defaultfont_url );
-    }
-    add_action( 'init', 'tinyjpfont_add_default_font' );
-}else{
-$defaultfont_url = plugin_dir_url(__FILE__) . "default-font-css.php?fn={$fontname}";
-function tinyjpfont_add_default_font() {
-	add_editor_style( $defaultfont_url );
-}
-add_action( 'init', 'tinyjpfont_add_default_font' );
-}
->>>>>>> a99c351a74046e4d2bfcc0dcab2cae8bbcc7dfbf
 
 //ADD OPTION
 
@@ -345,26 +325,6 @@ function tinyjpfont_options_page()
 				update_option('tinyjpfont_check_noto', $tinyjpfont_check_noto);
 
 				$tinyjpfont_gutenberg = isset($_POST['tinyjpfont_gutenberg']) ? 1 : 0;
-<<<<<<< HEAD
-				update_option('tinyjpfont_gutenberg', $tinyjpfont_gutenberg);
-
-		} ?>
-</head>
-<body>
-
-<div id="wrap">
-	<div id="nav">
-		Japanese Font for WordPressの情報についてはTwitterにて#tinyjpfontのハッシュタグでたまーにツイートしています。<br>
-あとよろしければ <a href="https://twitter.com/raspi0124">作者のTwitter</a>もフォローお願いします!<br><br>
-なお、このプラグインの次を決める <a href="https://docs.google.com/forms/d/e/1FAIpQLSd_PLkuRGr-NcXQ1Jq36xru73WvvbmyCm0QjFH92pJ14yQQjQ/viewform?usp=send_form">アンケートフォーム</a>も公開中！よろしければ要望等どうぞ！<br>
-バグ等発見されましたらraspi0124<@>gmail.comかTwitter(@raspi0124)までお願いいたします。
-
-</div>
-	<h2>Japanese Font for WordPress</h2>
-	<h3>Japanese Font for WordPressからのお知らせ:<br>Japanese Font for WordPressは今までCSSや一部のフォントの配信に使用していたRawgitのサービス終了に伴いjsdelivrからの配信に切り替えたためこれをお知らせします。<br>詳しくは<a href="https://raspi-diary.com/post-4241/">こちら</a>をご覧ください。</h3>
-	 <link rel="stylesheet" href= "https://cdn.jsdelivr.net/gh/raspi0124/Japanese-font-for-TinyMCE@stable/admin.css">
-<div id="content">
-=======
 				update_option('tinyjpfont_gutenberg', $tinyjpfont_gutenberg);
 		} ?>
 </head>
@@ -383,79 +343,11 @@ Japanese Font for WordPressの情報についてはTwitterにて#tinyjpfontの�
 	<h3>Japanese Font for WordPressからのお知らせ:<br>Japanese Font for WordPressは今までCSSや一部のフォントの配信に使用していたRawgitのサービス終了に伴いjsdelivrからの配信に切り替えたためこれをお知らせします。<br>詳しくは<a href="https://raspi-diary.com/post-4241/">こちら</a>をご覧ください。</h3>
 	 <link rel="stylesheet" href= "https://cdn.jsdelivr.net/gh/raspi0124/Japanese-font-for-TinyMCE@stable/admin.css">
 <div id="content">
->>>>>>> a99c351a74046e4d2bfcc0dcab2cae8bbcc7dfbf
 	<?php
 						// 更新完了を通知
 						if (isset($_POST['tinyjpfont_select'])) {
 								echo '<div id="setting-error-settings_updated" class="updated settings-error notice is-dismissible">
 							<p><strong>設定を保存しました。</strong></p></div>';
-<<<<<<< HEAD
-						} ?>
-	<form method="post" action="">
-			<tr>
-					<th scope="row"><h3><label for="tinyjpfont_select">フォントロードモード</label></h3></th><br>
-					<td>
-							<select name="tinyjpfont_select" id="tinyjpfont_select">
-									<option value="0" <?php selected(0, get_option('tinyjpfont_select')); ?> >フォントロードNormal</option>
-									<option value="1" <?php selected(1, get_option('tinyjpfont_select')); ?> >フォントロードLite</option>
-							</select>
-					</td>
-			</tr><br>
-			<strong>
-			フォントロードNormalは指定したフォントを読み込みます。Liteを指定した場合最低限のフォント(ふい字、Noto Sans Japanese)のみ読み込まれるようになります。
-		</strong>
-			<tr>
-					<th scope="row"><label for="tinyjpfont_check_cdn"><h3>CDNモード (CSSもCDNから読み込むようになります)</h3></label></th><br>
-					<td><label><input name="tinyjpfont_check_cdn" type="checkbox" id="tinyjpfont_check_cdn" value="1" <?php checked(1, get_option('tinyjpfont_check_cdn')); ?> /> CSSをCDNから読み込む</label></td><br>
-			</tr>
-			<strong>CDNはjsdelivrという無料サービスを使用しています。日本国内でのロード速度に自信があるようでしたらチェックボックスはオフにしましょう</strong>
-			<tr>
-				<th scope="row">
-					<label for="tinyjpfont_head"><h3>読み込み場所指定モード</h3></label></th><br>
-					<td>
-							<select name="tinyjpfont_head" id="tinyjpfont_head">
-									<option value="0" <?php selected(0, get_option('tinyjpfont_head')); ?> >ヘッダーで読み込む</option>
-									<option value="1" <?php selected(1, get_option('tinyjpfont_head')); ?> >フッターで読み込む</option>
-							</select>
-					</td>
-				</th>
-				<br><strong>テーマの仕様により対応していない場合もあります。</strong>
-			</tr><br>
-			<tr>
-				<th scope="row"><label for="tinyjpfont_gutenberg"><h3>Gutenberg対応モード(beta)</h3></label></th><br>
-					<td><label><input name="tinyjpfont_gutenberg" type="checkbox" id="tinyjpfont_gutenberg" value="1" <?php checked(1, get_option('tinyjpfont_gutenberg')); ?> /> Gutenbergに対応させる(beta)</label></td><br>
-		</tr><br>
-			<strong>
-			Gutenberg対応機能はNoto Sans Japaneseとふい字フォントのみ現在サポートしています。
-		</strong>
-		<tr>
-			<th scope="row"><label for="tinyjpfont_default_font"><h3>デフォルトフォント(beta)</h3></label></th><br>
-				<td>
-					<select name="tinyjpfont_default_font" id="tinyjpfont_default_font">
-							<option value="none" <?php selected("none", get_option('tinyjpfont_default_font')); ?> >デフォルト</option>
-							<option value="Noto Sans Japanese" <?php selected("Noto Sans Japanese", get_option('tinyjpfont_default_font')); ?> >Noto Sans Japanese</option>
-							<option value="Huifont" <?php selected("Huifont", get_option('tinyjpfont_default_font')); ?> >ふい字</option>
-							<option value="kokorom" <?php selected("kokorom", get_option('tinyjpfont_default_font')); ?> >こころ明朝体</option>
-					</select>
-				</td>
-			</th>
-		</tr>
-	<br>
-	</table>
-	<?php submit_button(); ?>
-	</form>
-このプラグインは膨大な時間をフォントの作成に捧げたフォントの作成者様達なしでは成り立ちませんでした。略式となりますがこの場にて感謝申し上げたいと思います。<br>
-こちらに自分がわかるかぎりのすべてのフォント作成者様の連絡先、寄付先を載せておりますのでよろしければそちらもご覧ください。
-</div>
-
-
-
-</div>
-
-</body>
-</html>
-
-=======
 						} ?>
 	<form method="post" action="">
 			<tr>
@@ -519,6 +411,5 @@ Japanese Font for WordPressの情報についてはTwitterにて#tinyjpfontの�
 </body>
 </html>
 
->>>>>>> a99c351a74046e4d2bfcc0dcab2cae8bbcc7dfbf
 <?php
 }
