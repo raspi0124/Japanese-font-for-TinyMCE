@@ -271,12 +271,18 @@ function tinyjpfont_add_original_styles_button($buttons)
 }
 
 //DEFAULT FONT
-$fontname = $config5;
-if (!isset($config5) || $config5 != "") {
-}else{
-$defaultfont_url = plugin_dir_url(__FILE__) . "default-font-css.php?fn={$fontname}";
+function tinyjpfont_getdefaultfonturl(){
+	$fontname = $config5;
+	if (!isset($config5) || $config5 != "") {
+	}else{
+	$defaultfont_url = plugin_dir_url(__FILE__) . "default-font-css.php?fn={$fontname}";
+}
 function tinyjpfont_add_default_font() {
+	$defaultfont_url = tinyjpfont_getdefaultfonturl();
+	if (isset($config5) || $config5 == "") {
 	add_editor_style( $defaultfont_url );
+}else {
+}
 }
 add_action( 'init', 'tinyjpfont_add_default_font' );
 }
@@ -312,6 +318,7 @@ function tinyjpfont_options_page()
 		if (isset($_POST['tinyjpfont_select'])) {
 				update_option('tinyjpfont_select', $_POST['tinyjpfont_select']);
 				update_option('tinyjpfont_head', $_POST['tinyjpfont_head']);
+				update_option('tinyjpfont_default_font', $_POST['tinyjpfont_default_font']);
 				// チェックボックスはチェックされないとキーも受け取れないので、ない時は0にする
 				$tinyjpfont_check_cdn = isset($_POST['tinyjpfont_check_cdn']) ? 1 : 0;
 				update_option('tinyjpfont_check_cdn', $tinyjpfont_check_cdn);
@@ -321,14 +328,14 @@ function tinyjpfont_options_page()
 
 				$tinyjpfont_gutenberg = isset($_POST['tinyjpfont_gutenberg']) ? 1 : 0;
 				update_option('tinyjpfont_gutenberg', $tinyjpfont_gutenberg);
+
 		} ?>
 </head>
 <body>
 
 <div id="wrap">
-
-<div id="nav">
-Japanese Font for WordPressの情報についてはTwitterにて#tinyjpfontのハッシュタグでたまーにツイートしています。<br>
+	<div id="nav">
+		Japanese Font for WordPressの情報についてはTwitterにて#tinyjpfontのハッシュタグでたまーにツイートしています。<br>
 あとよろしければ <a href="https://twitter.com/raspi0124">作者のTwitter</a>もフォローお願いします!<br><br>
 なお、このプラグインの次を決める <a href="https://docs.google.com/forms/d/e/1FAIpQLSd_PLkuRGr-NcXQ1Jq36xru73WvvbmyCm0QjFH92pJ14yQQjQ/viewform?usp=send_form">アンケートフォーム</a>も公開中！よろしければ要望等どうぞ！<br>
 バグ等発見されましたらraspi0124<@>gmail.comかTwitter(@raspi0124)までお願いいたします。
@@ -385,6 +392,7 @@ Japanese Font for WordPressの情報についてはTwitterにて#tinyjpfontの�
 			<th scope="row"><label for="tinyjpfont_default_font"><h3>デフォルトフォント(beta)</h3></label></th><br>
 				<td>
 					<select name="tinyjpfont_default_font" id="tinyjpfont_default_font">
+							<option value="none" <?php selected("none", get_option('tinyjpfont_default_font')); ?> >デフォルト</option>
 							<option value="Noto Sans Japanese" <?php selected("Noto Sans Japanese", get_option('tinyjpfont_default_font')); ?> >Noto Sans Japanese</option>
 							<option value="Huifont" <?php selected("Huifont", get_option('tinyjpfont_default_font')); ?> >ふい字</option>
 							<option value="kokorom" <?php selected("kokorom", get_option('tinyjpfont_default_font')); ?> >こころ明朝体</option>
@@ -396,7 +404,8 @@ Japanese Font for WordPressの情報についてはTwitterにて#tinyjpfontの�
 	</table>
 	<?php submit_button(); ?>
 	</form>
-
+このプラグインは膨大な時間をフォントの作成に捧げたフォントの作成者様達なしでは成り立ちませんでした。略式となりますがこの場にて感謝申し上げたいと思います。<br>
+こちらに自分がわかるかぎりのすべてのフォント作成者様の連絡先、寄付先を載せておりますのでよろしければそちらもご覧ください。
 </div>
 
 
