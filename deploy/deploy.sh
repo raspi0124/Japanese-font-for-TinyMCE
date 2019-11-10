@@ -1,28 +1,30 @@
-language: php
-php:
-- 7.0
+#!/usr/bin/env bash
 
-script:
-# Override default Travis script action [phpunit]
-- php -l *.php
+# 1. Clone complete SVN repository to separate directory
+svn co $SVN_REPOSITORY ../svn
 
-branches:
-  only:
-  # Enable Travis hook on tags (there is regular expression for semver tag)*
-  - "/\\d\\.\\d\\.\\d/"
+# 2. Copy git repository contents to SNV trunk/ directory
+cp -R ./* ../svn/trunk/
 
-# Enable Travis deployment
-deploy:
-  # Use script as a deployment tool
-  provider: script
-  script: deploy/deploy.sh
-  # Restrict deployment only for tags
-  on:
-    tags: true
+# 3. Switch to SVN repository
+cd ../svn/trunk/
 
-# Deployment script requires few enviromnet variables
-env:
-  global:
-  - SVN_REPOSITORY={PLUGIN SVN REPOSITORY URL}
-  - secure: {ENCRYPTED SVN ACCOUNT USERNAME}
-  - secure: {ENCRYPTED SVN ACCOUNT PASSWORD}
+# 4. Move assets/ to SVN /assets/
+mv ./assets/ ../assets/
+
+# 5. Clean up unnecessary files
+rm -rf .git/
+rm -rf deploy/
+rm .travis.yml
+
+# 6. Go to SVN repository root
+cd ../
+
+# 7. Create SVN tag
+svn cp trunk tags/$TRAVIS_TAG
+
+# 8. Push SVN tag
+svn ci  --message "Release $TRAVIS_TAG" \
+        --username $SVN_USERNAME \
+        --password $SVN_PASSWORD \
+        --non-interactive
