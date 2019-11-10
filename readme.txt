@@ -1,8 +1,8 @@
 === Japanese font for WordPress(Previously: Japanese Font for TinyMCE) ===
 Contributors: raspi0124
-Tags: TinyMCE,fonts,font,Japanese,JapaneseFont, gutenberg
+Tags: TinyMCE,fonts,font,Japanese,JapaneseFont,gutenberg
 Requires at least: 4.7
-Tested up to: 5.1
+Tested up to: 5.2.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
