@@ -8,8 +8,7 @@ script:
 
 branches:
   only:
-  # Enable Travis hook on tags (there is regular expression for semver tag)*
-  - "/\\d\\.\\d\\.\\d/"
+  - release
 
 # Enable Travis deployment
 deploy:
