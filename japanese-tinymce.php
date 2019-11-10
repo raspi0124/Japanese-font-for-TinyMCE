@@ -272,20 +272,24 @@ function tinyjpfont_add_original_styles_button($buttons)
 
 //DEFAULT FONT
 function tinyjpfont_getdefaultfonturl(){
+	$config5 = get_option('tinyjpfont_default_font');
 	$fontname = $config5;
 	if (!isset($config5) || $config5 != "") {
+		$defaultfont_url = plugin_dir_url(__FILE__) . "default-font-css.php?fn=" . $fontname;
+		return $defaultfont_url;
 	}else{
-	$defaultfont_url = plugin_dir_url(__FILE__) . "default-font-css.php?fn={$fontname}";
+	$defaultfont_url = plugin_dir_url(__FILE__) . "default-font-css.php?fn=" . $fontname;
+	return $defaultfont_url;
+}
 }
 function tinyjpfont_add_default_font() {
 	$defaultfont_url = tinyjpfont_getdefaultfonturl();
-	if (isset($config5) || $config5 == "") {
 	add_editor_style( $defaultfont_url );
-}else {
-}
+	wp_register_style('tinyjpfont-default-font', $defaultfont_url);
+	wp_enqueue_style('tinyjpfont-default-font');
 }
 add_action( 'init', 'tinyjpfont_add_default_font' );
-}
+
 
 //ADD OPTION
 
