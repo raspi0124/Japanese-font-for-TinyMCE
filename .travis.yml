@@ -8,7 +8,7 @@ script:
 
 branches:
   only:
-  - release
+  - "/\\d\\.\\d\\.\\d/"
 
 # Enable Travis deployment
 deploy:
