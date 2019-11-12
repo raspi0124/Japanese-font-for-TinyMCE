@@ -90,3 +90,4 @@ Version 4.17: Fixed looping noticing bug.
 Version 4.18: Re-added font size change function for non TinyMCE Addvanced users..(Thought noone uses it, but there was.)
 Version 4.19: Fixed bug: Gutenberg option cannnot be edited
 Version 4.20: Implemented default font function
+Version 4.21: Made notice forever-dissmissable

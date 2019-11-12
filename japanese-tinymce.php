@@ -2,7 +2,7 @@
 /*
 Plugin Name: Japanese font for WordPress (priviously: Japanese Font for TinyMCE)
 Description: Add Japanese font to both Gutenberg and TinyMCE Advanced plugin's font family selections.
-Version: 4.20
+Version: 4.21
 Author: raspi0124
 Author URI: https://raspi0124.dev/
 License: GPLv2
@@ -48,7 +48,7 @@ https://nelog.jp/wordpress-visual-editor-font-size
 Gutenberg版で参考になった記事についてははgutenjpfont/gutenjpfont.phpをご覧ください
 */
 // define $
-$version = "4.20";
+$version = "4.21";
 //1 is enable, 0 is disable unless written.
 // config 1 is CDN
 //conbfig 2 is font load mode
@@ -63,33 +63,25 @@ $defaultvalue = "0";
 $isknown = "";
 //Notice
 
-function tinyjpfont_notify($message = '', $classes = 'notice-success')
-{
-		if (! empty($message)) {
-				printf('<div class="notice %2$s">%1$s</div>', $message, $classes);
-		}
-}
 
-$isknown = get_option('isknown');
 
-if ($isknown == "" || !isset($isknown)) {
-		update_option('tinyjpfont_cdn_change_notice', $defaultvalue);
-};
-function tinyjpfont_notify_cdn_change()
-{
-	$isknown = get_option('isknown');
-		if ($isknown == "0") {
-				if (current_user_can('manage_options')) {
-						add_action('admin_notices', function () {
-								$message = sprintf('<p><strong>Japanese Font for WordPressからのお知らせ:<br>デフォルトフォント機能を追加しました!これを設定すると新しい記事を作った際自動的に指定したフォントが初期状態で使われるようになります!</a></strong></p>');
-								tinyjpfont_notify($message, 'notice-info is-dismissible');
-						});
-						update_option('tinyjpfont_cdn_change_notice', '1');
-				}
-		} else {
-		}
+function tinyjpfont_defaultfont_notice() {
+    $user_id = get_current_user_id();
+    if ( !get_user_meta( $user_id, 'tinyjpfont_defaultfont_notice_dismissed', 'dismissed' ) )
+        echo '<div class="notice notice-info" style="padding:1%;"><strong>Japanese Font for WordPressからのお知らせです!</strong><br>
+				デフォルトフォント機能を実装しました!この機能を使うとエディタでデフォルトで使用するフォントを変更することができます!
+				<br><a href="?tinyjpfont-defaultfont-notice-dismissed=true">Dismiss(この通知を消す)</a></div>';
 }
-add_action('init', 'tinyjpfont_notify_cdn_change');
+add_action( 'admin_notices', 'tinyjpfont_defaultfont_notice' );
+
+function tinyjpfont_defaultfont_notice_dismissed() {
+    $user_id = get_current_user_id();
+    if ( isset( $_GET['tinyjpfont-defaultfont-notice-dismissed'] ) )
+        add_user_meta( $user_id, 'tinyjpfont_defaultfont_notice_dismissed', 'true', true );
+}
+add_action( 'admin_init', 'tinyjpfont_defaultfont_notice_dismissed' );
+
+
 
 
 // setting <Version 3.5-beta3>
