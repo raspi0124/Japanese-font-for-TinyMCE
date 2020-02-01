@@ -1,8 +1,8 @@
 === Japanese font for WordPress(Previously: Japanese Font for TinyMCE) ===
 Contributors: raspi0124
-Tags: TinyMCE,fonts,font,Japanese,JapaneseFont, gutenberg
+Tags: TinyMCE,fonts,font,Japanese,JapaneseFont,gutenberg
 Requires at least: 4.7
-Tested up to: 5.1
+Tested up to: 5.2.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -72,7 +72,7 @@ Version 2.30: Added lite option. you can now make your website faster by loading
 Version 2.40: Added Licence and copyright for fonts
 Version 2.50:You can now use font even from TinyMCE's text editor.
 Version 2.60: yay! You can use font selector without installing TinyMCE Advanced plugin!
-Version 3.0+ yay! no more TinyMCE Advanced plugin! you can now select font without TinyMCE Advanced plugin!(alpha)
+Version 3.0: yay! no more TinyMCE Advanced plugin! you can now select font without TinyMCE Advanced plugin!(alpha)
 Version 3.01: bug fixed.
 Version 3.5-beta1: added 3 font and beta option page.
 Version 3.5-beta2: Bug fixed for option page
@@ -89,3 +89,5 @@ Version 4.16: Fixed bug caused by optimization done at version 4.15
 Version 4.17: Fixed looping noticing bug.
 Version 4.18: Re-added font size change function for non TinyMCE Addvanced users..(Thought noone uses it, but there was.)
 Version 4.19: Fixed bug: Gutenberg option cannnot be edited
+Version 4.20: Implemented default font function
+Version 4.21: Made notice permanantly-dissmissable
