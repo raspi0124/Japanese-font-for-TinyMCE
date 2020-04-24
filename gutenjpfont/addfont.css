@@ -13,8 +13,8 @@
 
 @font-face {
     font-family: Huifont;
-    src:url('https://cdn.rawgit.com/raspi0124/my-sites-files/dc302549/HuiFont109.woff2') format('woff2'),
-        url('https://cdn.rawgit.com/raspi0124/my-sites-files/eed42314/Light-Huiji.ttf') format('truetype');
+    src:url('https://cdn.jsdelivr.net/gh/raspi0124/my-sites-files@dc302549468ac811f2c12a171c10b90cd0551c3b/HuiFont109.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/raspi0124/my-sites-files@eed42314cef07897e0b2be3747e3bd6c029c0264/Light-Huiji.ttf') format('truetype');
 }
 
 .wp-block-tinyjpfont-huiji {
