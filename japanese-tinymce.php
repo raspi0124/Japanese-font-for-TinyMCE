@@ -67,8 +67,8 @@ $isknown = "";
 
 function tinyjpfont_fix422_notice() {
     $user_id = get_current_user_id();
-    if ( !get_user_meta( $user_id, 'tinyjpfont_defaultfont_notice_dismissed', 'dismissed' ) )
-        echo '<div class="notice notice-info" style="padding:1%;"><strong>Japanese Font for WordPressからのお知らせです!</strong><br>
+    if ( !get_user_meta( $user_id, 'tinyjpfont_fix422_notice_dismissed', 'dismissed' ) )
+        echo '<div class="notice notice-info" style="padding:1%;"><strong>Japanese Font for WordPressからのお知らせです!</strong>(バージョン4.22 リリースノート)<br>
 				Gutenbergでこのプラグインが正常に機能しないバグを修正し、Gutenbergにおけるフォントのロード元をRawGitからjsdelivrに変更しました。<br>
 				この場をお借りしてバグを報告してくださった @tomoko_misaki さんにお礼申し上げます。<br>
 				このプラグインのバグを発見されましたら@raspi0124(Twitter) または raspi0124@gmail.com までご一報いただけますと幸いです。<br>
