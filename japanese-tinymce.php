@@ -2,7 +2,7 @@
 /*
 Plugin Name: Japanese font for WordPress (priviously: Japanese Font for TinyMCE)
 Description: Add Japanese font to both Gutenberg and TinyMCE Advanced plugin's font family selections.
-Version: 4.21
+Version: 4.22
 Author: raspi0124
 Author URI: https://raspi0124.dev/
 License: GPLv2
@@ -48,7 +48,7 @@ https://nelog.jp/wordpress-visual-editor-font-size
 Gutenberg版で参考になった記事についてははgutenjpfont/gutenjpfont.phpをご覧ください
 */
 // define $
-$version = "4.21";
+$version = "4.22";
 //1 is enable, 0 is disable unless written.
 // config 1 is CDN
 //conbfig 2 is font load mode
@@ -65,21 +65,24 @@ $isknown = "";
 
 
 
-function tinyjpfont_defaultfont_notice() {
+function tinyjpfont_fix422_notice() {
     $user_id = get_current_user_id();
     if ( !get_user_meta( $user_id, 'tinyjpfont_defaultfont_notice_dismissed', 'dismissed' ) )
         echo '<div class="notice notice-info" style="padding:1%;"><strong>Japanese Font for WordPressからのお知らせです!</strong><br>
-				デフォルトフォント機能を実装しました!この機能を使うとエディタでデフォルトで使用するフォントを変更することができます!
-				<br><a href="?tinyjpfont-defaultfont-notice-dismissed=true">Dismiss(この通知を消す)</a></div>';
+				Gutenbergでこのプラグインが正常に機能しないバグを修正し、Gutenbergにおけるフォントのロード元をRawGitからjsdelivrに変更しました。<br>
+				この場をお借りしてバグを報告してくださった @tomoko_misaki さんにお礼申し上げます。<br>
+				このプラグインのバグを発見されましたら@raspi0124(Twitter) または raspi0124@gmail.com までご一報いただけますと幸いです。<br>
+				今回はご迷惑をおかけしすみませんでした。
+				<br><a href="?tinyjpfont-fix422-notice-dismissed=true">Dismiss(この通知を消す)</a></div>';
 }
-add_action( 'admin_notices', 'tinyjpfont_defaultfont_notice' );
+add_action( 'admin_notices', 'tinyjpfont_fix422_notice' );
 
-function tinyjpfont_defaultfont_notice_dismissed() {
+function tinyjpfont_fix422_notice_dismissed() {
     $user_id = get_current_user_id();
-    if ( isset( $_GET['tinyjpfont-defaultfont-notice-dismissed'] ) )
-        add_user_meta( $user_id, 'tinyjpfont_defaultfont_notice_dismissed', 'true', true );
+    if ( isset( $_GET['tinyjpfont-fix422-notice-dismissed'] ) )
+        add_user_meta( $user_id, 'tinyjpfont_fix422_notice_dismissed', 'true', true );
 }
-add_action( 'admin_init', 'tinyjpfont_defaultfont_notice_dismissed' );
+add_action( 'admin_init', 'tinyjpfont_fix422_notice_dismissed' );
 
 
 

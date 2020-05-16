@@ -1,4 +1,3 @@
-
 //  Import CSS.
 import './style.scss';
 import './editor.scss';
@@ -12,13 +11,19 @@ import './editor.scss';
 
 const {
     RichText
-} = wp.editor;
+} = wp.blockEditor;
 
 registerBlockType('tinyjpfont/huiji', {
-    title: "Huiji",
-    icon: 'welcome-write-blog',
+    title: "ふい字",
+    icon: "edit",
     category: 'common',
-
+    example: {
+    attributes: {
+        cover: 'https://storage.googleapis.com/japanese-font-for-wordpress/huiji.png',
+        author: 'Hui/raspi0124',
+        pages: 500
+    },
+},
     attributes: {
         textString: {
             type: 'array',
@@ -49,7 +54,7 @@ registerBlockType('tinyjpfont/huiji', {
                 tagName="p"
                 value={attributes.textString}
                 onChange={onTextChange}
-								className="tinyjpfont_huiji"
+								className="wp-block-tinyjpfont-huiji"
                 placeholder="Enter your favorite text with your fevorite font! yay!"
                 />
         );
@@ -64,7 +69,7 @@ registerBlockType('tinyjpfont/huiji', {
 		    // and we place the textString value just
 		    // like we would in a normal react app
 		    return (
-		        <p class="tinyjpfont_huiji">{attributes.textString}</p>
+		        <p class="wp-block-tinyjpfont-huiji">{attributes.textString}</p>
 		    );
 		}
 })

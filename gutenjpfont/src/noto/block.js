@@ -1,4 +1,3 @@
-
 //  Import CSS.
 import './style.scss';
 import './editor.scss';
@@ -12,13 +11,19 @@ import './editor.scss';
 
 const {
     RichText
-} = wp.editor;
+} = wp.blockEditor;
 
 registerBlockType('tinyjpfont/noto', {
     title: "Noto Sans Japanese",
-    icon: 'welcome-write-blog',
+    icon: 'edit',
     category: 'common',
-
+    example: {
+    attributes: {
+        cover: 'https://storage.googleapis.com/japanese-font-for-wordpress/huiji.png',
+        author: 'Hui/raspi0124',
+        pages: 500
+    },
+},
     attributes: {
         textString: {
             type: 'array',
@@ -49,7 +54,7 @@ registerBlockType('tinyjpfont/noto', {
                 tagName="p"
                 value={attributes.textString}
                 onChange={onTextChange}
-								className="tinyjpfont_noto"
+								className="wp-block-tinyjpfont-noto"
                 placeholder="Enter your favorite text with your fevorite font! yay!"
                 />
         );
@@ -64,7 +69,7 @@ registerBlockType('tinyjpfont/noto', {
 		    // and we place the textString value just
 		    // like we would in a normal react app
 		    return (
-		        <p class="tinyjpfont_noto">{attributes.textString}</p>
+		        <p class="wp-block-tinyjpfont-noto">{attributes.textString}</p>
 		    );
 		}
 })

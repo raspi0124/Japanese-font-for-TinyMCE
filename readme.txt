@@ -91,3 +91,4 @@ Version 4.18: Re-added font size change function for non TinyMCE Addvanced users
 Version 4.19: Fixed bug: Gutenberg option cannnot be edited
 Version 4.20: Implemented default font function
 Version 4.21: Made notice permanantly-dissmissable
+Version 4.22: Fixed Bug: Failing to correctly display the fonts on Gutenberg (Thanks to @tomoko_misaki for reporting this bug), and fixed font-loading source for Gutenberg to jsDelivr, from RawGit.

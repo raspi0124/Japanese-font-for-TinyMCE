@@ -1,18 +1,25 @@
 This project was bootstrapped with [Create Guten Block](https://github.com/ahmadawais/create-guten-block).
 
-このディレクトリを編集する際の注意点:
-今回Japanese Font for TinyMCEではGutenberg対応のためにcreate-guten-blockツールを使って作業時間の短縮を図ったのですがその弊害として注意点が出てきたので載せておきます。
+Below you will find some information on how to run scripts.
 
-本来このツールを使用した場合コンパイル等の作業を簡便化するためかnode_modulesディレクトリが作成されそこに様々なコンパイルツールがインストールされるようですがそのディレクトリが80MBと少し大きかったのでモジュールをzipとして同梱しています。
+>You can find the most recent version of this guide [here](https://github.com/ahmadawais/create-guten-block).
 
-このため、このプラグインのGutenberg対応部分(gutenjpfontディレクトリ以下)を改変する場合は以下の作業が必要になる可能性があります。
-1. zipの解凍
+## 👉  `npm start`
+- Use to compile and run the block in development mode.
+- Watches for any changes and reports back any errors in your code.
 
-まずは改変するためにnode_module.zipを解凍してください。解凍したらnode_modulesディレクトリがあるはずなのでそれをそのままgutenjpfontフォルダ直下に置きます。
-2.ビルド等
+## 👉  `npm run build`
+- Use to build production code for your block inside `dist` folder.
+- Runs once and reports back the gzip file sizes of the produced code.
 
-あとはcreate-guten-toolの公式ページ(https://github.com/ahmadawais/create-guten-block)の内容と基本的に変わらないのでそちらを参照してください。ちなみに簡単にまとめるとnpm startで開発ビルドしてくれます。
+## 👉  `npm run eject`
+- Use to eject your plugin out of `create-guten-block`.
+- Provides all the configurations so you can customize the project as you want.
+- It's a one-way street, `eject` and you have to maintain everything yourself.
+- You don't normally have to `eject` a project because by ejecting you lose the connection with `create-guten-block` and from there onwards you have to update and maintain all the dependencies on your own.
 
-なおnode_module.zipは普通に使う場合は不要ですので容量が足りない等の理由で削除されたい場合は削除しても(たぶん)きちんと動きます。
+---
 
-何か問題があった場合はraspi0124[at]gmail.comにメールくださると幸いです。なおこの内容はこのままプラグインに同梱されています
+###### Feel free to tweet and say 👋 at me [@MrAhmadAwais](https://twitter.com/mrahmadawais/)
+
+[![npm](https://img.shields.io/npm/v/create-guten-block.svg?style=flat-square)](https://www.npmjs.com/package/create-guten-block) [![npm](https://img.shields.io/npm/dt/create-guten-block.svg?style=flat-square&label=downloads)](https://www.npmjs.com/package/create-guten-block)  [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/ahmadawais/create-guten-block) [![Tweet for help](https://img.shields.io/twitter/follow/mrahmadawais.svg?style=social&label=Tweet%20@MrAhmadAwais)](https://twitter.com/mrahmadawais/) [![GitHub stars](https://img.shields.io/github/stars/ahmadawais/create-guten-block.svg?style=social&label=Stars)](https://github.com/ahmadawais/create-guten-block/stargazers) [![GitHub followers](https://img.shields.io/github/followers/ahmadawais.svg?style=social&label=Follow)](https://github.com/ahmadawais?tab=followers)
