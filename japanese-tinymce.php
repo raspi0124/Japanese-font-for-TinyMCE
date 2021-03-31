@@ -64,7 +64,7 @@ $isknown = "";
 //Notice
 function tinyjpfont_fix423_notice() {
     $user_id = get_current_user_id();
-    if ( !get_user_meta( user_id, 'tinyjpfont_fix423_notice_dismissed', 'dismissed' ) )
+    if ( !get_user_meta( $user_id, 'tinyjpfont_fix423_notice_dismissed', 'dismissed' ) )
         echo '<div class="notice notice-info" style="padding:1%;"><strong>Japanese Font for WordPressからのお知らせです!</strong>(バージョン4.23 リリースノート)<br>
 				・古いバージョンのブラウザ(IE8以前ぐらい)を使用している際に発生しうる脆弱性を修正しました。<br>
 				・一部のフォント(ふいフォントとたぬきマジック)のロード元を試験的にアジアリージョンのGoogle Cloud Storageサーバーに変更しました。ロード速度がだいたい2倍ほど早くなると思います。
@@ -75,18 +75,18 @@ add_action( 'admin_notices', 'tinyjpfont_fix423_notice' );
 
 function tinyjpfont_fix423_notice_dismissed() {
     $user_id = get_current_user_id();
-    if ( isset( _GET['tinyjpfont-fix423-notice-dismissed'] ) )
-        add_user_meta( user_id, 'tinyjpfont_fix423_notice_dismissed', 'true', true );
+    if ( isset( $_GET['tinyjpfont-fix423-notice-dismissed'] ) )
+        add_user_meta( $user_id, 'tinyjpfont_fix423_notice_dismissed', 'true', true );
 }
 add_action( 'admin_init', 'tinyjpfont_fix423_notice_dismissed' );
 
 //INSTALL NOTICE
 function tinyjpfont_install_notice() {
     $user_id = get_current_user_id();
-    if ( !get_user_meta( user_id, 'tinyjpfont_install_notice_dismissed', 'dismissed' ) )
-        echo '<div class="notice notice-info" style="padding:1%;"><strong>Japanese Font for WordPressへようこそ!<br>
+    if ( !get_user_meta( $user_id, 'tinyjpfont_install_notice_dismissed', 'dismissed' ) )
+        echo '<div class="notice notice-info" style="padding:1%;"><strong>Japanese Font for WordPressへようこそ!</strong><br>
                 Japanese Font for WordPressのインストールありがとうございます!<br>
-                さっそく新しく追加された7種類のフォントを試してみましょう! (WordPress5.0以降に搭載されているブロックエディタ、Gutenbergで利用するにはJapanese Font for WordPressの設定→
+                さっそく新しく追加された7種類のフォントを試してみましょう! (WordPress5.0以降に搭載されているブロックエディタ、Gutenbergでこれらのフォントを利用するにはJapanese Font for WordPressの設定にて
                 Gutenberg対応モード (beta)を有効化する必要がありますのでご注意ください)
 				<br><a href="?tinyjpfont-install-notice-dismissed=true">Dismiss(この通知を消す)</a></div>';
 }
@@ -94,8 +94,8 @@ add_action( 'admin_notices', 'tinyjpfont_install_notice' );
 
 function tinyjpfont_install_notice_dismissed() {
     $user_id = get_current_user_id();
-    if ( isset( _GET['tinyjpfont-install-notice-dismissed'] ) )
-        add_user_meta( user_id, 'tinyjpfont_install_notice_dismissed', 'true', true );
+    if ( isset( $_GET['tinyjpfont-install-notice-dismissed'] ) )
+        add_user_meta( $user_id, 'tinyjpfont_install_notice_dismissed', 'true', true );
 }
 add_action( 'admin_init', 'tinyjpfont_install_notice_dismissed' );
 
@@ -351,8 +351,8 @@ Japanese Font for WordPressの情報についてはTwitterにて#tinyjpfontの�
 バグ等発見されましたらraspi0124<@>gmail.comかTwitter(@raspi0124)までお願いいたします。
 
 </div>
-	<h2>Japanese Font for WordPress</h2>
-	<h3>Japanese Font for WordPressからのお知らせ:<br>Japanese Font for WordPressは今までCSSや一部のフォントの配信に使用していたRawgitのサービス終了に伴いjsdelivrからの配信に切り替えたためこれをお知らせします。<br>詳しくは<a href="https://raspi-diary.com/post-4241/">こちら</a>をご覧ください。</h3>
+	<h1>Japanese Font for WordPress</h1>
+	<h3>Japanese Font for WordPressからのお知らせ:<br>Japanese Font for WordPressは今までCSSや一部のフォントの配信に使用していたRawgitのサービス終了に伴いjsdelivrからの配信に切り替えたためこれをお知らせします。<br>詳しくは<a href="https://diary.raspi0124.dev/post-4241/">こちら</a>をご覧ください。</h3><strong><h3>NEW:バージョン4.23(2021年3月31日リリース)にて一部のフォントをGoogle Cloud Storageからのロードに試験的に切り替えました!</h3></strong>
 	 <link rel="stylesheet" href= "https://cdn.jsdelivr.net/gh/raspi0124/Japanese-font-for-TinyMCE@stable/admin.css">
 <div id="content">
 	<?php
