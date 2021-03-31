@@ -4,6 +4,12 @@ on:
   push:
     tags:
       - "v*"
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Tekitou"
+        required: false
+        default: "Tekitou"
 jobs:
   convert:
     runs-on: ubuntu-latest
