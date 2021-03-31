@@ -10,7 +10,7 @@ on:
         description: "Version"
         required: true
 jobs:
-  convert:
+  release:
     runs-on: ubuntu-latest
 
     strategy:
@@ -31,9 +31,11 @@ jobs:
         working-directory: ./gutenjpfont
         env:
           CI: true
+      - name: Remove Unnecessary Folders.
+        run: rm -rf .github .git
       - name: Zip output
         run: |
-          zip release *.*
+          zip -r release *
       - name: Create release
         id: create_release
         uses: actions/create-release@v1.0.0
