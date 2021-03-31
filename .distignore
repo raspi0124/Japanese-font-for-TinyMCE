@@ -1,0 +1,9 @@
+.idea/
+.vs/
+.github/
+.wordpress-org/
+.distignore
+gutenjpfont/node_modules
+gutenjpfont/yarn.lock
+.travis.yml
+.gitignore
