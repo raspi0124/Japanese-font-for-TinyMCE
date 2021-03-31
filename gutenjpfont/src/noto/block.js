@@ -19,8 +19,8 @@ registerBlockType('tinyjpfont/noto', {
     category: 'common',
     example: {
     attributes: {
-        cover: 'https://storage.googleapis.com/japanese-font-for-wordpress/huiji.png',
-        author: 'Hui/raspi0124',
+        cover: 'https://gcs.raspi0124.dev/tinyjpfont/assets/noto.png',
+        author: 'raspi0124',
         pages: 500
     },
 },

@@ -19,7 +19,7 @@ registerBlockType('tinyjpfont/huiji', {
     category: 'common',
     example: {
     attributes: {
-        cover: 'https://storage.googleapis.com/japanese-font-for-wordpress/huiji.png',
+        cover: 'https://gcs.raspi0124.dev/tinyjpfont/assets/huiji.png',
         author: 'Hui/raspi0124',
         pages: 500
     },

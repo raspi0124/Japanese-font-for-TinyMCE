@@ -2,7 +2,7 @@
 Contributors: raspi0124
 Tags: TinyMCE,fonts,font,Japanese,JapaneseFont,Gutenberg
 Requires at least: 4.7
-Tested up to: 5.4.1
+Tested up to: 5.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -92,3 +92,4 @@ Version 4.19: Fixed bug: Gutenberg option cannnot be edited
 Version 4.20: Implemented default font function
 Version 4.21: Made notice permanantly-dissmissable
 Version 4.22: Fixed Bug: Failing to correctly display the fonts on Gutenberg (Thanks to @tomoko_misaki for reporting this bug), and fixed font-loading source for Gutenberg to jsDelivr, from RawGit.
+Version 4.23: Fixed Security Vulnerability: Fixed vulnerability that may occur at old browsers (Thanks to @stmkza for reporting this), and New Feature: Betaly changed source of some fonts (Huifont and TanukiMagic) to Google Cloud Storage.

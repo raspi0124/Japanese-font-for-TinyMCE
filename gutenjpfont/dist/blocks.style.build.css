@@ -1,9 +1,3 @@
-/**
- * #.# Common SCSS
- *
- * Can include things like variables and mixins
- * that are used across the project.
-*/
 /* Lite version of CSS for Japanese Font for TinyMCE. Version 3.5-beta1*/
 @font-face {
   font-family: Huifont;
@@ -32,12 +26,6 @@
 
 *[data-type='tinyjpfont/huiji'] {
   font-family: Huifont !important; }
-/**
- * #.# Common SCSS
- *
- * Can include things like variables and mixins
- * that are used across the project.
-*/
 /* Lite version of CSS for Japanese Font for TinyMCE. Version 3.5-beta1*/
 @font-face {
   font-family: Huifont;
