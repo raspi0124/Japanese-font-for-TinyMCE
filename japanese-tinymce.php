@@ -8,7 +8,7 @@ Author URI: https://raspi0124.dev/
 License: GPLv2
 */
 
-/*  Copyright 2017-2019 raspi0124 (email : raspi0124@gmail.com)
+/*  Copyright 2017-2021 raspi0124 (email : raspi0124@gmail.com)
 
 				This program is free software; you can redistribute it and/or modify
 				it under the terms of the GNU General Public License, version 2, as
@@ -62,23 +62,42 @@ $config5 = get_option('tinyjpfont_default_font');
 $defaultvalue = "0";
 $isknown = "";
 //Notice
-function tinyjpfont_fix433_notice() {
+function tinyjpfont_fix423_notice() {
     $user_id = get_current_user_id();
-    if ( !get_user_meta( user_id, 'tinyjpfont_fix433_notice_dismissed', 'dismissed' ) )
+    if ( !get_user_meta( user_id, 'tinyjpfont_fix423_notice_dismissed', 'dismissed' ) )
         echo '<div class="notice notice-info" style="padding:1%;"><strong>Japanese Font for WordPressからのお知らせです!</strong>(バージョン4.23 リリースノート)<br>
-				古いバージョンのブラウザ(IE8以前ぐらい)を使用している際に発生しうる脆弱性を修正しました。
-				<br><a href="?tinyjpfont-fix433-notice-dismissed=true">Dismiss(この通知を消す)</a></div>';
+				・古いバージョンのブラウザ(IE8以前ぐらい)を使用している際に発生しうる脆弱性を修正しました。<br>
+				・一部のフォント(ふいフォントとたぬきマジック)のロード元を試験的にアジアリージョンのGoogle Cloud Storageサーバーに変更しました。ロード速度がだいたい2倍ほど早くなると思います。
+				ただサーバーが少しお高いのでどれぐらい課金されるか様子を見て対象を広げるか検討していきたいと思います。
+				<br><a href="?tinyjpfont-fix423-notice-dismissed=true">Dismiss(この通知を消す)</a></div>';
 }
-add_action( 'admin_notices', 'tinyjpfont_fix433_notice' );
+add_action( 'admin_notices', 'tinyjpfont_fix423_notice' );
 
-function tinyjpfont_fix433_notice_dismissed() {
+function tinyjpfont_fix423_notice_dismissed() {
     $user_id = get_current_user_id();
-    if ( isset( _GET['tinyjpfont-fix433-notice-dismissed'] ) )
-        add_user_meta( user_id, 'tinyjpfont_fix433_notice_dismissed', 'true', true );
+    if ( isset( _GET['tinyjpfont-fix423-notice-dismissed'] ) )
+        add_user_meta( user_id, 'tinyjpfont_fix423_notice_dismissed', 'true', true );
 }
-add_action( 'admin_init', 'tinyjpfont_fix433_notice_dismissed' );
+add_action( 'admin_init', 'tinyjpfont_fix423_notice_dismissed' );
 
+//INSTALL NOTICE
+function tinyjpfont_install_notice() {
+    $user_id = get_current_user_id();
+    if ( !get_user_meta( user_id, 'tinyjpfont_install_notice_dismissed', 'dismissed' ) )
+        echo '<div class="notice notice-info" style="padding:1%;"><strong>Japanese Font for WordPressへようこそ!<br>
+                Japanese Font for WordPressのインストールありがとうございます!<br>
+                さっそく新しく追加された7種類のフォントを試してみましょう! (WordPress5.0以降に搭載されているブロックエディタ、Gutenbergで利用するにはJapanese Font for WordPressの設定→
+                Gutenberg対応モード (beta)を有効化する必要がありますのでご注意ください)
+				<br><a href="?tinyjpfont-install-notice-dismissed=true">Dismiss(この通知を消す)</a></div>';
+}
+add_action( 'admin_notices', 'tinyjpfont_install_notice' );
 
+function tinyjpfont_install_notice_dismissed() {
+    $user_id = get_current_user_id();
+    if ( isset( _GET['tinyjpfont-install-notice-dismissed'] ) )
+        add_user_meta( user_id, 'tinyjpfont_install_notice_dismissed', 'true', true );
+}
+add_action( 'admin_init', 'tinyjpfont_install_notice_dismissed' );
 
 
 // setting <Version 3.5-beta3>
@@ -380,7 +399,7 @@ Japanese Font for WordPressの情報についてはTwitterにて#tinyjpfontの�
 			Gutenberg対応機能はNoto Sans Japaneseとふい字フォントのみ現在サポートしています。
 		</strong>
 		<tr>
-			<th scope="row"><label for="tinyjpfont_default_font"><h3>デフォルトフォント(beta)</h3></label></th><br>
+			<th scope="row"><label for="tinyjpfont_default_font"><h3>デフォルトフォント(beta) (TinyMCEエディタ上でデフォルトで利用するフォントを選択できます)</h3></label></th><br>
 				<td>
 					<select name="tinyjpfont_default_font" id="tinyjpfont_default_font">
 							<option value="Noto Sans Japanese" <?php selected("noto", get_option('tinyjpfont_default_font')); ?> >Noto Sans Japanese</option>
