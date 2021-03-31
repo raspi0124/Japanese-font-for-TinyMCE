@@ -8,7 +8,7 @@ on:
     inputs:
       name:
         description: "Version"
-        required: true
+        required: false
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -32,7 +32,7 @@ jobs:
         env:
           CI: true
       - name: Remove Unnecessary Folders.
-        run: rm -rf .github .git
+        run: rm -rf .github .git gutenjpfont/node_modules
       - name: Zip output
         run: |
           zip -r release *
