@@ -283,8 +283,7 @@ function tinyjpfont_getdefaultfonturl(){
 	$config5 = get_option('tinyjpfont_default_font');
 	$fontname = $config5;
 	if (!isset($config5) || $config5 != "") {
-		$defaultfont_url = plugin_dir_url(__FILE__) . "default-font-css.php?fn=" . $fontname;
-		return $defaultfont_url;
+        return plugin_dir_url(__FILE__) . "default-font-css.php?fn=" . $fontname;
 	}else{
 	$defaultfont_url = plugin_dir_url(__FILE__) . "default-font-css.php?fn=" . $fontname;
 	return $defaultfont_url;
