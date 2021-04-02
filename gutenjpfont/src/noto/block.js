@@ -1,75 +1,81 @@
 //  Import CSS.
-import './style.scss';
-import './editor.scss';
+import "./style.scss";
+import "./editor.scss";
+import { registerFormatType } from "@wordpress/rich-text";
+import { RichTextToolbarButton } from "@wordpress/block-editor";
 
+const { __ } = wp.i18n;
+const { registerBlockType } = wp.blocks;
 
+const { RichText } = wp.blockEditor;
 
- const { __ } = wp.i18n;
- const {
-    registerBlockType,
-} = wp.blocks;
-
-const {
-    RichText
-} = wp.blockEditor;
-
-registerBlockType('tinyjpfont/noto', {
-    title: "Noto Sans Japanese",
-    icon: 'edit',
-    category: 'common',
-    example: {
+registerBlockType("tinyjpfont/noto", {
+  title: "Noto Sans Japanese",
+  icon: "edit",
+  category: "common",
+  example: {
     attributes: {
-        cover: 'https://gcs.raspi0124.dev/tinyjpfont/assets/noto.png',
-        author: 'raspi0124',
-        pages: 500
+      cover: "https://gcs.raspi0124.dev/tinyjpfont/assets/noto.png",
+      author: "raspi0124",
+      pages: 500,
     },
-},
-    attributes: {
-        textString: {
-            type: 'array',
-            source: 'children',
-            selector: 'p',
-        }
+  },
+  attributes: {
+    textString: {
+      type: "array",
+      source: "children",
+      selector: "p",
     },
+  },
 
-		// props are passed to edit by default
-    // props contains things like setAttributes and attributes
-    edit(props) {
+  // props are passed to edit by default
+  // props contains things like setAttributes and attributes
+  edit(props) {
+    // we are peeling off the things we need
+    const { setAttributes, attributes } = props;
 
-        // we are peeling off the things we need
-        const { setAttributes, attributes } = props;
+    // This function is called when RichText changes
+    // By default the new string is passed to the function
+    // not an event object like react normally would do
+    function onTextChange(changes) {
+      // works very much like setState
+      setAttributes({
+        textString: changes,
+      });
+    }
 
-        // This function is called when RichText changes
-        // By default the new string is passed to the function
-        // not an event object like react normally would do
-        function onTextChange(changes) {
-            // works very much like setState
-            setAttributes({
-                textString: changes
-            });
-        }
+    return (
+      <RichText
+        tagName="p"
+        value={attributes.textString}
+        onChange={onTextChange}
+        className="wp-block-tinyjpfont-noto"
+        placeholder="Enter your favorite text with your fevorite font! yay!"
+      />
+    );
+  },
 
-        return (
-            <RichText
-                tagName="p"
-                value={attributes.textString}
-                onChange={onTextChange}
-								className="wp-block-tinyjpfont-noto"
-                placeholder="Enter your favorite text with your fevorite font! yay!"
-                />
-        );
-    },
+  // again, props are automatically passed to save and edit
+  save(props) {
+    const { attributes } = props;
 
-		// again, props are automatically passed to save and edit
-		save(props) {
+    // We want the text to be an h2 element
+    // and we place the textString value just
+    // like we would in a normal react app
+    return <p class="wp-block-tinyjpfont-noto">{attributes.textString}</p>;
+  },
+});
 
-		    const { attributes } = props;
+//Add Noto Btn to Toolbar
+const tinyjpfontNotobtn = (props) => {
+  return (
+    <RichTextToolbarButton icon="editor-textcolor" title="Noto Sans Japanese" />
+  );
+};
 
-		    // We want the text to be an h2 element
-		    // and we place the textString value just
-		    // like we would in a normal react app
-		    return (
-		        <p class="wp-block-tinyjpfont-noto">{attributes.textString}</p>
-		    );
-		}
-})
+registerFormatType("tinyjpfont/notobtn", {
+  title: "Noto Sans Japanese",
+  tagName: "tinyjpfont_noto",
+  className: "tinyjpfont_noto",
+  edit: tinyjpfontNotobtn,
+});
