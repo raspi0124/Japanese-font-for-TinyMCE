@@ -2,14 +2,14 @@ name: Dev Release
 
 on:
   push:
-    tags:
-      - "*"
     branches-ignore:
       - "release"
+    tags:
+      - "*"
 jobs:
   release:
     runs-on: ubuntu-latest
-
+    if: github.ref == "refs/heads/dev"
     strategy:
       matrix:
         node-version: [12.x]

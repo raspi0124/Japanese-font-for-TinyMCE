@@ -2,14 +2,15 @@ name: Release
 
 on:
   push:
-    tags:
-      - "*"
     branches-ignore:
       - "dev"
+    tags:
+      - "*"
 
 jobs:
   release:
     runs-on: ubuntu-latest
+    if: github.ref == "refs/heads/release"
 
     strategy:
       matrix:
