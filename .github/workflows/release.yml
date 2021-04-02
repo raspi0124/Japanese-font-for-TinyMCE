@@ -4,10 +4,11 @@ on:
   push:
     tags:
       - "*"
+    branches-ignore:
+      - "dev"
 
 jobs:
   release:
-    if: github.ref == 'refs/heads/release'
     runs-on: ubuntu-latest
 
     strategy:
