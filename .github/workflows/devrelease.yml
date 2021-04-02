@@ -6,7 +6,7 @@ on:
       - "*"
 jobs:
   release:
-    if: github.event.base_ref == 'refs/heads/dev'
+    if: github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
 
     strategy:
