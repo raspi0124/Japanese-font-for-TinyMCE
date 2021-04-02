@@ -4,11 +4,9 @@ on:
   push:
     tags:
       - "*"
-    branches:
-      - dev
-
 jobs:
   release:
+    if: github.event.base_ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
 
     strategy:
