@@ -74,7 +74,7 @@ const tinyjpfontNotobtn = (props) => {
       title="Noto Sans Japanese"
       onClick={() => {
         props.onChange(
-          toggleFormat(props.value, { type: "tinyjpfont/notobtn" })
+          props.toggleFormat(props.value, { type: "tinyjpfont/notobtn" })
         );
       }}
       isActive={props.isActive}

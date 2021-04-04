@@ -74,7 +74,7 @@ const tinyjpfontHuijibtn = (props) => {
       title="ふい字"
       onClick={() => {
         props.onChange(
-          toggleFormat(props.value, { type: "tinyjpfont/notobtn" })
+          props.toggleFormat(props.value, { type: "tinyjpfont/huijibtn" })
         );
       }}
       isActive={props.isActive}
