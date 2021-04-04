@@ -85,5 +85,6 @@ const tinyjpfontNotobtn = (props) => {
 registerFormatType("tinyjpfont/notobtn", {
   title: "Noto Sans Japanese",
   className: "wp-block-tinyjpfont-noto",
+  tagName: "tinyjpfontNoto",
   edit: tinyjpfontNotobtn,
 });

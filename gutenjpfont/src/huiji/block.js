@@ -84,6 +84,7 @@ const tinyjpfontHuijibtn = (props) => {
 
 registerFormatType("tinyjpfont/huijibtn", {
   title: "ふい字",
-  className: "tinyjpfont_huiji",
+  className: "wp-block-tinyjpfont-huiji",
+  tagName: "tinyjpfontNoto",
   edit: tinyjpfontHuijibtn,
 });
