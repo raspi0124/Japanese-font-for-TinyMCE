@@ -68,12 +68,22 @@ registerBlockType("tinyjpfont/huiji", {
 
 //Add Huiji Btn to Toolbar
 const tinyjpfontHuijibtn = (props) => {
-  return <RichTextToolbarButton icon="editor-textcolor" title="ふい字" />;
+  return (
+    <RichTextToolbarButton
+      icon="editor-textcolor"
+      title="ふい字"
+      onClick={() => {
+        props.onChange(
+          toggleFormat(props.value, { type: "tinyjpfont/notobtn" })
+        );
+      }}
+      isActive={props.isActive}
+    />
+  );
 };
 
 registerFormatType("tinyjpfont/huijibtn", {
   title: "ふい字",
-  tagName: "tinyjpfont_huiji",
   className: "tinyjpfont_huiji",
   edit: tinyjpfontHuijibtn,
 });

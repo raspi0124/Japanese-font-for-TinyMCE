@@ -69,13 +69,21 @@ registerBlockType("tinyjpfont/noto", {
 //Add Noto Btn to Toolbar
 const tinyjpfontNotobtn = (props) => {
   return (
-    <RichTextToolbarButton icon="editor-textcolor" title="Noto Sans Japanese" />
+    <RichTextToolbarButton
+      icon="editor-textcolor"
+      title="Noto Sans Japanese"
+      onClick={() => {
+        props.onChange(
+          toggleFormat(props.value, { type: "tinyjpfont/notobtn" })
+        );
+      }}
+      isActive={props.isActive}
+    />
   );
 };
 
 registerFormatType("tinyjpfont/notobtn", {
   title: "Noto Sans Japanese",
-  tagName: "tinyjpfont_noto",
-  className: "tinyjpfont_noto",
+  className: "wp-block-tinyjpfont-noto",
   edit: tinyjpfontNotobtn,
 });
