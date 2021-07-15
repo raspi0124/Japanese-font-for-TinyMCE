@@ -93,3 +93,4 @@ Version 4.20: Implemented default font function
 Version 4.21: Made notice permanantly-dissmissable
 Version 4.22: Fixed Bug: Failing to correctly display the fonts on Gutenberg (Thanks to @tomoko_misaki for reporting this bug), and fixed font-loading source for Gutenberg to jsDelivr, from RawGit.
 Version 4.23: Fixed Security Vulnerability: Fixed vulnerability that may occur at old browsers (Thanks to @stmkza for reporting this), and New Feature: Betaly changed source of some fonts (Huifont and TanukiMagic) to Google Cloud Storage.
+Version 4.24: Reverted Source of Font(s) to Previous One as cost to maintain CDN servers was becoming unaffordable.

@@ -48,7 +48,7 @@ https://nelog.jp/wordpress-visual-editor-font-size
 Gutenberg版で参考になった記事についてははgutenjpfont/gutenjpfont.phpをご覧ください
 */
 // define $
-$version = "4.23";
+$version = "4.24";
 //1 is enable, 0 is disable unless written.
 // config 1 is CDN
 //conbfig 2 is font load mode
@@ -62,23 +62,23 @@ $config5 = get_option('tinyjpfont_default_font');
 $defaultvalue = "0";
 $isknown = "";
 //Notice
-function tinyjpfont_fix423_notice() {
+function tinyjpfont_fix424_notice() {
     $user_id = get_current_user_id();
-    if ( !get_user_meta( $user_id, 'tinyjpfont_fix423_notice_dismissed', 'dismissed' ) )
-        echo '<div class="notice notice-info" style="padding:1%;"><strong>Japanese Font for WordPressからのお知らせです!</strong>(バージョン4.23 リリースノート)<br>
-				・古いバージョンのブラウザ(IE8以前ぐらい)を使用している際に発生しうる脆弱性を修正しました。<br>
-				・一部のフォント(ふいフォントとたぬきマジック)のロード元を試験的にアジアリージョンのGoogle Cloud Storageサーバーに変更しました。ロード速度がだいたい2倍ほど早くなると思います。
-				ただサーバーが少しお高いのでどれぐらい課金されるか様子を見て対象を広げるか検討していきたいと思います。
-				<br><a href="?tinyjpfont-fix423-notice-dismissed=true">Dismiss(この通知を消す)</a></div>';
+    if ( !get_user_meta( $user_id, 'tinyjpfont_fix424_notice_dismissed', 'dismissed' ) )
+        echo '<div class="notice notice-info" style="padding:1%;"><strong>Japanese Font for WordPressからのお知らせです!</strong>(バージョン4.24 リリースノート)<br>
+				・数TB規模のリクエストをサーバーに掛けられ、寄付で頂いた金額を大きく上回るコストがかかったため、すべてのフォント(ふいフォントとたぬきマジック)のロード元をアジアリージョンのGoogle Cloud Storageサーバーから元のCDNサーバーに戻しました。<br />
+				ロードにかかる速度は元通り(6月以前のもの)、大体今の2倍程度にますが全体から見れば誤差レベル(数十~数百ms)の違いだと思います。<br />
+				今後は有料ユーザー向けのオプションとして検討していきます。
+				<br><a href="?tinyjpfont-fix424-notice-dismissed=true">Dismiss(この通知を消す)</a></div>';
 }
-add_action( 'admin_notices', 'tinyjpfont_fix423_notice' );
+add_action( 'admin_notices', 'tinyjpfont_fix424_notice' );
 
-function tinyjpfont_fix423_notice_dismissed() {
+function tinyjpfont_fix424_notice_dismissed() {
     $user_id = get_current_user_id();
-    if ( isset( $_GET['tinyjpfont-fix423-notice-dismissed'] ) )
-        add_user_meta( $user_id, 'tinyjpfont_fix423_notice_dismissed', 'true', true );
+    if ( isset( $_GET['tinyjpfont-fix424-notice-dismissed'] ) )
+        add_user_meta( $user_id, 'tinyjpfont_fix424_notice_dismissed', 'true', true );
 }
-add_action( 'admin_init', 'tinyjpfont_fix423_notice_dismissed' );
+add_action( 'admin_init', 'tinyjpfont_fix424_notice_dismissed' );
 
 //INSTALL NOTICE
 function tinyjpfont_install_notice() {
