@@ -1,9 +1,9 @@
 /* Lite version of CSS for Japanese Font for TinyMCE. Version 3.5-beta1*/
 @font-face {
   font-family: Huifont;
-  src: url("https://gcs.raspi0124.dev/tinyjpfont/fonts/HuiFont109.woff2")
+  src: url("https://cdn.rawgit.com/raspi0124/my-sites-files/dc302549/HuiFont109.woff2")
       format("woff2"),
-    url("https://gcs.raspi0124.dev/tinyjpfont/fonts/Light-Huiji.ttf")
+    url("https://cdn.rawgit.com/raspi0124/my-sites-files/eed42314/Light-Huiji.ttf")
       format("truetype");
 }
 @font-face {

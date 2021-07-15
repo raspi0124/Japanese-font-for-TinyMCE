@@ -16,14 +16,15 @@
 }
 @font-face {
   font-family: tanukiM;
-  src: url("https://gcs.raspi0124.dev/tinyjpfont/fonts/TanukiMagic.ttf")
+  src: url("https://cdn.jsdelivr.net/gh/raspi0124/my-sites-files@master/TanukiMagic.ttf")
     format("truetype");
 }
+/*@import url("https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap");*/
 @font-face {
   font-family: Huifont;
-  src: url("https://gcs.raspi0124.dev/tinyjpfont/fonts/HuiFont109.woff2")
+  src: url("https://cdn.rawgit.com/raspi0124/my-sites-files/dc302549/HuiFont109.woff2")
       format("woff2"),
-    url("https://gcs.raspi0124.dev/tinyjpfont/fonts/Light-Huiji.ttf")
+    url("https://cdn.rawgit.com/raspi0124/my-sites-files/eed42314/Light-Huiji.ttf")
       format("truetype");
 }
 @font-face {
