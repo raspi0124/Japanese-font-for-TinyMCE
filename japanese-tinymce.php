@@ -85,7 +85,9 @@ function tinyjpfont_install_notice() {
     if ( !get_user_meta( $user_id, 'tinyjpfont_install_notice_dismissed', 'dismissed' ) )
         echo '<div class="notice notice-info" style="padding:1%;"><strong>Japanese Font for WordPressへようこそ!</strong><br>
                 Japanese Font for WordPressのインストールありがとうございます!<br>
-                さっそく新しく追加された7種類のフォントを試してみましょう!
+                さっそく新しく追加された7種類のフォントを試してみましょう!<br>
+				何か不具合等発見されましたら<a href="https://twitter.com/raspi0124">Twitter: @raspi0124</a> または raspi0124[at]gmail.com までお気軽にご連絡ください。<br>
+				Japanese Font for WordPressをよろしくお願いします!<br>
 				<br><a href="?tinyjpfont-install-notice-dismissed=true">Dismiss(この通知を消す)</a></div>';
 }
 add_action( 'admin_notices', 'tinyjpfont_install_notice' );
