@@ -56,7 +56,7 @@ $version = "4.25";
 //config 4 is load by header or footer. 0=header, 1=footer
 $config1 = get_option('tinyjpfont_check_cdn');
 $config2 = get_option('tinyjpfont_select');
-$config3 = get_option('tinyjpfont_gutenberg');
+$config3 = get_option('tinyjpfont_disable_gutenberg');
 $config4 = get_option('tinyjpfont_head');
 $config5 = get_option('tinyjpfont_default_font');
 $defaultvalue = "0";
@@ -75,7 +75,7 @@ add_action( 'admin_notices', 'tinyjpfont_fix424_notice' );
 function tinyjpfont_fix425_notice() {
     $user_id = get_current_user_id();
     if ( !get_user_meta( $user_id, 'tinyjpfont_fix425_notice_dismissed', 'dismissed' ) )
-        echo '<div class="notice notice-info" style="padding:1%;"><strong>Japanese Font for WordPressからのお知らせです!</strong>(バージョン4.24 リリースノート)<br>
+        echo '<div class="notice notice-info" style="padding:1%;"><strong>Japanese Font for WordPressからのお知らせです!</strong>(バージョン4.25 リリースノート)<br>
 				・Gutenberg対応をデフォルトにしました。これによりWordPressの必須バージョンが5.0以上となりました。5.0以前をご利用の方はバージョン4.24のご利用をご検討ください。<br />
 				<br><a href="?tinyjpfont-fix425-notice-dismissed=true">Dismiss(この通知を消す)</a></div>';
 }
@@ -180,7 +180,7 @@ if ($config1 == "0" and $config2 == "0") {
 }
 
 //add gutenberg support.
-if ($config3 == "1") {
+if ($config3 == "0") {
 		include(plugin_dir_path(__FILE__) . 'gutenjpfont/gutenjpfont.php');
 } else {
 }
@@ -348,8 +348,8 @@ function tinyjpfont_options_page()
 				$tinyjpfont_check_noto = isset($_POST['tinyjpfont_check_noto']) ? 1 : 0;
 				update_option('tinyjpfont_check_noto', $tinyjpfont_check_noto);
 
-				$tinyjpfont_gutenberg = isset($_POST['tinyjpfont_gutenberg']) ? 0 : 1;
-				update_option('tinyjpfont_gutenberg', $tinyjpfont_gutenberg);
+				$tinyjpfont_disable_gutenberg = isset($_POST['tinyjpfont_disable_gutenberg']) ? 1 : 0;
+				update_option('tinyjpfont_disable_gutenberg', $tinyjpfont_disable_gutenberg);
 		} ?>
 </head>
 <body>
@@ -404,8 +404,8 @@ Japanese Font for WordPressの情報についてはTwitterにて#tinyjpfontの�
 				<br><strong>テーマの仕様により対応していない場合もあります。</strong>
 			</tr><br>
 			<tr>
-				<th scope="row"><label for="tinyjpfont_gutenberg"><h3>Gutenberg対応モード(beta)</h3></label></th><br>
-					<td><label><input name="tinyjpfont_gutenberg" type="checkbox" id="tinyjpfont_gutenberg" value="1" <?php checked(1, get_option('tinyjpfont_gutenberg')); ?> /> Gutenbergに対応させる(beta)</label></td><br>
+				<th scope="row"><label for="tinyjpfont_disable_gutenberg"><h3>Gutenberg対応モード(beta)</h3></label></th><br>
+					<td><label><input name="tinyjpfont_disable_gutenberg" type="checkbox" id="tinyjpfont_disable_gutenberg" value="1" <?php checked(1, get_option('tinyjpfont_disable_gutenberg')); ?> /> Gutenbergへの対応を無効化する</label></td><br>
 		</tr><br>
 			<strong>
 			Gutenberg対応機能はNoto Sans Japaneseとふい字フォントのみ現在サポートしています。
