@@ -97,16 +97,15 @@ function tinyjpfont_install_notice_dismissed() {
 }
 add_action( 'admin_init', 'tinyjpfont_install_notice_dismissed' );
 
-//INSTALL NOTICE
 function tinyjpfont_advanced_warning() {
     $user_id = get_current_user_id();
-    if ( !get_user_meta( $user_id, 'tinyjpfont_install_notice_dismissed', 'dismissed' ) && is_plugin_active( 'tinymce-advanced/tinymce-advanced.php' ) )
-        echo '<div class="notice notice-warning" style="padding:1%;"><strong>Advanced Editor Tools (旧名 TinyMCE Advanced)プラグインの無効化をお願いします</strong><br>
+    if ( !get_user_meta( $user_id, 'tinyjpfont_advanced_warning', 'dismissed' ) && is_plugin_active( 'tinymce-advanced/tinymce-advanced.php' ) )
+        echo '<div class="notice is-dismissible notice-warning" style="padding:1%;"><strong>Advanced Editor Tools (旧名 TinyMCE Advanced)プラグインの無効化をお願いします</strong><br>
 				現在、Advanced Editor Tools (旧名 TinyMCE Advanced) プラグインがインストールされている環境においてJapanese Font for WordPressのクラシックエディタ上での動作を始めとする機能の動作に不具合が生じています。<br>
 				よろしければAdvanced Editor Tools (旧名 TinyMCE Advanced) プラグインを<a href="/wp-admin/plugins.php">無効化</a>してくださりますと幸いです。<br>
-				<br><a href="?tinyjpfont-advanced-warning-dismissed=true">Dismiss(この通知を消す)</a></div>';
+				<br><a href="?tinyjpfont-advanced-warning-dismissed=true">この通知を二度と表示しない</a></div>';
 }
-add_action( 'admin_notices', 'tinyjpfont_install_notice' );
+add_action( 'admin_notices', 'tinyjpfont_advanced_warning' );
 
 function tinyjpfont_advanced_warning_dismissed() {
     $user_id = get_current_user_id();
