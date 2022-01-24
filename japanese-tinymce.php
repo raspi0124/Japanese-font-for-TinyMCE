@@ -61,8 +61,8 @@ $config4 = get_option('tinyjpfont_head');
 $config5 = get_option('tinyjpfont_default_font');
 $defaultvalue = "0";
 $isknown = "";
-//Load setting.php
-include(plugin_dir_path(__FILE__) . 'gutenjpfont/gutenjpfont.php');
+//Load settings.php
+include(plugin_dir_path(__FILE__) . 'settings.php');
 //Notice
 function tinyjpfont_fix425_notice() {
     $user_id = get_current_user_id();
