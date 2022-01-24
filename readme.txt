@@ -19,7 +19,7 @@ Font to be added；<br>
 and more..
 And If you want more font,please post a comment to page below.<br>
 <br>
-Please see <a href="http://raspi-diary.com/wordpress%e3%81%ae%e3%82%a8%e3%83%87%e3%82%a3%e3%82%bf%e3%81%ab%e6%97%a5%e6%9c%ac%e8%aa%9e%e3%83%95%e3%82%a9%e3%83%b3%e3%83%88%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b%e3%83%97%e3%83%a9%e3%82%b0/">here</a> for more infomation.(Japanese)<br>
+Please see <a href="https://diary.raspi0124.dev/post-677/">here</a> for more infomation.(Japanese)<br>
 Development for this plugin takes place at GitHub. To report bugs or feature requests, please use <a href="https://github.com/raspi0124/Japanese-font-for-TinyMCE">Github</a> issues.
 This plugin could not be exist without the creator of the fonts, the people who sacrificed huge amount of their time contributing to more freeer world.
 If you would like to donate, or send message to those people who sacrificed huge amount of their private time making those fonts and pubishing them for free, feel free to checkout this list. It has all email/donating destination I could collect.
@@ -94,3 +94,4 @@ Version 4.21: Made notice permanantly-dissmissable
 Version 4.22: Fixed Bug: Failing to correctly display the fonts on Gutenberg (Thanks to @tomoko_misaki for reporting this bug), and fixed font-loading source for Gutenberg to jsDelivr, from RawGit.
 Version 4.23: Fixed Security Vulnerability: Fixed vulnerability that may occur at old browsers (Thanks to @stmkza for reporting this), and New Feature: Betaly changed source of some fonts (Huifont and TanukiMagic) to Google Cloud Storage.
 Version 4.24: Reverted Source of Font(s) to Previous One as cost to maintain CDN servers was becoming unaffordable.
+Version 4.25: Made Gutenberg option default & Upgraded required version to >5.0 & Updated Tested version & Added warning when Advanced Editor Tools plugin is installed.
