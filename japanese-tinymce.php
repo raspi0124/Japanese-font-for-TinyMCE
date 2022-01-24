@@ -64,22 +64,22 @@ $isknown = "";
 //Load settings.php
 include(plugin_dir_path(__FILE__) . 'settings.php');
 //Notice
-/*function tinyjpfont_fix425_notice() {
+function tinyjpfont_fix426_notice() {
     $user_id = get_current_user_id();
     if ( !get_user_meta( $user_id, 'tinyjpfont_fix426_notice_dismissed', 'dismissed' ) )
-        echo '<div class="notice notice-info" style="padding:1%;"><strong>Japanese Font for WordPressからのお知らせです!</strong>(バージョン4.25 リリースノート)<br>
-				・Gutenberg対応をデフォルトにしました。これによりWordPressの必須バージョンが5.0以上となりました。5.0以前をご利用の方はバージョン4.24のご利用をご検討ください。<br />
-				<br><a href="?tinyjpfont-fix425-notice-dismissed=true">Dismiss(この通知を消す)</a></div>';
+        echo '<div class="notice notice-info" style="padding:1%;"><strong>Japanese Font for WordPressからのお知らせです!</strong>(バージョン4.26 リリースノート)<br>
+				・バージョン4.25で行ったGutenberg対応のデフォルト化がいくつかの環境で致命的な不具合を発生させたとの報告を受け、至急変更を取り消しました。ご迷惑をおかけし本当に申し訳ありませんでした。<br />
+				<br><a href="?tinyjpfont-fix426-notice-dismissed=true">Dismiss(この通知を消す)</a></div>';
 }
-add_action( 'admin_notices', 'tinyjpfont_fix425_notice' );
+add_action( 'admin_notices', 'tinyjpfont_fix426_notice' );
 
-add_action( 'admin_init', 'tinyjpfont_fix424_notice_dismissed' );
-function tinyjpfont_fix425_notice_dismissed() {
+add_action( 'admin_init', 'tinyjpfont_fix426_notice_dismissed' );
+function tinyjpfont_fix426_notice_dismissed() {
     $user_id = get_current_user_id();
-    if ( isset( $_GET['tinyjpfont-fix425-notice-dismissed'] ) )
-        add_user_meta( $user_id, 'tinyjpfont_fix425_notice_dismissed', 'true', true );
+    if ( isset( $_GET['tinyjpfont-fix426-notice-dismissed'] ) )
+        add_user_meta( $user_id, 'tinyjpfont_fix426_notice_dismissed', 'true', true );
 }
-add_action( 'admin_init', 'tinyjpfont_fix425_notice_dismissed' );
+add_action( 'admin_init', 'tinyjpfont_fix426_notice_dismissed' );
 */
 //INSTALL NOTICE
 
@@ -90,7 +90,7 @@ function tinyjpfont_install_notice() {
                 Japanese Font for WordPressのインストールありがとうございます!<br>
                 さっそく新しく追加された7種類のフォントを試してみましょう!<br>
 				(WordPress5.0以降に搭載されているブロックエディタ、Gutenbergでこれらのフォントを利用するにはJapanese Font for WordPressの設定にて
-                Gutenberg対応モード (beta)を有効化する必要がありますのでご注意ください)<br>
+                Gutenberg対応モードを有効化する必要がありますのでご注意ください)<br>
 				何か不具合等発見されましたら<a href="https://twitter.com/raspi0124">Twitter: @raspi0124</a> または raspi0124[at]gmail.com までお気軽にご連絡ください。<br>
 				Japanese Font for WordPressをよろしくお願いします!<br>
 				<br><a href="?tinyjpfont-install-notice-dismissed=true">Dismiss(この通知を消す)</a></div>';
@@ -109,7 +109,7 @@ function tinyjpfont_advanced_warning() {
     if ( !get_user_meta( $user_id, 'tinyjpfont_advanced_warning', 'dismissed' ) && is_plugin_active( 'tinymce-advanced/tinymce-advanced.php' ) )
         echo '<div class="notice is-dismissible notice-warning" style="padding:1%;"><strong>Advanced Editor Tools (旧名 TinyMCE Advanced)プラグインの設定をお願いします</strong><br>
 				現在、Advanced Editor Tools (旧名 TinyMCE Advanced) プラグインがインストールされている環境においてJapanese Font for WordPressのクラシックエディタ上での動作を始めとする機能の動作に不具合が生じています。<br>
-				お手数おかけしますが、<a href="https://diary.raspi0124.dev/post-4425/" target="_blank" rel="noopnener">こちらの記事の手順</a>に従って設定をお願いします。<br>
+				お手数おかけしますが、<a href="https://diary.raspi0124.dev/post-4426/" target="_blank" rel="noopnener">こちらの記事の手順</a>に従って設定をお願いします。<br>
 				<br><span style="float: right;"><a href="?tinyjpfont-advanced-warning-dismissed=true">設定を完了したのでこの通知を表示しない</a></span></div>';
 }
 add_action( 'admin_notices', 'tinyjpfont_advanced_warning' );
