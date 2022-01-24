@@ -95,3 +95,4 @@ Version 4.22: Fixed Bug: Failing to correctly display the fonts on Gutenberg (Th
 Version 4.23: Fixed Security Vulnerability: Fixed vulnerability that may occur at old browsers (Thanks to @stmkza for reporting this), and New Feature: Betaly changed source of some fonts (Huifont and TanukiMagic) to Google Cloud Storage.
 Version 4.24: Reverted Source of Font(s) to Previous One as cost to maintain CDN servers was becoming unaffordable.
 Version 4.25: Made Gutenberg option default & Upgraded required version to >5.0 & Updated Tested version & Added warning when Advanced Editor Tools plugin is installed.
+Version 4.26: Reverted previous change of making Gutenbeg Option default as it caused fatal damage to certain websites.

@@ -36,8 +36,8 @@ function tinyjpfont_options_page()
 				$tinyjpfont_check_noto = isset($_POST['tinyjpfont_check_noto']) ? 1 : 0;
 				update_option('tinyjpfont_check_noto', $tinyjpfont_check_noto);
 
-				$tinyjpfont_disable_gutenberg = isset($_POST['tinyjpfont_disable_gutenberg']) ? 1 : 0;
-				update_option('tinyjpfont_disable_gutenberg', $tinyjpfont_disable_gutenberg);
+				$tinyjpfont_gutenberg = isset($_POST['tinyjpfont_gutenberg']) ? 1 : 0;
+				update_option('tinyjpfont_gutenberg', $tinyjpfont_gutenberg);
 		} ?>
 </head>
 <body>
