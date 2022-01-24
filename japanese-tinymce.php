@@ -2,7 +2,7 @@
 /*
 Plugin Name: Japanese font for WordPress (priviously: Japanese Font for TinyMCE)
 Description: Add Japanese font to both Gutenberg and TinyMCE Advanced plugin's font family selections.
-Version: 4.25
+Version: 4.26
 Author: raspi0124
 Author URI: https://raspi0124.dev/
 License: GPLv2
@@ -48,7 +48,7 @@ https://nelog.jp/wordpress-visual-editor-font-size
 Gutenberg版で参考になった記事についてははgutenjpfont/gutenjpfont.phpをご覧ください
 */
 // define $
-$version = "4.25";
+$version = "4.26";
 //1 is enable, 0 is disable unless written.
 // config 1 is CDN
 //conbfig 2 is font load mode
@@ -56,7 +56,7 @@ $version = "4.25";
 //config 4 is load by header or footer. 0=header, 1=footer
 $config1 = get_option('tinyjpfont_check_cdn');
 $config2 = get_option('tinyjpfont_select');
-$config3 = get_option('tinyjpfont_disable_gutenberg');
+$config3 = get_option('tinyjpfont_gutenberg');
 $config4 = get_option('tinyjpfont_head');
 $config5 = get_option('tinyjpfont_default_font');
 $defaultvalue = "0";
@@ -64,9 +64,9 @@ $isknown = "";
 //Load settings.php
 include(plugin_dir_path(__FILE__) . 'settings.php');
 //Notice
-function tinyjpfont_fix425_notice() {
+/*function tinyjpfont_fix425_notice() {
     $user_id = get_current_user_id();
-    if ( !get_user_meta( $user_id, 'tinyjpfont_fix425_notice_dismissed', 'dismissed' ) )
+    if ( !get_user_meta( $user_id, 'tinyjpfont_fix426_notice_dismissed', 'dismissed' ) )
         echo '<div class="notice notice-info" style="padding:1%;"><strong>Japanese Font for WordPressからのお知らせです!</strong>(バージョン4.25 リリースノート)<br>
 				・Gutenberg対応をデフォルトにしました。これによりWordPressの必須バージョンが5.0以上となりました。5.0以前をご利用の方はバージョン4.24のご利用をご検討ください。<br />
 				<br><a href="?tinyjpfont-fix425-notice-dismissed=true">Dismiss(この通知を消す)</a></div>';
@@ -80,14 +80,17 @@ function tinyjpfont_fix425_notice_dismissed() {
         add_user_meta( $user_id, 'tinyjpfont_fix425_notice_dismissed', 'true', true );
 }
 add_action( 'admin_init', 'tinyjpfont_fix425_notice_dismissed' );
-
+*/
 //INSTALL NOTICE
+
 function tinyjpfont_install_notice() {
     $user_id = get_current_user_id();
     if ( !get_user_meta( $user_id, 'tinyjpfont_install_notice_dismissed', 'dismissed' ) )
         echo '<div class="notice notice-info" style="padding:1%;"><strong>Japanese Font for WordPressへようこそ!</strong><br>
                 Japanese Font for WordPressのインストールありがとうございます!<br>
                 さっそく新しく追加された7種類のフォントを試してみましょう!<br>
+				(WordPress5.0以降に搭載されているブロックエディタ、Gutenbergでこれらのフォントを利用するにはJapanese Font for WordPressの設定にて
+                Gutenberg対応モード (beta)を有効化する必要がありますのでご注意ください)<br>
 				何か不具合等発見されましたら<a href="https://twitter.com/raspi0124">Twitter: @raspi0124</a> または raspi0124[at]gmail.com までお気軽にご連絡ください。<br>
 				Japanese Font for WordPressをよろしくお願いします!<br>
 				<br><a href="?tinyjpfont-install-notice-dismissed=true">Dismiss(この通知を消す)</a></div>';
@@ -185,7 +188,7 @@ if ($config1 == "0" and $config2 == "0") {
 }
 
 //add gutenberg support.
-if ($config3 == "0") {
+if ($config3 == "1") {
 		include(plugin_dir_path(__FILE__) . 'gutenjpfont/gutenjpfont.php');
 } else {
 }
