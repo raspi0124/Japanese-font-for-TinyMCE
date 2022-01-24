@@ -80,7 +80,7 @@ function tinyjpfont_fix426_notice_dismissed() {
         add_user_meta( $user_id, 'tinyjpfont_fix426_notice_dismissed', 'true', true );
 }
 add_action( 'admin_init', 'tinyjpfont_fix426_notice_dismissed' );
-*/
+
 //INSTALL NOTICE
 
 function tinyjpfont_install_notice() {
