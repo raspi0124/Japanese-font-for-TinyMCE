@@ -105,7 +105,7 @@ function tinyjpfont_advanced_warning() {
         echo '<div class="notice is-dismissible notice-warning" style="padding:1%;"><strong>Advanced Editor Tools (旧名 TinyMCE Advanced)プラグインの設定をお願いします</strong><br>
 				現在、Advanced Editor Tools (旧名 TinyMCE Advanced) プラグインがインストールされている環境においてJapanese Font for WordPressのクラシックエディタ上での動作を始めとする機能の動作に不具合が生じています。<br>
 				お手数おかけしますが、<a href="https://diary.raspi0124.dev/post-4425/" target="_blank" rel="noopnener">こちらの記事の手順</a>に従って設定をお願いします。<br>
-				<br><a href="?tinyjpfont-advanced-warning-dismissed=true">設定を完了したのでこの通知を表示しない</a></div>';
+				<br><span style="float: right;"><a href="?tinyjpfont-advanced-warning-dismissed=true">設定を完了したのでこの通知を表示しない</a></span></div>';
 }
 add_action( 'admin_notices', 'tinyjpfont_advanced_warning' );
 
