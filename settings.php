@@ -92,8 +92,8 @@ Japanese Font for WordPressの情報についてはTwitterにて#tinyjpfontの�
 				<br><strong>テーマの仕様により対応していない場合もあります。</strong>
 			</tr><br>
 			<tr>
-				<th scope="row"><label for="tinyjpfont_gutenberg"><h3>Gutenberg対応機能の有効化</h3></label></th><br>
-					<td><label><input name="tinyjpfont_gutenberg" type="checkbox" id="tinyjpfont_gutenberg" value="1" <?php checked(1, get_option('tinyjpfont_gutenberg')); ?> /> Gutenbergへの対応を有効化する</label></td><br>
+				<th scope="row"><label for="tinyjpfont_gutenberg"><h3>ブロックエディタ(Gutenberg)対応機能の有効化</h3></label></th><br>
+					<td><label><input name="tinyjpfont_gutenberg" type="checkbox" id="tinyjpfont_gutenberg" value="1" <?php checked(1, get_option('tinyjpfont_gutenberg')); ?> /> ブロックエディタ(Gutenberg)への対応を有効化する</label></td><br>
 		</tr><br>
 			<strong>
 			Gutenberg対応機能はNoto Sans Japaneseとふい字フォントのみ現在サポートしています。

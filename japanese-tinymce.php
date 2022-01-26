@@ -81,6 +81,28 @@ function tinyjpfont_fix426_notice_dismissed() {
 }
 add_action( 'admin_init', 'tinyjpfont_fix426_notice_dismissed' );
 
+//Gutenberg Extra Notice
+//Notice
+function tinyjpfont_gutenberg_notice() {
+    $user_id = get_current_user_id();
+    if ( !get_user_meta( $user_id, 'tinyjpfont_gutenberg_notice_dismissed', 'dismissed' ) && get_user_meta( $user_id, 'tinyjpfont_install_notice_dismissed', 'dismissed' ) && $config3 == 0 )
+        echo '<div class="notice notice-warning" style="padding:1%;"><strong>Gutenberg(ブロックエディタ)対応機能が無効になっているようです</strong><br>
+				Japanese Font for WordPressの一部機能がGutenberg(ブロックエディタ)上で動作しない状態となっています。<br />
+				ダッシュボードのサイドバーにあるJapanese Font for WordPressの設定より、「Gutenberg対応機能の有効化」をお願いします。<br />
+				なお、WordPressバージョン5.0より前のバージョンをお使いの方はこの通知を無視していただいて大丈夫です。<br />
+				この通知はGutenberg対応機能が有効化され次第、自動的に消去されます。<br />
+				<br><a href="?tinyjpfont-gutenberg-notice-dismissed=true">2019年よりWordPressを更新していない/ブロックエディタを使用していないのでこの通知を無視する</a></div>';
+}
+add_action( 'admin_notices', 'tinyjpfont_gutenberg_notice' );
+
+add_action( 'admin_init', 'tinyjpfont_gutenberg_notice_dismissed' );
+function tinyjpfont_gutenberg_notice_dismissed() {
+    $user_id = get_current_user_id();
+    if ( isset( $_GET['tinyjpfont-gutenberg-notice-dismissed'] ) )
+        add_user_meta( $user_id, 'tinyjpfont_gutenberg_notice_dismissed', 'true', true );
+}
+add_action( 'admin_init', 'tinyjpfont_gutenberg_notice_dismissed' );
+
 //INSTALL NOTICE
 
 function tinyjpfont_install_notice() {
