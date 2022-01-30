@@ -86,6 +86,14 @@ add_action( 'admin_init', 'tinyjpfont_fix426_notice_dismissed' );
 function tinyjpfont_gutenberg_notice() {
     $user_id = get_current_user_id();
 	$config3 = get_option('tinyjpfont_gutenberg');
+	$current_url = home_url($_SERVER['REQUEST_URI']);
+	$query = parse_url($url, PHP_URL_QUERY);
+
+if ($query) {
+    $url .= '&tinyjpfont-gutenberg-notice-dismissed=true';
+} else {
+    $url .= '?tinyjpfont-gutenberg-notice-dismissed=true';
+}
     if ( !get_user_meta( $user_id, 'tinyjpfont_gutenberg_notice_dismissed', 'dismissed' ) && get_user_meta( $user_id, 'tinyjpfont_install_notice_dismissed', 'dismissed' ) && $config3 == 0 )
         echo '<div class="notice notice-warning" style="padding:1%;"><strong>Gutenberg(ブロックエディタ)対応機能が無効になっているようです</strong><br>
 				Japanese Font for WordPressの一部機能がGutenberg(ブロックエディタ)上で動作しない状態となっています。<br />
@@ -129,7 +137,7 @@ add_action( 'admin_init', 'tinyjpfont_install_notice_dismissed' );
 
 function tinyjpfont_advanced_warning() {
     $user_id = get_current_user_id();
-    if ( !get_user_meta( $user_id, 'tinyjpfont_advanced_warning', 'dismissed' ) && is_plugin_active( 'tinymce-advanced/tinymce-advanced.php' ) )
+    if ( !get_user_meta( $user_id, 'tinyjpfont_advanced_warning_dismissed', 'dismissed' ) && is_plugin_active( 'tinymce-advanced/tinymce-advanced.php' ) )
         echo '<div class="notice is-dismissible notice-warning" style="padding:1%;"><strong>Advanced Editor Tools (旧名 TinyMCE Advanced)プラグインの設定をお願いします</strong><br>
 				現在、Advanced Editor Tools (旧名 TinyMCE Advanced) プラグインがインストールされている環境においてJapanese Font for WordPressのクラシックエディタ上での動作を始めとする機能の動作に不具合が生じています。<br>
 				お手数おかけしますが、<a href="https://diary.raspi0124.dev/post-4426/" target="_blank" rel="noopnener">こちらの記事の手順</a>に従って設定をお願いします。<br>
@@ -281,11 +289,11 @@ function tinyjpfont_quicktag()
 {
 		//スクリプトキューにquicktagsが保存されているかチェック
 		if (wp_script_is('quicktags')) {?>
-		<script>
-			QTags.addButton('tinyjpfont-noto','Noto Sans Japanese','<span style="font-family: Noto Sans Japanese;">','</span>');
-			QTags.addButton('tinyjpfont-huiji','ふい字','<span style="font-family: Huifont;">','</span>');
-		</script>
-	<?php
+<script>
+QTags.addButton('tinyjpfont-noto', 'Noto Sans Japanese', '<span style="font-family: Noto Sans Japanese;">', '</span>');
+QTags.addButton('tinyjpfont-huiji', 'ふい字', '<span style="font-family: Huifont;">', '</span>');
+</script>
+<?php
 		}
 }
 add_action('admin_print_footer_scripts', 'tinyjpfont_quicktag');
