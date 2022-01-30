@@ -23,23 +23,25 @@ function tinyjpfont_notice_dismiss_url($dismissid) {
 	return $current_url;
 }
 //Notice
-function tinyjpfont_fix426_notice() {
+function tinyjpfont_fix427_notice() {
 	$user_id = get_current_user_id();
-	$dismissurl = tinyjpfont_notice_dismiss_url('tinyjpfont-fix426-notice-dismissed');
-    if ( !get_user_meta( $user_id, 'tinyjpfont_fix426_notice_dismissed', 'dismissed' ) )
-        echo '<div class="notice notice-info" style="padding:1%;"><strong>Japanese Font for WordPressからのお知らせです!</strong>(バージョン4.26 リリースノート)<br>
-				・バージョン4.25で行ったGutenberg対応のデフォルト化がいくつかの環境で致命的な不具合を発生させたとの報告を受け、至急変更を取り消しました。ご迷惑をおかけし本当に申し訳ありませんでした。<br />
+	$dismissurl = tinyjpfont_notice_dismiss_url('tinyjpfont-fix427-notice-dismissed');
+    if ( !get_user_meta( $user_id, 'tinyjpfont_fix427_notice_dismissed', 'dismissed' ) )
+        echo '<div class="notice notice-info" style="padding:1%;"><strong>Japanese Font for WordPressからのお知らせです!</strong>(バージョン4.27 リリースノート)<br>
+				・通知のDismissのURL生成方法を改善しました<br />
+                ・コードのリファクタリングを行いました<br />
+                ・Advanced Editor Tools (旧名 TinyMCE Advanced)プラグインが有効化されている際に表示される通知が消せない問題を修正しました。Takashiさん、ご報告ありがとうございました<br />
 				<br><a href="'. $dismissurl .'">Dismiss(この通知を消す)</a></div>';
 }
-add_action( 'admin_notices', 'tinyjpfont_fix426_notice' );
+add_action( 'admin_notices', 'tinyjpfont_fix427_notice' );
 
-add_action( 'admin_init', 'tinyjpfont_fix426_notice_dismissed' );
-function tinyjpfont_fix426_notice_dismissed() {
+add_action( 'admin_init', 'tinyjpfont_fix427_notice_dismissed' );
+function tinyjpfont_fix427_notice_dismissed() {
     $user_id = get_current_user_id();
-    if ( isset( $_GET['tinyjpfont-fix426-notice-dismissed'] ) )
-        add_user_meta( $user_id, 'tinyjpfont_fix426_notice_dismissed', 'true', true );
+    if ( isset( $_GET['tinyjpfont-fix427-notice-dismissed'] ) )
+        add_user_meta( $user_id, 'tinyjpfont_fix427_notice_dismissed', 'true', true );
 }
-add_action( 'admin_init', 'tinyjpfont_fix426_notice_dismissed' );
+add_action( 'admin_init', 'tinyjpfont_fix427_notice_dismissed' );
 
 //Gutenberg Extra Notice
 //Notice
@@ -95,7 +97,7 @@ function tinyjpfont_advanced_warning() {
     if ( !get_user_meta( $user_id, 'tinyjpfont_advanced_warning_dismissed', 'dismissed' ) && is_plugin_active( 'tinymce-advanced/tinymce-advanced.php' ) )
         echo '<div class="notice is-dismissible notice-warning" style="padding:1%;"><strong>Advanced Editor Tools (旧名 TinyMCE Advanced)プラグインの設定をお願いします</strong><br>
 				現在、Advanced Editor Tools (旧名 TinyMCE Advanced) プラグインがインストールされている環境においてJapanese Font for WordPressのクラシックエディタ上での動作を始めとする機能の動作に不具合が生じています。<br>
-				お手数おかけしますが、<a href="https://diary.raspi0124.dev/post-4426/" target="_blank" rel="noopnener">こちらの記事の手順</a>に従って設定をお願いします。<br>
+				お手数おかけしますが、<a href="https://diary.raspi0124.dev/post-4427/" target="_blank" rel="noopnener">こちらの記事の手順</a>に従って設定をお願いします。<br>
 				<br><span style="float: right;"><a href="'. $dismissurl .'">設定を完了したのでこの通知を表示しない</a></span></div>';
 }
 add_action( 'admin_notices', 'tinyjpfont_advanced_warning' );
