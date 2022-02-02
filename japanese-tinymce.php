@@ -246,16 +246,18 @@ function tinyjpfont_getdefaultfonturl(){
 	$config5 = get_option('tinyjpfont_default_font');
 	$fontname = $config5;
 	if (!isset($config5) || $config5 != "") {
-        return plugin_dir_url(__FILE__) . "default-font-css.php?fn=" . $fontname;
+        return plugin_dir_url(__FILE__) . "default-font-css.php?fn=Noto";
 	}else{
-	$defaultfont_url = plugin_dir_url(__FILE__) . "default-font-css.php?fn=" . $fontname;
-	return $defaultfont_url;
+		$defaultfont_url = plugin_dir_url(__FILE__) . "default-font-css.php?fn=" . $fontname;
+		return $defaultfont_url;
 }
 }
 function tinyjpfont_add_default_font() {
-	$defaultfont_url = tinyjpfont_getdefaultfonturl();
-	add_editor_style( $defaultfont_url );
-	wp_register_style('tinyjpfont-default-font', $defaultfont_url);
-	wp_enqueue_style('tinyjpfont-default-font');
+	if (is_admin()) {
+		$defaultfont_url = tinyjpfont_getdefaultfonturl();
+		add_editor_style( $defaultfont_url );
+		wp_register_style('tinyjpfont-default-font', $defaultfont_url);
+		wp_enqueue_style('tinyjpfont-default-font');
+	}
 }
 add_action( 'init', 'tinyjpfont_add_default_font' );
