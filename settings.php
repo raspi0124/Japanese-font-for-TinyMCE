@@ -8,37 +8,37 @@ add_action('admin_menu', 'tinyjpfont_add_pages');
 // メニューを追加する
 function tinyjpfont_add_pages()
 {
-        $tinyjpfont_plugin_slug = "tinyjpfont";
+	$tinyjpfont_plugin_slug = "tinyjpfont";
 
-		// トップレベルにオリジナルのメニューを追加
-		add_menu_page(
-				'Japanese Font for WordPressの設定',
-				'Japanese Font for WordPressの設定',
-				'manage_options',
-				$tinyjpfont_plugin_slug,
-				'tinyjpfont_options_page',
-				plugins_url('icon.png', __FILE__)
-				);
+	// トップレベルにオリジナルのメニューを追加
+	add_menu_page(
+		'Japanese Font for WordPressの設定',
+		'Japanese Font for WordPressの設定',
+		'manage_options',
+		$tinyjpfont_plugin_slug,
+		'tinyjpfont_options_page',
+		plugins_url('icon.png', __FILE__)
+	);
 }
 
 // メニューで表示されるページの内容を返す関数
 function tinyjpfont_options_page()
 {
-		// POSTデータがあれば設定を更新
-		if (isset($_POST['tinyjpfont_select'])) {
-				update_option('tinyjpfont_select', $_POST['tinyjpfont_select']);
-				update_option('tinyjpfont_head', $_POST['tinyjpfont_head']);
-				update_option('tinyjpfont_default_font', $_POST['tinyjpfont_default_font']);
-				// チェックボックスはチェックされないとキーも受け取れないので、ない時は0にする
-				$tinyjpfont_check_cdn = isset($_POST['tinyjpfont_check_cdn']) ? 1 : 0;
-				update_option('tinyjpfont_check_cdn', $tinyjpfont_check_cdn);
+	// POSTデータがあれば設定を更新
+	if (isset($_POST['tinyjpfont_select'])) {
+		update_option('tinyjpfont_select', $_POST['tinyjpfont_select']);
+		update_option('tinyjpfont_head', $_POST['tinyjpfont_head']);
+		update_option('tinyjpfont_default_font', $_POST['tinyjpfont_default_font']);
+		// チェックボックスはチェックされないとキーも受け取れないので、ない時は0にする
+		$tinyjpfont_check_cdn = isset($_POST['tinyjpfont_check_cdn']) ? 1 : 0;
+		update_option('tinyjpfont_check_cdn', $tinyjpfont_check_cdn);
 
-				$tinyjpfont_check_noto = isset($_POST['tinyjpfont_check_noto']) ? 1 : 0;
-				update_option('tinyjpfont_check_noto', $tinyjpfont_check_noto);
+		$tinyjpfont_check_noto = isset($_POST['tinyjpfont_check_noto']) ? 1 : 0;
+		update_option('tinyjpfont_check_noto', $tinyjpfont_check_noto);
 
-				$tinyjpfont_gutenberg = isset($_POST['tinyjpfont_gutenberg']) ? 1 : 0;
-				update_option('tinyjpfont_gutenberg', $tinyjpfont_gutenberg);
-		} ?>
+		$tinyjpfont_gutenberg = isset($_POST['tinyjpfont_gutenberg']) ? 1 : 0;
+		update_option('tinyjpfont_gutenberg', $tinyjpfont_gutenberg);
+	} ?>
 </head>
 
 <body>
@@ -57,11 +57,11 @@ function tinyjpfont_options_page()
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/raspi0124/Japanese-font-for-TinyMCE@stable/admin.css">
         <div id="content">
             <?php
-						// 更新完了を通知
-						if (isset($_POST['tinyjpfont_select'])) {
-								echo '<div id="setting-error-settings_updated" class="updated settings-error notice is-dismissible">
+				// 更新完了を通知
+				if (isset($_POST['tinyjpfont_select'])) {
+					echo '<div id="setting-error-settings_updated" class="updated settings-error notice is-dismissible">
 							<p><strong>設定を保存しました。</strong></p></div>';
-						} ?>
+				} ?>
             <form method="post" action="">
                 <tr>
                     <th scope="row">
