@@ -30,7 +30,7 @@ function tinyjpfont_fix428_notice()
     $dismissurl = tinyjpfont_notice_dismiss_url('tinyjpfont-fix428-notice-dismissed');
     if (!get_user_meta($user_id, 'tinyjpfont_fix428_notice_dismissed', 'dismissed') && current_user_can( 'manage_options' ) ) {
         echo '<div class="notice notice-info" style="padding:1%;"><strong>Japanese Font for WordPressからのお知らせです!</strong>(バージョン4.28 リリースノート)<br>
-				・通知のDismissが、WordPressがサブディレクトリ下にインストールされている場合に正常に稼働しないバグを修正しました。<a href="twitter.com/tw_toto">toto</a>さん、ご報告ありがとうございました。<br />
+				・通知のDismissが、WordPressがサブディレクトリ下にインストールされている場合に正常に稼働しないバグを修正しました。T.さん、ご報告ありがとうございました。<br />
 				<br><a href="' . $dismissurl . '">Dismiss(この通知を消す)</a></div>';
 }
 }
