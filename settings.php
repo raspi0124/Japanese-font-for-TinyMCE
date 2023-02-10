@@ -131,6 +131,27 @@ function tinyjpfont_options_page()
                     </td>
                     </th>
                 </tr>
+                <tr>
+                    <th scope="row"><label for="tinyjpfont_whole_font">
+                            <h3>ウェブサイト全体適用フォント</h3>
+                            <p>ウェブサイト全体に適用されるフォントです。</p>
+                        </label></th><br>
+                    <td>
+                        <select name="tinyjpfont_whole_font" id="tinyjpfont_whole_font">
+                            <option value="noselect"
+                                <?php selected("noselect", get_option('tinyjpfont_whole_font')); ?>>
+                                選択しない</option>
+                            <option value="Noto Sans Japanese"
+                                <?php selected("noto", get_option('tinyjpfont_whole_font')); ?>>Noto Sans Japanese
+                            </option>
+                            <option value="Huifont" <?php selected("Huifont", get_option('tinyjpfont_whole_font')); ?>>
+                                ふい字</option>
+                            <option value="kokorom" <?php selected("kokorom", get_option('tinyjpfont_whole_font')); ?>>
+                                こころ明朝体</option>
+                        </select>
+                    </td>
+                    </th>
+                </tr>
                 <br>
                 </table>
                 <?php submit_button(); ?>

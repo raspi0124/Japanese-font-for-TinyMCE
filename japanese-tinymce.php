@@ -263,3 +263,29 @@ function tinyjpfont_add_default_font()
 	}
 }
 add_action('init', 'tinyjpfont_add_default_font');
+
+//Font for entire site
+function tinyjpfont_getwholefonturl()
+{
+	$config6 = get_option('tinyjpfont_whole_font');
+	$wholefontname = $config6;
+	if (!isset($config6) || $config6 != "" || $config6 == "noselect") {
+		//選択されていない場合はとりあえずaddfont.cssを返す
+		return plugin_dir_url(__FILE__) . "addfont.css";
+	} else {
+		$defaultfont_url = plugin_dir_url(__FILE__) . "whole-font-css.php?fn=" . $fontname;
+		return $defaultfont_url;
+	}
+}
+function tinyjpfont_add_whole_font()
+{
+	$config6 = get_option('tinyjpfont_whole_font');
+	if (!isset($config6) || $config6 != "" || $config6 == "noselect") {
+		return;
+	} else {
+		$wholefont_url = tinyjpfont_getwholefonturl();
+		wp_register_style('tinyjpfont-whole-font', $wholefont_url);
+		wp_enqueue_style('tinyjpfont-whole-font');
+	}
+}
+add_action('init', 'tinyjpfont_add_whole_font');
