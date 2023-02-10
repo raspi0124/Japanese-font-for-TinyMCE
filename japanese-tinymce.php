@@ -59,6 +59,8 @@ $config2 = get_option('tinyjpfont_select');
 $config3 = get_option('tinyjpfont_gutenberg');
 $config4 = get_option('tinyjpfont_head');
 $config5 = get_option('tinyjpfont_default_font');
+$config6 = get_option('tinyjpfont_whole_font');
+
 $defaultvalue = "0";
 $isknown = "";
 //Load settings.php

@@ -29,6 +29,7 @@ function tinyjpfont_options_page()
 		update_option('tinyjpfont_select', $_POST['tinyjpfont_select']);
 		update_option('tinyjpfont_head', $_POST['tinyjpfont_head']);
 		update_option('tinyjpfont_default_font', $_POST['tinyjpfont_default_font']);
+        update_option('tinyjpfont_whole_font', $_POST['tinyjpfont_whole_font']);
 		// チェックボックスはチェックされないとキーも受け取れないので、ない時は0にする
 		$tinyjpfont_check_cdn = isset($_POST['tinyjpfont_check_cdn']) ? 1 : 0;
 		update_option('tinyjpfont_check_cdn', $tinyjpfont_check_cdn);
