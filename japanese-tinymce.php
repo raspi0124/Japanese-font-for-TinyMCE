@@ -87,6 +87,7 @@ class JapaneseFontTinyMCE {
         $this->init_font_styles();
         add_action('init', [$this, 'add_default_font']);
         add_action('init', [$this, 'add_whole_font']);
+        add_action('init', [$this, 'register_font_library']);
 
         // Editor customizations
         $this->init_editor_hooks();
@@ -292,6 +293,151 @@ class JapaneseFontTinyMCE {
         $whole_font_url = plugin_dir_url(__FILE__) . 'whole-font-css.php?fn=' . $font_name;
         wp_register_style('tinyjpfont-whole-font', $whole_font_url);
         wp_enqueue_style('tinyjpfont-whole-font');
+    }
+
+    /**
+     * Register fonts with the WordPress Font Library
+     */
+    public function register_font_library() {
+        if (!function_exists('wp_register_font_collection')) {
+            return;
+        }
+
+        wp_register_font_collection('japanese-fonts', [
+            'name' => __('Japanese Fonts', 'japanese-font-tinymce'),
+            'description' => __('A collection of high-quality Japanese fonts.', 'japanese-font-tinymce'),
+            'font_families' => [
+                [
+                    'font_family_settings' => [
+                        'name' => __('Noto Sans Japanese', 'japanese-font-tinymce'),
+                        'slug' => 'noto-sans-japanese',
+                        'fontFamily' => '"Noto Sans Japanese", sans-serif',
+                        'fontFace' => [
+                            [
+                                'fontWeight' => '100',
+                                'src' => '//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Thin.woff2',
+                                'format' => 'woff2'
+                            ],
+                            [
+                                'fontWeight' => '300',
+                                'src' => '//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff2',
+                                'format' => 'woff2'
+                            ],
+                            [
+                                'fontWeight' => '900',
+                                'src' => '//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.woff2',
+                                'format' => 'woff2'
+                            ]
+                        ]
+                    ],
+                    'categories' => ['sans-serif']
+                ],
+                [
+                    'font_family_settings' => [
+                        'name' => __('ふい字', 'japanese-font-tinymce'),
+                        'slug' => 'huifont',
+                        'fontFamily' => 'Huifont, sans-serif',
+                        'fontFace' => [
+                            [
+                                'fontWeight' => '400',
+                                'src' => 'https://cdn.statically.io/gh/raspi0124/my-sites-files/dc302549/HuiFont109.woff2',
+                                'format' => 'woff2'
+                            ]
+                        ]
+                    ],
+                    'categories' => ['handwriting']
+                ],
+                [
+                    'font_family_settings' => [
+                        'name' => __('心明朝', 'japanese-font-tinymce'),
+                        'slug' => 'kokorom',
+                        'fontFamily' => 'kokorom, serif',
+                        'fontFace' => [
+                            [
+                                'fontWeight' => '400',
+                                'src' => 'https://cdn.jsdelivr.net/gh/raspi0124/my-sites-files@0a9c3e242b46cd2d493db832a6eccba8f31b9da6/Kokoro.ttf',
+                                'format' => 'truetype'
+                            ]
+                        ]
+                    ],
+                    'categories' => ['serif']
+                ],
+                [
+                    'font_family_settings' => [
+                        'name' => __('エセナパJ', 'japanese-font-tinymce'),
+                        'slug' => 'esenapaj',
+                        'fontFamily' => 'esenapaj, sans-serif',
+                        'fontFace' => [
+                            [
+                                'fontWeight' => '400',
+                                'src' => 'https://cdn.jsdelivr.net/gh/raspi0124/my-sites-files@097f6373c8d24abad960ab5ec25e001be4fe7bd0/esenapaj.ttf',
+                                'format' => 'truetype'
+                            ]
+                        ]
+                    ],
+                    'categories' => ['sans-serif']
+                ],
+                [
+                    'font_family_settings' => [
+                        'name' => __('ほのか丸ゴシック', 'japanese-font-tinymce'),
+                        'slug' => 'honokamaru',
+                        'fontFamily' => 'honokamaru, sans-serif',
+                        'fontFace' => [
+                            [
+                                'fontWeight' => '400',
+                                'src' => 'https://cdn.jsdelivr.net/gh/raspi0124/my-sites-files@80b7a9fadba7c729d00bcc81beba49deb97e19de/font_1_honokamarugo_1.1.ttf',
+                                'format' => 'truetype'
+                            ]
+                        ]
+                    ],
+                    'categories' => ['sans-serif']
+                ],
+                [
+                    'font_family_settings' => [
+                        'name' => __('青柳衡山フォントT', 'japanese-font-tinymce'),
+                        'slug' => 'aoyanagiT',
+                        'fontFamily' => 'aoyanagiT, serif',
+                        'fontFace' => [
+                            [
+                                'fontWeight' => '400',
+                                'src' => 'https://cdn.jsdelivr.net/gh/raspi0124/my-sites-files@729d123c3a7de4ac2bb3a7a7cdbdedc707dde69120/aoyanagiT.ttf',
+                                'format' => 'truetype'
+                            ]
+                        ]
+                    ],
+                    'categories' => ['serif']
+                ],
+                [
+                    'font_family_settings' => [
+                        'name' => __('たぬき油性マジック', 'japanese-font-tinymce'),
+                        'slug' => 'tanukiM',
+                        'fontFamily' => 'tanukiM, cursive',
+                        'fontFace' => [
+                            [
+                                'fontWeight' => '400',
+                                'src' => 'https://cdn.jsdelivr.net/gh/raspi0124/my-sites-files@master/TanukiMagic.ttf',
+                                'format' => 'truetype'
+                            ]
+                        ]
+                    ],
+                    'categories' => ['handwriting']
+                ]
+            ],
+            'categories' => [
+                [
+                    'name' => __('Sans Serif', 'japanese-font-tinymce'),
+                    'slug' => 'sans-serif'
+                ],
+                [
+                    'name' => __('Serif', 'japanese-font-tinymce'),
+                    'slug' => 'serif'
+                ],
+                [
+                    'name' => __('Handwriting', 'japanese-font-tinymce'),
+                    'slug' => 'handwriting'
+                ]
+            ]
+        ]);
     }
 }
 
