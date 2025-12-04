@@ -2,7 +2,7 @@
 Contributors: raspi0124
 Tags: TinyMCE,fonts,font,Japanese,JapaneseFont,Gutenberg
 Requires at least: 5.1
-Tested up to: 6.7
+Tested up to: 6.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -99,3 +99,4 @@ Version 4.26: Reverted previous change of making Gutenbeg Option default as it c
 Version 4.27: Improved url generation method for dismissing notices & Fixed: Advanced warning not being dissmissable.
 Version 4.28: Fixed Bug: Notices not being dissmissable when wordpress is installed in subdirectory. (Thanks to @tw_toto for reporting this bug)
 Version 4.29: Executed a major overhaul (Part 1 of 2) to improve the developer experience. ToDo: Execute overhaul for Block Editor Part.
+Version 4.30: Fixed existing vulnerabilities & bugs.

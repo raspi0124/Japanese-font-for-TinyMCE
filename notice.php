@@ -19,26 +19,27 @@ function tinyjpfont_notice_dismiss_url($dismissid)
     return wp_nonce_url($url, 'tinyjpfont_dismiss_' . $dismissid);
 }
 //Notice
-function tinyjpfont_fix428_notice()
+function tinyjpfont_fix430_notice()
 {
     $user_id = get_current_user_id();
-    $dismissurl = tinyjpfont_notice_dismiss_url('tinyjpfont-fix428-notice-dismissed');
-    if (!get_user_meta($user_id, 'tinyjpfont_fix428_notice_dismissed', 'dismissed') && current_user_can( 'manage_options' ) ) {
-        echo '<div class="notice notice-info" style="padding:1%;"><strong>Japanese Font for WordPressからのお知らせです!</strong>(バージョン4.28 リリースノート)<br>
-				・通知のDismissが、WordPressがサブディレクトリ下にインストールされている場合に正常に稼働しないバグを修正しました。T.さん、ご報告ありがとうございました。<br />
+    $dismissurl = tinyjpfont_notice_dismiss_url('tinyjpfont-fix430-notice-dismissed');
+    if (!get_user_meta($user_id, 'tinyjpfont_fix430_notice_dismissed', 'dismissed') && current_user_can( 'manage_options' ) ) {
+        echo '<div class="notice notice-info" style="padding:1%;"><strong>Japanese Font for WordPressからのお知らせです!</strong>(バージョン4.30 リリースノート)<br>
+				・2件の脆弱性の修正<br />
+                ・その他、バグ修正等
 				<br><a href="' . esc_url($dismissurl) . '">Dismiss(この通知を消す)</a></div>';
 }
 }
-add_action('admin_notices', 'tinyjpfont_fix428_notice');
+add_action('admin_notices', 'tinyjpfont_fix430_notice');
 
-add_action('admin_init', 'tinyjpfont_fix428_notice_dismissed');
-function tinyjpfont_fix428_notice_dismissed()
+add_action('admin_init', 'tinyjpfont_fix430_notice_dismissed');
+function tinyjpfont_fix430_notice_dismissed()
 {
     $user_id = get_current_user_id();
-    if (isset($_GET['tinyjpfont-fix428-notice-dismissed']) && check_admin_referer('tinyjpfont_dismiss_tinyjpfont-fix428-notice-dismissed'))
-        add_user_meta($user_id, 'tinyjpfont_fix428_notice_dismissed', 'true', true);
+    if (isset($_GET['tinyjpfont-fix430-notice-dismissed']) && check_admin_referer('tinyjpfont_dismiss_tinyjpfont-fix430-notice-dismissed'))
+        add_user_meta($user_id, 'tinyjpfont_fix430_notice_dismissed', 'true', true);
 }
-add_action('admin_init', 'tinyjpfont_fix428_notice_dismissed');
+add_action('admin_init', 'tinyjpfont_fix430_notice_dismissed');
 
 //Gutenberg Extra Notice
 //Notice
