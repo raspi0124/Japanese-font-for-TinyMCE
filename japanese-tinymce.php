@@ -271,14 +271,17 @@ class JapaneseFontTinyMCE {
             return;
         }
 
-        $font_name = $this->config['default_font'];
-        $default_font_url = plugin_dir_url(__FILE__) . 'default-font-css.php?fn=' . 
-                           (!empty($font_name) ? $font_name : 'Noto');
+		$font_name = $this->config['default_font'];
+		$font_to_load = !empty($font_name) ? $font_name : 'Noto Sans Japanese';
+		$default_font_url = add_query_arg(
+			['fn' => $font_to_load],
+			plugin_dir_url(__FILE__) . 'default-font-css.php'
+		);
 
-        add_editor_style($default_font_url);
-        wp_register_style('tinyjpfont-default-font', $default_font_url);
-        wp_enqueue_style('tinyjpfont-default-font');
-    }
+		add_editor_style($default_font_url);
+		wp_register_style('tinyjpfont-default-font', $default_font_url);
+		wp_enqueue_style('tinyjpfont-default-font');
+	}
 
     /**
      * Add font styles to the entire site
@@ -289,10 +292,13 @@ class JapaneseFontTinyMCE {
             return;
         }
 
-        $whole_font_url = plugin_dir_url(__FILE__) . 'whole-font-css.php?fn=' . $font_name;
-        wp_register_style('tinyjpfont-whole-font', $whole_font_url);
-        wp_enqueue_style('tinyjpfont-whole-font');
-    }
+		$whole_font_url = add_query_arg(
+			['fn' => $font_name],
+			plugin_dir_url(__FILE__) . 'whole-font-css.php'
+		);
+		wp_register_style('tinyjpfont-whole-font', $whole_font_url);
+		wp_enqueue_style('tinyjpfont-whole-font');
+	}
 }
 
 // Initialize the plugin

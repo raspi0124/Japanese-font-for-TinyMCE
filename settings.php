@@ -140,15 +140,15 @@ function tinyjpfont_options_page()
                             <h3>デフォルトフォント(beta) (TinyMCEエディタ上でデフォルトで利用するフォントを選択できます)</h3>
                         </label></th><br>
                     <td>
-                        <select name="tinyjpfont_default_font" id="tinyjpfont_default_font">
-                            <option value="Noto Sans Japanese"
-                                <?php selected("noto", get_option('tinyjpfont_default_font')); ?>>Noto Sans Japanese
-                            </option>
-                            <option value="Huifont"
-                                <?php selected("Huifont", get_option('tinyjpfont_default_font')); ?>>ふい字</option>
-                            <option value="kokorom"
-                                <?php selected("kokorom", get_option('tinyjpfont_default_font')); ?>>こころ明朝体</option>
-                        </select>
+				<select name="tinyjpfont_default_font" id="tinyjpfont_default_font">
+					<option value="Noto Sans Japanese"
+						<?php selected(get_option('tinyjpfont_default_font'), 'Noto Sans Japanese'); ?>>Noto Sans Japanese
+					</option>
+					<option value="Huifont"
+						<?php selected(get_option('tinyjpfont_default_font'), 'Huifont'); ?>>ふい字</option>
+					<option value="kokorom"
+						<?php selected(get_option('tinyjpfont_default_font'), 'kokorom'); ?>>こころ明朝体</option>
+				</select>
                     </td>
                     </th>
                 </tr>
@@ -158,18 +158,18 @@ function tinyjpfont_options_page()
                             <p>ウェブサイト全体に適用されるフォントです。</p>
                         </label></th><br>
                     <td>
-                        <select name="tinyjpfont_whole_font" id="tinyjpfont_whole_font">
-                            <option value="noselect"
-                                <?php selected("noselect", get_option('tinyjpfont_whole_font')); ?>>
-                                選択しない</option>
-                            <option value="Noto Sans Japanese"
-                                <?php selected("noto", get_option('tinyjpfont_whole_font')); ?>>Noto Sans Japanese
-                            </option>
-                            <option value="Huifont" <?php selected("Huifont", get_option('tinyjpfont_whole_font')); ?>>
-                                ふい字</option>
-                            <option value="kokorom" <?php selected("kokorom", get_option('tinyjpfont_whole_font')); ?>>
-                                こころ明朝体</option>
-                        </select>
+				<select name="tinyjpfont_whole_font" id="tinyjpfont_whole_font">
+					<option value="noselect"
+						<?php selected(get_option('tinyjpfont_whole_font'), 'noselect'); ?>>
+						選択しない</option>
+					<option value="Noto Sans Japanese"
+						<?php selected(get_option('tinyjpfont_whole_font'), 'Noto Sans Japanese'); ?>>Noto Sans Japanese
+					</option>
+					<option value="Huifont" <?php selected(get_option('tinyjpfont_whole_font'), 'Huifont'); ?>>
+						ふい字</option>
+					<option value="kokorom" <?php selected(get_option('tinyjpfont_whole_font'), 'kokorom'); ?>>
+						こころ明朝体</option>
+				</select>
                     </td>
                     </th>
                 </tr>
