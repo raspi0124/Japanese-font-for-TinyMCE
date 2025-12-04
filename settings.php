@@ -26,10 +26,29 @@ function tinyjpfont_options_page()
 {
 	// POSTデータがあれば設定を更新
 	if (isset($_POST['tinyjpfont_select'])) {
-		update_option('tinyjpfont_select', $_POST['tinyjpfont_select']);
-		update_option('tinyjpfont_head', $_POST['tinyjpfont_head']);
-		update_option('tinyjpfont_default_font', $_POST['tinyjpfont_default_font']);
-        update_option('tinyjpfont_whole_font', $_POST['tinyjpfont_whole_font']);
+		if (!current_user_can('manage_options')) {
+			return;
+		}
+		check_admin_referer('tinyjpfont_settings_action');
+
+		$font_mode = isset($_POST['tinyjpfont_select']) ? sanitize_text_field(wp_unslash($_POST['tinyjpfont_select'])) : '0';
+		$font_mode = in_array($font_mode, ['0', '1'], true) ? $font_mode : '0';
+		update_option('tinyjpfont_select', $font_mode);
+
+		$load_position = isset($_POST['tinyjpfont_head']) ? sanitize_text_field(wp_unslash($_POST['tinyjpfont_head'])) : '0';
+		$load_position = in_array($load_position, ['0', '1'], true) ? $load_position : '0';
+		update_option('tinyjpfont_head', $load_position);
+
+		$default_font = isset($_POST['tinyjpfont_default_font']) ? sanitize_text_field(wp_unslash($_POST['tinyjpfont_default_font'])) : 'Noto Sans Japanese';
+		$allowed_fonts = ['Noto Sans Japanese', 'Huifont', 'kokorom'];
+		$default_font = in_array($default_font, $allowed_fonts, true) ? $default_font : 'Noto Sans Japanese';
+		update_option('tinyjpfont_default_font', $default_font);
+
+		$whole_font = isset($_POST['tinyjpfont_whole_font']) ? sanitize_text_field(wp_unslash($_POST['tinyjpfont_whole_font'])) : 'noselect';
+		$allowed_whole_fonts = array_merge(['noselect'], $allowed_fonts);
+		$whole_font = in_array($whole_font, $allowed_whole_fonts, true) ? $whole_font : 'noselect';
+		update_option('tinyjpfont_whole_font', $whole_font);
+
 		// チェックボックスはチェックされないとキーも受け取れないので、ない時は0にする
 		$tinyjpfont_check_cdn = isset($_POST['tinyjpfont_check_cdn']) ? 1 : 0;
 		update_option('tinyjpfont_check_cdn', $tinyjpfont_check_cdn);
@@ -63,7 +82,8 @@ function tinyjpfont_options_page()
 					echo '<div id="setting-error-settings_updated" class="updated settings-error notice is-dismissible">
 							<p><strong>設定を保存しました。</strong></p></div>';
 				} ?>
-            <form method="post" action="">
+	            <form method="post" action="">
+	                <?php wp_nonce_field('tinyjpfont_settings_action'); ?>
                 <tr>
                     <th scope="row">
                         <h3><label for="tinyjpfont_select">フォントロードモード</label></h3>
