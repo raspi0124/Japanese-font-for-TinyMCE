@@ -91,10 +91,8 @@ class JapaneseFontTinyMCE {
         // Editor customizations
         $this->init_editor_hooks();
 
-        // Gutenberg support
-        if ($this->config['gutenberg_enabled'] === '1') {
-            include_once plugin_dir_path(__FILE__) . 'gutenjpfont/gutenjpfont.php';
-        }
+        // Gutenberg support (always on)
+        include_once plugin_dir_path(__FILE__) . 'gutenjpfont/gutenjpfont.php';
     }
 
     /**

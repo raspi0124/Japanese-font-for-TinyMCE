@@ -14,51 +14,63 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Enqueue Gutenberg block assets for both frontend + backend.
+ * Register Gutenberg assets built via @wordpress/scripts and block.json.
  *
- * @uses {wp-editor} for WP editor styles.
- * @since 1.0.0
+ * Assets are built into /build by CI; if the build does not exist we bail
+ * without affecting TinyMCE legacy.
  */
-function tinyjpfont_gutenberg_block_assets() { // phpcs:ignore
-	// Styles.
-	wp_enqueue_style(
-		'tinyjpfont_gutenberg_style-css', // Handle.
-		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ), // Block style CSS.
-		array( 'wp-editor' ) // Dependency to include the CSS after it.
-		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: File modification time.
-	);
-}
+function tinyjpfont_register_gutenberg_assets() { // phpcs:ignore
+	$build_dir  = plugin_dir_path( __FILE__ ) . 'build/';
+	$asset_path = $build_dir . 'index.asset.php';
 
-// Hook: Frontend assets.
-add_action( 'enqueue_block_assets', 'tinyjpfont_gutenberg_block_assets' );
+	if ( ! file_exists( $asset_path ) ) {
+		return;
+	}
+
+	register_block_type_from_metadata( __DIR__ );
+
+	$asset_meta = include $asset_path;
+
+	// Make translations available for the editor script.
+	if ( isset( $asset_meta['dependencies'], $asset_meta['version'] ) ) {
+		wp_set_script_translations(
+			'tinyjpfont-font-kit-editor-script',
+			'japanese-font-for-tinymce'
+		);
+	}
+}
+add_action( 'init', 'tinyjpfont_register_gutenberg_assets' );
 
 /**
- * Enqueue Gutenberg block assets for backend editor.
- *
- * @uses {wp-blocks} for block type registration & related functions.
- * @uses {wp-element} for WP Element abstraction — structure of blocks.
- * @uses {wp-i18n} to internationalize the block's text.
- * @uses {wp-editor} for WP editor styles.
- * @since 1.0.0
+ * Surface font families to the block editor typography controls.
  */
-function tinyjpfont_gutenberg_editor_assets() { // phpcs:ignore
-	// Scripts.
-	wp_enqueue_script(
-		'tinyjpfont_gutenberg_block-js', // Handle.
-		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ), // Block.build.js: We register the block here. Built with Webpack.
-		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ), // Dependencies, defined above.
-		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: File modification time.
-		true // Enqueue the script in the footer.
+function tinyjpfont_register_font_families( $settings ) {
+	$fonts = array(
+		array(
+			'slug'  => 'tinyjpfont-noto',
+			'name'  => 'Noto Sans Japanese',
+			'fontFamily' => '"Noto Sans Japanese", sans-serif',
+		),
+		array(
+			'slug'  => 'tinyjpfont-huiji',
+			'name'  => 'ふい字',
+			'fontFamily' => '"Huifont", "Noto Sans Japanese", sans-serif',
+		),
 	);
 
-	// Styles.
-	wp_enqueue_style(
-		'tinyjpfont_gutenberg_block-editor-css', // Handle.
-		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ), // Block editor CSS.
-		array( 'wp-edit-blocks' ) // Dependency to include the CSS after it.
-		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
+	if ( ! isset( $settings['typography'] ) || ! is_array( $settings['typography'] ) ) {
+		$settings['typography'] = array();
+	}
+
+	if ( ! isset( $settings['typography']['fontFamilies'] ) || ! is_array( $settings['typography']['fontFamilies'] ) ) {
+		$settings['typography']['fontFamilies'] = array();
+	}
+
+	$settings['typography']['fontFamilies'] = array_merge(
+		$settings['typography']['fontFamilies'],
+		$fonts
 	);
+
+	return $settings;
 }
-
-// Hook: Editor assets.
-add_action( 'enqueue_block_editor_assets', 'tinyjpfont_gutenberg_editor_assets' );
+add_filter( 'block_editor_settings_all', 'tinyjpfont_register_font_families' );

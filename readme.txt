@@ -10,7 +10,7 @@ Add Japanese font to Gutenberg and TinyMCE Advanced plugin's font family selecti
 
 == Description ==
 Add Japanese font to Gutenberg and TinyMCE Advanced plugin's font family selections.<br>
-Now supports Gutenberg as option. Please enable gutenberg option in order to use it.
+Gutenberg向け機能は常時有効で、パラグラフ/見出しのブロックスタイルとインラインフォーマットとして利用できます。
 Font to be added；<br>
 <a href="http://hp.vector.co.jp/authors/VA039499/#hui">ふい字</a><br>
 <a href="https://www.google.com/get/noto/#sans-jpan">Noto Sans Japanese</a><br>

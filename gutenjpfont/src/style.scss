@@ -1,0 +1,33 @@
+/* Shared styles for Gutenberg blocks and inline formats */
+@font-face {
+	font-family: 'Noto Sans Japanese';
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+	src: url('https://fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff2') format('woff2'),
+		url('https://fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff') format('woff'),
+		url('https://fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'Huifont';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('https://cdn.jsdelivr.net/gh/raspi0124/my-sites-files@dc302549468ac811f2c12a171c10b90cd0551c3b/HuiFont109.woff2')
+			format('woff2'),
+		url('https://cdn.jsdelivr.net/gh/raspi0124/my-sites-files@eed42314cef07897e0b2be3747e3bd6c029c0264/Light-Huiji.ttf')
+			format('truetype');
+}
+
+.tinyjpfont-noto-format,
+.is-format-tinyjpfont-noto-format,
+.is-style-tinyjpfont-noto {
+	font-family: 'Noto Sans Japanese', sans-serif;
+}
+
+.tinyjpfont-huiji-format,
+.is-format-tinyjpfont-huiji-format,
+.is-style-tinyjpfont-huiji {
+	font-family: 'Huifont', 'Noto Sans Japanese', sans-serif;
+}

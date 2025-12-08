@@ -1,0 +1,19 @@
+{
+  "apiVersion": 2,
+  "name": "tinyjpfont/font-kit",
+  "title": "Japanese Font Kit",
+  "category": "text",
+  "description": "Provides Japanese font formats and styles for core blocks.",
+  "keywords": [
+    "font",
+    "Japanese",
+    "typography"
+  ],
+  "textdomain": "japanese-font-for-tinymce",
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css",
+  "supports": {
+    "inserter": false
+  }
+}

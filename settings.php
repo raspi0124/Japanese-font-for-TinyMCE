@@ -56,8 +56,6 @@ function tinyjpfont_options_page()
 		$tinyjpfont_check_noto = isset($_POST['tinyjpfont_check_noto']) ? 1 : 0;
 		update_option('tinyjpfont_check_noto', $tinyjpfont_check_noto);
 
-		$tinyjpfont_gutenberg = isset($_POST['tinyjpfont_gutenberg']) ? 1 : 0;
-		update_option('tinyjpfont_gutenberg', $tinyjpfont_gutenberg);
 	} ?>
 </head>
 
@@ -125,16 +123,13 @@ function tinyjpfont_options_page()
                     <br><strong>テーマの仕様により対応していない場合もあります。</strong>
                 </tr><br>
                 <tr>
-                    <th scope="row"><label for="tinyjpfont_gutenberg">
-                            <h3>ブロックエディタ(Gutenberg)対応機能の有効化</h3>
-                        </label></th><br>
-                    <td><label><input name="tinyjpfont_gutenberg" type="checkbox" id="tinyjpfont_gutenberg" value="1"
-                                <?php checked(1, get_option('tinyjpfont_gutenberg')); ?> />
-                            ブロックエディタ(Gutenberg)への対応を有効化する</label></td><br>
+                    <th scope="row">
+                        <h3>ブロックエディタ(Gutenberg)対応機能</h3>
+                    </th><br>
+                    <td>
+                        <p>ブロックエディタ向け機能は常時有効です。フォントはパラグラフ/見出しのブロックスタイルとインラインフォーマットで利用できます。</p>
+                    </td><br>
                 </tr><br>
-                <strong>
-                    Gutenberg対応機能はNoto Sans Japaneseとふい字フォントのみ現在サポートしています。
-                </strong>
                 <tr>
                     <th scope="row"><label for="tinyjpfont_default_font">
                             <h3>デフォルトフォント(beta) (TinyMCEエディタ上でデフォルトで利用するフォントを選択できます)</h3>
