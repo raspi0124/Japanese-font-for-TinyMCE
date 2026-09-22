@@ -1,0 +1,54 @@
+[
+  {
+    "id": "1",
+    "fonts": [
+      {
+        "family": "Noto Sans Japanese",
+        "loaded": true
+      },
+      {
+        "family": "Huifont",
+        "loaded": true
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "fonts": [
+      {
+        "family": "Noto Sans Japanese",
+        "loaded": true
+      },
+      {
+        "family": "Huifont",
+        "loaded": true
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "fonts": [
+      {
+        "family": "Noto Sans Japanese",
+        "loaded": true
+      },
+      {
+        "family": "Huifont",
+        "loaded": true
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "fonts": [
+      {
+        "family": "Noto Sans Japanese",
+        "loaded": true
+      },
+      {
+        "family": "Huifont",
+        "loaded": true
+      }
+    ]
+  }
+]

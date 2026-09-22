@@ -1,0 +1,83 @@
+[
+  {
+    "id": "huifont",
+    "sha256": "4d03f34d1f75a511e7bdffc2cdcebf77b60237ddc92ecd067d56a45f1a6e1420",
+    "mime": "font/woff2",
+    "cors": "*",
+    "cache": "public, max-age=31536000, immutable",
+    "bytes": 932128,
+    "result": "PASS"
+  },
+  {
+    "id": "noto",
+    "sha256": "19c7bb021cf59924d343e13ea11faeaac878b722853cc3e1a3d280122e6e1370",
+    "mime": "font/woff2",
+    "cors": "*",
+    "cache": "public, max-age=31536000, immutable",
+    "bytes": 11329296,
+    "result": "PASS"
+  },
+  {
+    "id": "noto-thin",
+    "sha256": "0062ddb0fc8bb7ae94f318bb8d831368fc2e59d33cbed95dcf4e2fb0717fd233",
+    "mime": "font/woff2",
+    "cors": "*",
+    "cache": "public, max-age=31536000, immutable",
+    "bytes": 9561904,
+    "result": "PASS"
+  },
+  {
+    "id": "noto-black",
+    "sha256": "1a09367d3b29bd774822d4cc7f64608cf6b2fffb520e56a7f566aa807b3d149c",
+    "mime": "font/woff2",
+    "cors": "*",
+    "cache": "public, max-age=31536000, immutable",
+    "bytes": 12386892,
+    "result": "PASS"
+  },
+  {
+    "id": "esenapaj",
+    "sha256": "9d8f63e2e07c31e02e62ac6e9d21df33c9d1ebb972cfdbf3ea4085c33c78db12",
+    "mime": "font/ttf",
+    "cors": "*",
+    "cache": "public, max-age=31536000, immutable",
+    "bytes": 2334056,
+    "result": "PASS"
+  },
+  {
+    "id": "honokamaru",
+    "sha256": "1d533bbb03aef6ddd3c35f6d07d19b1490be99b76c8e6fe9eb69e7c6084814d1",
+    "mime": "font/ttf",
+    "cors": "*",
+    "cache": "public, max-age=31536000, immutable",
+    "bytes": 10504512,
+    "result": "PASS"
+  },
+  {
+    "id": "kokorom",
+    "sha256": "a7df1a0a9a3a691657b43b02759a3de21548f76ee22fd0dfc624c31881b70b8d",
+    "mime": "font/ttf",
+    "cors": "*",
+    "cache": "public, max-age=31536000, immutable",
+    "bytes": 3968936,
+    "result": "PASS"
+  },
+  {
+    "id": "aoyanagit",
+    "sha256": "233d623f88c083631521c909950ce3046eb9f89d444a0a8be4c80ac50019fcbd",
+    "mime": "font/ttf",
+    "cors": "*",
+    "cache": "public, max-age=31536000, immutable",
+    "bytes": 2088064,
+    "result": "PASS"
+  },
+  {
+    "id": "tanukim",
+    "sha256": "9f19429f9a756458efe7ef9ed844c2ae1cbb03bcde3bf3a575262d3b1b6d3aae",
+    "mime": "font/ttf",
+    "cors": "*",
+    "cache": "public, max-age=31536000, immutable",
+    "bytes": 8820644,
+    "result": "PASS"
+  }
+]

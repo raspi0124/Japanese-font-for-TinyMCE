@@ -1,0 +1,52 @@
+[
+  {
+    "name": "wp51",
+    "post": "8",
+    "authorSettingsDenied": true,
+    "saved": "<!-- wp:tinyjpfont/huiji -->\n<p class=\"wp-block-tinyjpfont-huiji\">投稿者 <strong>太字</strong> <a href=\"https://example.com/\">リンク</a><br>改行 ABC 123<br>追記 日本語</p>\n<!-- /wp:tinyjpfont/huiji -->\n\n<!-- wp:paragraph -->\n<p><tinyjpfontNoto class=\"wp-block-tinyjpfont-noto\">旧書式</tinyjpfontNoto></p>\n<!-- /wp:paragraph -->",
+    "markupPreserved": true,
+    "nonceRejected": true,
+    "cssInputValidation": true,
+    "result": "PASS"
+  },
+  {
+    "name": "wp62",
+    "post": "12",
+    "authorSettingsDenied": true,
+    "saved": "<!-- wp:tinyjpfont/huiji -->\n<p class=\"wp-block-tinyjpfont-huiji\">投稿者 <strong>太字</strong> <a href=\"https://example.com/\">リンク</a><br>改行 ABC 123<br>追記 日本語</p>\n<!-- /wp:tinyjpfont/huiji -->\n\n<!-- wp:paragraph -->\n<p><tinyjpfontnoto class=\"wp-block-tinyjpfont-noto\">旧書式</tinyjpfontnoto></p>\n<!-- /wp:paragraph -->",
+    "markupPreserved": true,
+    "nonceRejected": true,
+    "cssInputValidation": true,
+    "result": "PASS"
+  },
+  {
+    "name": "wp65",
+    "post": "14",
+    "authorSettingsDenied": true,
+    "saved": "<!-- wp:tinyjpfont/huiji -->\n<p class=\"wp-block-tinyjpfont-huiji\">投稿者 <strong>太字</strong> <a href=\"https://example.com/\">リンク</a><br>改行 ABC 123<br>追記 日本語</p>\n<!-- /wp:tinyjpfont/huiji -->\n\n<!-- wp:paragraph -->\n<p><tinyjpfontnoto class=\"wp-block-tinyjpfont-noto\">旧書式</tinyjpfontnoto></p>\n<!-- /wp:paragraph -->",
+    "markupPreserved": true,
+    "nonceRejected": true,
+    "cssInputValidation": true,
+    "result": "PASS"
+  },
+  {
+    "name": "wp69",
+    "post": "11",
+    "authorSettingsDenied": true,
+    "saved": "<!-- wp:tinyjpfont/huiji -->\n<p class=\"wp-block-tinyjpfont-huiji\">投稿者 <strong>太字</strong> <a href=\"https://example.com/\">リンク</a><br>改行 ABC 123<br>追記 日本語</p>\n<!-- /wp:tinyjpfont/huiji -->\n\n<!-- wp:paragraph -->\n<p><tinyjpfontnoto class=\"wp-block-tinyjpfont-noto\">旧書式</tinyjpfontnoto></p>\n<!-- /wp:paragraph -->",
+    "markupPreserved": true,
+    "nonceRejected": true,
+    "cssInputValidation": true,
+    "result": "PASS"
+  },
+  {
+    "name": "wp71",
+    "post": "14",
+    "authorSettingsDenied": true,
+    "saved": "<!-- wp:tinyjpfont/huiji -->\n<p class=\"wp-block-tinyjpfont-huiji\">投稿者 <strong>太字</strong> <a href=\"https://example.com/\">リンク</a><br>改行 ABC 123<br>追記 日本語</p>\n<!-- /wp:tinyjpfont/huiji -->\n\n<!-- wp:paragraph -->\n<p><tinyjpfontnoto class=\"wp-block-tinyjpfont-noto\">旧書式</tinyjpfontnoto></p>\n<!-- /wp:paragraph -->",
+    "markupPreserved": true,
+    "nonceRejected": true,
+    "cssInputValidation": true,
+    "result": "PASS"
+  }
+]

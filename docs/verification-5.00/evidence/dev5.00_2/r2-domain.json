@@ -1,0 +1,15 @@
+{
+  "domains": [
+    {
+      "domain": "fonts.raspi0124.dev",
+      "status": {
+        "ssl": "active",
+        "ownership": "active"
+      },
+      "zoneId": "23a48bbb4086b202dfa3c472c5bac34c",
+      "zoneName": "raspi0124.dev",
+      "minTLS": "1.2",
+      "enabled": true
+    }
+  ]
+}

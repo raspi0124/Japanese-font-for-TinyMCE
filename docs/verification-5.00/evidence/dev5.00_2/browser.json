@@ -1,0 +1,1063 @@
+[
+  {
+    "name": "wp51",
+    "wordpress": "5.1.25",
+    "image": "tinyjpfont-php56",
+    "port": 8891,
+    "postId": "11",
+    "registration": {
+      "blocks": [
+        "tinyjpfont/noto",
+        "tinyjpfont/huiji"
+      ],
+      "formats": [
+        "tinyjpfont/notobtn",
+        "tinyjpfont/huijibtn",
+        "tinyjpfont/legacy"
+      ],
+      "parsed": [
+        {
+          "name": "core/paragraph",
+          "valid": true
+        },
+        {
+          "name": "tinyjpfont/noto",
+          "valid": true
+        },
+        {
+          "name": "tinyjpfont/huiji",
+          "valid": true
+        },
+        {
+          "name": "core/paragraph",
+          "valid": true
+        }
+      ]
+    },
+    "paragraph": "<strong data-mce-selected=\"inline-boundary\"><span class=\"wp-block-tinyjpfont-noto\">日本語の文章。ひらがな カタカナ 漢字 ABC 123。</span></strong>",
+    "saved": "<!-- wp:paragraph -->\n<p><strong><span class=\"wp-block-tinyjpfont-noto\">日本語の文章。ひらがな カタカナ 漢字 ABC 123。</span></strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:tinyjpfont/noto -->\n<p class=\"wp-block-tinyjpfont-noto\">既存の記事 <strong>太字</strong> <a href=\"https://example.com/\">リンク</a><br>改行を保持</p>\n<!-- /wp:tinyjpfont/noto -->\n\n<!-- wp:tinyjpfont/huiji -->\n<p class=\"wp-block-tinyjpfont-huiji\">既存の記事 <strong>太字</strong> <a href=\"https://example.com/\">リンク</a><br>改行を保持</p>\n<!-- /wp:tinyjpfont/huiji -->\n\n<!-- wp:paragraph -->\n<p><tinyjpfontNoto class=\"wp-block-tinyjpfont-noto\">旧インライン書式</tinyjpfontNoto></p>\n<!-- /wp:paragraph -->",
+    "fonts": [
+      {
+        "family": "Huifont",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "Noto Sans Japanese",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "Noto Sans Japanese-100",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "Noto Sans Japanese-900",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "esenapaj",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "honokamaru",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "kokorom",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "aoyanagiT",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "tanukiM",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      }
+    ],
+    "renderedFonts": [
+      {
+        "id": "huifont",
+        "fonts": [
+          {
+            "familyName": "HuiFont",
+            "postScriptName": "HuiFont",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "noto",
+        "fonts": [
+          {
+            "familyName": "Noto Sans CJK JP DemiLight",
+            "postScriptName": "NotoSansCJKjp-DemiLight",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "noto-thin",
+        "fonts": [
+          {
+            "familyName": "Noto Sans CJK JP Thin",
+            "postScriptName": "NotoSansCJKjp-Thin",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "noto-black",
+        "fonts": [
+          {
+            "familyName": "Noto Sans CJK JP Black",
+            "postScriptName": "NotoSansCJKjp-Black",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "esenapaj",
+        "fonts": [
+          {
+            "familyName": "IPAGothic",
+            "postScriptName": "IPAGothic",
+            "isCustomFont": false,
+            "glyphCount": 5
+          },
+          {
+            "familyName": "esenapaj",
+            "postScriptName": "esenapaj",
+            "isCustomFont": true,
+            "glyphCount": 19
+          }
+        ]
+      },
+      {
+        "id": "honokamaru",
+        "fonts": [
+          {
+            "familyName": "Honoka Maru-Gothic",
+            "postScriptName": "Honoka-Maru-Gothic",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "kokorom",
+        "fonts": [
+          {
+            "familyName": "OTS derived font",
+            "postScriptName": "KokoroMinchoutai",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "aoyanagit",
+        "fonts": [
+          {
+            "familyName": "AoyagiKouzanFontT",
+            "postScriptName": "AoyagiKouzanFontT",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "tanukim",
+        "fonts": [
+          {
+            "familyName": "Tanuki Permanent Marker",
+            "postScriptName": "Tanuki-Permanent-Marker",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "result": "PASS"
+  },
+  {
+    "name": "wp62",
+    "wordpress": "6.2.12",
+    "image": "wordpress:php7.4-apache",
+    "port": 8892,
+    "postId": "15",
+    "registration": {
+      "blocks": [
+        "tinyjpfont/noto",
+        "tinyjpfont/huiji"
+      ],
+      "formats": [
+        "tinyjpfont/notobtn",
+        "tinyjpfont/huijibtn",
+        "tinyjpfont/legacy"
+      ],
+      "parsed": [
+        {
+          "name": "core/paragraph",
+          "valid": true
+        },
+        {
+          "name": "tinyjpfont/noto",
+          "valid": true
+        },
+        {
+          "name": "tinyjpfont/huiji",
+          "valid": true
+        },
+        {
+          "name": "core/paragraph",
+          "valid": true
+        }
+      ]
+    },
+    "paragraph": "<strong><span data-rich-text-format-boundary=\"true\" class=\"wp-block-tinyjpfont-noto\">日本語の文章。ひらがな カタカナ 漢字 ABC 123。</span></strong>",
+    "saved": "<!-- wp:paragraph -->\n<p><strong><span class=\"wp-block-tinyjpfont-noto\">日本語の文章。ひらがな カタカナ 漢字 ABC 123。</span></strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:tinyjpfont/noto -->\n<p class=\"wp-block-tinyjpfont-noto\">既存の記事 <strong>太字</strong> <a href=\"https://example.com/\">リンク</a><br>改行を保持</p>\n<!-- /wp:tinyjpfont/noto -->\n\n<!-- wp:tinyjpfont/huiji -->\n<p class=\"wp-block-tinyjpfont-huiji\">既存の記事 <strong>太字</strong> <a href=\"https://example.com/\">リンク</a><br>改行を保持</p>\n<!-- /wp:tinyjpfont/huiji -->\n\n<!-- wp:paragraph -->\n<p><tinyjpfontnoto class=\"wp-block-tinyjpfont-noto\">旧インライン書式</tinyjpfontnoto></p>\n<!-- /wp:paragraph -->",
+    "fonts": [
+      {
+        "family": "Huifont",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "Noto Sans Japanese",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "Noto Sans Japanese-100",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "Noto Sans Japanese-900",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "esenapaj",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "honokamaru",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "kokorom",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "aoyanagiT",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "tanukiM",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      }
+    ],
+    "renderedFonts": [
+      {
+        "id": "huifont",
+        "fonts": [
+          {
+            "familyName": "HuiFont",
+            "postScriptName": "HuiFont",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "noto",
+        "fonts": [
+          {
+            "familyName": "Noto Sans CJK JP DemiLight",
+            "postScriptName": "NotoSansCJKjp-DemiLight",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "noto-thin",
+        "fonts": [
+          {
+            "familyName": "Noto Sans CJK JP Thin",
+            "postScriptName": "NotoSansCJKjp-Thin",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "noto-black",
+        "fonts": [
+          {
+            "familyName": "Noto Sans CJK JP Black",
+            "postScriptName": "NotoSansCJKjp-Black",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "esenapaj",
+        "fonts": [
+          {
+            "familyName": "IPAGothic",
+            "postScriptName": "IPAGothic",
+            "isCustomFont": false,
+            "glyphCount": 5
+          },
+          {
+            "familyName": "esenapaj",
+            "postScriptName": "esenapaj",
+            "isCustomFont": true,
+            "glyphCount": 19
+          }
+        ]
+      },
+      {
+        "id": "honokamaru",
+        "fonts": [
+          {
+            "familyName": "Honoka Maru-Gothic",
+            "postScriptName": "Honoka-Maru-Gothic",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "kokorom",
+        "fonts": [
+          {
+            "familyName": "OTS derived font",
+            "postScriptName": "KokoroMinchoutai",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "aoyanagit",
+        "fonts": [
+          {
+            "familyName": "AoyagiKouzanFontT",
+            "postScriptName": "AoyagiKouzanFontT",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "tanukim",
+        "fonts": [
+          {
+            "familyName": "Tanuki Permanent Marker",
+            "postScriptName": "Tanuki-Permanent-Marker",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "result": "PASS"
+  },
+  {
+    "name": "wp65",
+    "wordpress": "6.5.11",
+    "image": "wordpress:6.5-php8.1-apache",
+    "port": 8893,
+    "postId": "17",
+    "registration": {
+      "blocks": [
+        "tinyjpfont/noto",
+        "tinyjpfont/huiji"
+      ],
+      "formats": [
+        "tinyjpfont/notobtn",
+        "tinyjpfont/huijibtn",
+        "tinyjpfont/legacy"
+      ],
+      "parsed": [
+        {
+          "name": "core/paragraph",
+          "valid": true
+        },
+        {
+          "name": "tinyjpfont/noto",
+          "valid": true
+        },
+        {
+          "name": "tinyjpfont/huiji",
+          "valid": true
+        },
+        {
+          "name": "core/paragraph",
+          "valid": true
+        }
+      ]
+    },
+    "paragraph": "<strong><span data-rich-text-format-boundary=\"true\" class=\"wp-block-tinyjpfont-noto\">日本語の文章。ひらがな カタカナ 漢字 ABC 123。</span></strong>",
+    "saved": "<!-- wp:paragraph -->\n<p><strong><span class=\"wp-block-tinyjpfont-noto\">日本語の文章。ひらがな カタカナ 漢字 ABC 123。</span></strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:tinyjpfont/noto -->\n<p class=\"wp-block-tinyjpfont-noto\">既存の記事 <strong>太字</strong> <a href=\"https://example.com/\">リンク</a><br>改行を保持</p>\n<!-- /wp:tinyjpfont/noto -->\n\n<!-- wp:tinyjpfont/huiji -->\n<p class=\"wp-block-tinyjpfont-huiji\">既存の記事 <strong>太字</strong> <a href=\"https://example.com/\">リンク</a><br>改行を保持</p>\n<!-- /wp:tinyjpfont/huiji -->\n\n<!-- wp:paragraph -->\n<p><tinyjpfontnoto class=\"wp-block-tinyjpfont-noto\">旧インライン書式</tinyjpfontnoto></p>\n<!-- /wp:paragraph -->",
+    "fonts": [
+      {
+        "family": "Huifont",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "Noto Sans Japanese",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "Noto Sans Japanese-100",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "Noto Sans Japanese-900",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "esenapaj",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "honokamaru",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "kokorom",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "aoyanagiT",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "tanukiM",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      }
+    ],
+    "renderedFonts": [
+      {
+        "id": "huifont",
+        "fonts": [
+          {
+            "familyName": "HuiFont",
+            "postScriptName": "HuiFont",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "noto",
+        "fonts": [
+          {
+            "familyName": "Noto Sans CJK JP DemiLight",
+            "postScriptName": "NotoSansCJKjp-DemiLight",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "noto-thin",
+        "fonts": [
+          {
+            "familyName": "Noto Sans CJK JP Thin",
+            "postScriptName": "NotoSansCJKjp-Thin",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "noto-black",
+        "fonts": [
+          {
+            "familyName": "Noto Sans CJK JP Black",
+            "postScriptName": "NotoSansCJKjp-Black",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "esenapaj",
+        "fonts": [
+          {
+            "familyName": "IPAGothic",
+            "postScriptName": "IPAGothic",
+            "isCustomFont": false,
+            "glyphCount": 5
+          },
+          {
+            "familyName": "esenapaj",
+            "postScriptName": "esenapaj",
+            "isCustomFont": true,
+            "glyphCount": 19
+          }
+        ]
+      },
+      {
+        "id": "honokamaru",
+        "fonts": [
+          {
+            "familyName": "Honoka Maru-Gothic",
+            "postScriptName": "Honoka-Maru-Gothic",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "kokorom",
+        "fonts": [
+          {
+            "familyName": "OTS derived font",
+            "postScriptName": "KokoroMinchoutai",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "aoyanagit",
+        "fonts": [
+          {
+            "familyName": "AoyagiKouzanFontT",
+            "postScriptName": "AoyagiKouzanFontT",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "tanukim",
+        "fonts": [
+          {
+            "familyName": "Tanuki Permanent Marker",
+            "postScriptName": "Tanuki-Permanent-Marker",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "result": "PASS"
+  },
+  {
+    "name": "wp69",
+    "wordpress": "6.9.8",
+    "image": "wordpress:6.9-php8.2-apache",
+    "port": 8894,
+    "postId": "14",
+    "registration": {
+      "blocks": [
+        "tinyjpfont/noto",
+        "tinyjpfont/huiji"
+      ],
+      "formats": [
+        "tinyjpfont/notobtn",
+        "tinyjpfont/huijibtn",
+        "tinyjpfont/legacy"
+      ],
+      "parsed": [
+        {
+          "name": "core/paragraph",
+          "valid": true
+        },
+        {
+          "name": "tinyjpfont/noto",
+          "valid": true
+        },
+        {
+          "name": "tinyjpfont/huiji",
+          "valid": true
+        },
+        {
+          "name": "core/paragraph",
+          "valid": true
+        }
+      ]
+    },
+    "paragraph": "<strong><span data-rich-text-format-boundary=\"true\" class=\"wp-block-tinyjpfont-noto\">日本語の文章。ひらがな カタカナ 漢字 ABC 123。</span></strong>",
+    "saved": "<!-- wp:paragraph -->\n<p><strong><span class=\"wp-block-tinyjpfont-noto\">日本語の文章。ひらがな カタカナ 漢字 ABC 123。</span></strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:tinyjpfont/noto -->\n<p class=\"wp-block-tinyjpfont-noto\">既存の記事 <strong>太字</strong> <a href=\"https://example.com/\">リンク</a><br>改行を保持</p>\n<!-- /wp:tinyjpfont/noto -->\n\n<!-- wp:tinyjpfont/huiji -->\n<p class=\"wp-block-tinyjpfont-huiji\">既存の記事 <strong>太字</strong> <a href=\"https://example.com/\">リンク</a><br>改行を保持</p>\n<!-- /wp:tinyjpfont/huiji -->\n\n<!-- wp:paragraph -->\n<p><tinyjpfontnoto class=\"wp-block-tinyjpfont-noto\">旧インライン書式</tinyjpfontnoto></p>\n<!-- /wp:paragraph -->",
+    "fonts": [
+      {
+        "family": "Huifont",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "Noto Sans Japanese",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "Noto Sans Japanese-100",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "Noto Sans Japanese-900",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "esenapaj",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "honokamaru",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "kokorom",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "aoyanagiT",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "tanukiM",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      }
+    ],
+    "renderedFonts": [
+      {
+        "id": "huifont",
+        "fonts": [
+          {
+            "familyName": "HuiFont",
+            "postScriptName": "HuiFont",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "noto",
+        "fonts": [
+          {
+            "familyName": "Noto Sans CJK JP DemiLight",
+            "postScriptName": "NotoSansCJKjp-DemiLight",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "noto-thin",
+        "fonts": [
+          {
+            "familyName": "Noto Sans CJK JP Thin",
+            "postScriptName": "NotoSansCJKjp-Thin",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "noto-black",
+        "fonts": [
+          {
+            "familyName": "Noto Sans CJK JP Black",
+            "postScriptName": "NotoSansCJKjp-Black",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "esenapaj",
+        "fonts": [
+          {
+            "familyName": "IPAGothic",
+            "postScriptName": "IPAGothic",
+            "isCustomFont": false,
+            "glyphCount": 5
+          },
+          {
+            "familyName": "esenapaj",
+            "postScriptName": "esenapaj",
+            "isCustomFont": true,
+            "glyphCount": 19
+          }
+        ]
+      },
+      {
+        "id": "honokamaru",
+        "fonts": [
+          {
+            "familyName": "Honoka Maru-Gothic",
+            "postScriptName": "Honoka-Maru-Gothic",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "kokorom",
+        "fonts": [
+          {
+            "familyName": "OTS derived font",
+            "postScriptName": "KokoroMinchoutai",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "aoyanagit",
+        "fonts": [
+          {
+            "familyName": "AoyagiKouzanFontT",
+            "postScriptName": "AoyagiKouzanFontT",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "tanukim",
+        "fonts": [
+          {
+            "familyName": "Tanuki Permanent Marker",
+            "postScriptName": "Tanuki-Permanent-Marker",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "result": "PASS"
+  },
+  {
+    "name": "wp71",
+    "wordpress": "7.1.1",
+    "image": "wordpress:latest",
+    "port": 8895,
+    "postId": "17",
+    "registration": {
+      "blocks": [
+        "tinyjpfont/noto",
+        "tinyjpfont/huiji"
+      ],
+      "formats": [
+        "tinyjpfont/notobtn",
+        "tinyjpfont/huijibtn",
+        "tinyjpfont/legacy"
+      ],
+      "parsed": [
+        {
+          "name": "core/paragraph",
+          "valid": true
+        },
+        {
+          "name": "tinyjpfont/noto",
+          "valid": true
+        },
+        {
+          "name": "tinyjpfont/huiji",
+          "valid": true
+        },
+        {
+          "name": "core/paragraph",
+          "valid": true
+        }
+      ]
+    },
+    "paragraph": "<strong><span data-rich-text-format-boundary=\"true\" class=\"wp-block-tinyjpfont-noto\">日本語の文章。ひらがな カタカナ 漢字 ABC 123。</span></strong>",
+    "saved": "<!-- wp:paragraph -->\n<p><strong><span class=\"wp-block-tinyjpfont-noto\">日本語の文章。ひらがな カタカナ 漢字 ABC 123。</span></strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:tinyjpfont/noto -->\n<p class=\"wp-block-tinyjpfont-noto\">既存の記事 <strong>太字</strong> <a href=\"https://example.com/\">リンク</a><br>改行を保持</p>\n<!-- /wp:tinyjpfont/noto -->\n\n<!-- wp:tinyjpfont/huiji -->\n<p class=\"wp-block-tinyjpfont-huiji\">既存の記事 <strong>太字</strong> <a href=\"https://example.com/\">リンク</a><br>改行を保持</p>\n<!-- /wp:tinyjpfont/huiji -->\n\n<!-- wp:paragraph -->\n<p><tinyjpfontnoto class=\"wp-block-tinyjpfont-noto\">旧インライン書式</tinyjpfontnoto></p>\n<!-- /wp:paragraph -->",
+    "fonts": [
+      {
+        "family": "Huifont",
+        "count": 2,
+        "status": [
+          "loaded",
+          "loaded"
+        ]
+      },
+      {
+        "family": "Noto Sans Japanese",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "Noto Sans Japanese-100",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "Noto Sans Japanese-900",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "esenapaj",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "honokamaru",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "kokorom",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "aoyanagiT",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      },
+      {
+        "family": "tanukiM",
+        "count": 1,
+        "status": [
+          "loaded"
+        ]
+      }
+    ],
+    "renderedFonts": [
+      {
+        "id": "huifont",
+        "fonts": [
+          {
+            "familyName": "HuiFont",
+            "postScriptName": "HuiFont",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "noto",
+        "fonts": [
+          {
+            "familyName": "Noto Sans CJK JP DemiLight",
+            "postScriptName": "NotoSansCJKjp-DemiLight",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "noto-thin",
+        "fonts": [
+          {
+            "familyName": "Noto Sans CJK JP Thin",
+            "postScriptName": "NotoSansCJKjp-Thin",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "noto-black",
+        "fonts": [
+          {
+            "familyName": "Noto Sans CJK JP Black",
+            "postScriptName": "NotoSansCJKjp-Black",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "esenapaj",
+        "fonts": [
+          {
+            "familyName": "IPAGothic",
+            "postScriptName": "IPAGothic",
+            "isCustomFont": false,
+            "glyphCount": 5
+          },
+          {
+            "familyName": "esenapaj",
+            "postScriptName": "esenapaj",
+            "isCustomFont": true,
+            "glyphCount": 19
+          }
+        ]
+      },
+      {
+        "id": "honokamaru",
+        "fonts": [
+          {
+            "familyName": "Honoka Maru-Gothic",
+            "postScriptName": "Honoka-Maru-Gothic",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "kokorom",
+        "fonts": [
+          {
+            "familyName": "OTS derived font",
+            "postScriptName": "KokoroMinchoutai",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "aoyanagit",
+        "fonts": [
+          {
+            "familyName": "AoyagiKouzanFontT",
+            "postScriptName": "AoyagiKouzanFontT",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      },
+      {
+        "id": "tanukim",
+        "fonts": [
+          {
+            "familyName": "Tanuki Permanent Marker",
+            "postScriptName": "Tanuki-Permanent-Marker",
+            "isCustomFont": true,
+            "glyphCount": 24
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "result": "PASS"
+  }
+]

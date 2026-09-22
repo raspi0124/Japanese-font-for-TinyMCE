@@ -1,0 +1,17 @@
+{
+  "version": "5.00-dev.2",
+  "options": {
+    "tinyjpfont_check_cdn": "0",
+    "tinyjpfont_select": "0",
+    "tinyjpfont_gutenberg": "1",
+    "tinyjpfont_head": "0",
+    "tinyjpfont_default_font": "Noto Sans Japanese",
+    "tinyjpfont_whole_font": "noselect"
+  },
+  "posts": {
+    "8": "0d1f800b16f204f2acc7181985f8513fd79b85166d73aac1d0fac3adb9e56de7",
+    "1": "01a4f5d1bb06f7b58aa738268df2413b42b0aac6c5acf483268836d388d7ebdc",
+    "2": "0911291ffc2324648b1e05334706f61234a1b85dc22d206f8a984ff43ea9cd4b",
+    "3": "dbc77c198d6281ad2db8e5b84c95efa304eaa4203ebc529f4e3950015844bfc9"
+  }
+}

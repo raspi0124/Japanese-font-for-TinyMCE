@@ -1,0 +1,32 @@
+[
+  {
+    "id": "old-DemiLight",
+    "width": 590,
+    "height": 129.5625
+  },
+  {
+    "id": "new-DemiLight",
+    "width": 590,
+    "height": 129.5625
+  },
+  {
+    "id": "old-Thin",
+    "width": 590,
+    "height": 129.5625
+  },
+  {
+    "id": "new-Thin",
+    "width": 590,
+    "height": 129.5625
+  },
+  {
+    "id": "old-Black",
+    "width": 590,
+    "height": 129.5625
+  },
+  {
+    "id": "new-Black",
+    "width": 590,
+    "height": 129.5625
+  }
+]

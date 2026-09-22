@@ -19,7 +19,9 @@ jobs:
       - run: python3 tools/package.py
       - name: Check runtime PHP syntax
         run: find . -path './gutenjpfont/node_modules' -prune -o -name '*.php' -print0 | xargs -0 -n1 php -l
-      - name: Publish development ZIP
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" .artifacts/japanese-font-wordpress.zip --prerelease --verify-tag --generate-notes
+      # Public prereleases use the exact ZIP verified in the browser matrix.
+      # CI artifacts are candidates and never replace a tested release asset.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: development-zip-candidate
+          path: .artifacts/japanese-font-wordpress.zip
