@@ -14,10 +14,14 @@ function tinyjpfont_settings_news() {
     ?>
     <div class="notice notice-info inline tinyjpfont-news">
     <p><strong><?php esc_html_e('5.00系の主な変更（4.30から）','japanese-font-for-tinymce'); ?></strong></p>
-    <p><?php esc_html_e('フォント配信を復旧し、WordPress標準のフォント選択とFont Libraryに対応しました。対応ブロックの「タイポグラフィ → フォント」で日本語書体を選べます。Font Libraryでは必要な書体だけをサイトに保存できます。','japanese-font-for-tinymce'); ?></p>
-    <p><?php esc_html_e('ブロックエディタ・Classic Editorの編集や保存、Lite／CDN／ヘッダー・フッター設定の不具合を修正しました。ブロックテーマや他プラグインとの連携を改善し、配信診断を追加しています。','japanese-font-for-tinymce'); ?></p>
-    <p><?php esc_html_e('従来の設定画面・独自ブロック・書式ボタンは引き続き使えます。既存記事と保存済み設定を引き継ぎ、ブロックエディタ対応は設定未保存の場合のみ初期状態で有効になります。','japanese-font-for-tinymce'); ?></p>
-    <p><?php esc_html_e('入力検証と依存関係を見直し、旧バージョンを含む5環境で動作を確認しました。詳しい変更内容は変更履歴をご覧ください。','japanese-font-for-tinymce'); ?></p>
+    <ul class="tinyjpfont-news-list">
+    <li><?php esc_html_e('フォント配信を復旧し、Lite／CDN／ヘッダー・フッター設定の不具合を修正。','japanese-font-for-tinymce'); ?></li>
+    <li><?php esc_html_e('WordPress標準のフォント選択とFont Libraryに対応。必要な書体をサイトに保存して配信できます。','japanese-font-for-tinymce'); ?></li>
+    <li><?php esc_html_e('ブロックエディタ・Classic Editorの編集・保存を修正し、ブロックテーマや他プラグインとの連携を改善。','japanese-font-for-tinymce'); ?></li>
+    <li><?php esc_html_e('配信診断を追加し、入力検証と依存関係を見直し。旧バージョンを含む5環境で動作を確認。','japanese-font-for-tinymce'); ?></li>
+    <li><?php esc_html_e('既存記事と保存済み設定を引き継ぎ、従来の設定画面・独自ブロック・書式ボタンも維持。','japanese-font-for-tinymce'); ?></li>
+    <li><?php esc_html_e('ブロックエディタ対応は、設定未保存の場合のみ初期状態で有効化。','japanese-font-for-tinymce'); ?></li>
+    </ul>
     <p><a href="<?php echo esc_url(plugins_url('readme.txt', __FILE__)); ?>"><?php esc_html_e('変更履歴を読む（readme.txt）','japanese-font-for-tinymce'); ?></a></p>
     </div>
     <?php
