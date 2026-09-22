@@ -1,7 +1,7 @@
 import { registerBlockType, createBlock } from '@wordpress/blocks';
 import { createElement, renderToString } from '@wordpress/element';
 const editor = window.wp.blockEditor || window.wp.editor;
-const api3 = window.tinyjpfontEditor && window.tinyjpfontEditor.apiVersion === 3;
+const api3 = window.tinyjpfontEditor && Number(window.tinyjpfontEditor.apiVersion) === 3;
 function html(value) {
     if (typeof value === 'string') return value;
     if (Array.isArray(value)) return renderToString(createElement('div', null, value)).replace(/^<div>|<\/div>$/g, '');
