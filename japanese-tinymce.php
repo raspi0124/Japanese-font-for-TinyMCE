@@ -16,6 +16,7 @@ require_once __DIR__ . '/settings.php';
 require_once __DIR__ . '/notice.php';
 require_once __DIR__ . '/includes/whole-font.php';
 require_once __DIR__ . '/includes/modern.php';
+require_once __DIR__ . '/includes/font-library.php';
 class JapaneseFontTinyMCE {
     const VERSION = '5.00-dev.3';
     const OPT_CDN_ENABLED = 'tinyjpfont_check_cdn';
