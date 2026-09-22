@@ -87,7 +87,11 @@ class JapaneseFontTinyMCE {
         $init['custom_elements']=trim($custom . ',~tinyjpfontnoto', ',');
         $urls = empty($init['content_css']) ? array() : explode(',', $init['content_css']);
         $urls[] = $this->style_url();
-        if (function_exists('tinyjpfont_local_face_css')) { $init['content_style']=(isset($init['content_style'])?$init['content_style']:'').tinyjpfont_local_face_css(); }
+        if (function_exists('tinyjpfont_local_face_css')) {
+            // WordPress _WP_Editors::_parse_init wraps this in a JS string without escaping it.
+            $local=wp_json_encode(tinyjpfont_local_face_css(),JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT);
+            $init['content_style']=(isset($init['content_style'])?$init['content_style']:'').substr($local,1,-1);
+        }
         $init['content_css'] = implode(',', array_unique($urls));
         $existing = isset($init['font_formats']) ? $init['font_formats'] : self::DEFAULT_FONTS;
         $init['font_formats'] = implode(';', array_unique(array_filter(explode(';', $existing . $this->get_custom_fonts()))));
