@@ -1,6 +1,6 @@
 {
   "name": "tinyjpfont-editor",
-  "version": "5.0.0-dev.3",
+  "version": "5.0.0-dev.4",
   "private": true,
   "engines": {
     "node": ">=24"

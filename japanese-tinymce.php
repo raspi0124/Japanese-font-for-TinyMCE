@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Japanese font for WordPress (Previously: Japanese Font for TinyMCE)
  * Description: Adds Japanese fonts to Gutenberg and TinyMCE while preserving existing content.
- * Version: 5.00-dev.3
+ * Version: 5.00-dev.4
  * Requires at least: 5.1
  * Requires PHP: 5.6
  * Author: raspi0124
@@ -18,7 +18,7 @@ require_once __DIR__ . '/includes/whole-font.php';
 require_once __DIR__ . '/includes/modern.php';
 require_once __DIR__ . '/includes/font-library.php';
 class JapaneseFontTinyMCE {
-    const VERSION = '5.00-dev.3';
+    const VERSION = '5.00-dev.4';
     const OPT_CDN_ENABLED = 'tinyjpfont_check_cdn';
     const OPT_FONT_MODE = 'tinyjpfont_select';
     const OPT_GUTENBERG_ENABLED = 'tinyjpfont_gutenberg';
@@ -53,8 +53,8 @@ class JapaneseFontTinyMCE {
     }
     public function register_and_enqueue_style() {
         wp_enqueue_style('tinyjpfont-styles', $this->style_url(), array(), self::VERSION);
-        if (function_exists('tinyjpfont_local_face_css')) { wp_add_inline_style('tinyjpfont-styles',tinyjpfont_local_face_css()); }
         if (defined('TINYJPFONT_ASSET_BASE_URL')) { wp_add_inline_style('tinyjpfont-styles', tinyjpfont_face_css()); }
+        if (function_exists('tinyjpfont_local_face_css')) { wp_add_inline_style('tinyjpfont-styles',tinyjpfont_local_face_css()); }
     }
     public function frontend() {
         if ((string) get_option(self::OPT_LOAD_IN_FOOTER, '0') === '0') { $this->register_and_enqueue_style(); }
