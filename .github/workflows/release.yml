@@ -9,29 +9,16 @@ jobs:
   release:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x]
-
     steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: npm install, build
-        run: |
-          npm ci
-          npm run build
-        working-directory: ./gutenjpfont
-        env:
-          CI: true
-      - name: Remove Unnecessary Folders.
-        run: rm -rf .github .git gutenjpfont/node_modules
-      - name: Zip output
-        run: |
-          zip -r release *
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: gutenjpfont/package-lock.json
+      - run: npm ci && npm run build
+        working-directory: gutenjpfont
+      - run: python3 tools/package.py
       - name: Create release
         id: create_release
         uses: actions/create-release@v1.0.0
@@ -49,14 +36,17 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./release.zip
+          asset_path: .artifacts/japanese-font-wordpress.zip
           asset_name: japanese-font-wordpress.zip
           asset_content_type: application/zip
-      - name: Clean Up ZIP
-        run: rm release.zip
+      - name: Prepare WordPress.org package
+        run: |
+          mkdir -p .wordpress-org-build
+          unzip -q .artifacts/japanese-font-wordpress.zip -d .wordpress-org-build
       - name: WordPress Plugin Deploy
         uses: 10up/action-wordpress-plugin-deploy@stable
         env:
+          BUILD_DIR: .wordpress-org-build/japanese-font-for-tinymce
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
           SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
           SLUG: japanese-font-for-tinymce # optional, remove if GitHub repo name matches SVN slug, including capitalization

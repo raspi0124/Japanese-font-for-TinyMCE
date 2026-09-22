@@ -6,7 +6,7 @@ root=Path(__file__).resolve().parent.parent
 out=root/'.artifacts/japanese-font-wordpress.zip';out.parent.mkdir(exist_ok=True)
 if not (root/'gutenjpfont/dist/blocks.js').is_file():raise SystemExit('Build editor assets first')
 files=[]
-for pattern in ['*.php','*.css','*.png','readme.txt','LICENCE.txt','includes/*.php','assets/*.json','assets/*.js','assets/*.css','gutenjpfont/dist/*','gutenjpfont/gutenjpfont.php','gutenjpfont/src/init.php']:
+for pattern in ['*.php','*.css','*.png','readme.txt','LICENCE.txt','licenses/*','includes/*.php','assets/*.json','assets/*.js','assets/*.css','gutenjpfont/dist/*','gutenjpfont/gutenjpfont.php','gutenjpfont/src/init.php']:
  files.extend(root.glob(pattern))
 with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED) as z:
  for f in sorted(set(files)):
