@@ -1,22 +1,6 @@
 <?php
-header('Content-type: text/css; charset=UTF-8');
-
-$fontname = '';
-
-if (isset($_GET['fn'])) {
-	$requested_font = strtolower(trim((string) $_GET['fn']));
-	$requested_font = preg_replace('/[^a-z\s]/', '', $requested_font);
-	$font_map = [
-		'noto' => 'Noto Sans Japanese',
-		'noto sans japanese' => 'Noto Sans Japanese',
-		'huifont' => 'Huifont',
-		'kokorom' => 'kokorom',
-	];
-	if (isset($font_map[$requested_font])) {
-		$fontname = $font_map[$requested_font];
-	}
-}
-?>
-body {
-font-family: <?php echo htmlspecialchars($fontname, ENT_QUOTES, 'UTF-8'); ?>;
-}
+header('Content-Type: text/css; charset=UTF-8');
+header('X-Content-Type-Options: nosniff');
+require_once __DIR__ . '/includes/fonts.php';
+$font = tinyjpfont_font(isset($_GET['fn']) ? $_GET['fn'] : '');
+if ($font) { echo 'body{font-family:"' . $font['family'] . '",sans-serif;}'; }
