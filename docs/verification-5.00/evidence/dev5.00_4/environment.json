@@ -1,0 +1,91 @@
+[
+  {
+    "site": "wp51",
+    "imageId": "sha256:23848733720ddd72ecd9386e4686695c75482a0b9c9286df0ca88d58f0383128",
+    "image": "tinyjpfont-php56@sha256:23848733720ddd72ecd9386e4686695c75482a0b9c9286df0ca88d58f0383128",
+    "ports": [
+      "127.0.0.1:8891:80"
+    ],
+    "wordpress": "5.1.25",
+    "php": "5.6.40",
+    "plugin": "5.00-dev.4",
+    "activeTheme": "twentynineteen",
+    "themes": {
+      "twentynineteen": "1.3",
+      "twentyseventeen": "2.1",
+      "twentysixteen": "1.9"
+    }
+  },
+  {
+    "site": "wp62",
+    "imageId": "sha256:7e46cf3373751b6d62b7a0fc3a7d6686f641a34a2a0eb18947da5375c55fd009",
+    "image": "wordpress@sha256:7e46cf3373751b6d62b7a0fc3a7d6686f641a34a2a0eb18947da5375c55fd009",
+    "ports": [
+      "127.0.0.1:8892:80"
+    ],
+    "wordpress": "6.2.12",
+    "php": "7.4.33",
+    "plugin": "5.00-dev.4",
+    "activeTheme": "twentytwentythree",
+    "themes": {
+      "twentynineteen": "1.3",
+      "twentytwentyone": "1.8",
+      "twentytwentythree": "1.1",
+      "twentytwentytwo": "1.4"
+    }
+  },
+  {
+    "site": "wp65",
+    "imageId": "sha256:deb7e5d058e277be30e7f7b93e8cf863b54130fcb2adf481a46280d76499d144",
+    "image": "wordpress@sha256:deb7e5d058e277be30e7f7b93e8cf863b54130fcb2adf481a46280d76499d144",
+    "ports": [
+      "127.0.0.1:8893:80"
+    ],
+    "wordpress": "6.5.11",
+    "php": "8.1.29",
+    "plugin": "5.00-dev.4",
+    "activeTheme": "twentytwentyfour",
+    "themes": {
+      "twentynineteen": "1.3",
+      "twentytwentyfour": "1.1",
+      "twentytwentythree": "1.4",
+      "twentytwentytwo": "1.7"
+    }
+  },
+  {
+    "site": "wp69",
+    "imageId": "sha256:29a3af5db27d8c1716367575280bbf449cd231ced707daf8ce411895c042ed76",
+    "image": "wordpress@sha256:29a3af5db27d8c1716367575280bbf449cd231ced707daf8ce411895c042ed76",
+    "ports": [
+      "127.0.0.1:8894:80"
+    ],
+    "wordpress": "6.9.8",
+    "php": "8.2.31",
+    "plugin": "5.00-dev.4",
+    "activeTheme": "twentytwentyfive",
+    "themes": {
+      "twentynineteen": "1.3",
+      "twentytwentyfive": "1.4",
+      "twentytwentyfour": "1.4",
+      "twentytwentythree": "1.6"
+    }
+  },
+  {
+    "site": "wp71",
+    "imageId": "sha256:a85a30d9e7524d4577d6fdd09935b698687521026efbefd4b05d85ed6ae5dec7",
+    "image": "wordpress@sha256:a85a30d9e7524d4577d6fdd09935b698687521026efbefd4b05d85ed6ae5dec7",
+    "ports": [
+      "127.0.0.1:8895:80"
+    ],
+    "wordpress": "7.1.1",
+    "php": "8.3.33",
+    "plugin": "5.00-dev.4",
+    "activeTheme": "twentytwentyfive",
+    "themes": {
+      "twentynineteen": "1.3",
+      "twentytwentyfive": "1.5",
+      "twentytwentyfour": "1.6",
+      "twentytwentythree": "1.7"
+    }
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "site": "wp51",
+    "fonts": [
+      "Huifont, sans-serif",
+      "Huifont, sans-serif",
+      "\"Noto Sans Japanese\", sans-serif"
+    ],
+    "adminFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif",
+    "result": "PASS"
+  },
+  {
+    "site": "wp62",
+    "fonts": [
+      "Huifont, sans-serif",
+      "Huifont, sans-serif",
+      "\"Noto Sans Japanese\", sans-serif"
+    ],
+    "adminFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif",
+    "result": "PASS"
+  },
+  {
+    "site": "wp65",
+    "fonts": [
+      "Huifont, sans-serif",
+      "Huifont, sans-serif",
+      "\"Noto Sans Japanese\", sans-serif"
+    ],
+    "adminFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif",
+    "result": "PASS"
+  },
+  {
+    "site": "wp69",
+    "fonts": [
+      "Huifont, sans-serif",
+      "Huifont, sans-serif",
+      "\"Noto Sans Japanese\", sans-serif"
+    ],
+    "adminFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif",
+    "result": "PASS"
+  },
+  {
+    "site": "wp71",
+    "fonts": [
+      "Huifont, sans-serif",
+      "Huifont, sans-serif",
+      "\"Noto Sans Japanese\", sans-serif"
+    ],
+    "adminFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif",
+    "result": "PASS"
+  }
+]

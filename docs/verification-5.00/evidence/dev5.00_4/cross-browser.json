@@ -1,0 +1,38 @@
+[
+  {
+    "browser": "chromium",
+    "postId": "66",
+    "loaded": true,
+    "cachedReload": true,
+    "outageFontRejected": true,
+    "outageReadable": true,
+    "recovered": true,
+    "corsRejected": true,
+    "corsBehavior": "blocked",
+    "result": "PASS"
+  },
+  {
+    "browser": "firefox",
+    "postId": "66",
+    "loaded": true,
+    "cachedReload": true,
+    "outageFontRejected": true,
+    "outageReadable": true,
+    "recovered": true,
+    "corsRejected": true,
+    "corsBehavior": "blocked",
+    "result": "PASS"
+  },
+  {
+    "browser": "webkit",
+    "postId": "66",
+    "loaded": true,
+    "cachedReload": true,
+    "outageFontRejected": true,
+    "outageReadable": true,
+    "recovered": true,
+    "corsRejected": false,
+    "corsBehavior": "font CORS not enforced by this WebKit build (upstream bug 86817)",
+    "result": "PASS"
+  }
+]
