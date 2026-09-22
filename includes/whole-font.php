@@ -5,7 +5,7 @@ function tinyjpfont_whole_css() {
     if (!$font) { return ''; }
     $family='"'.$font['family'].'",sans-serif';
     // Individual inline styles/preset classes still win. Inheritance preserves group-level choices.
-    return 'body{font-family:'.$family.';}body .entry-content,body .wp-site-blocks{font-family:'.$family.';}body .entry-content :where(p,h1,h2,h3,h4,h5,h6,li,button,a),body .wp-site-blocks :where(p,h1,h2,h3,h4,h5,h6,li,button,a){font-family:inherit;}';
+    return 'body{font-family:'.$family.';}body .entry-content,body .wp-site-blocks{font-family:'.$family.';}body .entry-content :where(p,h1,h2,h3,h4,h5,h6,li,button,a):not(:where(.noto,.huiji,.honokamaru,.tinyjpfont_noto,.tinyjpfont_huiji,.wp-block-tinyjpfont-noto,.wp-block-tinyjpfont-huiji,[class*="-font-family"])),body .wp-site-blocks :where(p,h1,h2,h3,h4,h5,h6,li,button,a):not(:where(.noto,.huiji,.honokamaru,.tinyjpfont_noto,.tinyjpfont_huiji,.wp-block-tinyjpfont-noto,.wp-block-tinyjpfont-huiji,[class*="-font-family"])){font-family:inherit;}';
 }
 function tinyjpfont_whole_assets() {
     $css=tinyjpfont_whole_css();
