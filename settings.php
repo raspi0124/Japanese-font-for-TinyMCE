@@ -27,6 +27,7 @@ function tinyjpfont_options_page() {
     <div class="wrap tinyjpfont-settings">
     <h1>Japanese Font for WordPress</h1>
     <?php if (isset($_GET['settings-updated'])) { ?><div class="notice notice-success"><p><?php esc_html_e('設定を保存しました。','japanese-font-for-tinymce'); ?></p></div><?php } ?>
+    <?php tinyjpfont_settings_news(); ?>
     <form method="post">
     <?php wp_nonce_field('tinyjpfont_settings_action'); ?>
     <table class="form-table" role="presentation"><tbody>
@@ -35,7 +36,7 @@ function tinyjpfont_options_page() {
     <p class="description"><?php esc_html_e('Liteの基本候補はふい字とNoto Sans Japaneseです。既存記事や全体設定で使用中の書体は引き続き表示します。フォントファイルは使用時に読み込みます。','japanese-font-for-tinymce'); ?></p></td></tr>
     <tr><th><?php esc_html_e('CDNモード','japanese-font-for-tinymce'); ?></th><td><label><input id="tinyjpfont_check_cdn" name="tinyjpfont_check_cdn" value="1" type="checkbox" <?php checked(get_option('tinyjpfont_check_cdn','0'),'1'); ?>><?php esc_html_e('CSSをCDNから読み込む','japanese-font-for-tinymce'); ?></label><p class="description"><?php esc_html_e('オフの場合はCSSをこのサイトから配信します。Font Libraryでインストールした書体はこのサイトから、それ以外はfonts.raspi0124.devから配信されます。','japanese-font-for-tinymce'); ?></p></td></tr>
     <tr><th><label for="tinyjpfont_head"><?php esc_html_e('読み込み場所指定モード','japanese-font-for-tinymce'); ?></label></th><td><select id="tinyjpfont_head" name="tinyjpfont_head"><option value="0" <?php selected(get_option('tinyjpfont_head','0'),'0'); ?>><?php esc_html_e('ヘッダーで読み込む','japanese-font-for-tinymce'); ?></option><option value="1" <?php selected(get_option('tinyjpfont_head','0'),'1'); ?>><?php esc_html_e('フッターで読み込む','japanese-font-for-tinymce'); ?></option></select></td></tr>
-    <tr><th><?php esc_html_e('ブロックエディタ(Gutenberg)対応機能の有効化','japanese-font-for-tinymce'); ?></th><td><label><input id="tinyjpfont_gutenberg" name="tinyjpfont_gutenberg" value="1" type="checkbox" <?php checked(get_option('tinyjpfont_gutenberg','0'),'1'); ?>><?php esc_html_e('ブロックエディタへの対応を有効化する','japanese-font-for-tinymce'); ?></label><p class="description"><?php esc_html_e('従来のブロック・書式ボタンを引き続き使えます。無効にしても既存記事のフォント表示は維持します。','japanese-font-for-tinymce'); ?></p></td></tr>
+    <tr><th><?php esc_html_e('ブロックエディタ(Gutenberg)対応機能の有効化','japanese-font-for-tinymce'); ?></th><td><label><input id="tinyjpfont_gutenberg" name="tinyjpfont_gutenberg" value="1" type="checkbox" <?php checked(get_option('tinyjpfont_gutenberg','1'),'1'); ?>><?php esc_html_e('ブロックエディタへの対応を有効化する','japanese-font-for-tinymce'); ?></label><p class="description"><?php esc_html_e('未設定の場合は有効です。保存済みの無効設定は維持します。従来のブロック・書式ボタンも使えます。無効にしても既存記事のフォント表示は維持します。','japanese-font-for-tinymce'); ?></p></td></tr>
     <?php foreach (array('tinyjpfont_default_font'=>__('デフォルトフォント (TinyMCEエディタ)','japanese-font-for-tinymce'),'tinyjpfont_whole_font'=>__('ウェブサイト全体適用フォント','japanese-font-for-tinymce')) as $key=>$title) { ?>
     <tr><th><label for="<?php echo esc_attr($key); ?>"><?php echo esc_html($title); ?></label></th><td><select id="<?php echo esc_attr($key); ?>" name="<?php echo esc_attr($key); ?>">
     <?php if ($key === 'tinyjpfont_whole_font') { ?><option value="noselect" <?php selected(get_option($key,'noselect'),'noselect'); ?>><?php esc_html_e('選択しない','japanese-font-for-tinymce'); ?></option><?php } ?>

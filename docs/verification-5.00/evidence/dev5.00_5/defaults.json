@@ -1,0 +1,92 @@
+[
+  {
+    "site": "wp51",
+    "value": null,
+    "editor": true,
+    "result": "PASS"
+  },
+  {
+    "site": "wp51",
+    "value": "0",
+    "editor": false,
+    "result": "PASS"
+  },
+  {
+    "site": "wp51",
+    "value": "1",
+    "editor": true,
+    "result": "PASS"
+  },
+  {
+    "site": "wp62",
+    "value": null,
+    "editor": true,
+    "result": "PASS"
+  },
+  {
+    "site": "wp62",
+    "value": "0",
+    "editor": false,
+    "result": "PASS"
+  },
+  {
+    "site": "wp62",
+    "value": "1",
+    "editor": true,
+    "result": "PASS"
+  },
+  {
+    "site": "wp65",
+    "value": null,
+    "editor": true,
+    "result": "PASS"
+  },
+  {
+    "site": "wp65",
+    "value": "0",
+    "editor": false,
+    "result": "PASS"
+  },
+  {
+    "site": "wp65",
+    "value": "1",
+    "editor": true,
+    "result": "PASS"
+  },
+  {
+    "site": "wp69",
+    "value": null,
+    "editor": true,
+    "result": "PASS"
+  },
+  {
+    "site": "wp69",
+    "value": "0",
+    "editor": false,
+    "result": "PASS"
+  },
+  {
+    "site": "wp69",
+    "value": "1",
+    "editor": true,
+    "result": "PASS"
+  },
+  {
+    "site": "wp71",
+    "value": null,
+    "editor": true,
+    "result": "PASS"
+  },
+  {
+    "site": "wp71",
+    "value": "0",
+    "editor": false,
+    "result": "PASS"
+  },
+  {
+    "site": "wp71",
+    "value": "1",
+    "editor": true,
+    "result": "PASS"
+  }
+]

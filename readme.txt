@@ -4,6 +4,7 @@ Tags: fonts, Japanese, TinyMCE, Gutenberg
 Requires at least: 5.1
 Requires PHP: 5.6
 Tested up to: 7.1
+Version: 5.00-dev.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,7 +27,7 @@ Fonts: Hui, Noto Sans Japanese (DemiLight, Thin, Black), Esenapaj, Honoka Maru G
 
 1. Upload the plugin ZIP through Plugins > Add New and activate it.
 2. Open the existing Japanese Font for WordPress settings menu.
-3. Enable block editor support if you want its custom blocks, formatting buttons, and standard font choices.
+3. Block editor support is enabled when no preference has been saved. A previously saved disabled preference remains disabled; you can change it on the settings page.
 4. In Advanced Editor Tools, add Font Family and Font Sizes to your toolbar if they are not already present.
 
 On supported blocks, reveal Font/Font family through the Typography options menu if it is hidden. The Font Library collection is available through WordPress font management; its location depends on the WordPress version and theme. Installing fonts is optional.
@@ -56,6 +57,10 @@ Settings, posts, and fonts installed through WordPress remain. Reactivation can 
 Font files and optionally CSS are requested from https://fonts.raspi0124.dev/, operated for this plugin using Cloudflare R2. As with any remote asset request, the delivery service receives ordinary request data such as the visitor's IP address. This plugin does not send post content or settings to the service. Fonts explicitly installed through Font Library are delivered by your own site.
 
 == Changelog ==
+
+= 5.00-dev.5 =
+* Enable block editor support by default when the setting is absent; preserve explicitly disabled settings.
+* Update settings-page news and instructions for standard font selection and optional Font Library installation.
 
 = 5.00-dev.4 =
 * Complete the five-version compatibility verification and browser rendering checks.
