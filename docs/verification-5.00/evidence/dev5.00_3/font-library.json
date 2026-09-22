@@ -1,0 +1,36 @@
+[
+  {
+    "site": "wp65",
+    "requests": [
+      "http://localhost:8893/wp-content/themes/twentytwentyfour/assets/fonts/inter/Inter-VariableFont_slnt,wght.woff2",
+      "http://localhost:8893/wp-content/themes/twentytwentyfour/assets/fonts/cardo/cardo_normal_400.woff2",
+      "http://localhost:8893/wp-content/uploads/fonts/honokamaru.ttf"
+    ],
+    "installed": true,
+    "postId": 37,
+    "loaded": true,
+    "result": "PASS"
+  },
+  {
+    "site": "wp69",
+    "requests": [
+      "http://localhost:8894/wp-content/themes/twentytwentyfive/assets/fonts/manrope/Manrope-VariableFont_wght.woff2",
+      "http://localhost:8894/wp-content/uploads/fonts/honokamaru.ttf"
+    ],
+    "installed": true,
+    "postId": 31,
+    "loaded": true,
+    "result": "PASS"
+  },
+  {
+    "site": "wp71",
+    "requests": [
+      "http://localhost:8895/wp-content/themes/twentytwentyfive/assets/fonts/manrope/Manrope-VariableFont_wght.woff2",
+      "http://localhost:8895/wp-content/uploads/fonts/honokamaru.ttf"
+    ],
+    "installed": true,
+    "postId": 52,
+    "loaded": true,
+    "result": "PASS"
+  }
+]

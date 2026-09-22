@@ -1,0 +1,81 @@
+[
+  {
+    "site": "wp51",
+    "block": {
+      "name": "core/paragraph",
+      "isValid": true,
+      "attributes": {
+        "content": "<span style=\"font-family: Huifont;\">\u65e5\u672c\u8a9e <strong>\u592a\u5b57</strong> <a href=\"https://example.com\">\u30ea\u30f3\u30af</a><br>\u6539\u884c ABC</span>",
+        "dropCap": false
+      },
+      "innerBlocks": []
+    },
+    "id": 27,
+    "saved": "<!-- wp:paragraph -->\n<p><span style=\"font-family: Huifont;\">\u65e5\u672c\u8a9e <strong>\u592a\u5b57</strong> <a href=\"https://example.com\">\u30ea\u30f3\u30af</a><br>\u6539\u884c ABC</span></p>\n<!-- /wp:paragraph -->",
+    "result": "PASS"
+  },
+  {
+    "site": "wp62",
+    "block": {
+      "name": "core/paragraph",
+      "isValid": true,
+      "attributes": {
+        "content": "\u65e5\u672c\u8a9e <strong>\u592a\u5b57</strong> <a href=\"https://example.com\">\u30ea\u30f3\u30af</a><br>\u6539\u884c ABC",
+        "dropCap": false,
+        "fontFamily": "tinyjpfont-huifont"
+      },
+      "innerBlocks": []
+    },
+    "id": 34,
+    "saved": "<!-- wp:paragraph {\"fontFamily\":\"tinyjpfont-huifont\"} -->\n<p class=\"has-tinyjpfont-huifont-font-family\">\u65e5\u672c\u8a9e <strong>\u592a\u5b57</strong> <a href=\"https://example.com\">\u30ea\u30f3\u30af</a><br>\u6539\u884c ABC</p>\n<!-- /wp:paragraph -->",
+    "result": "PASS"
+  },
+  {
+    "site": "wp65",
+    "block": {
+      "name": "core/paragraph",
+      "isValid": true,
+      "attributes": {
+        "content": "\u65e5\u672c\u8a9e <strong>\u592a\u5b57</strong> <a href=\"https://example.com\">\u30ea\u30f3\u30af</a><br>\u6539\u884c ABC",
+        "dropCap": false,
+        "fontFamily": "tinyjpfont-huifont"
+      },
+      "innerBlocks": []
+    },
+    "id": 39,
+    "saved": "<!-- wp:paragraph {\"fontFamily\":\"tinyjpfont-huifont\"} -->\n<p class=\"has-tinyjpfont-huifont-font-family\">\u65e5\u672c\u8a9e <strong>\u592a\u5b57</strong> <a href=\"https://example.com\">\u30ea\u30f3\u30af</a><br>\u6539\u884c ABC</p>\n<!-- /wp:paragraph -->",
+    "result": "PASS"
+  },
+  {
+    "site": "wp69",
+    "block": {
+      "name": "core/paragraph",
+      "isValid": true,
+      "attributes": {
+        "content": "\u65e5\u672c\u8a9e <strong>\u592a\u5b57</strong> <a href=\"https://example.com\">\u30ea\u30f3\u30af</a><br>\u6539\u884c ABC",
+        "dropCap": false,
+        "fontFamily": "tinyjpfont-huifont"
+      },
+      "innerBlocks": []
+    },
+    "id": 33,
+    "saved": "<!-- wp:paragraph {\"fontFamily\":\"tinyjpfont-huifont\"} -->\n<p class=\"has-tinyjpfont-huifont-font-family\">\u65e5\u672c\u8a9e <strong>\u592a\u5b57</strong> <a href=\"https://example.com\">\u30ea\u30f3\u30af</a><br>\u6539\u884c ABC</p>\n<!-- /wp:paragraph -->",
+    "result": "PASS"
+  },
+  {
+    "site": "wp71",
+    "block": {
+      "name": "core/paragraph",
+      "isValid": true,
+      "attributes": {
+        "content": "\u65e5\u672c\u8a9e <strong>\u592a\u5b57</strong> <a href=\"https://example.com\">\u30ea\u30f3\u30af</a><br>\u6539\u884c ABC",
+        "dropCap": false,
+        "fontFamily": "tinyjpfont-huifont"
+      },
+      "innerBlocks": []
+    },
+    "id": 59,
+    "saved": "<!-- wp:paragraph {\"fontFamily\":\"tinyjpfont-huifont\"} -->\n<p class=\"has-tinyjpfont-huifont-font-family\">\u65e5\u672c\u8a9e <strong>\u592a\u5b57</strong> <a href=\"https://example.com\">\u30ea\u30f3\u30af</a><br>\u6539\u884c ABC</p>\n<!-- /wp:paragraph -->",
+    "result": "PASS"
+  }
+]

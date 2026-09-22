@@ -1,0 +1,110 @@
+[
+  {
+    "site": "wp62",
+    "browser": "chromium",
+    "blocks": [
+      {
+        "name": "core/paragraph",
+        "font": "tinyjpfont-huifont"
+      },
+      {
+        "name": "core/heading",
+        "font": "tinyjpfont-huifont"
+      },
+      {
+        "name": "core/button",
+        "font": "tinyjpfont-huifont"
+      }
+    ],
+    "postId": 29,
+    "saved": "<!-- wp:paragraph {\"fontFamily\":\"tinyjpfont-huifont\"} -->\n<p class=\"has-tinyjpfont-huifont-font-family\">標準段落 <strong>太字</strong> <a href=\"https://example.com\">リンク</a><br>日本語 ABC 123</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading {\"fontFamily\":\"tinyjpfont-huifont\"} -->\n<h2 class=\"wp-block-heading has-tinyjpfont-huifont-font-family\">日本語の見出し</h2>\n<!-- /wp:heading -->\n\n<!-- wp:buttons -->\n<div class=\"wp-block-buttons\"><!-- wp:button {\"fontFamily\":\"tinyjpfont-huifont\"} -->\n<div class=\"wp-block-button has-tinyjpfont-huifont-font-family\"><a class=\"wp-block-button__link wp-element-button\">日本語ボタン</a></div>\n<!-- /wp:button --></div>\n<!-- /wp:buttons -->",
+    "loaded": true,
+    "families": [
+      "Huifont, sans-serif",
+      "Huifont, sans-serif",
+      "Huifont, sans-serif"
+    ],
+    "result": "PASS"
+  },
+  {
+    "site": "wp65",
+    "browser": "chromium",
+    "blocks": [
+      {
+        "name": "core/paragraph",
+        "font": "tinyjpfont-huifont"
+      },
+      {
+        "name": "core/heading",
+        "font": "tinyjpfont-huifont"
+      },
+      {
+        "name": "core/button",
+        "font": "tinyjpfont-huifont"
+      }
+    ],
+    "postId": 35,
+    "saved": "<!-- wp:paragraph {\"fontFamily\":\"tinyjpfont-huifont\"} -->\n<p class=\"has-tinyjpfont-huifont-font-family\">標準段落 <strong>太字</strong> <a href=\"https://example.com\">リンク</a><br>日本語 ABC 123</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading {\"fontFamily\":\"tinyjpfont-huifont\"} -->\n<h2 class=\"wp-block-heading has-tinyjpfont-huifont-font-family\">日本語の見出し</h2>\n<!-- /wp:heading -->\n\n<!-- wp:buttons -->\n<div class=\"wp-block-buttons\"><!-- wp:button {\"fontFamily\":\"tinyjpfont-huifont\"} -->\n<div class=\"wp-block-button has-tinyjpfont-huifont-font-family\"><a class=\"wp-block-button__link wp-element-button\">日本語ボタン</a></div>\n<!-- /wp:button --></div>\n<!-- /wp:buttons -->",
+    "loaded": true,
+    "families": [
+      "Huifont, sans-serif",
+      "Huifont, sans-serif",
+      "Huifont, sans-serif"
+    ],
+    "result": "PASS"
+  },
+  {
+    "site": "wp69",
+    "browser": "chromium",
+    "blocks": [
+      {
+        "name": "core/paragraph",
+        "font": "tinyjpfont-huifont"
+      },
+      {
+        "name": "core/heading",
+        "font": "tinyjpfont-huifont"
+      },
+      {
+        "name": "core/button",
+        "font": "tinyjpfont-huifont"
+      }
+    ],
+    "postId": 29,
+    "saved": "<!-- wp:paragraph {\"fontFamily\":\"tinyjpfont-huifont\"} -->\n<p class=\"has-tinyjpfont-huifont-font-family\">標準段落 <strong>太字</strong> <a href=\"https://example.com\">リンク</a><br>日本語 ABC 123</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading {\"fontFamily\":\"tinyjpfont-huifont\"} -->\n<h2 class=\"wp-block-heading has-tinyjpfont-huifont-font-family\">日本語の見出し</h2>\n<!-- /wp:heading -->\n\n<!-- wp:buttons -->\n<div class=\"wp-block-buttons\"><!-- wp:button {\"fontFamily\":\"tinyjpfont-huifont\"} -->\n<div class=\"wp-block-button\"><a class=\"wp-block-button__link has-tinyjpfont-huifont-font-family wp-element-button\">日本語ボタン</a></div>\n<!-- /wp:button --></div>\n<!-- /wp:buttons -->",
+    "loaded": true,
+    "families": [
+      "Huifont, sans-serif",
+      "Huifont, sans-serif",
+      "Huifont, sans-serif"
+    ],
+    "result": "PASS"
+  },
+  {
+    "site": "wp71",
+    "browser": "chromium",
+    "blocks": [
+      {
+        "name": "core/paragraph",
+        "font": "tinyjpfont-huifont"
+      },
+      {
+        "name": "core/heading",
+        "font": "tinyjpfont-huifont"
+      },
+      {
+        "name": "core/button",
+        "font": "tinyjpfont-huifont"
+      }
+    ],
+    "postId": 49,
+    "saved": "<!-- wp:paragraph {\"fontFamily\":\"tinyjpfont-huifont\"} -->\n<p class=\"has-tinyjpfont-huifont-font-family\">標準段落 <strong>太字</strong> <a href=\"https://example.com\">リンク</a><br>日本語 ABC 123</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading {\"fontFamily\":\"tinyjpfont-huifont\"} -->\n<h2 class=\"wp-block-heading has-tinyjpfont-huifont-font-family\">日本語の見出し</h2>\n<!-- /wp:heading -->\n\n<!-- wp:buttons -->\n<div class=\"wp-block-buttons\"><!-- wp:button {\"fontFamily\":\"tinyjpfont-huifont\"} -->\n<div class=\"wp-block-button\"><a class=\"wp-block-button__link has-tinyjpfont-huifont-font-family wp-element-button\">日本語ボタン</a></div>\n<!-- /wp:button --></div>\n<!-- /wp:buttons -->",
+    "loaded": true,
+    "families": [
+      "Huifont, sans-serif",
+      "Huifont, sans-serif",
+      "Huifont, sans-serif"
+    ],
+    "result": "PASS"
+  }
+]

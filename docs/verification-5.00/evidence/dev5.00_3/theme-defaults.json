@@ -1,0 +1,194 @@
+[
+  {
+    "site": "wp51",
+    "themes": [
+      {
+        "theme": "twentynineteen",
+        "default": "Huifont, sans-serif",
+        "heading": "Huifont, sans-serif",
+        "individual": "\"Noto Sans Japanese\"",
+        "liteLoaded": true,
+        "styleCount": 0
+      }
+    ],
+    "postId": "22",
+    "defaults": {
+      "whole": false,
+      "css": [
+        {
+          "head": "HEAD",
+          "url": "http://localhost:8891/wp-content/plugins/japanese-font-for-tinymce/addfont.css?ver=5.00-dev.3"
+        }
+      ]
+    },
+    "optionsUnchanged": {
+      "tinyjpfont_select": null,
+      "tinyjpfont_check_cdn": null,
+      "tinyjpfont_head": null,
+      "tinyjpfont_gutenberg": null,
+      "tinyjpfont_whole_font": null
+    },
+    "adminScoped": true,
+    "result": "PASS"
+  },
+  {
+    "site": "wp62",
+    "themes": [
+      {
+        "theme": "twentytwentythree",
+        "default": "Huifont, sans-serif",
+        "heading": "Huifont, sans-serif",
+        "individual": "\"Noto Sans Japanese\"",
+        "liteLoaded": true,
+        "styleCount": 0
+      },
+      {
+        "theme": "twentynineteen",
+        "default": "Huifont, sans-serif",
+        "heading": "Huifont, sans-serif",
+        "individual": "\"Noto Sans Japanese\"",
+        "liteLoaded": true,
+        "styleCount": 0
+      }
+    ],
+    "postId": "28",
+    "defaults": {
+      "whole": false,
+      "css": [
+        {
+          "head": "HEAD",
+          "url": "http://localhost:8892/wp-content/plugins/japanese-font-for-tinymce/addfont.css?ver=5.00-dev.3"
+        }
+      ]
+    },
+    "optionsUnchanged": {
+      "tinyjpfont_select": null,
+      "tinyjpfont_check_cdn": null,
+      "tinyjpfont_head": null,
+      "tinyjpfont_gutenberg": null,
+      "tinyjpfont_whole_font": null
+    },
+    "adminScoped": true,
+    "result": "PASS"
+  },
+  {
+    "site": "wp65",
+    "themes": [
+      {
+        "theme": "twentytwentyfour",
+        "default": "Huifont, sans-serif",
+        "heading": "Huifont, sans-serif",
+        "individual": "\"Noto Sans Japanese\"",
+        "liteLoaded": true,
+        "styleCount": 0
+      },
+      {
+        "theme": "twentynineteen",
+        "default": "Huifont, sans-serif",
+        "heading": "Huifont, sans-serif",
+        "individual": "\"Noto Sans Japanese\"",
+        "liteLoaded": true,
+        "styleCount": 0
+      }
+    ],
+    "postId": "34",
+    "defaults": {
+      "whole": false,
+      "css": [
+        {
+          "head": "HEAD",
+          "url": "http://localhost:8893/wp-content/plugins/japanese-font-for-tinymce/addfont.css?ver=5.00-dev.3"
+        }
+      ]
+    },
+    "optionsUnchanged": {
+      "tinyjpfont_select": null,
+      "tinyjpfont_check_cdn": null,
+      "tinyjpfont_head": null,
+      "tinyjpfont_gutenberg": null,
+      "tinyjpfont_whole_font": null
+    },
+    "adminScoped": true,
+    "result": "PASS"
+  },
+  {
+    "site": "wp69",
+    "themes": [
+      {
+        "theme": "twentytwentyfive",
+        "default": "Huifont, sans-serif",
+        "heading": "Huifont, sans-serif",
+        "individual": "\"Noto Sans Japanese\"",
+        "liteLoaded": true,
+        "styleCount": 0
+      },
+      {
+        "theme": "twentynineteen",
+        "default": "Huifont, sans-serif",
+        "heading": "Huifont, sans-serif",
+        "individual": "\"Noto Sans Japanese\"",
+        "liteLoaded": true,
+        "styleCount": 0
+      }
+    ],
+    "postId": "28",
+    "defaults": {
+      "whole": false,
+      "css": [
+        {
+          "head": "HEAD",
+          "url": "http://localhost:8894/wp-content/plugins/japanese-font-for-tinymce/addfont.css?ver=5.00-dev.3"
+        }
+      ]
+    },
+    "optionsUnchanged": {
+      "tinyjpfont_select": null,
+      "tinyjpfont_check_cdn": null,
+      "tinyjpfont_head": null,
+      "tinyjpfont_gutenberg": null,
+      "tinyjpfont_whole_font": null
+    },
+    "adminScoped": true,
+    "result": "PASS"
+  },
+  {
+    "site": "wp71",
+    "themes": [
+      {
+        "theme": "twentytwentyfive",
+        "default": "Huifont, sans-serif",
+        "heading": "Huifont, sans-serif",
+        "individual": "\"Noto Sans Japanese\"",
+        "liteLoaded": true,
+        "styleCount": 0
+      },
+      {
+        "theme": "twentynineteen",
+        "default": "Huifont, sans-serif",
+        "heading": "Huifont, sans-serif",
+        "individual": "\"Noto Sans Japanese\"",
+        "liteLoaded": true,
+        "styleCount": 0
+      }
+    ],
+    "postId": "48",
+    "defaults": {
+      "whole": false,
+      "css": [
+        {
+          "head": "HEAD",
+          "url": "http://localhost:8895/wp-content/plugins/japanese-font-for-tinymce/addfont.css?ver=5.00-dev.3"
+        }
+      ]
+    },
+    "optionsUnchanged": {
+      "tinyjpfont_select": null,
+      "tinyjpfont_check_cdn": null,
+      "tinyjpfont_head": null,
+      "tinyjpfont_gutenberg": null,
+      "tinyjpfont_whole_font": null
+    },
+    "adminScoped": true,
+    "result": "PASS"
+  }
+]

@@ -1,0 +1,19 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';
+const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'@playwright/test');const b=await chromium.launch({args:['--no-sandbox']});const rows=[];
+for(const site of JSON.parse(fs.readFileSync('.verification/matrix.json')).filter(s=>['wp65','wp69','wp71'].includes(s.name)&&(!process.env.SITE||process.env.SITE===s.name))){
+ const ctx=await b.newContext({storageState:'.verification/'+site.name+'-auth.json',viewport:{width:1440,height:1100}});const p=await ctx.newPage();p.setDefaultTimeout(20000);const r={site:site.name,requests:[]};p.on('response',async res=>{if(res.url().includes('font-')&&res.status()>=400)console.log('HTTP',res.status(),res.url(),await res.text())});
+ const base='http://localhost:'+site.port;
+ try{
+ console.log(site.name,'OPEN');await p.goto(base+'/wp-admin/'+(site.name==='wp71'?'font-library.php':'site-editor.php?path=%2Fwp_global_styles&canvas=edit'));
+ if(site.name!=='wp71'){
+ await p.waitForTimeout(1500);const close=p.locator('.components-modal__frame').getByRole('button',{name:/Close/});if(await close.count())await close.first().click();const start=p.getByRole('button',{name:'Get started',exact:true});if(await start.count())await start.click();await p.getByRole('button',{name:'Styles',exact:true}).click();const tour=p.locator('.components-modal__frame').getByRole('button',{name:'Close',exact:true});if(await tour.count())await tour.click();await p.getByText('Typography',{exact:true}).click();await p.getByRole('button',{name:'Manage fonts',exact:true}).click();
+ }
+ console.log('LIBRARY');await p.getByRole('tab',{name:'日本語フォント',exact:true}).click();await p.getByRole('button',{name:/ほのか丸ゴシック/}).click();console.log('FONT');const all=p.getByRole('checkbox',{name:'Select all',exact:true});if(await all.count()&&await all.isEnabled())await all.check();else{const last=p.getByRole('checkbox').last();if(await last.count()&&await last.isEnabled())await last.check();}
+ const install=p.getByRole('button',{name:'Install',exact:true});if(await install.count()&&await install.isEnabled()){await install.click();await p.getByText(/installed successfully|successfully installed/i).first().waitFor({timeout:60000});r.installed=true;}else{assert.ok((await p.locator('body').innerText()).includes('Installed'));r.alreadyInstalled=true;}await p.screenshot({path:'.verification/results/'+site.name+'-font-library.png'});
+ const post=await p.evaluate(async()=>await wp.apiFetch({path:'/wp/v2/posts',method:'POST',data:{title:'Font Library local font',status:'publish',content:'<p style="font-family:honokamaru">日本語フォントのローカル配信 ABC 123</p>'}}));r.postId=post.id;
+ // A fresh context prevents the collection preview's remote font from satisfying the public page.
+ const publicCtx=await b.newContext();const front=await publicCtx.newPage();front.on('request',req=>{if(/\.(woff2?|ttf)(\?|$)/.test(req.url()))r.requests.push(req.url())});await front.goto(base+'/?p='+post.id);r.loaded=await front.evaluate(async()=>{await document.fonts.ready;return [...document.fonts].some(f=>f.family==='honokamaru'&&f.status==='loaded')});assert.ok(r.loaded);assert.ok(r.requests.some(u=>u.startsWith(base+'/wp-content/uploads/fonts/')));assert.ok(!r.requests.some(u=>u.includes('fonts.raspi0124.dev')&&u.includes('honokamaru')));await front.screenshot({path:'.verification/results/'+site.name+'-font-local.png'});await publicCtx.close();r.result='PASS';
+ }catch(e){r.result='FAIL';r.error=e.stack;await p.screenshot({path:'.verification/results/'+site.name+'-library-fail.png'}).catch(()=>{})}
+ rows.push(r);console.log(site.name,r.result,r.error?.split('\n')[0]||'');fs.writeFileSync('.verification/results/font-library'+(process.env.SITE?'-'+process.env.SITE:'')+'.json',JSON.stringify(rows,null,2));await ctx.close();
+}
+await b.close();if(rows.some(r=>r.result==='FAIL'))process.exitCode=1;
