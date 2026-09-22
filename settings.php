@@ -1,191 +1,58 @@
 <?php
-//ADD OPTION
-
-
-// 管理メニューにフックを登録
+if (!defined('ABSPATH')) { exit; }
 add_action('admin_menu', 'tinyjpfont_add_pages');
-
-// メニューを追加する
-function tinyjpfont_add_pages()
-{
-	$tinyjpfont_plugin_slug = "tinyjpfont";
-
-	// トップレベルにオリジナルのメニューを追加
-	add_menu_page(
-		'Japanese Font for WordPressの設定',
-		'Japanese Font for WordPressの設定',
-		'manage_options',
-		$tinyjpfont_plugin_slug,
-		'tinyjpfont_options_page',
-		plugins_url('icon.png', __FILE__)
-	);
+add_action('admin_init', 'tinyjpfont_save_settings');
+function tinyjpfont_add_pages() {
+    add_menu_page('Japanese Font for WordPressの設定', 'Japanese Font for WordPressの設定', 'manage_options', 'tinyjpfont', 'tinyjpfont_options_page', plugins_url('icon.png', __FILE__));
 }
-
-// メニューで表示されるページの内容を返す関数
-function tinyjpfont_options_page()
-{
-	// POSTデータがあれば設定を更新
-	if (isset($_POST['tinyjpfont_select'])) {
-		if (!current_user_can('manage_options')) {
-			return;
-		}
-		check_admin_referer('tinyjpfont_settings_action');
-
-		$font_mode = isset($_POST['tinyjpfont_select']) ? sanitize_text_field(wp_unslash($_POST['tinyjpfont_select'])) : '0';
-		$font_mode = in_array($font_mode, ['0', '1'], true) ? $font_mode : '0';
-		update_option('tinyjpfont_select', $font_mode);
-
-		$load_position = isset($_POST['tinyjpfont_head']) ? sanitize_text_field(wp_unslash($_POST['tinyjpfont_head'])) : '0';
-		$load_position = in_array($load_position, ['0', '1'], true) ? $load_position : '0';
-		update_option('tinyjpfont_head', $load_position);
-
-		$default_font = isset($_POST['tinyjpfont_default_font']) ? sanitize_text_field(wp_unslash($_POST['tinyjpfont_default_font'])) : 'Noto Sans Japanese';
-		$allowed_fonts = ['Noto Sans Japanese', 'Huifont', 'kokorom'];
-		$default_font = in_array($default_font, $allowed_fonts, true) ? $default_font : 'Noto Sans Japanese';
-		update_option('tinyjpfont_default_font', $default_font);
-
-		$whole_font = isset($_POST['tinyjpfont_whole_font']) ? sanitize_text_field(wp_unslash($_POST['tinyjpfont_whole_font'])) : 'noselect';
-		$allowed_whole_fonts = array_merge(['noselect'], $allowed_fonts);
-		$whole_font = in_array($whole_font, $allowed_whole_fonts, true) ? $whole_font : 'noselect';
-		update_option('tinyjpfont_whole_font', $whole_font);
-
-		// チェックボックスはチェックされないとキーも受け取れないので、ない時は0にする
-		$tinyjpfont_check_cdn = isset($_POST['tinyjpfont_check_cdn']) ? 1 : 0;
-		update_option('tinyjpfont_check_cdn', $tinyjpfont_check_cdn);
-
-		$tinyjpfont_check_noto = isset($_POST['tinyjpfont_check_noto']) ? 1 : 0;
-		update_option('tinyjpfont_check_noto', $tinyjpfont_check_noto);
-
-		$tinyjpfont_gutenberg = isset($_POST['tinyjpfont_gutenberg']) ? 1 : 0;
-		update_option('tinyjpfont_gutenberg', $tinyjpfont_gutenberg);
-	} ?>
-</head>
-
-<body>
-
-    <div id="wrap">
-
-        <div id="nav">
-            Japanese Font for WordPressの情報についてはTwitterにて#tinyjpfontのハッシュタグでたまーにツイートしています。<br>
-            あとよろしければ <a href="https://twitter.com/raspi0124">作者のTwitter</a>もフォローお願いします!<br><br>
-            なお、このプラグインの次を決める <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSd_PLkuRGr-NcXQ1Jq36xru73WvvbmyCm0QjFH92pJ14yQQjQ/viewform?usp=send_form">アンケートフォーム</a>も公開中！よろしければ要望等どうぞ！<br>
-            バグ等発見されましたらraspi0124<@>gmail.comかTwitter(@raspi0124)までお願いいたします。
-
-        </div>
-        <h1>Japanese Font for WordPress</h1>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/raspi0124/Japanese-font-for-TinyMCE@stable/admin.css">
-        <div id="content">
-            <?php
-				// 更新完了を通知
-				if (isset($_POST['tinyjpfont_select'])) {
-					echo '<div id="setting-error-settings_updated" class="updated settings-error notice is-dismissible">
-							<p><strong>設定を保存しました。</strong></p></div>';
-				} ?>
-	            <form method="post" action="">
-	                <?php wp_nonce_field('tinyjpfont_settings_action'); ?>
-                <tr>
-                    <th scope="row">
-                        <h3><label for="tinyjpfont_select">フォントロードモード</label></h3>
-                    </th><br>
-                    <td>
-                        <select name="tinyjpfont_select" id="tinyjpfont_select">
-                            <option value="0" <?php selected(0, get_option('tinyjpfont_select')); ?>>フォントロードNormal
-                            </option>
-                            <option value="1" <?php selected(1, get_option('tinyjpfont_select')); ?>>フォントロードLite
-                            </option>
-                        </select>
-                    </td>
-                </tr><br>
-                <strong>
-                    フォントロードNormalは指定したフォントを読み込みます。Liteを指定した場合最低限のフォント(ふい字、Noto Sans Japanese)のみ読み込まれるようになります。
-                </strong>
-                <tr>
-                    <th scope="row"><label for="tinyjpfont_check_cdn">
-                            <h3>CDNモード (CSSもCDNから読み込むようになります)</h3>
-                        </label></th><br>
-                    <td><label><input name="tinyjpfont_check_cdn" type="checkbox" id="tinyjpfont_check_cdn" value="1"
-                                <?php checked(1, get_option('tinyjpfont_check_cdn')); ?> /> CSSをCDNから読み込む</label></td>
-                    <br>
-                </tr>
-                <strong>CDNはjsdelivrという無料サービスを使用しています。日本国内でのロード速度に自信があるようでしたらチェックボックスはオフにしましょう</strong>
-                <tr>
-                    <th scope="row">
-                        <label for="tinyjpfont_head">
-                            <h3>読み込み場所指定モード</h3>
-                        </label>
-                    </th><br>
-                    <td>
-                        <select name="tinyjpfont_head" id="tinyjpfont_head">
-                            <option value="0" <?php selected(0, get_option('tinyjpfont_head')); ?>>ヘッダーで読み込む</option>
-                            <option value="1" <?php selected(1, get_option('tinyjpfont_head')); ?>>フッターで読み込む</option>
-                        </select>
-                    </td>
-                    </th>
-                    <br><strong>テーマの仕様により対応していない場合もあります。</strong>
-                </tr><br>
-                <tr>
-                    <th scope="row"><label for="tinyjpfont_gutenberg">
-                            <h3>ブロックエディタ(Gutenberg)対応機能の有効化</h3>
-                        </label></th><br>
-                    <td><label><input name="tinyjpfont_gutenberg" type="checkbox" id="tinyjpfont_gutenberg" value="1"
-                                <?php checked(1, get_option('tinyjpfont_gutenberg')); ?> />
-                            ブロックエディタ(Gutenberg)への対応を有効化する</label></td><br>
-                </tr><br>
-                <strong>
-                    Gutenberg対応機能はNoto Sans Japaneseとふい字フォントのみ現在サポートしています。
-                </strong>
-                <tr>
-                    <th scope="row"><label for="tinyjpfont_default_font">
-                            <h3>デフォルトフォント(beta) (TinyMCEエディタ上でデフォルトで利用するフォントを選択できます)</h3>
-                        </label></th><br>
-                    <td>
-				<select name="tinyjpfont_default_font" id="tinyjpfont_default_font">
-					<option value="Noto Sans Japanese"
-						<?php selected(get_option('tinyjpfont_default_font'), 'Noto Sans Japanese'); ?>>Noto Sans Japanese
-					</option>
-					<option value="Huifont"
-						<?php selected(get_option('tinyjpfont_default_font'), 'Huifont'); ?>>ふい字</option>
-					<option value="kokorom"
-						<?php selected(get_option('tinyjpfont_default_font'), 'kokorom'); ?>>こころ明朝体</option>
-				</select>
-                    </td>
-                    </th>
-                </tr>
-                <tr>
-                    <th scope="row"><label for="tinyjpfont_whole_font">
-                            <h3>ウェブサイト全体適用フォント</h3>
-                            <p>ウェブサイト全体に適用されるフォントです。</p>
-                        </label></th><br>
-                    <td>
-				<select name="tinyjpfont_whole_font" id="tinyjpfont_whole_font">
-					<option value="noselect"
-						<?php selected(get_option('tinyjpfont_whole_font'), 'noselect'); ?>>
-						選択しない</option>
-					<option value="Noto Sans Japanese"
-						<?php selected(get_option('tinyjpfont_whole_font'), 'Noto Sans Japanese'); ?>>Noto Sans Japanese
-					</option>
-					<option value="Huifont" <?php selected(get_option('tinyjpfont_whole_font'), 'Huifont'); ?>>
-						ふい字</option>
-					<option value="kokorom" <?php selected(get_option('tinyjpfont_whole_font'), 'kokorom'); ?>>
-						こころ明朝体</option>
-				</select>
-                    </td>
-                    </th>
-                </tr>
-                <br>
-                </table>
-                <?php submit_button(); ?>
-            </form>
-
-        </div>
-
-
-
+function tinyjpfont_save_settings() {
+    if (!isset($_GET['page']) || $_GET['page'] !== 'tinyjpfont' || !isset($_POST['tinyjpfont_select'])) { return; }
+    if (!current_user_can('manage_options')) { wp_die(esc_html__('You are not allowed to change these settings.', 'japanese-font-for-tinymce'), '', array('response'=>403)); }
+    check_admin_referer('tinyjpfont_settings_action');
+    foreach (array('tinyjpfont_select','tinyjpfont_head') as $key) {
+        update_option($key, isset($_POST[$key]) && $_POST[$key] === '1' ? '1' : '0');
+    }
+    foreach (array('tinyjpfont_check_cdn','tinyjpfont_gutenberg') as $key) { update_option($key, isset($_POST[$key]) && $_POST[$key] === '1' ? '1' : '0'); }
+    foreach (array('tinyjpfont_default_font'=>'Noto Sans Japanese','tinyjpfont_whole_font'=>'noselect') as $key=>$default) {
+        $value = isset($_POST[$key]) && is_string($_POST[$key]) ? wp_unslash($_POST[$key]) : '';
+        $font = tinyjpfont_font($value);
+        update_option($key, $font ? $font['family'] : $default);
+    }
+    wp_safe_redirect(add_query_arg(array('page'=>'tinyjpfont','settings-updated'=>'true'), admin_url('admin.php')));
+    exit;
+}
+function tinyjpfont_options_page() {
+    if (!current_user_can('manage_options')) { return; }
+    ?>
+    <div class="wrap tinyjpfont-settings">
+    <h1>Japanese Font for WordPress</h1>
+    <?php if (isset($_GET['settings-updated'])) { ?><div class="notice notice-success"><p><?php esc_html_e('設定を保存しました。','japanese-font-for-tinymce'); ?></p></div><?php } ?>
+    <form method="post">
+    <?php wp_nonce_field('tinyjpfont_settings_action'); ?>
+    <table class="form-table" role="presentation"><tbody>
+    <tr><th><label for="tinyjpfont_select"><?php esc_html_e('フォントロードモード','japanese-font-for-tinymce'); ?></label></th><td>
+    <select id="tinyjpfont_select" name="tinyjpfont_select"><option value="0" <?php selected(get_option('tinyjpfont_select','0'),'0'); ?>>Normal</option><option value="1" <?php selected(get_option('tinyjpfont_select','0'),'1'); ?>>Lite</option></select>
+    <p class="description"><?php esc_html_e('Liteの基本候補はふい字とNoto Sans Japaneseです。既存記事や全体設定で使用中の書体は引き続き表示します。フォントファイルは使用時に読み込みます。','japanese-font-for-tinymce'); ?></p></td></tr>
+    <tr><th><?php esc_html_e('CDNモード','japanese-font-for-tinymce'); ?></th><td><label><input id="tinyjpfont_check_cdn" name="tinyjpfont_check_cdn" value="1" type="checkbox" <?php checked(get_option('tinyjpfont_check_cdn','0'),'1'); ?>><?php esc_html_e('CSSをCDNから読み込む','japanese-font-for-tinymce'); ?></label><p class="description"><?php esc_html_e('オフの場合はCSSをこのサイトから配信します。フォントファイルはfonts.raspi0124.devから配信されます。','japanese-font-for-tinymce'); ?></p></td></tr>
+    <tr><th><label for="tinyjpfont_head"><?php esc_html_e('読み込み場所指定モード','japanese-font-for-tinymce'); ?></label></th><td><select id="tinyjpfont_head" name="tinyjpfont_head"><option value="0" <?php selected(get_option('tinyjpfont_head','0'),'0'); ?>><?php esc_html_e('ヘッダーで読み込む','japanese-font-for-tinymce'); ?></option><option value="1" <?php selected(get_option('tinyjpfont_head','0'),'1'); ?>><?php esc_html_e('フッターで読み込む','japanese-font-for-tinymce'); ?></option></select></td></tr>
+    <tr><th><?php esc_html_e('ブロックエディタ(Gutenberg)対応機能の有効化','japanese-font-for-tinymce'); ?></th><td><label><input id="tinyjpfont_gutenberg" name="tinyjpfont_gutenberg" value="1" type="checkbox" <?php checked(get_option('tinyjpfont_gutenberg','0'),'1'); ?>><?php esc_html_e('ブロックエディタへの対応を有効化する','japanese-font-for-tinymce'); ?></label><p class="description"><?php esc_html_e('従来のブロック・書式ボタンを引き続き使えます。無効にしても既存記事のフォント表示は維持します。','japanese-font-for-tinymce'); ?></p></td></tr>
+    <?php foreach (array('tinyjpfont_default_font'=>__('デフォルトフォント (TinyMCEエディタ)','japanese-font-for-tinymce'),'tinyjpfont_whole_font'=>__('ウェブサイト全体適用フォント','japanese-font-for-tinymce')) as $key=>$title) { ?>
+    <tr><th><label for="<?php echo esc_attr($key); ?>"><?php echo esc_html($title); ?></label></th><td><select id="<?php echo esc_attr($key); ?>" name="<?php echo esc_attr($key); ?>">
+    <?php if ($key === 'tinyjpfont_whole_font') { ?><option value="noselect" <?php selected(get_option($key,'noselect'),'noselect'); ?>><?php esc_html_e('選択しない','japanese-font-for-tinymce'); ?></option><?php } ?>
+    <?php foreach (tinyjpfont_fonts() as $font) { ?><option value="<?php echo esc_attr($font['family']); ?>" <?php selected(get_option($key,$key==='tinyjpfont_default_font'?'Noto Sans Japanese':'noselect'),$font['family']); ?>><?php echo esc_html($font['label']); ?></option><?php } ?>
+    </select></td></tr><?php } ?>
+    </tbody></table><?php submit_button(); ?></form>
+    <?php if (is_plugin_active('tinymce-advanced/tinymce-advanced.php')) { ?><div class="notice notice-info inline"><p><?php esc_html_e('Advanced Editor Toolsを併用中です。フォント・サイズの選択欄がない場合は「設定 → Advanced Editor Tools」でFont FamilyとFont Sizesをツールバーへ追加してください。配置済みのボタンは変更しません。','japanese-font-for-tinymce'); ?></p></div><?php } ?>
+    <h2><?php esc_html_e('フォント配信の確認','japanese-font-for-tinymce'); ?></h2><p><?php esc_html_e('書体を選んで確認すると、その書体だけを読み込みます。','japanese-font-for-tinymce'); ?></p>
+    <select id="tinyjpfont-diagnostic-font" aria-label="<?php esc_attr_e('確認する書体','japanese-font-for-tinymce'); ?>"><?php foreach(tinyjpfont_fonts() as $font) { ?><option value="<?php echo esc_attr($font['family']); ?>"><?php echo esc_html($font['label']); ?></option><?php } ?></select>
+    <button type="button" class="button" id="tinyjpfont-diagnostic-run"><?php esc_html_e('配信を確認','japanese-font-for-tinymce'); ?></button><p id="tinyjpfont-diagnostic-result" role="status" aria-live="polite"></p>
     </div>
-
-</body>
-
-</html>
-<?php
+    <?php
 }
+add_action('admin_enqueue_scripts', function ($hook) {
+    if ($hook !== 'toplevel_page_tinyjpfont') { return; }
+    wp_enqueue_style('tinyjpfont-admin', plugins_url('admin.css',__FILE__), array(), JapaneseFontTinyMCE::VERSION);
+    wp_enqueue_style('tinyjpfont-diagnostic-fonts', plugins_url('addfont.css',__FILE__), array(), JapaneseFontTinyMCE::VERSION);
+    wp_enqueue_script('tinyjpfont-diagnostic', plugins_url('assets/diagnostic.js',__FILE__), array(), JapaneseFontTinyMCE::VERSION, true);
+    wp_localize_script('tinyjpfont-diagnostic', 'tinyjpfontDiagnostic', array('loading'=>__('読み込み中…','japanese-font-for-tinymce'),'ok'=>__('読み込みに成功しました。日本語の表示を確認してください。','japanese-font-for-tinymce'),'error'=>__('読み込みに失敗しました。ネットワークまたは配信先を確認してください。','japanese-font-for-tinymce')));
+});
