@@ -2,10 +2,15 @@
   "name": "tinyjpfont-editor",
   "version": "5.0.0-dev.2",
   "private": true,
-  "engines": { "node": ">=24" },
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "build": "wp-scripts build src/blocks.js --output-path=dist",
     "start": "wp-scripts start src/blocks.js --output-path=dist"
   },
-  "devDependencies": { "@wordpress/scripts": "35.0.0" }
+  "devDependencies": {
+    "@wordpress/scripts": "35.0.0",
+    "webpack-cli": "^5.1.4"
+  }
 }

@@ -45,12 +45,13 @@ class JapaneseFontTinyMCE {
     private function style_url() {
         $name = (string) get_option(self::OPT_FONT_MODE, '0') === '1' ? 'addfont_lite.css' : 'addfont.css';
         if ((string) get_option(self::OPT_CDN_ENABLED, '0') === '1') {
-            return 'https://fonts.raspi0124.dev/v1/css/' . $name;
+            return 'https://fonts.raspi0124.dev/v1/css/3/' . $name;
         }
         return plugins_url($name, __FILE__);
     }
     public function register_and_enqueue_style() {
         wp_enqueue_style('tinyjpfont-styles', $this->style_url(), array(), self::VERSION);
+        if (function_exists('tinyjpfont_local_face_css')) { wp_add_inline_style('tinyjpfont-styles',tinyjpfont_local_face_css()); }
         if (defined('TINYJPFONT_ASSET_BASE_URL')) { wp_add_inline_style('tinyjpfont-styles', tinyjpfont_face_css()); }
     }
     public function frontend() {
@@ -80,6 +81,7 @@ class JapaneseFontTinyMCE {
     public function load_custom_fonts($init) {
         $urls = empty($init['content_css']) ? array() : explode(',', $init['content_css']);
         $urls[] = $this->style_url();
+        if (function_exists('tinyjpfont_local_face_css')) { $init['content_style']=(isset($init['content_style'])?$init['content_style']:'').tinyjpfont_local_face_css(); }
         $init['content_css'] = implode(',', array_unique($urls));
         $existing = isset($init['font_formats']) ? $init['font_formats'] : self::DEFAULT_FONTS;
         $init['font_formats'] = implode(';', array_unique(array_filter(explode(';', $existing . $this->get_custom_fonts()))));
