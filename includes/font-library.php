@@ -25,7 +25,10 @@ function tinyjpfont_local_face_css() {
             if (!is_string($src) || strpos($src,trailingslashit($directory['url']))!==0) { continue; }
             $weight=isset($face['fontWeight']) && preg_match('/^[0-9 ]+$/',$face['fontWeight']) ? $face['fontWeight'] : $font['weight'];
             $style=isset($face['fontStyle']) && $face['fontStyle']==='italic' ? 'italic' : 'normal';
-            $css.='@font-face{font-family:"'.$font['family'].'";font-style:'.$style.';font-weight:'.$weight.';font-display:swap;src:url("'.esc_url_raw($src).'");}';
+            $names=array_merge(array($font['family']),isset($font['aliases']) ? $font['aliases'] : array());
+            foreach ($names as $family) {
+                $css.='@font-face{font-family:"'.$family.'";font-style:'.$style.';font-weight:'.$weight.';font-display:swap;src:url("'.esc_url_raw($src).'");}';
+            }
             break;
         }
     }

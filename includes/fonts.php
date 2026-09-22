@@ -27,7 +27,10 @@ function tinyjpfont_choices($lite = false) {
 function tinyjpfont_face_css() {
     $css = '';
     foreach (tinyjpfont_fonts() as $font) {
-        $css .= '@font-face{font-family:"' . $font['family'] . '";font-style:normal;font-weight:' . $font['weight'] . ';font-display:swap;src:url("' . tinyjpfont_font_url($font) . '") format("' . $font['format'] . '");}';
+        $names=array_merge(array($font['family']),isset($font['aliases']) ? $font['aliases'] : array());
+        foreach ($names as $family) {
+            $css .= '@font-face{font-family:"' . $family . '";font-style:normal;font-weight:' . $font['weight'] . ';font-display:swap;src:url("' . tinyjpfont_font_url($font) . '") format("' . $font['format'] . '");}';
+        }
     }
     return $css;
 }

@@ -29,3 +29,26 @@ function tinyjpfont_editor_whole_font() {
     wp_enqueue_style('tinyjpfont-editor-whole');wp_add_inline_style('tinyjpfont-editor-whole',$css);
 }
 add_action('enqueue_block_assets','tinyjpfont_editor_whole_font',100);
+
+/** Saved Global Styles may replace the theme's entire font list. Retain new choices. */
+function tinyjpfont_user_presets($data) {
+    if ((string)get_option('tinyjpfont_gutenberg','0') !== '1') { return $data; }
+    $raw=$data->get_data();
+    if (empty($raw['settings']['typography']['fontFamilies'])) { return $data; }
+    $origins=$raw['settings']['typography']['fontFamilies'];
+    $custom=isset($origins['custom']) ? $origins['custom'] : array();
+    $existing=array();
+    foreach ($origins as $families) {
+        foreach ((array)$families as $family) {
+            if (is_array($family) && isset($family['slug'])) { $existing[]=$family['slug']; }
+        }
+    }
+    foreach (tinyjpfont_choices((string)get_option('tinyjpfont_select','0')==='1') as $font) {
+        $slug='tinyjpfont-'.$font['id'];
+        if (!in_array($slug,$existing,true)) {
+            $custom[]=array('name'=>$font['label'],'slug'=>$slug,'fontFamily'=>'"'.$font['family'].'", sans-serif');
+        }
+    }
+    return $data->update_with(array('version'=>2,'settings'=>array('typography'=>array('fontFamilies'=>$custom))));
+}
+add_filter('wp_theme_json_data_user','tinyjpfont_user_presets');
