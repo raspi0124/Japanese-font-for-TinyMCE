@@ -1,7 +1,7 @@
 <?php
 if (!defined('ABSPATH')) { exit; }
 function tinyjpfont_presets($data) {
-    if ((string)get_option('tinyjpfont_gutenberg','0') !== '1') { return $data; }
+    if ((string)get_option('tinyjpfont_gutenberg','1') !== '1') { return $data; }
     $theme=$data->get_data();
     if (!isset($theme['settings']['typography']['fontFamilies'])) { $theme['settings']['typography']['fontFamilies']=array(); }
     $families=$theme['settings']['typography']['fontFamilies'];
@@ -32,7 +32,7 @@ add_action('enqueue_block_assets','tinyjpfont_editor_whole_font',100);
 
 /** Saved Global Styles may replace the theme's entire font list. Retain new choices. */
 function tinyjpfont_user_presets($data) {
-    if ((string)get_option('tinyjpfont_gutenberg','0') !== '1') { return $data; }
+    if ((string)get_option('tinyjpfont_gutenberg','1') !== '1') { return $data; }
     $raw=$data->get_data();
     if (empty($raw['settings']['typography']['fontFamilies'])) { return $data; }
     $origins=$raw['settings']['typography']['fontFamilies'];
