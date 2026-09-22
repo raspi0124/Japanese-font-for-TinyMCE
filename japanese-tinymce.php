@@ -79,6 +79,10 @@ class JapaneseFontTinyMCE {
         return ';' . implode(';', $items);
     }
     public function load_custom_fonts($init) {
+        $extended=isset($init['extended_valid_elements']) && is_string($init['extended_valid_elements']) ? $init['extended_valid_elements'] : '';
+        $init['extended_valid_elements']=trim($extended . ',tinyjpfontnoto[class]', ',');
+        $custom=isset($init['custom_elements']) && is_string($init['custom_elements']) ? $init['custom_elements'] : '';
+        $init['custom_elements']=trim($custom . ',~tinyjpfontnoto', ',');
         $urls = empty($init['content_css']) ? array() : explode(',', $init['content_css']);
         $urls[] = $this->style_url();
         if (function_exists('tinyjpfont_local_face_css')) { $init['content_style']=(isset($init['content_style'])?$init['content_style']:'').tinyjpfont_local_face_css(); }
