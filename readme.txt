@@ -4,7 +4,7 @@ Tags: fonts, Japanese, TinyMCE, Gutenberg
 Requires at least: 5.1
 Requires PHP: 5.6
 Tested up to: 7.1
-Version: 5.00-dev.6
+Version: 5.00-dev.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,6 +68,10 @@ Font files and optionally CSS are requested from https://fonts.raspi0124.dev/, o
 * 安全性・保守性を改善：入力検証を見直し、ビルド環境・依存関係を更新。配布ZIPから開発用ファイルを除外。
 * 従来の利用方法を維持：設定画面・独自ブロック・書式ボタン、保存済み設定と既存記事を引き継ぎます。アンインストール時も設定・投稿・インストール済みフォントを保持。
 * 旧環境との互換性を確認：WordPress 5.1以降・PHP 5.6以降の5構成で検証。新しいフォントAPIがない環境では従来機能を提供。
+
+= 5.00-dev.7 =
+
+* 設定画面のお知らせに、4.30から5.00系への配信・フォント選択・エディタ・互換性の主な変更をまとめました。
 
 = 5.00-dev.6 =
 * 設定画面のお知らせを、ブロックエディタ対応の初期設定の変更と、既存サイトへの影響が分かる説明に更新。
