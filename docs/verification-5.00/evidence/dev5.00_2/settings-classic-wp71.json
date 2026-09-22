@@ -1,5 +1,5 @@
 {
-  "name": "wp62",
+  "name": "wp71",
   "result": "PASS",
   "checks": [
     {
@@ -63,7 +63,7 @@
       "advanced": false,
       "init": {
         "fonts": "Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings;ふい字=Huifont;Noto Sans Japanese=Noto Sans Japanese",
-        "css": "http://localhost:8892/wp-includes/css/dashicons.min.css?ver=6.2.12,http://localhost:8892/wp-includes/js/tinymce/skins/wordpress/wp-content.css?ver=6.2.12,http://localhost:8892/wp-content/plugins/japanese-font-for-tinymce/default-font-css.php?fn=Noto%20Sans%20Japanese,http://localhost:8892/wp-content/plugins/japanese-font-for-tinymce/addfont_lite.css",
+        "css": "http://localhost:8895/wp-includes/css/dashicons.min.css?ver=7.1.1,http://localhost:8895/wp-includes/js/tinymce/skins/wordpress/wp-content.css?ver=7.1.1,http://localhost:8895/wp-content/plugins/japanese-font-for-tinymce/default-font-css.php?fn=Noto%20Sans%20Japanese,http://localhost:8895/wp-content/themes/twentytwentyfive/assets/css/editor-style.css,http://localhost:8895/wp-content/plugins/japanese-font-for-tinymce/addfont_lite.css",
         "toolbar": "formatselect,bold,italic,bullist,numlist,blockquote,alignleft,aligncenter,alignright,link,wp_more,spellchecker,wp_adv,dfw,fontselect,fontsizeselect"
       },
       "result": "PASS"
@@ -73,7 +73,7 @@
       "advanced": true,
       "init": {
         "fonts": "Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings;ふい字=Huifont;Noto Sans Japanese=Noto Sans Japanese",
-        "css": "http://localhost:8892/wp-includes/css/dashicons.min.css?ver=6.2.12,http://localhost:8892/wp-includes/js/tinymce/skins/wordpress/wp-content.css?ver=6.2.12,http://localhost:8892/wp-content/plugins/japanese-font-for-tinymce/default-font-css.php?fn=Noto%20Sans%20Japanese,http://localhost:8892/wp-content/plugins/japanese-font-for-tinymce/addfont_lite.css",
+        "css": "http://localhost:8895/wp-includes/css/dashicons.min.css?ver=7.1.1,http://localhost:8895/wp-includes/js/tinymce/skins/wordpress/wp-content.css?ver=7.1.1,http://localhost:8895/wp-content/plugins/japanese-font-for-tinymce/default-font-css.php?fn=Noto%20Sans%20Japanese,http://localhost:8895/wp-content/themes/twentytwentyfive/assets/css/editor-style.css,http://localhost:8895/wp-content/plugins/japanese-font-for-tinymce/addfont_lite.css",
         "toolbar": "formatselect,bold,italic,blockquote,bullist,numlist,alignleft,aligncenter,alignright,link,unlink,undo,redo,spellchecker,dfw"
       },
       "result": "PASS"

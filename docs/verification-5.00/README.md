@@ -29,6 +29,16 @@ FontFaceのロード結果に加え、Chromiumの描画フォントAPIで実際�
 
 上記編集画面とNoto比較画像は生成後に開いて確認した。各PHP環境でZIP内のPHP全ファイルの構文検査にも合格した。
 
+### 設定・Classic Editor
+
+5環境でNormal/Lite、CDN on/off、head/footerの8通りを実操作で保存し、CSSが指定場所へ一度だけ出力されることを確認した。Gutenbergの有効・無効も組み合わせ、無効時に既存フォント表示が消えないこと、全体設定より個別のNoto指定が優先されることを確認した。
+
+Classic Editor 1.6.7と、Advanced Editor Tools（5.1環境は5.2.1、その他は5.9.2）を使用した。5環境全てでTinyMCEの基本候補を保持したままLiteの2候補が追加され、Quicktagsの挿入・保存・再表示が成功した。WordPress 7.1では自動操作の安定待ちが繰り返しの画面遷移後に止まったため、実マウスでチェック状態を確認し、保存後の新しいページでも保存内容を照合した。
+
+検査結果: [5.1](evidence/dev5.00_2/settings-classic-wp51.json)、[6.2](evidence/dev5.00_2/settings-classic-wp62.json)、[6.5](evidence/dev5.00_2/settings-classic-wp65.json)、[6.9](evidence/dev5.00_2/settings-classic-wp69.json)、[7.1](evidence/dev5.00_2/settings-classic-wp71.json)。
+
+配信診断は画面を開いただけではフォントファイルを取得せず、実行ボタンを押した1書体だけを取得した。[記録](evidence/dev5.00_2/diagnostic.json)
+
 ### 4.30からの更新
 
 4.30を動かしていた別のWordPress環境を同じZIPへ更新した。更新前後で6設定値と既存4投稿・固定ページの本文SHA256が一致した。投稿本文の一括書換えは行っていない。更新後の4ページでNotoとふい字のロード成功を確認した。

@@ -1,84 +1,83 @@
-[
-  {
-    "name": "wp51",
-    "checks": [
-      {
-        "lite": "0",
-        "cdn": "0",
-        "footer": "0",
-        "guten": false,
-        "result": "PASS"
+{
+  "name": "wp51",
+  "result": "PASS",
+  "checks": [
+    {
+      "lite": "0",
+      "cdn": "0",
+      "footer": "0",
+      "guten": false,
+      "result": "PASS"
+    },
+    {
+      "lite": "1",
+      "cdn": "0",
+      "footer": "0",
+      "guten": true,
+      "result": "PASS"
+    },
+    {
+      "lite": "0",
+      "cdn": "1",
+      "footer": "0",
+      "guten": true,
+      "result": "PASS"
+    },
+    {
+      "lite": "1",
+      "cdn": "1",
+      "footer": "0",
+      "guten": false,
+      "result": "PASS"
+    },
+    {
+      "lite": "0",
+      "cdn": "0",
+      "footer": "1",
+      "guten": false,
+      "result": "PASS"
+    },
+    {
+      "lite": "1",
+      "cdn": "0",
+      "footer": "1",
+      "guten": true,
+      "result": "PASS"
+    },
+    {
+      "lite": "0",
+      "cdn": "1",
+      "footer": "1",
+      "guten": true,
+      "result": "PASS"
+    },
+    {
+      "lite": "1",
+      "cdn": "1",
+      "footer": "1",
+      "guten": false,
+      "result": "PASS"
+    },
+    {
+      "classic": true,
+      "advanced": false,
+      "init": {
+        "fonts": "Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings;ふい字=Huifont;Noto Sans Japanese=Noto Sans Japanese",
+        "css": "http://localhost:8891/wp-includes/css/dashicons.min.css?ver=5.1.25,http://localhost:8891/wp-includes/js/tinymce/skins/wordpress/wp-content.css?ver=5.1.25,http://localhost:8891/wp-content/plugins/japanese-font-for-tinymce/default-font-css.php?fn=Noto%20Sans%20Japanese,http://localhost:8891/wp-content/themes/twentynineteen/style-editor.css,http://localhost:8891/wp-content/plugins/japanese-font-for-tinymce/addfont_lite.css",
+        "toolbar": "formatselect,bold,italic,bullist,numlist,blockquote,alignleft,aligncenter,alignright,link,wp_more,spellchecker,dfw,wp_adv,fontselect,fontsizeselect"
       },
-      {
-        "lite": "1",
-        "cdn": "0",
-        "footer": "0",
-        "guten": true,
-        "result": "PASS"
+      "result": "PASS"
+    },
+    {
+      "classic": true,
+      "advanced": true,
+      "init": {
+        "fonts": "Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings;ふい字=Huifont;Noto Sans Japanese=Noto Sans Japanese",
+        "css": "http://localhost:8891/wp-includes/css/dashicons.min.css?ver=5.1.25,http://localhost:8891/wp-includes/js/tinymce/skins/wordpress/wp-content.css?ver=5.1.25,http://localhost:8891/wp-content/plugins/japanese-font-for-tinymce/default-font-css.php?fn=Noto%20Sans%20Japanese,http://localhost:8891/wp-content/themes/twentynineteen/style-editor.css,http://localhost:8891/wp-content/plugins/japanese-font-for-tinymce/addfont_lite.css",
+        "toolbar": "formatselect,bold,italic,blockquote,bullist,numlist,alignleft,aligncenter,alignright,link,unlink,undo,redo,spellchecker,dfw"
       },
-      {
-        "lite": "0",
-        "cdn": "1",
-        "footer": "0",
-        "guten": true,
-        "result": "PASS"
-      },
-      {
-        "lite": "1",
-        "cdn": "1",
-        "footer": "0",
-        "guten": false,
-        "result": "PASS"
-      },
-      {
-        "lite": "0",
-        "cdn": "0",
-        "footer": "1",
-        "guten": false,
-        "result": "PASS"
-      },
-      {
-        "lite": "1",
-        "cdn": "0",
-        "footer": "1",
-        "guten": true,
-        "result": "PASS"
-      },
-      {
-        "lite": "0",
-        "cdn": "1",
-        "footer": "1",
-        "guten": true,
-        "result": "PASS"
-      },
-      {
-        "lite": "1",
-        "cdn": "1",
-        "footer": "1",
-        "guten": false,
-        "result": "PASS"
-      },
-      {
-        "classic": true,
-        "advanced": false,
-        "init": {
-          "fonts": "Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings;ふい字=Huifont;Noto Sans Japanese=Noto Sans Japanese",
-          "css": "http://localhost:8891/wp-includes/css/dashicons.min.css?ver=5.1.25,http://localhost:8891/wp-includes/js/tinymce/skins/wordpress/wp-content.css?ver=5.1.25,http://localhost:8891/wp-content/plugins/japanese-font-for-tinymce/default-font-css.php?fn=Noto%20Sans%20Japanese,http://localhost:8891/wp-content/themes/twentynineteen/style-editor.css,https://fonts.raspi0124.dev/v1/css/3/addfont_lite.css",
-          "toolbar": "formatselect,bold,italic,bullist,numlist,blockquote,alignleft,aligncenter,alignright,link,wp_more,spellchecker,dfw,wp_adv,fontselect,fontsizeselect"
-        },
-        "result": "PASS"
-      },
-      {
-        "classic": true,
-        "advanced": true,
-        "init": {
-          "fonts": "Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings;ふい字=Huifont;Noto Sans Japanese=Noto Sans Japanese",
-          "css": "http://localhost:8891/wp-includes/css/dashicons.min.css?ver=5.1.25,http://localhost:8891/wp-includes/js/tinymce/skins/wordpress/wp-content.css?ver=5.1.25,http://localhost:8891/wp-content/plugins/japanese-font-for-tinymce/default-font-css.php?fn=Noto%20Sans%20Japanese,http://localhost:8891/wp-content/themes/twentynineteen/style-editor.css,https://fonts.raspi0124.dev/v1/css/3/addfont_lite.css",
-          "toolbar": "formatselect,bold,italic,blockquote,bullist,numlist,alignleft,aligncenter,alignright,link,unlink,undo,redo,spellchecker,dfw"
-        },
-        "result": "PASS"
-      }
-    ],
-    "result": "PASS"
-  }
-]
+      "result": "PASS"
+    }
+  ],
+  "verificationNotes": "Settings and fresh Classic posts tested separately. Final ZIP differs from the initial candidate only by the additional TinyMCE legacy-tag schema; Classic save tests use that final ZIP."
+}
