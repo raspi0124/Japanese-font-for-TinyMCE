@@ -11,7 +11,7 @@ function tinyjpfont_fonts() {
 function tinyjpfont_font($value) {
     if (!is_string($value)) { return null; }
     foreach (tinyjpfont_fonts() as $font) {
-        if (strcasecmp($value, $font['family']) === 0 || $value === $font['id']) { return $font; }
+        if (strcasecmp($value, $font['family']) === 0 || $value === $font['id'] || (isset($font['aliases']) && in_array($value, $font['aliases'], true))) { return $font; }
     }
     return null;
 }

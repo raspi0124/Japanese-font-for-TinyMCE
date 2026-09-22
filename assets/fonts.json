@@ -7,49 +7,79 @@
     "source": "https://cdn.jsdelivr.net/gh/raspi0124/my-sites-files@dc302549468ac811f2c12a171c10b90cd0551c3b/HuiFont109.woff2",
     "file": "HuiFont109.woff2",
     "url": "https://fonts.raspi0124.dev/v1/fonts/HuiFont109.woff2",
-    "license": "Huifont terms; prior notice confirmed by maintainer",
+    "license": "Author terms; prior redistribution notice confirmed",
     "sha256": "4d03f34d1f75a511e7bdffc2cdcebf77b60237ddc92ecd067d56a45f1a6e1420",
     "bytes": 932128,
-    "format": "woff2"
+    "format": "woff2",
+    "aliases": [],
+    "license_source": "https://hp.vector.co.jp/authors/VA039499/",
+    "license_files": [
+      "licenses/Huifont-terms.txt"
+    ]
   },
   {
     "id": "noto",
     "label": "Noto Sans Japanese",
     "family": "Noto Sans Japanese",
     "weight": 300,
-    "source": "https://raw.githubusercontent.com/ichiwa/google-web-font-jp-noto-sans-japanese/e04a564c2178bfe9175b5b2726aafda38722d8bb/fonts/DemiLight.woff",
-    "file": "NotoSansJP-DemiLight.woff",
-    "url": "https://fonts.raspi0124.dev/v1/fonts/NotoSansJP-DemiLight.woff",
+    "source": "https://raw.githubusercontent.com/notofonts/noto-cjk/f8d157532fbfaeda587e826d4cd5b21a49186f7c/Sans/OTF/Japanese/NotoSansCJKjp-DemiLight.otf",
+    "file": "NotoSansCJKjp-DemiLight.woff2",
+    "url": "https://fonts.raspi0124.dev/v1/fonts/NotoSansCJKjp-DemiLight.woff2",
     "license": "SIL OFL 1.1",
-    "sha256": "4999adced6d7c3bd01341a8bb49659f5071e022c52eed221292b9a6c95ec0f77",
-    "bytes": 565920,
-    "format": "woff"
+    "sha256": "19c7bb021cf59924d343e13ea11faeaac878b722853cc3e1a3d280122e6e1370",
+    "bytes": 11329296,
+    "format": "woff2",
+    "aliases": [
+      "normal-gen"
+    ],
+    "conversion": "OTF to WOFF2, all 44810 encoded characters retained",
+    "characters": 44810,
+    "license_source": "https://github.com/notofonts/noto-cjk",
+    "license_files": [
+      "licenses/Noto-OFL.txt"
+    ]
   },
   {
     "id": "noto-thin",
     "label": "細字なNoto Sans Japanese",
     "family": "Noto Sans Japanese-100",
     "weight": 100,
-    "source": "https://raw.githubusercontent.com/ichiwa/google-web-font-jp-noto-sans-japanese/e04a564c2178bfe9175b5b2726aafda38722d8bb/fonts/Thin.woff",
-    "file": "NotoSansJP-Thin.woff",
-    "url": "https://fonts.raspi0124.dev/v1/fonts/NotoSansJP-Thin.woff",
+    "source": "https://raw.githubusercontent.com/notofonts/noto-cjk/f8d157532fbfaeda587e826d4cd5b21a49186f7c/Sans/OTF/Japanese/NotoSansCJKjp-Thin.otf",
+    "file": "NotoSansCJKjp-Thin.woff2",
+    "url": "https://fonts.raspi0124.dev/v1/fonts/NotoSansCJKjp-Thin.woff2",
     "license": "SIL OFL 1.1",
-    "sha256": "16fa2bcd28da580070c4979b6f2ca6de7a4cda681c44d94637883ec3f3399fc5",
-    "bytes": 535376,
-    "format": "woff"
+    "sha256": "0062ddb0fc8bb7ae94f318bb8d831368fc2e59d33cbed95dcf4e2fb0717fd233",
+    "bytes": 9561904,
+    "format": "woff2",
+    "aliases": [
+      "light-gen"
+    ],
+    "conversion": "OTF to WOFF2, all 44810 encoded characters retained",
+    "characters": 44810,
+    "license_source": "https://github.com/notofonts/noto-cjk",
+    "license_files": [
+      "licenses/Noto-OFL.txt"
+    ]
   },
   {
     "id": "noto-black",
     "label": "太字なNoto Sans Japanese",
     "family": "Noto Sans Japanese-900",
     "weight": 900,
-    "source": "https://raw.githubusercontent.com/ichiwa/google-web-font-jp-noto-sans-japanese/e04a564c2178bfe9175b5b2726aafda38722d8bb/fonts/Black.woff",
-    "file": "NotoSansJP-Black.woff",
-    "url": "https://fonts.raspi0124.dev/v1/fonts/NotoSansJP-Black.woff",
+    "source": "https://raw.githubusercontent.com/notofonts/noto-cjk/f8d157532fbfaeda587e826d4cd5b21a49186f7c/Sans/OTF/Japanese/NotoSansCJKjp-Black.otf",
+    "file": "NotoSansCJKjp-Black.woff2",
+    "url": "https://fonts.raspi0124.dev/v1/fonts/NotoSansCJKjp-Black.woff2",
     "license": "SIL OFL 1.1",
-    "sha256": "1db9c105e73693b3dc451236614152ee129b55fda225d9a8f70cd4a7c61ed1d0",
-    "bytes": 565556,
-    "format": "woff"
+    "sha256": "1a09367d3b29bd774822d4cc7f64608cf6b2fffb520e56a7f566aa807b3d149c",
+    "bytes": 12386892,
+    "format": "woff2",
+    "aliases": [],
+    "conversion": "OTF to WOFF2, all 44810 encoded characters retained",
+    "characters": 44810,
+    "license_source": "https://github.com/notofonts/noto-cjk",
+    "license_files": [
+      "licenses/Noto-OFL.txt"
+    ]
   },
   {
     "id": "esenapaj",
@@ -62,7 +92,13 @@
     "license": "SIL OFL 1.1",
     "sha256": "9d8f63e2e07c31e02e62ac6e9d21df33c9d1ebb972cfdbf3ea4085c33c78db12",
     "bytes": 2334056,
-    "format": "truetype"
+    "format": "truetype",
+    "aliases": [],
+    "license_source": "https://tanukifont.com/esenapaj/",
+    "license_files": [
+      "licenses/Esenapaj-SIL OPEN FONT LICENSE Version 1.1.txt",
+      "licenses/Esenapaj-readme.txt"
+    ]
   },
   {
     "id": "honokamaru",
@@ -72,10 +108,20 @@
     "source": "https://cdn.jsdelivr.net/gh/raspi0124/my-sites-files@80b7a9fadba7c729d00bcc81beba49deb97e19de/font_1_honokamarugo_1.1.ttf",
     "file": "honokamaru.ttf",
     "url": "https://fonts.raspi0124.dev/v1/fonts/honokamaru.ttf",
-    "license": "Original author distribution terms",
+    "license": "Apache-2.0 and M+ Font License",
     "sha256": "1d533bbb03aef6ddd3c35f6d07d19b1490be99b76c8e6fe9eb69e7c6084814d1",
     "bytes": 10504512,
-    "format": "truetype"
+    "format": "truetype",
+    "aliases": [],
+    "license_source": "https://font.gloomy.jp/honoka-maru-gothic-dl-oldver.html",
+    "license_files": [
+      "licenses/Honoka-README_E",
+      "licenses/Honoka-README_J",
+      "licenses/Honoka-LICENSE_J",
+      "licenses/Honoka-【源ノ角ゴシック・源柔ゴシック】Apache License 2.0.txt",
+      "licenses/Honoka-LICENSE_E",
+      "licenses/Honoka-利用前にお読みください.txt"
+    ]
   },
   {
     "id": "kokorom",
@@ -85,10 +131,16 @@
     "source": "https://cdn.jsdelivr.net/gh/raspi0124/my-sites-files@0a9c3e242b46cd2d493db832a6eccba8f31b9da6/Kokoro.ttf",
     "file": "Kokoro.ttf",
     "url": "https://fonts.raspi0124.dev/v1/fonts/Kokoro.ttf",
-    "license": "Original author distribution terms",
+    "license": "IPA Font License 1.0",
     "sha256": "a7df1a0a9a3a691657b43b02759a3de21548f76ee22fd0dfc624c31881b70b8d",
     "bytes": 3968936,
-    "format": "truetype"
+    "format": "truetype",
+    "aliases": [],
+    "license_source": "https://fontopo.com/?p=520",
+    "license_files": [
+      "licenses/Kokoro-ReadMe.txt",
+      "licenses/Kokoro-IPA_Font_License_Agreement_v1.0.txt"
+    ]
   },
   {
     "id": "aoyanagit",
@@ -98,10 +150,15 @@
     "source": "https://cdn.jsdelivr.net/gh/raspi0124/my-sites-files@729d123c3a7de4ac2bb3a7cdbdedc707dde69120/aoyanagiT.ttf",
     "file": "aoyanagiT.ttf",
     "url": "https://fonts.raspi0124.dev/v1/fonts/aoyanagiT.ttf",
-    "license": "Original author distribution terms",
+    "license": "Author unrestricted-use terms",
     "sha256": "233d623f88c083631521c909950ce3046eb9f89d444a0a8be4c80ac50019fcbd",
     "bytes": 2088064,
-    "format": "truetype"
+    "format": "truetype",
+    "aliases": [],
+    "license_source": "https://opentype.jp/aoyagikouzanfontt",
+    "license_files": [
+      "licenses/Aoyagi-source.txt"
+    ]
   },
   {
     "id": "tanukim",
@@ -111,9 +168,14 @@
     "source": "https://cdn.jsdelivr.net/gh/raspi0124/my-sites-files@729d123c3a7de4ac2bb3a7cdbdedc707dde69120/TanukiMagic.ttf",
     "file": "TanukiMagic.ttf",
     "url": "https://fonts.raspi0124.dev/v1/fonts/TanukiMagic.ttf",
-    "license": "Original author distribution terms",
+    "license": "TanukiMagic author terms",
     "sha256": "9f19429f9a756458efe7ef9ed844c2ae1cbb03bcde3bf3a575262d3b1b6d3aae",
     "bytes": 8820644,
-    "format": "truetype"
+    "format": "truetype",
+    "aliases": [],
+    "license_source": "https://tanukifont.com/tanuki-permanent-marker/",
+    "license_files": [
+      "licenses/TanukiMagic-readme.txt"
+    ]
   }
 ]

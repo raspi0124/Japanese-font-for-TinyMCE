@@ -6,6 +6,8 @@ ZONE = '23a48bbb4086b202dfa3c472c5bac34c'
 BUCKET = 'japanese-font-for-wordpress'
 def request(path, method='GET', data=None):
     token = os.environ.get('CLOUDFLARE_API_TOKEN')
+    if not token and (pathlib.Path.home()/'.config/cloudflare/api-token').exists():
+        token=(pathlib.Path.home()/'.config/cloudflare/api-token').read_text().strip()
     if not token:
         config = pathlib.Path.home()/'.config/.wrangler/config/default.toml'
         token = tomllib.loads(config.read_text())['oauth_token']
