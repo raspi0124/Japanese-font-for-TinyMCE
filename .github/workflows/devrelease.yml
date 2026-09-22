@@ -16,6 +16,8 @@ jobs:
           cache-dependency-path: gutenjpfont/package-lock.json
       - run: npm ci && npm run build
         working-directory: gutenjpfont
+      - run: npm audit --audit-level=high
+        working-directory: gutenjpfont
       - run: python3 tools/package.py
       - name: Check runtime PHP syntax
         run: find . -path './gutenjpfont/node_modules' -prune -o -name '*.php' -print0 | xargs -0 -n1 php -l

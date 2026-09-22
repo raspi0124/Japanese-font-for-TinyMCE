@@ -59,7 +59,7 @@ Font files and optionally CSS are requested from https://fonts.raspi0124.dev/, o
 
 = 5.00-dev.4 =
 * Complete the five-version compatibility verification and browser rendering checks.
-* Document large-font installation requirements, delivery behavior, and remaining development dependency advisories.
+* Document large-font installation requirements, delivery behavior, and dependency audit results.
 * Preserve settings and installed fonts during uninstall; improve administration, input validation, and delivery diagnostics.
 
 = 5.00-dev.3 =
