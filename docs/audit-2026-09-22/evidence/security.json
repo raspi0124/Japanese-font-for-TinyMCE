@@ -1,0 +1,73 @@
+[
+  {
+    "name": "missing-nonce",
+    "status": 200,
+    "injected": false,
+    "rejected": true,
+    "savedMessage": false
+  },
+  {
+    "name": "bad-nonce",
+    "status": 200,
+    "injected": false,
+    "rejected": true,
+    "savedMessage": false
+  },
+  {
+    "name": "invalid-font",
+    "status": 200,
+    "injected": false,
+    "rejected": false,
+    "savedMessage": true
+  },
+  {
+    "savedDefault": "Noto Sans Japanese",
+    "savedWhole": "noselect"
+  },
+  {
+    "name": "subscriber-settings-post",
+    "status": 403
+  },
+  {
+    "endpoint": "default-font-css.php",
+    "query": "fn=Huifont",
+    "status": 200,
+    "type": "text/css; charset=UTF-8",
+    "body": "body#tinymce.wp-editor {\nfont-family: Huifont !important;\n}\n"
+  },
+  {
+    "endpoint": "default-font-css.php",
+    "query": "fn=%3C%2Fstyle%3E%3Cscript%3Ealert(1)%3C%2Fscript%3E",
+    "status": 200,
+    "type": "text/css; charset=UTF-8",
+    "body": "body#tinymce.wp-editor {\nfont-family: Noto Sans Japanese !important;\n}\n"
+  },
+  {
+    "endpoint": "default-font-css.php",
+    "query": "fn%5B%5D=Huifont",
+    "status": 200,
+    "type": "text/css; charset=UTF-8",
+    "body": "body#tinymce.wp-editor {\nfont-family: Noto Sans Japanese !important;\n}\n"
+  },
+  {
+    "endpoint": "whole-font-css.php",
+    "query": "fn=Huifont",
+    "status": 200,
+    "type": "text/css; charset=UTF-8",
+    "body": "body {\nfont-family: Huifont;\n}\n"
+  },
+  {
+    "endpoint": "whole-font-css.php",
+    "query": "fn=%3C%2Fstyle%3E%3Cscript%3Ealert(1)%3C%2Fscript%3E",
+    "status": 200,
+    "type": "text/css; charset=UTF-8",
+    "body": "body {\nfont-family: ;\n}\n"
+  },
+  {
+    "endpoint": "whole-font-css.php",
+    "query": "fn%5B%5D=Huifont",
+    "status": 200,
+    "type": "text/css; charset=UTF-8",
+    "body": "body {\nfont-family: ;\n}\n"
+  }
+]

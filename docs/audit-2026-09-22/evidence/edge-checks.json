@@ -1,0 +1,54 @@
+[
+  {
+    "label": "unset-head",
+    "styles": [
+      "tinyjpfont_gutenberg_style-css-css"
+    ],
+    "legacy": [
+      {
+        "text": "日本語 Noto旧ブロック",
+        "font": "\"Noto Sans Japanese\""
+      },
+      {
+        "text": "日本語 ふい字旧ブロック",
+        "font": "Huifont"
+      }
+    ]
+  },
+  {
+    "label": "gutenberg-disabled",
+    "styles": [
+      "tinyjpfont-styles-css"
+    ],
+    "legacy": [
+      {
+        "text": "日本語 Noto旧ブロック",
+        "font": "Manrope, sans-serif"
+      },
+      {
+        "text": "日本語 ふい字旧ブロック",
+        "font": "Manrope, sans-serif"
+      }
+    ]
+  },
+  {
+    "label": "lite-huifont",
+    "styles": [
+      "tinyjpfont_gutenberg_style-css-css",
+      "tinyjpfont-styles-css"
+    ],
+    "legacy": [
+      {
+        "text": "日本語 Noto旧ブロック",
+        "font": "\"Noto Sans Japanese\""
+      },
+      {
+        "text": "日本語 ふい字旧ブロック",
+        "font": "Huifont"
+      }
+    ],
+    "font": [
+      "loaded"
+    ]
+  }
+]

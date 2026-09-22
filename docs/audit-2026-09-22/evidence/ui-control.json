@@ -1,0 +1,47 @@
+[
+  {
+    "mode": "disabled",
+    "browser": "149.0.7827.0",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.0.0 Safari/537.36",
+    "paragraphAfterBold": "<strong data-rich-text-format-boundary=\"true\">日本語 標準の段落</strong>",
+    "coreBlocks": 115,
+    "pluginBlocks": [],
+    "errors": []
+  },
+  {
+    "mode": "enabled",
+    "browser": "149.0.7827.0",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.0.0 Safari/537.36",
+    "paragraphAfterBold": "<strong data-rich-text-format-boundary=\"true\">日本語 標準の段落</strong>",
+    "coreBlocks": 115,
+    "pluginBlocks": [],
+    "errors": [
+      {
+        "message": "lodash is not defined",
+        "stack": "ReferenceError: lodash is not defined\n    at Object.<anonymous> (http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.build.js?ver=1:1:523)\n    at e (http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.build.js?ver=1:1:101)\n    at Object.<anonymous> (http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.build.js?ver=1:1:41480)\n    at e (http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.build.js?ver=1:1:101)\n    at Object.<anonymous> (http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.build.js?ver=1:1:7724)\n    at e (http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.build.js?ver=1:1:101)\n    at Object.<anonymous> (http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.build.js?ver=1:1:15111)\n    at e (http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.build.js?ver=1:1:101)\n    at Object.<anonymous> (http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.build.js?ver=1:1:39433)\n    at e (http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.build.js?ver=1:1:101)"
+      },
+      {
+        "message": "QTags is not defined",
+        "stack": "ReferenceError: QTags is not defined\n    at http://localhost:8887/wp-admin/post.php?post=8&action=edit:1988:13"
+      }
+    ]
+  },
+  {
+    "mode": "diagnostic",
+    "browser": "149.0.7827.0",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.0.0 Safari/537.36",
+    "paragraphAfterBold": "<strong data-rich-text-format-boundary=\"true\">日本語 標準の段落</strong>",
+    "coreBlocks": 115,
+    "pluginBlocks": [
+      "tinyjpfont/noto",
+      "tinyjpfont/huiji"
+    ],
+    "paragraphAfterFont": "<strong data-rich-text-format-boundary=\"true\">日本語 標準の段落</strong>",
+    "errors": [
+      {
+        "message": "QTags is not defined",
+        "stack": "ReferenceError: QTags is not defined\n    at http://localhost:8887/wp-admin/post.php?post=8&action=edit:1988:13"
+      }
+    ]
+  }
+]

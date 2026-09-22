@@ -1,0 +1,59 @@
+{
+  "php": "8.3.33",
+  "wp": "7.1.1",
+  "kses": "<p>日本語</p>",
+  "font_options": [
+    "0",
+    "0",
+    "1"
+  ],
+  "fonts": {
+    "theme": [
+      {
+        "name": "Manrope",
+        "slug": "manrope",
+        "fontFamily": "Manrope, sans-serif",
+        "fontFace": [
+          {
+            "src": [
+              "file:./assets/fonts/manrope/Manrope-VariableFont_wght.woff2"
+            ],
+            "fontWeight": "200 800",
+            "fontStyle": "normal",
+            "fontFamily": "Manrope"
+          }
+        ]
+      },
+      {
+        "name": "Fira Code",
+        "slug": "fira-code",
+        "fontFamily": "\"Fira Code\", monospace",
+        "fontFace": [
+          {
+            "src": [
+              "file:./assets/fonts/fira-code/FiraCode-VariableFont_wght.woff2"
+            ],
+            "fontWeight": "300 700",
+            "fontStyle": "normal",
+            "fontFamily": "\"Fira Code\""
+          }
+        ]
+      }
+    ]
+  },
+  "mce": {
+    "font_formats": "Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings;ふい字=Huifont;Noto Sans Japanese=Noto Sans Japanese;太字なNoto Sans Japanese=Noto Sans Japanese-900;細字なNoto Sans Japanese=Noto Sans Japanese-100;エセナパJ=esenapaj;ほのか丸ゴシック=honokamaru;こころ明朝体=kokorom;青柳衡山フォントT=aoyanagiT;たぬき油性マジック=tanukiM",
+    "style_formats": "[{\"title\":\"Noto Sans Japanese\",\"block\":\"div\",\"classes\":\"noto\",\"wrapper\":true},{\"title\":\"Huifont\",\"block\":\"div\",\"classes\":\"huiji\",\"wrapper\":true}]",
+    "content_css": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/addfont.css",
+    "fontsize_formats": "10px 12px 14px 16px 18px 20px 24px 28px 32px 36px 42px 48px"
+  },
+  "buttons": [
+    "bold",
+    "fontselect",
+    "fontselect",
+    "fontsizeselect",
+    "fontsizeselect"
+  ],
+  "style_deps": true,
+  "post_id": 8
+}

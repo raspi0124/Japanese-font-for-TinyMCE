@@ -1,0 +1,107 @@
+{
+  "blocks": [],
+  "formats": [],
+  "fontFamilies": {
+    "theme": [
+      {
+        "name": "Manrope",
+        "slug": "manrope",
+        "fontFamily": "Manrope, sans-serif",
+        "fontFace": [
+          {
+            "src": [
+              "file:./assets/fonts/manrope/Manrope-VariableFont_wght.woff2"
+            ],
+            "fontWeight": "200 800",
+            "fontStyle": "normal",
+            "fontFamily": "Manrope"
+          }
+        ]
+      },
+      {
+        "name": "Fira Code",
+        "slug": "fira-code",
+        "fontFamily": "\"Fira Code\", monospace",
+        "fontFace": [
+          {
+            "src": [
+              "file:./assets/fonts/fira-code/FiraCode-VariableFont_wght.woff2"
+            ],
+            "fontWeight": "300 700",
+            "fontStyle": "normal",
+            "fontFamily": "\"Fira Code\""
+          }
+        ]
+      }
+    ]
+  },
+  "frames": [
+    {
+      "url": "http://localhost:8887/wp-admin/post.php?post=8&action=edit",
+      "fonts": [
+        "Beiruti",
+        "Fira Code",
+        "Fira Sans",
+        "Huifont",
+        "Literata",
+        "Manrope",
+        "Noto Sans Japanese",
+        "Noto Sans Japanese-100",
+        "Noto Sans Japanese-900",
+        "Platypi",
+        "Roboto Slab",
+        "Vollkorn",
+        "Ysabeau Office",
+        "aoyanagiT",
+        "dashicons",
+        "esenapaj",
+        "honokamaru",
+        "kokorom",
+        "light-gen",
+        "normal-gen",
+        "tanukiM"
+      ],
+      "styles": [
+        "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/default-font-css.php?fn=Noto%20Sans%20Japanese&ver=7.1.1",
+        "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.editor.build.css?ver=7.1.1",
+        "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.style.build.css?ver=7.1.1",
+        "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/addfont.css?ver=7.1.1"
+      ],
+      "legacy": []
+    },
+    {
+      "url": "blob:http://localhost:8887/39d72ed2-daf2-4708-b442-585d27abdf11",
+      "fonts": [
+        "Beiruti",
+        "Fira Code",
+        "Fira Sans",
+        "Huifont",
+        "Literata",
+        "Manrope",
+        "Noto Sans Japanese",
+        "Platypi",
+        "Roboto Slab",
+        "Vollkorn",
+        "Ysabeau Office"
+      ],
+      "styles": [
+        "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.style.build.css?ver=7.1.1",
+        "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.editor.build.css?ver=7.1.1"
+      ],
+      "legacy": [
+        {
+          "text": "日本語 Noto旧ブロック",
+          "font": "\"Noto Sans Japanese\""
+        },
+        {
+          "text": "日本語 ふい字旧ブロック",
+          "font": "Huifont"
+        }
+      ]
+    }
+  ],
+  "errors": [
+    "lodash is not defined",
+    "QTags is not defined"
+  ]
+}

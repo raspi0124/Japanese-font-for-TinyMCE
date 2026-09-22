@@ -1,0 +1,657 @@
+[
+  {
+    "theme": "twentytwentyfive",
+    "label": "normal-head",
+    "styles": [
+      {
+        "id": "tinyjpfont_gutenberg_style-css-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.style.build.css?ver=7.1.1",
+        "head": true
+      },
+      {
+        "id": "tinyjpfont-styles-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/addfont.css?ver=7.1.1",
+        "head": true
+      }
+    ],
+    "bodyFont": "Manrope, sans-serif",
+    "fonts": [
+      "esenapaj",
+      "kokorom",
+      "aoyanagiT",
+      "tanukiM",
+      "Huifont",
+      "honokamaru",
+      "light-gen",
+      "normal-gen",
+      "Noto Sans Japanese-100",
+      "Noto Sans Japanese",
+      "Noto Sans Japanese-900",
+      "Manrope",
+      "Fira Code"
+    ],
+    "elements": [
+      {
+        "text": "日本語 標準の段落",
+        "font": "Manrope, sans-serif"
+      },
+      {
+        "text": "日本語 見出し",
+        "font": "Manrope, sans-serif"
+      },
+      {
+        "text": "日本語 Noto旧ブロック",
+        "font": "\"Noto Sans Japanese\""
+      },
+      {
+        "text": "日本語 ふい字旧ブロック",
+        "font": "Huifont"
+      }
+    ]
+  },
+  {
+    "theme": "twentytwentyfive",
+    "label": "normal-footer",
+    "styles": [
+      {
+        "id": "tinyjpfont_gutenberg_style-css-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.style.build.css?ver=7.1.1",
+        "head": true
+      }
+    ],
+    "bodyFont": "Manrope, sans-serif",
+    "fonts": [
+      "Manrope",
+      "Fira Code"
+    ],
+    "elements": [
+      {
+        "text": "日本語 標準の段落",
+        "font": "Manrope, sans-serif"
+      },
+      {
+        "text": "日本語 見出し",
+        "font": "Manrope, sans-serif"
+      },
+      {
+        "text": "日本語 Noto旧ブロック",
+        "font": "\"Noto Sans Japanese\""
+      },
+      {
+        "text": "日本語 ふい字旧ブロック",
+        "font": "Huifont"
+      }
+    ]
+  },
+  {
+    "theme": "twentytwentyfive",
+    "label": "lite-head",
+    "styles": [
+      {
+        "id": "tinyjpfont_gutenberg_style-css-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.style.build.css?ver=7.1.1",
+        "head": true
+      },
+      {
+        "id": "tinyjpfont-styles-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/addfont_lite.css?ver=7.1.1",
+        "head": true
+      }
+    ],
+    "bodyFont": "Manrope, sans-serif",
+    "fonts": [
+      "Huifont",
+      "Noto Sans Japanese",
+      "Manrope",
+      "Fira Code"
+    ],
+    "elements": [
+      {
+        "text": "日本語 標準の段落",
+        "font": "Manrope, sans-serif"
+      },
+      {
+        "text": "日本語 見出し",
+        "font": "Manrope, sans-serif"
+      },
+      {
+        "text": "日本語 Noto旧ブロック",
+        "font": "\"Noto Sans Japanese\""
+      },
+      {
+        "text": "日本語 ふい字旧ブロック",
+        "font": "Huifont"
+      }
+    ]
+  },
+  {
+    "theme": "twentytwentyfive",
+    "label": "lite-whole-kokoro",
+    "styles": [
+      {
+        "id": "tinyjpfont-whole-font-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/whole-font-css.php?fn=kokorom&ver=7.1.1",
+        "head": true
+      },
+      {
+        "id": "tinyjpfont_gutenberg_style-css-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.style.build.css?ver=7.1.1",
+        "head": true
+      },
+      {
+        "id": "tinyjpfont-styles-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/addfont_lite.css?ver=7.1.1",
+        "head": true
+      }
+    ],
+    "bodyFont": "Manrope, sans-serif",
+    "fonts": [
+      "Huifont",
+      "Noto Sans Japanese",
+      "Manrope",
+      "Fira Code"
+    ],
+    "elements": [
+      {
+        "text": "日本語 標準の段落",
+        "font": "Manrope, sans-serif"
+      },
+      {
+        "text": "日本語 見出し",
+        "font": "Manrope, sans-serif"
+      },
+      {
+        "text": "日本語 Noto旧ブロック",
+        "font": "\"Noto Sans Japanese\""
+      },
+      {
+        "text": "日本語 ふい字旧ブロック",
+        "font": "Huifont"
+      }
+    ]
+  },
+  {
+    "theme": "twentytwentyfive",
+    "label": "normal-whole-kokoro",
+    "styles": [
+      {
+        "id": "tinyjpfont-whole-font-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/whole-font-css.php?fn=kokorom&ver=7.1.1",
+        "head": true
+      },
+      {
+        "id": "tinyjpfont_gutenberg_style-css-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.style.build.css?ver=7.1.1",
+        "head": true
+      },
+      {
+        "id": "tinyjpfont-styles-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/addfont.css?ver=7.1.1",
+        "head": true
+      }
+    ],
+    "bodyFont": "Manrope, sans-serif",
+    "fonts": [
+      "esenapaj",
+      "kokorom",
+      "aoyanagiT",
+      "tanukiM",
+      "Huifont",
+      "honokamaru",
+      "light-gen",
+      "normal-gen",
+      "Noto Sans Japanese-100",
+      "Noto Sans Japanese",
+      "Noto Sans Japanese-900",
+      "Manrope",
+      "Fira Code"
+    ],
+    "elements": [
+      {
+        "text": "日本語 標準の段落",
+        "font": "Manrope, sans-serif"
+      },
+      {
+        "text": "日本語 見出し",
+        "font": "Manrope, sans-serif"
+      },
+      {
+        "text": "日本語 Noto旧ブロック",
+        "font": "\"Noto Sans Japanese\""
+      },
+      {
+        "text": "日本語 ふい字旧ブロック",
+        "font": "Huifont"
+      }
+    ]
+  },
+  {
+    "theme": "twentytwentyfive",
+    "label": "cdn-normal",
+    "styles": [
+      {
+        "id": "tinyjpfont_gutenberg_style-css-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.style.build.css?ver=7.1.1",
+        "head": true
+      },
+      {
+        "id": "tinyjpfont-styles-css",
+        "href": "https://cdn.jsdelivr.net/gh/raspi0124/Japanese-font-for-TinyMCE@stable/addfont.css?ver=7.1.1",
+        "head": true
+      }
+    ],
+    "bodyFont": "Manrope, sans-serif",
+    "fonts": [
+      "esenapaj",
+      "kokorom",
+      "aoyanagiT",
+      "tanukiM",
+      "Huifont",
+      "honokamaru",
+      "light-gen",
+      "normal-gen",
+      "Noto Sans Japanese-100",
+      "Noto Sans Japanese",
+      "Noto Sans Japanese-900",
+      "Manrope",
+      "Fira Code"
+    ],
+    "elements": [
+      {
+        "text": "日本語 標準の段落",
+        "font": "Manrope, sans-serif"
+      },
+      {
+        "text": "日本語 見出し",
+        "font": "Manrope, sans-serif"
+      },
+      {
+        "text": "日本語 Noto旧ブロック",
+        "font": "\"Noto Sans Japanese\""
+      },
+      {
+        "text": "日本語 ふい字旧ブロック",
+        "font": "Huifont"
+      }
+    ]
+  },
+  {
+    "theme": "twentytwentyone",
+    "label": "normal-head",
+    "styles": [
+      {
+        "id": "tinyjpfont_gutenberg_style-css-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.style.build.css?ver=7.1.1",
+        "head": true
+      },
+      {
+        "id": "tinyjpfont-styles-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/addfont.css?ver=7.1.1",
+        "head": true
+      }
+    ],
+    "bodyFont": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif",
+    "fonts": [
+      "esenapaj",
+      "kokorom",
+      "aoyanagiT",
+      "tanukiM",
+      "Huifont",
+      "honokamaru",
+      "light-gen",
+      "normal-gen",
+      "Noto Sans Japanese-100",
+      "Noto Sans Japanese",
+      "Noto Sans Japanese-900"
+    ],
+    "elements": [
+      {
+        "text": "日本語 標準の段落",
+        "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif"
+      },
+      {
+        "text": "日本語 見出し",
+        "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif"
+      },
+      {
+        "text": "日本語 Noto旧ブロック",
+        "font": "\"Noto Sans Japanese\""
+      },
+      {
+        "text": "日本語 ふい字旧ブロック",
+        "font": "Huifont"
+      }
+    ]
+  },
+  {
+    "theme": "twentytwentyone",
+    "label": "normal-footer",
+    "styles": [
+      {
+        "id": "tinyjpfont_gutenberg_style-css-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.style.build.css?ver=7.1.1",
+        "head": true
+      },
+      {
+        "id": "tinyjpfont-styles-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/addfont.css?ver=7.1.1",
+        "head": true
+      }
+    ],
+    "bodyFont": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif",
+    "fonts": [
+      "esenapaj",
+      "kokorom",
+      "aoyanagiT",
+      "tanukiM",
+      "Huifont",
+      "honokamaru",
+      "light-gen",
+      "normal-gen",
+      "Noto Sans Japanese-100",
+      "Noto Sans Japanese",
+      "Noto Sans Japanese-900"
+    ],
+    "elements": [
+      {
+        "text": "日本語 標準の段落",
+        "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif"
+      },
+      {
+        "text": "日本語 見出し",
+        "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif"
+      },
+      {
+        "text": "日本語 Noto旧ブロック",
+        "font": "\"Noto Sans Japanese\""
+      },
+      {
+        "text": "日本語 ふい字旧ブロック",
+        "font": "Huifont"
+      }
+    ]
+  },
+  {
+    "theme": "twentytwentyone",
+    "label": "lite-head",
+    "styles": [
+      {
+        "id": "tinyjpfont_gutenberg_style-css-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.style.build.css?ver=7.1.1",
+        "head": true
+      },
+      {
+        "id": "tinyjpfont-styles-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/addfont_lite.css?ver=7.1.1",
+        "head": true
+      }
+    ],
+    "bodyFont": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif",
+    "fonts": [
+      "Huifont",
+      "Noto Sans Japanese"
+    ],
+    "elements": [
+      {
+        "text": "日本語 標準の段落",
+        "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif"
+      },
+      {
+        "text": "日本語 見出し",
+        "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif"
+      },
+      {
+        "text": "日本語 Noto旧ブロック",
+        "font": "\"Noto Sans Japanese\""
+      },
+      {
+        "text": "日本語 ふい字旧ブロック",
+        "font": "Huifont"
+      }
+    ]
+  },
+  {
+    "theme": "twentytwentyone",
+    "label": "lite-whole-kokoro",
+    "styles": [
+      {
+        "id": "tinyjpfont-whole-font-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/whole-font-css.php?fn=kokorom&ver=7.1.1",
+        "head": true
+      },
+      {
+        "id": "tinyjpfont_gutenberg_style-css-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.style.build.css?ver=7.1.1",
+        "head": true
+      },
+      {
+        "id": "tinyjpfont-styles-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/addfont_lite.css?ver=7.1.1",
+        "head": true
+      }
+    ],
+    "bodyFont": "kokorom",
+    "fonts": [
+      "Huifont",
+      "Noto Sans Japanese"
+    ],
+    "elements": [
+      {
+        "text": "日本語 標準の段落",
+        "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif"
+      },
+      {
+        "text": "日本語 見出し",
+        "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif"
+      },
+      {
+        "text": "日本語 Noto旧ブロック",
+        "font": "\"Noto Sans Japanese\""
+      },
+      {
+        "text": "日本語 ふい字旧ブロック",
+        "font": "Huifont"
+      }
+    ]
+  },
+  {
+    "theme": "twentytwentyone",
+    "label": "normal-whole-kokoro",
+    "styles": [
+      {
+        "id": "tinyjpfont-whole-font-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/whole-font-css.php?fn=kokorom&ver=7.1.1",
+        "head": true
+      },
+      {
+        "id": "tinyjpfont_gutenberg_style-css-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.style.build.css?ver=7.1.1",
+        "head": true
+      },
+      {
+        "id": "tinyjpfont-styles-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/addfont.css?ver=7.1.1",
+        "head": true
+      }
+    ],
+    "bodyFont": "kokorom",
+    "fonts": [
+      "esenapaj",
+      "kokorom",
+      "aoyanagiT",
+      "tanukiM",
+      "Huifont",
+      "honokamaru",
+      "light-gen",
+      "normal-gen",
+      "Noto Sans Japanese-100",
+      "Noto Sans Japanese",
+      "Noto Sans Japanese-900"
+    ],
+    "elements": [
+      {
+        "text": "日本語 標準の段落",
+        "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif"
+      },
+      {
+        "text": "日本語 見出し",
+        "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif"
+      },
+      {
+        "text": "日本語 Noto旧ブロック",
+        "font": "\"Noto Sans Japanese\""
+      },
+      {
+        "text": "日本語 ふい字旧ブロック",
+        "font": "Huifont"
+      }
+    ]
+  },
+  {
+    "theme": "twentytwentyone",
+    "label": "cdn-normal",
+    "styles": [
+      {
+        "id": "tinyjpfont_gutenberg_style-css-css",
+        "href": "http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/gutenjpfont/dist/blocks.style.build.css?ver=7.1.1",
+        "head": true
+      },
+      {
+        "id": "tinyjpfont-styles-css",
+        "href": "https://cdn.jsdelivr.net/gh/raspi0124/Japanese-font-for-TinyMCE@stable/addfont.css?ver=7.1.1",
+        "head": true
+      }
+    ],
+    "bodyFont": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif",
+    "fonts": [
+      "esenapaj",
+      "kokorom",
+      "aoyanagiT",
+      "tanukiM",
+      "Huifont",
+      "honokamaru",
+      "light-gen",
+      "normal-gen",
+      "Noto Sans Japanese-100",
+      "Noto Sans Japanese",
+      "Noto Sans Japanese-900"
+    ],
+    "elements": [
+      {
+        "text": "日本語 標準の段落",
+        "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif"
+      },
+      {
+        "text": "日本語 見出し",
+        "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif"
+      },
+      {
+        "text": "日本語 Noto旧ブロック",
+        "font": "\"Noto Sans Japanese\""
+      },
+      {
+        "text": "日本語 ふい字旧ブロック",
+        "font": "Huifont"
+      }
+    ]
+  },
+  {
+    "fontLoads": [
+      {
+        "family": "Noto Sans Japanese",
+        "error": "A network error occurred."
+      },
+      {
+        "family": "Noto Sans Japanese-100",
+        "error": "A network error occurred."
+      },
+      {
+        "family": "Noto Sans Japanese-900",
+        "error": "A network error occurred."
+      },
+      {
+        "family": "Huifont",
+        "error": "A network error occurred."
+      },
+      {
+        "family": "esenapaj",
+        "loaded": [
+          {
+            "family": "esenapaj",
+            "status": "loaded"
+          }
+        ]
+      },
+      {
+        "family": "kokorom",
+        "loaded": [
+          {
+            "family": "kokorom",
+            "status": "loaded"
+          }
+        ]
+      },
+      {
+        "family": "aoyanagiT",
+        "loaded": [
+          {
+            "family": "aoyanagiT",
+            "status": "loaded"
+          }
+        ]
+      },
+      {
+        "family": "tanukiM",
+        "loaded": [
+          {
+            "family": "tanukiM",
+            "status": "loaded"
+          }
+        ]
+      },
+      {
+        "family": "honokamaru",
+        "loaded": [
+          {
+            "family": "honokamaru",
+            "status": "loaded"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "classic": true,
+    "advanced": false,
+    "errors": [
+      "QTags is not defined",
+      "QTags is not defined"
+    ],
+    "mce": {
+      "buttons": "formatselect,fontselect,bold,italic,bullist,numlist,blockquote,alignleft,aligncenter,alignright,link,wp_more,spellchecker,wp_adv,dfw,fontsizeselect",
+      "content_css": "http://localhost:8887/wp-includes/css/dashicons.min.css?ver=7.1.1,http://localhost:8887/wp-includes/js/tinymce/skins/wordpress/wp-content.css?ver=7.1.1,http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/default-font-css.php?fn=Noto%20Sans%20Japanese,http://localhost:8887/wp-content/themes/twentytwentyfive/assets/css/editor-style.css,http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/addfont.css",
+      "formats": "Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings;ふい字=Huifont;Noto Sans Japanese=Noto Sans Japanese;太字なNoto Sans Japanese=Noto Sans Japanese-900;細字なNoto Sans Japanese=Noto Sans Japanese-100;エセナパJ=esenapaj;ほのか丸ゴシック=honokamaru;こころ明朝体=kokorom;青柳衡山フォントT=aoyanagiT;たぬき油性マジック=tanukiM",
+      "quicktagButtons": []
+    }
+  },
+  {
+    "classicLite": {
+      "content_css": "http://localhost:8887/wp-includes/css/dashicons.min.css?ver=7.1.1,http://localhost:8887/wp-includes/js/tinymce/skins/wordpress/wp-content.css?ver=7.1.1,http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/default-font-css.php?fn=kokorom,http://localhost:8887/wp-content/themes/twentytwentyfive/assets/css/editor-style.css,http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/addfont.css",
+      "formats": "Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings;ふい字=Huifont;Noto Sans Japanese=Noto Sans Japanese;",
+      "bodyFont": "kokorom"
+    }
+  },
+  {
+    "classic": true,
+    "advanced": true,
+    "errors": [
+      "QTags is not defined"
+    ],
+    "mce": {
+      "buttons": "formatselect,bold,italic,blockquote,bullist,numlist,alignleft,aligncenter,alignright,link,unlink,undo,redo,spellchecker,dfw",
+      "content_css": "http://localhost:8887/wp-includes/css/dashicons.min.css?ver=7.1.1,http://localhost:8887/wp-includes/js/tinymce/skins/wordpress/wp-content.css?ver=7.1.1,http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/default-font-css.php?fn=Noto%20Sans%20Japanese,http://localhost:8887/wp-content/themes/twentytwentyfive/assets/css/editor-style.css,http://localhost:8887/wp-content/plugins/japanese-font-for-tinymce/addfont.css",
+      "formats": "Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings;ふい字=Huifont;Noto Sans Japanese=Noto Sans Japanese;太字なNoto Sans Japanese=Noto Sans Japanese-900;細字なNoto Sans Japanese=Noto Sans Japanese-100;エセナパJ=esenapaj;ほのか丸ゴシック=honokamaru;こころ明朝体=kokorom;青柳衡山フォントT=aoyanagiT;たぬき油性マジック=tanukiM",
+      "quicktagButtons": []
+    }
+  }
+]

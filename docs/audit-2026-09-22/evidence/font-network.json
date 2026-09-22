@@ -1,0 +1,142 @@
+[
+  {
+    "url": "https://cdn.jsdelivr.net/gh/raspi0124/my-sites-files@097f6373c8d24abad960ab5ec25e001be4fe7bd0/esenapaj.ttf",
+    "status": 200,
+    "size": 2334056,
+    "type": "font/ttf",
+    "cors": "*",
+    "magic": "00010000"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/raspi0124/my-sites-files@0a9c3e242b46cd2d493db832a6eccba8f31b9da6/Kokoro.ttf",
+    "status": 200,
+    "size": 3968936,
+    "type": "font/ttf",
+    "cors": "*",
+    "magic": "00010000"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/raspi0124/my-sites-files@729d123c3a7de4ac2bb3a7cdbdedc707dde69120/aoyanagiT.ttf",
+    "status": 200,
+    "size": 2088064,
+    "type": "font/ttf",
+    "cors": "*",
+    "magic": "00010000"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/raspi0124/my-sites-files@80b7a9fadba7c729d00bcc81beba49deb97e19de/font_1_honokamarugo_1.1.ttf",
+    "status": 200,
+    "size": 10504512,
+    "type": "font/ttf",
+    "cors": "*",
+    "magic": "00010000"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/raspi0124/my-sites-files@dc302549468ac811f2c12a171c10b90cd0551c3b/HuiFont109.woff2",
+    "status": 200,
+    "size": 932128,
+    "type": "font/woff2",
+    "cors": "*",
+    "magic": "774f4632"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/raspi0124/my-sites-files@eed42314cef07897e0b2be3747e3bd6c029c0264/Light-Huiji.ttf",
+    "status": 200,
+    "size": 395684,
+    "type": "font/ttf",
+    "cors": "*",
+    "magic": "00010000"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/raspi0124/my-sites-files@master/TanukiMagic.ttf",
+    "status": 200,
+    "size": 8820644,
+    "type": "font/ttf",
+    "cors": "*",
+    "magic": "00010000"
+  },
+  {
+    "url": "https://cdn.rawgit.com/raspi0124/my-sites-files/dc302549/HuiFont109.woff2",
+    "status": 200,
+    "size": 932128,
+    "type": "font/woff2",
+    "cors": "*",
+    "magic": "774f4632"
+  },
+  {
+    "url": "https://cdn.rawgit.com/raspi0124/my-sites-files/eed42314/Light-Huiji.ttf",
+    "status": 200,
+    "size": 395684,
+    "type": "font/ttf",
+    "cors": "*",
+    "magic": "00010000"
+  },
+  {
+    "url": "https://cdn.statically.io/gh/raspi0124/my-sites-files/dc302549/HuiFont109.woff2",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://cdn.statically.io/gh/raspi0124/my-sites-files/eed42314/Light-Huiji.ttf",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap",
+    "status": 200,
+    "size": 213,
+    "type": "text/css; charset=utf-8",
+    "cors": "*",
+    "magic": "40666f6e"
+  },
+  {
+    "url": "https://fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.otf",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "url": "https://fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.woff",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "url": "https://fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.woff2",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "url": "https://fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.otf",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "url": "https://fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "url": "https://fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff2",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "url": "https://fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Thin.otf",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "url": "https://fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Thin.woff",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "url": "https://fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Thin.woff2",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/raspi0124/Japanese-font-for-TinyMCE@stable/addfont.css",
+    "status": 200,
+    "size": 3501,
+    "type": "text/css; charset=utf-8",
+    "cors": "*",
+    "magic": "2f2a2043"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/raspi0124/Japanese-font-for-TinyMCE@stable/addfont_lite.css",
+    "status": 200,
+    "size": 817,
+    "type": "text/css; charset=utf-8",
+    "cors": "*",
+    "magic": "2f2a204c"
+  }
+]

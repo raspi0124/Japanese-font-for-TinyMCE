@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://gcs.raspi0124.dev/tinyjpfont/fonts/HuiFont109.woff2",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://gcs.raspi0124.dev/tinyjpfont/fonts/Light-Huiji.ttf",
+    "error": "HTTP Error 403: Forbidden"
+  }
+]
