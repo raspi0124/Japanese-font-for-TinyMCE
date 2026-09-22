@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Japanese font for WordPress (Previously: Japanese Font for TinyMCE)
  * Description: Adds Japanese fonts to Gutenberg and TinyMCE while preserving existing content.
- * Version: 5.00-dev.5
+ * Version: 5.00-dev.6
  * Requires at least: 5.1
  * Requires PHP: 5.6
  * Author: raspi0124
@@ -18,7 +18,7 @@ require_once __DIR__ . '/includes/whole-font.php';
 require_once __DIR__ . '/includes/modern.php';
 require_once __DIR__ . '/includes/font-library.php';
 class JapaneseFontTinyMCE {
-    const VERSION = '5.00-dev.5';
+    const VERSION = '5.00-dev.6';
     const OPT_CDN_ENABLED = 'tinyjpfont_check_cdn';
     const OPT_FONT_MODE = 'tinyjpfont_select';
     const OPT_GUTENBERG_ENABLED = 'tinyjpfont_gutenberg';

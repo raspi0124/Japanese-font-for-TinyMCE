@@ -15,7 +15,7 @@ for(const site of JSON.parse(fs.readFileSync('.verification/matrix.json'))){
  php(site.name,value===null?'delete_option("tinyjpfont_gutenberg");':'update_option("tinyjpfont_gutenberg","'+value+'");');
  await p.goto('http://localhost:'+site.port+'/wp-admin/admin.php?page=tinyjpfont');
  assert.equal(await p.locator('#tinyjpfont_gutenberg').isChecked(),value!=='0');
- assert.ok((await p.locator('.tinyjpfont-news').innerText()).includes('5.00-dev.5'));
+ assert.ok((await p.locator('.tinyjpfont-news').innerText()).includes('ブロックエディタ対応の初期設定'));
  assert.equal(await p.locator('.tinyjpfont-news').count(),1);
  const state=JSON.parse(php(site.name,'echo json_encode(array("stored"=>get_option("tinyjpfont_gutenberg",null),"editor"=>function_exists("tinyjpfont_gutenberg_editor_assets"),"presets"=>class_exists("WP_Theme_JSON_Data")?tinyjpfont_presets(new WP_Theme_JSON_Data(array("version"=>2)))->get_data():null));'));
  assert.equal(state.stored,value);assert.equal(state.editor,value!=='0');

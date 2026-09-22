@@ -13,9 +13,11 @@ function tinyjpfont_settings_news() {
     if (!current_user_can('manage_options')) { return; }
     ?>
     <div class="notice notice-info inline tinyjpfont-news">
-    <p><strong><?php printf(esc_html__('バージョン %s のお知らせ','japanese-font-for-tinymce'), esc_html(JapaneseFontTinyMCE::VERSION)); ?></strong></p>
-    <p><?php esc_html_e('ブロックエディタ対応は未設定の場合に有効になります。以前に無効として保存した設定は変更しません。対応ブロックを選び、右側の「タイポグラフィ → フォント」から書体を選択できます。項目が見つからない場合はタイポグラフィのオプションメニューを確認してください。従来の独自ブロック・書式ボタンも引き続き使えます。','japanese-font-for-tinymce'); ?></p>
-    <p><?php esc_html_e('フォント配信をfonts.raspi0124.devへ移転しました。対応するWordPressではFont Libraryの「日本語フォント」から必要な書体だけをサイトへ保存できます。インストールは任意で、自動ダウンロードは行いません。','japanese-font-for-tinymce'); ?></p>
+    <p><strong><?php esc_html_e('ブロックエディタですぐに日本語フォントを選べるようになりました','japanese-font-for-tinymce'); ?></strong></p>
+    <p><?php esc_html_e('5.00-dev.5から、ブロックエディタ対応の初期設定を「有効」に変更しました。新規インストール時や、この設定をまだ保存していないサイトが対象です。','japanese-font-for-tinymce'); ?></p>
+    <p><?php esc_html_e('すでに設定を保存しているサイトは、有効・無効のどちらもそのまま引き継ぎます。既存の記事の書体や内容は変更しません。','japanese-font-for-tinymce'); ?></p>
+    <p><?php esc_html_e('使い方：段落などのブロックを選択し、右側の「タイポグラフィ → フォント」で書体を選びます。項目が隠れている場合はタイポグラフィのオプションメニューから表示してください。標準のフォント選択がない古いWordPressでは、従来の独自ブロック・書式ボタンを利用できます。','japanese-font-for-tinymce'); ?></p>
+    <p><a href="<?php echo esc_url(plugins_url('readme.txt', __FILE__)); ?>"><?php esc_html_e('変更履歴を読む（readme.txt）','japanese-font-for-tinymce'); ?></a></p>
     </div>
     <?php
 }

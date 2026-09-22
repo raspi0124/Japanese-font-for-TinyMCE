@@ -4,7 +4,7 @@ Tags: fonts, Japanese, TinyMCE, Gutenberg
 Requires at least: 5.1
 Requires PHP: 5.6
 Tested up to: 7.1
-Version: 5.00-dev.5
+Version: 5.00-dev.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,28 +58,35 @@ Font files and optionally CSS are requested from https://fonts.raspi0124.dev/, o
 
 == Changelog ==
 
+= 5.00-dev.6 =
+* 設定画面のお知らせを、ブロックエディタ対応の初期設定の変更と、既存サイトへの影響が分かる説明に更新。
+* 5.00系の変更履歴を日本語で整理。各開発版で追加・修正した内容を明記。
+* フォント選択・配信・設定の動作は5.00-dev.5と同じです。
+
 = 5.00-dev.5 =
-* Enable block editor support by default when the setting is absent; preserve explicitly disabled settings.
-* Update settings-page news and instructions for standard font selection and optional Font Library installation.
+* ブロックエディタ対応の初期設定を「無効」から「有効」に変更。新規インストール時と、この設定をまだ保存していないサイトが対象です。
+* 保存済みの有効・無効設定は引き継ぎます。すでに無効にしているサイトで勝手に有効になることはありません。
+* 設定画面にフォントの選び方を案内するお知らせを追加。
 
 = 5.00-dev.4 =
-* Complete the five-version compatibility verification and browser rendering checks.
-* Document large-font installation requirements, delivery behavior, and dependency audit results.
-* Preserve settings and installed fonts during uninstall; improve administration, input validation, and delivery diagnostics.
+* Font Libraryでフォントをインストールした後、Classic Editorが正常に起動しない不具合を修正。
+* 「ウェブサイト全体適用フォント」がクラシックテーマの記事タイトルや見出しにも反映されるよう修正。個別に指定した書体を優先します。
+* Font Libraryで大きなフォントを保存する際に必要な、サーバーのアップロード上限を案内。
 
 = 5.00-dev.3 =
-* Add standard font choices and the Japanese Font Library collection.
-* Prefer explicitly installed local fonts, including legacy family aliases.
-* Preserve choices when saved Global Styles replace theme settings.
+* 対応するWordPressで、段落・見出し・ボタンなどの標準フォント選択に日本語書体を追加。
+* Font Libraryに「日本語フォント」コレクションを追加。必要な書体だけをサイトにインストールできます。
+* インストール済みの書体はサイトから配信。従来のフォント名で指定した記事にも適用します。
+* サイトのスタイル設定を保存した後も、日本語フォントの選択肢が残るよう修正。
 
 = 5.00-dev.2 =
-* Move font delivery to versioned HTTPS assets on Cloudflare R2.
-* Repair TinyMCE, Quicktags, Gutenberg formatting, and legacy block saving.
-* Preserve rich markup and old font names on WordPress 5.1 and later.
-* Replace the obsolete build system and package only runtime assets.
+* フォント配信先をfonts.raspi0124.devへ移転。従来の7書体とNotoの3ウェイトを提供。
+* ブロックエディタの書式ボタンと独自ブロックの保存処理を修正。既存記事の太字・リンク・改行を保持。
+* Classic Editorのフォント選択とテキスト編集用ボタンを修正。他プラグインの選択肢やツールバー設定を維持。
+* Lite・CDN・ヘッダー／フッター設定の読み込み処理を修正。ブロックエディタ対応を無効にしても既存記事のフォント表示を維持。
 
-= Earlier versions =
-The development history and earlier releases are available at https://github.com/raspi0124/Japanese-font-for-TinyMCE/releases.
+= 以前のバージョン =
+https://github.com/raspi0124/Japanese-font-for-TinyMCE/releases を参照してください。
 
 == Development ==
 

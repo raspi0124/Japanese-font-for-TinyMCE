@@ -162,3 +162,11 @@ WordPress 7.1でChromium・Firefox・WebKitの実エンジンを起動した。�
 [結果JSON](evidence/dev5.00_5/defaults.json) / [WordPress 5.1設定画面](evidence/dev5.00_5/wp51-settings.png) / [WordPress 7.1設定画面](evidence/dev5.00_5/wp71-settings.png)
 
 今回の検証は変更箇所を対象とした追加確認です。dev.4の全フォント配信・全エディタ操作・Firefox/WebKit試験は再実行していません。
+
+## dev5.00_6 — お知らせ・変更履歴の説明を整理
+
+設定画面のお知らせを初期設定の変更・既存サイトへの影響・操作手順に整理しました。CHANGELOG.mdを追加し、readme.txtの変更履歴も日本語で更新しています。フォント機能と設定の動作はdev.5から変更していません。
+
+生成ZIPを5環境に配置し、Chromiumでお知らせ表示・変更履歴リンク・ページJS例外がないことを確認。変更したnotice.phpは全5環境のPHP構文検査に合格しました。各環境を撮影し、5.1と7.1の画像を開いて確認しています。今回は文面とリンクの追加確認で、フォント描画・保存往復の全試験は再実行していません。
+
+[確認結果](evidence/dev5.00_6/news.json) / [5.1の画面](evidence/dev5.00_6/wp51-settings.png) / [7.1の画面](evidence/dev5.00_6/wp71-settings.png)
