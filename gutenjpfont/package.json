@@ -1,14 +1,11 @@
 {
-  "name": "gutenjpfont-cgb-guten-block",
-  "version": "1.0.0",
+  "name": "tinyjpfont-editor",
+  "version": "5.0.0-dev.2",
   "private": true,
+  "engines": { "node": ">=24" },
   "scripts": {
-    "start": "cgb-scripts start",
-    "build": "cgb-scripts build",
-    "eject": "cgb-scripts eject"
+    "build": "wp-scripts build src/blocks.js --output-path=dist",
+    "start": "wp-scripts start src/blocks.js --output-path=dist"
   },
-  "dependencies": {
-    "@wordpress/rich-text": "^3.25.0",
-    "cgb-scripts": "1.23.0"
-  }
+  "devDependencies": { "@wordpress/scripts": "35.0.0" }
 }

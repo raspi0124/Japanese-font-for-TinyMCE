@@ -1,52 +1,25 @@
 name: Dev Release
-
 on:
   push:
-    tags:
-      - "dev*"
+    tags: ['dev*']
+permissions:
+  contents: write
 jobs:
   release:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
-
     steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: npm install, build
-        run: |
-          npm ci
-          npm run build
-        working-directory: ./gutenjpfont
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: gutenjpfont/package-lock.json
+      - run: npm ci && npm run build
+        working-directory: gutenjpfont
+      - run: python3 tools/package.py
+      - name: Check runtime PHP syntax
+        run: find . -path './gutenjpfont/node_modules' -prune -o -name '*.php' -print0 | xargs -0 -n1 php -l
+      - name: Publish development ZIP
         env:
-          CI: true
-      - name: Remove Unnecessary Folders.
-        run: rm -rf .github .git gutenjpfont/node_modules
-      - name: Zip output
-        run: |
-          zip -r release *
-      - name: Create release
-        id: create_release
-        uses: actions/create-release@v1.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Dev Release ${{ github.ref }}
-          draft: false
-          prerelease: true
-      - name: Upload Release Asset
-        id: upload-release-asset
-        uses: actions/upload-release-asset@v1.0.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./release.zip
-          asset_name: japanese-font-wordpress.zip
-          asset_content_type: application/zip
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" .artifacts/japanese-font-wordpress.zip --prerelease --verify-tag --generate-notes

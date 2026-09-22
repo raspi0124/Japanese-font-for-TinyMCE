@@ -3,3 +3,6 @@
 gutenjpfont/dist/
 gutenjpfont/node_modules/
 gutenjpfont/yarn.lock
+.artifacts/
+.verification/
+__pycache__/
